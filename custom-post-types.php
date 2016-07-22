@@ -873,14 +873,14 @@ class Spotlight extends CustomPostType {
 			)
 		);
 	}
-
+	
 	public function objectsToHTML($objects, $css_classes) {
 		ob_start();?>
 		<ul class="spotlight-list">
 			<?php
 			rsort($objects);
 			foreach ($objects as $spotlight) { ?>
-				<li><a href="<?=get_permalink($spotlight->ID)?>"><?=$spotlight->post_title?></a></li>
+				<li><a href="<?=get_post_meta($spotlight->ID, 'url_redirect', True)?>"><?=$spotlight->post_title?></a></li>
 			<?php
 			}
 			?>
