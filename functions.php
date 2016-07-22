@@ -328,7 +328,7 @@ function frontpage_spotlights() {
 	
 	function output_spotlight($spotlight) {
 		?>
-		<?=echo $link . "<br/>" . $ext_link;?>
+		<?php echo $link . "<br/>" . $ext_link;?>
 		<div class="home_spotlight_single">
 			<a href="<?=$link?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
 				<?php
