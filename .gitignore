@@ -32,3 +32,6 @@ typings
 # debug files
 npm-debug.log
 
+# tags and tags.idx (notepad++ faux intelisens file)
+tags
+tags.idx
