@@ -329,7 +329,6 @@ function frontpage_spotlights() {
 		
 		?>
 		<div class="home_spotlight_single">
-			<?=$link . $ext_link?>			
 			<a href="<?=$link?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
 				<?php
 					$thumb_id = get_post_thumbnail_id($spotlight->ID);
