@@ -25,16 +25,16 @@
 
 				<p id="subfooter" role="contentinfo" class="vcard">
 					<span class="adr">
-						<span class="street-address">4000 Central Florida Blvd. </span>
+						<span class="street-address">P.O. Box 161800 </span>
 						<span class="locality">Orlando</span>,
 						<span class="region">Florida</span>,
-						<span class="postal-code">32816</span> |
-						<span class="tel"><a href="tel:4078232000">407.823.2000</a></span>
+						<span class="postal-code">32816-1800</span> |
+						<span class="tel"><a href="tel:4078232076">407.823.2076</a></span>
 					</span>
 					<br/>
 					<a href="<?=site_url()?>/feedback/">Comments and Feedback</a> | &copy;
 					<a href="<?=site_url()?>" class="print-noexpand fn org url">
-						<span class="organization-name">University of Central Florida</span>
+						<span class="organization-name">The Burnett Honors College</span>
 					</a>
 				</p>
 
