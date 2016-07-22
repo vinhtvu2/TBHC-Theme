@@ -789,7 +789,7 @@ class Person extends CustomPostType
  * Opportunities post type
  * Erik's first attempt to copy an existing post type and create a clone 
  * */
-class Opportunities extends CustomPostType {
+class Opportunity extends CustomPostType {
 	public
 	$name           = 'opportunity',
 	$plural_name    = 'Opportunities',
