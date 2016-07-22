@@ -182,7 +182,8 @@ Config::$custom_post_types = array(
 	'AZIndexLink',
 	'Announcement',
 	'Post',
-	'Degree'
+	'Degree',
+	'Opportunity'
 );
 
 Config::$custom_taxonomies = array(
