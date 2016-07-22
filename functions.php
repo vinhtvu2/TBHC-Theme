@@ -320,10 +320,16 @@ function frontpage_spotlights() {
 	$position_one  = get_post_meta($spotlight_one->ID, 'spotlight_position', TRUE);
 	$position_two  = get_post_meta($spotlight_two->ID, 'spotlight_position', TRUE);
 
+	$link = get_permalink($opportunity->ID);
+	$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
+	if($ext_link){
+		$link = $ext_link; 
+	}
+	
 	function output_spotlight($spotlight) {
 		?>
 		<div class="home_spotlight_single">
-			<a href="<?=get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
+			<a href="<?=$link?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
 				<?php
 					$thumb_id = get_post_thumbnail_id($spotlight->ID);
 					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
@@ -334,9 +340,9 @@ function frontpage_spotlights() {
 				<div class="screen-only spotlight_thumb" style="background-image:url('<?=$thumb_src?>');"><?=$spotlight->post_title?></div>
 				<?php } ?>
 			</a>
-			<h3 class="home_spotlight_title"><a href="<?=get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>"><?=$spotlight->post_title?></a></h3>
+			<h3 class="home_spotlight_title"><a href="<?=$link?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>"><?=$spotlight->post_title?></a></h3>
 			<?=truncateHtml($spotlight->post_content, 200)?>
-			<p><a class="home_spotlight_readmore ga-event" href="<?=get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE)?>" target="_blank" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">Read More…</a></p>
+			<p><a class="home_spotlight_readmore ga-event" href="<?=$link?>" target="_blank" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">Read More…</a></p>
 		</div>
 		<?
 	}

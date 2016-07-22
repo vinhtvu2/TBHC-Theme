@@ -867,20 +867,28 @@ class Spotlight extends CustomPostType {
 			),
 			array(
 				'name' => 'URL Redirect',
-				'desc' => 'Specify a Url to redirect a user to when they click the spotlight. V1, I will try to seperate this out to a tool for selecting an existing spotlight category post or an external url (I\'m still learning...).',
+				'desc' => 'Specify a full url to use as a redirect when the spotlight is clicked.',
 				'id'   => $prefix.'url_redirect',
 				'type' => 'text',
+				'placeholder' => 'http(s)://www.google.com'
 			)
 		);
 	}
 	
-	public function objectsToHTML($objects, $css_classes) {
+	public function objectsToHTML($objects, $css_classes) {		
 		ob_start();?>
 		<ul class="spotlight-list">
 			<?php
 			rsort($objects);
 			foreach ($objects as $spotlight) { ?>
-				<li><a href="<?=get_post_meta($spotlight->ID, 'url_redirect', True)?>"><?=$spotlight->post_title?></a></li>
+				<?php
+					$link = get_permalink($opportunity->ID);
+					$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
+					if($ext_link){
+						$link = $ext_link; 
+					}					
+				?>
+				<li><a href="<?=$link?>"><?=$spotlight->post_title?></a></li>
 			<?php
 			}
 			?>
