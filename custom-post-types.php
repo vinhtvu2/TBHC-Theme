@@ -785,6 +785,53 @@ class Person extends CustomPostType
 	}
 } // END class
 
+/*
+ * Opportunities post type
+ * Erik's first attempt to copy an existing post type and create a clone 
+ * */
+class Opportunities extends CustomPostType {
+	public
+	$name           = 'opportunity',
+	$plural_name    = 'Opportunities',
+	$singular_name  = 'Opportunity',
+	$add_new_item   = 'Add New Opportunity',
+	$edit_item      = 'Edit Opportunity',
+	$new_item       = 'New Opportunity',
+	$public         = True,
+	$use_editor     = True,
+	$use_thumbnails = True,
+	$use_title      = True,
+	$use_metabox    = True,
+	$use_shortcode	= True;
+	
+	public function fields() {
+		$prefix = $this->options('name').'_';
+		return array(
+		array(
+		'name' => 'Opportunity Position',
+		'desc' => 'Specify whether the opportunity should be positioned in the top slot of the opportunity section or the bottom.',
+		'id'   => $prefix.'position',
+		'type' => 'radio',
+		'options' => array('Top' => 'top', 'Bottom' => 'bottom'),
+		),
+		);
+	}
+	
+	public function objectsToHTML($objects, $css_classes) {
+	ob_start();?>
+	<ul class="opportunity-list">
+		<?php
+			rsort($objects);
+			foreach ($objects as $opportunity) { ?>
+			<li><a href="<?=get_permalink($opportunity->ID)?>"><?=$opportunity->post_title?></a></li>
+			<?php
+			}
+		?>
+	</ul>
+	<?php
+	}
+	
+}
 
 
 /**

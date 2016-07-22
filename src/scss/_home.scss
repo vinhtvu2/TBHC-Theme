@@ -30,6 +30,7 @@
     font-size: 14px;
     margin: 11px 0;
     text-transform: uppercase;
+    color: #B38C0B;
   }
 
   h3 {
@@ -55,9 +56,9 @@
 
 // Home page - left column
 #home_leftcol {
-  h2 {
+  /*h2 {
     color: #E26906;
-  }
+  }*/
 
   a {
     color: #333;
@@ -161,7 +162,7 @@
   }
 
   h2 {
-    color: #B38C0B;
+    /*color: #B38C0B;*/
 
     @include body-prefix('.ie8') {
       padding-bottom: 15px;
@@ -180,7 +181,7 @@
 
 // Home Page - Colleges Nav
 #home-supplemental {
-  background: #FFEFB3;
+  background: #FBFBFB;
   font-size: 12px;
   margin-top: 30px;
   padding: 15px 0;

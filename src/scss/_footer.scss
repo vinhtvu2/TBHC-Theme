@@ -71,7 +71,8 @@
   a[href*="twitter"],
   a[href*="flickr"],
   a[href*="youtube"],
-  a[href*="google"] {
+  /*a[href*="google"],*/
+  a[href*="instagram"] {
     @include sprite();
     height: 32px;
     width: 35px;
@@ -93,7 +94,11 @@
     background-position: -101px -35px;
   }
 
-  a[href*="google"] {
+  /*a[href*="google"] {
+    background-position: -134px -35px;
+  }*/
+
+  a[href*="instagram"]{
     background-position: -134px -35px;
   }
 }
