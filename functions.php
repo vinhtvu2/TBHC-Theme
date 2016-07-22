@@ -323,7 +323,7 @@ function frontpage_spotlights() {
 	function output_spotlight($spotlight) {
 		?>
 		<div class="home_spotlight_single">
-			<? echo get_post_meta($spotlight_one->ID, 'spotlight_url_redirect', TRUE)?>
+			<? echo get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE)?>
 			<a href="<?=get_permalink($spotlight->ID)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
 				<?php
 					$thumb_id = get_post_thumbnail_id($spotlight->ID);
