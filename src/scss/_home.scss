@@ -1,6 +1,10 @@
 // Home Page - General
-#home {
+
+ul{
     list-style: none;
+}
+
+#home {
   .description {
     @media (max-width: $screen-xs-max) {
       margin-top: 10px;
