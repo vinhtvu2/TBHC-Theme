@@ -880,7 +880,7 @@ class Spotlight extends CustomPostType {
 			<?php
 			rsort($objects);
 			foreach ($objects as $spotlight) { ?>
-				<li><a href="<?=$url_redirect?>"><?=$spotlight->post_title?></a></li>
+				<li><a href="<?=get_permalink($spotlight->ID)?>"><?=$spotlight->post_title?></a></li>
 			<?php
 			}
 			?>

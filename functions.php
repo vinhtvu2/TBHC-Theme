@@ -323,7 +323,7 @@ function frontpage_spotlights() {
 	function output_spotlight($spotlight) {
 		?>
 		<div class="home_spotlight_single">
-			<a href="<?=get_permalink($spotlight->ID)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
+			<a href="<?=$url_redirect?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
 				<?php
 					$thumb_id = get_post_thumbnail_id($spotlight->ID);
 					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
