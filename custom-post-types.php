@@ -887,7 +887,7 @@ class Spotlight extends CustomPostType {
 						$link = $ext_link; 
 					}					
 				?>
-				<li><a href="<?php=$link?>"><?=$spotlight->post_title?></a></li>
+				<li><a href="<?=$link?>"><?=$spotlight->post_title?></a></li>
 			<?php
 			}
 			?>
