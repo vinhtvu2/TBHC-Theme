@@ -319,14 +319,14 @@ function frontpage_spotlights() {
 
 	$position_one  = get_post_meta($spotlight_one->ID, 'spotlight_position', TRUE);
 	$position_two  = get_post_meta($spotlight_two->ID, 'spotlight_position', TRUE);
-
-	$link = get_permalink($opportunity->ID);
-	$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
-	if($ext_link){
-		$link = $ext_link; 
-	}
 	
 	function output_spotlight($spotlight) {
+		$link = get_permalink($spotlight->ID);
+		$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
+		if($ext_link){
+			$link = $ext_link; 
+		}
+		
 		?>
 		<div class="home_spotlight_single">
 			<?=$link . $ext_link?>			
