@@ -869,8 +869,7 @@ class Spotlight extends CustomPostType {
 				'name' => 'URL Redirect',
 				'desc' => 'Specify a full url to use as a redirect when the spotlight is clicked.',
 				'id'   => $prefix.'url_redirect',
-				'type' => 'text',
-				'placeholder' => 'http(s)://www.google.com'
+				'type' => 'text'
 			)
 		);
 	}
