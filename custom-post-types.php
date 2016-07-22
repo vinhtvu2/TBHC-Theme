@@ -865,6 +865,12 @@ class Spotlight extends CustomPostType {
 				'type' => 'radio',
 				'options' => array('Top' => 'top', 'Bottom' => 'bottom'),
 			),
+			array(
+				'name' => 'URL Redirect',
+				'desc' => 'Specify a Url to redirect a user to when they click the spotlight. V1, I will try to seperate this out to a tool for selecting an existing spotlight category post or an external url (I\'m still learning...).',
+				'id'   => $prefix.'url_redirect',
+				'type' => 'text',
+			)
 		);
 	}
 
@@ -874,7 +880,7 @@ class Spotlight extends CustomPostType {
 			<?php
 			rsort($objects);
 			foreach ($objects as $spotlight) { ?>
-				<li><a href="<?=get_permalink($spotlight->ID)?>"><?=$spotlight->post_title?></a></li>
+				<li><a href="<?=$url_redirect?>"><?=$spotlight->post_title?></a></li>
 			<?php
 			}
 			?>
