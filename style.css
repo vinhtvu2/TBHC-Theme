@@ -1,8 +1,8 @@
 /*
-Theme Name: UCF.edu theme
-Author: UCF Web Communications
-Github Theme URI: https://github.com/UCF/Main-Site-Theme
-Version: v2.0.6
+Theme Name: TBHC theme
+Author: Erik Pyell
+Github Theme URI: https://github.com/UCF/TBHC-Theme
+Version: v0.0.1
 */
 
 /*
@@ -12,4 +12,6 @@ the site's header.
 
 Style overrides should be made in scss files, located in static/scss/, then
 compiled using gulp.
+
+Forked from https://github.com/UCF/Main-Site-Theme.
 */
