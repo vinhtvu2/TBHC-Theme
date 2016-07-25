@@ -27,9 +27,9 @@
 		<?php
 			$theSubHeaderId = get_post_meta($post->ID, 'page_subheader', TRUE);
 			$theSubHeaderPush = get_post_meta($theSubHeaderId, 'subheader_push_right_sidebar', TRUE);
-			$dontPushRightSidebar = $theSubHeaderId == '' && $theSubHeaderPush == 'off';
+			$pushRightSidebar = $theSubHeaderId != '' && $theSubHeaderPush == 'on';
 		?>
-		<div id="sidebar_right" class="col-md-3 col-sm-3 <?php if ($dontPushRightSidebar) { ?>notoppad<?php } ?>" role="complementary">
+		<div id="sidebar_right" class="col-md-3 col-sm-3 <?php if (!($pushRightSidebar)) { ?>notoppad<?php } ?>" role="complementary">
 			<?=get_sidebar('right');?>
 		</div>
 	</div>
