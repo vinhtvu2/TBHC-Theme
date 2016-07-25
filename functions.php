@@ -485,6 +485,8 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
+	<?=print_r($opportunities)?>	
+	
 	$opportunity_one = $opportunities[0];
 	$opportunity_two = $opportunities[1];
 	
@@ -500,7 +502,6 @@ function frontpage_opportunities() {
 		
 	?>
 	<div class="home_opportunity_single">
-		<?=print_r($opportunity)?>
 		<a href="<?=$link?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=$opportunity->post_title?>">
 			<?php
 				$thumb_id = get_post_thumbnail_id($opportunity->ID);
