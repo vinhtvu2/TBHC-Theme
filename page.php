@@ -28,8 +28,7 @@
 			$theSubHeaderId = get_post_meta($post->ID, 'page_subheader', TRUE);
 			$args = array(
 				'numberofposts' => 1,
-				'ID' => $theSubHeaderId,
-				'post_status'   => 'publish'
+				'ID' => $theSubHeaderId
 			);
 			print_r($args);
 			$theSubHeader = get_post($args);
