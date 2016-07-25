@@ -488,12 +488,10 @@ function frontpage_opportunities() {
 	$opportunity_one = $opportunities[0];
 	$opportunity_two = $opportunities[1];
 	
-	$opportunity_one  = get_post_meta($opportunity_one->ID, 'opportunity_position', TRUE);
-	$opportunity_two  = get_post_meta($opportunity_two->ID, 'opportunity_position', TRUE);
+	$position_one  = get_post_meta($opportunity_one->ID, 'opportunity_position', TRUE);
+	$position_two  = get_post_meta($opportunity_two->ID, 'opportunity_position', TRUE);
 	
-	function output_opportunity($opportunity) {
-		print_r($opportunity);	
-		
+	function output_opportunity($opportunity) {	
 		$link = get_permalink($opportunity->ID);
 		$ext_link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);
 		if($ext_link){
