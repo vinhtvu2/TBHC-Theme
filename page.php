@@ -28,7 +28,7 @@
 			$theSubHeaderTitle = get_post_meta($post->ID, 'page_subheader', TRUE);
 			$args = array(
 				'numberofposts' => 1,
-				'post_name' => $theSubHeaderTitle,
+				'ID' => $theSubHeaderTitle,
 				'post_type' => 'subheader',
 				'post_status'   => 'publish'
 			);
