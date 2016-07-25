@@ -33,7 +33,7 @@
 				'post_status'   => 'publish'
 			);
 			$theSubHeader = get_post($args);
-			print_r(get_post_meta($theSubHeader[0]->ID, 'subheader_push_right_sidebar', TRUE));
+			print_r($theSubHeader->ID);
 			//$dontPushRightSidebar = $theSubHeaderTitle == '' && get_post_meta($theSubHeader->ID, 'subheader_push_right_sidebar', TRUE) == 'off');
 		?>
 		<div id="sidebar_right" class="col-md-3 col-sm-3 <?php if (false) { ?>notoppad<?php } ?>" role="complementary">
