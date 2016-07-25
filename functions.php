@@ -311,6 +311,8 @@ function frontpage_spotlights() {
 		'numberposts' 	=> 2,
 		'post_type' 	=> 'spotlight',
 		'post_status'   => 'publish',
+		'meta_key' => 'spotlight_post_to_home',
+		'meta_value' => 'on'
 	);
 	$spotlights = get_posts($args);
 
