@@ -485,7 +485,7 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	<?=print_r($opportunities)?>	
+	print_r($opportunities);	
 	
 	$opportunity_one = $opportunities[0];
 	$opportunity_two = $opportunities[1];
