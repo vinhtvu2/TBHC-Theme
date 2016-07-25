@@ -308,7 +308,6 @@ function get_page_subheader( $post ) {
  **/
 function frontpage_spotlights() {
 	$args = array(
-		'numberposts' 	=> 2,
 		'post_type' 	=> 'spotlight',
 		'post_status'   => 'publish',
 		'meta_key' => 'spotlight_post_to_home',
@@ -316,6 +315,15 @@ function frontpage_spotlights() {
 	);
 	$spotlights = get_posts($args);
 
+	if(empty($spotlights)){
+		$args = array(
+			'numberofposts' => 2,
+			'post_type' 	=> 'spotlight',
+			'post_status'   => 'publish',
+			);
+		$spotlights = get_posts($args);
+	}
+	
 	$spotlight_one = $spotlights[0];
 	$spotlight_two = $spotlights[1];
 
