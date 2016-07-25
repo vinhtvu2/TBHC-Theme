@@ -139,6 +139,40 @@ function manage_spotlight_columns( $column, $post_id ) {
 }
 add_action('manage_spotlight_posts_custom_column', 'manage_spotlight_columns', 10, 2);
 
+/*
+ * Custom grid stuff for opportunities
+ * */
+// Custom columns for 'opportunity' post type
+function edit_opportunity_columns() {
+	$columns = array(
+	'cb'          => '<input type="checkbox" />',
+	'title'       => 'Title',
+	'post' 		  => 'Post',	
+	'publish_date'=> 'Date'
+	);
+	return $columns;
+}
+add_action('manage_edit-opportunity_columns', 'edit_opportunity_columns');
+
+// Custom columns content for 'opportunity'
+function manage_opportunity_columns( $column, $post_id ) {
+	global $post;
+	switch ( $column ) {
+		case 'post':
+		print get_post_meta( $post->ID, 'opportunity_post_to_home', true );
+		break;
+		case 'publish_date':
+		if ($post->post_status == 'publish') {
+			print 'Published'.'<br/>'.get_post_time('Y/m/d', true, $post->ID);
+		}
+		break;
+		default:
+		break;
+	}
+}
+add_action('manage_opportunity_posts_custom_column', 'manage_opportunity_columns', 10, 2);
+
+
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.
  * Modifies $allowedposttags defined in wp-includes/kses.php
@@ -334,9 +368,6 @@ function get_page_subheader( $post ) {
 
 /**
  * Output Spotlights for front page.
- *
- * Note: this function assumes at least 2 spotlights already exist
- * and that only 2 spotlights at a time should ever be displayed.
  **/
 function frontpage_spotlights() {
 	$args = array(
@@ -433,7 +464,103 @@ function frontpage_spotlights() {
 	}
 }
 
-
+/**
+ * Output Opportunities for front page.
+**/
+function frontpage_opportunities() {
+	$args = array(
+	'post_type' 	=> 'opportunity',
+	'post_status'   => 'publish',
+	'meta_key' => 'opportunity_post_to_home',
+	'meta_value' => 'on'
+	);
+	$opportunities = get_posts($args);
+	
+	if(empty($opportunities)){
+		$args = array(
+		'numberofposts' => 2,
+		'post_type' 	=> 'opportunity',
+		'post_status'   => 'publish',
+		);
+		$opportunities = get_posts($args);
+	}
+	
+	$opportunity_one = $spotlights[0];
+	$opportunity_two = $spotlights[1];
+	
+	$opportunity_one  = get_post_meta($opportunity_one->ID, 'opportunity_position', TRUE);
+	$opportunity_two  = get_post_meta($opportunity_two->ID, 'opportunity_position', TRUE);
+	
+	function output_opportunity($opportunity) {
+		$link = get_permalink($opportunity->ID);
+		$ext_link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);
+		if($ext_link){
+			$link = $ext_link; 
+		}
+		
+	?>
+	<div class="home_opportunity_single">
+		
+		<a href="<?=$link?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=$opportunity->post_title?>">
+			<?php
+				$thumb_id = get_post_thumbnail_id($opportunity->ID);
+				$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
+				$thumb_src = $thumb_src[0];
+			?>
+			<?php if ($thumb_src) { ?>
+				<img class="print-only opportunity_thumb" src="<?=$thumb_src?>" />
+				<div class="screen-only opportunity_thumb" style="background-image:url('<?=$thumb_src?>');"><?=$opportunity->post_title?></div>
+			<?php } ?>
+		</a>
+		<h3 class="home_opportunity_title"><a href="<?=$link?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=$opportunity->post_title?>"><?=$opportunity->post_title?></a></h3>
+		<?=truncateHtml($opportunity->post_content, 200)?>
+		<p><a class="home_opportunity_readmore ga-event" href="<?=$link?>" target="_blank" data-ga-action="Opportunity Link" data-ga-label="<?=$opportunity->post_title?>">Read More…</a></p>
+	</div>
+	<?
+	}
+	
+	// If neither positions are set, or the two positions conflict with each
+	// other, just display them in the order they were retrieved:
+	if (($position_one == '' && $position_two == '') || ($position_one == $position_two)) {
+		output_opportunity($opportunity_one);
+		output_opportunity($opportunity_two);
+	}
+	
+	// If one is set but not the other, respect the set opportunity's position
+	// and place the other one in the other slot:
+	else if ($position_one == '' && $position_two !== '') {
+		if ($position_two == 'top') {
+			output_opportunity($opportunity_two);
+			output_opportunity($opportunity_one);
+		}
+		else {
+			output_opportunity($opportunity_one);
+			output_opportunity($opportunity_two);
+		}
+	}
+	else if ($position_one !== '' && $position_two == '') {
+		if ($position_one == 'top') {
+			output_opportunity($opportunity_one);
+			output_opportunity($opportunity_two);
+		}
+		else {
+			output_opportunity($opportunity_two);
+			output_opportunity($opportunity_one);
+		}
+	}
+	
+	// Otherwise, display them in their designated positions:
+	else {
+		if ($position_one == 'top') { // we can assume position_two is the opposite
+			output_opportunity($opportunity_one);
+			output_opportunity($opportunity_two);
+		}
+		else {
+			output_opportunity($opportunity_two);
+			output_opportunity($opportunity_one);
+		}
+	}
+}
 
 /**
  * Pulls, parses and caches the weather.
