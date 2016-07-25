@@ -14,7 +14,7 @@ require_once('third-party/truncate-html.php');  # Includes truncateHtml function
  * Slider post type customizations
  * Stolen from SmartStart theme
  **/
-
+ 
 // Custom columns for 'Centerpiece' post type
 function edit_centerpiece_columns() {
 	$columns = array(
@@ -106,6 +106,38 @@ function sortable_announcement_columns( $columns ) {
 }
 add_action('manage_edit-announcement_sortable_columns', 'sortable_announcement_columns');
 
+/*
+ * Custom grid stuff for spotlights
+ * */
+// Custom columns for 'spotlight' post type
+function edit_spotlight_columns() {
+	$columns = array(
+	'cb'          => '<input type="checkbox" />',
+	'title'       => 'Title',
+	'post' 		  => 'Post',	
+	'publish_date'=> 'Date'
+	);
+	return $columns;
+}
+add_action('manage_edit-spotlight_columns', 'edit_spotlight_columns');
+
+// Custom columns content for 'spotlight'
+function manage_spotlight_columns( $column, $post_id ) {
+	global $post;
+	switch ( $column ) {
+		case 'post':
+		print get_post_meta( $post->ID, 'spotlight_post_to_home', true );
+		break;
+		case 'publish_date':
+			if ($post->post_status == 'publish') {
+				print 'Published'.'<br/>'.get_post_time('Y/m/d', true, $post->ID);
+			}
+		break;
+		default:
+		break;
+	}
+}
+add_action('manage_spotlight_posts_custom_column', 'manage_spotlight_columns', 10, 2);
 
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.
