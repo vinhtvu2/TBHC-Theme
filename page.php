@@ -26,8 +26,8 @@
 		
 		<?php
 			$theSubHeaderId = get_post_meta($post->ID, 'page_subheader', TRUE);
-			$theSubHeaderPush = get_post_meta($theSubHeaderId, 'subheader_push_right_sidebar', TRUE));
-			$dontPushRightSidebar = $theSubHeaderId == '' && $theSubHeaderPush == 'off');
+			$theSubHeaderPush = get_post_meta($theSubHeaderId, 'subheader_push_right_sidebar', TRUE);
+			$dontPushRightSidebar = $theSubHeaderId == '' && $theSubHeaderPush == 'off';
 		?>
 		<div id="sidebar_right" class="col-md-3 col-sm-3 <?php if (false) { ?>notoppad<?php } ?>" role="complementary">
 			<?=get_sidebar('right');?>
