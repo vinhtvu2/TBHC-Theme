@@ -32,6 +32,7 @@
 				'post_type' => 'subheader',
 				'post_status'   => 'publish'
 			);
+			print_r($args);
 			$theSubHeader = get_post($args);
 			print_r($theSubHeader);
 			//$dontPushRightSidebar = $theSubHeaderTitle == '' && get_post_meta($theSubHeader->ID, 'subheader_push_right_sidebar', TRUE) == 'off');
