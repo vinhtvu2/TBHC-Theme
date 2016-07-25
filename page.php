@@ -25,11 +25,10 @@
 		</div>
 		
 		<?php
-			$theSubHeaderTitle = get_post_meta($post->ID, 'page_subheader', TRUE);
+			$theSubHeaderId = get_post_meta($post->ID, 'page_subheader', TRUE);
 			$args = array(
 				'numberofposts' => 1,
-				'ID' => $theSubHeaderTitle,
-				'post_type' => 'subheader',
+				'ID' => $theSubHeaderId,
 				'post_status'   => 'publish'
 			);
 			print_r($args);
