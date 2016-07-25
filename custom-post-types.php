@@ -961,6 +961,13 @@ class Subheader extends CustomPostType {
 		$prefix = $this->options('name').'_';
 		return array(
 			array(
+				'name' => 'Push Right Sidebar ',
+				'desc' => 'Specify whether the right sidebar should be pushed down below the bottom of the subheader.',
+				'id' => $prefix.'push_right_sidebar',
+				'type' => 'checkbox',
+				'std' => 'off'
+			),
+			array(
 					'name' => 'Student Name/Major',
 					'desc' => 'Name and discipline of the quoted student; e.g. "John Doe, Political Science".',
 					'id' => $prefix.'student_name',

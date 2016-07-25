@@ -23,8 +23,19 @@
 		<div id="sidebar_left" class="col-md-2 col-sm-2 col-md-pull-7 col-sm-pull-7" role="navigation">
 			<?=get_sidebar('left');?>
 		</div>
-
-		<div id="sidebar_right" class="col-md-3 col-sm-3 <?php if (get_post_meta($post->ID, 'page_subheader', TRUE) == '') { ?>notoppad<?php } ?>" role="complementary">
+		
+		<?php
+			$theSubHeaderTitle = get_post_meta($post->ID, 'page_subheader', TRUE);
+			$args = array(
+				'numberofposts' => 1,
+				'post_name' => $theSubHeaderTitle,
+				'post_type' => 'subheader',
+				'post_status'   => 'publish'
+			);
+			$theSubHeader = get_post($args);
+			$dontPushRightSidebar = $theSubHeaderTitle == '' && get_post_meta($theSubHeader->ID, 'subheader_push_right_sidebar', TRUE) == 'off');
+		?>
+		<div id="sidebar_right" class="col-md-3 col-sm-3 <?php if ($dontPushRightSidebar) { ?>notoppad<?php } ?>" role="complementary">
 			<?=get_sidebar('right');?>
 		</div>
 	</div>
