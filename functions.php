@@ -485,8 +485,8 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	$opportunity_one = $spotlights[0];
-	$opportunity_two = $spotlights[1];
+	$opportunity_one = $opportunities[0];
+	$opportunity_two = $opportunities[1];
 	
 	$opportunity_one  = get_post_meta($opportunity_one->ID, 'opportunity_position', TRUE);
 	$opportunity_two  = get_post_meta($opportunity_two->ID, 'opportunity_position', TRUE);
