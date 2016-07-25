@@ -26,12 +26,7 @@
 		
 		<?php
 			$theSubHeaderId = get_post_meta($post->ID, 'page_subheader', TRUE);
-			$args = array(
-				'numberofposts' => 1,
-				'ID' => $theSubHeaderId
-			);
-			print_r($args);
-			$theSubHeader = get_post($args);
+			$theSubHeader = get_post($theSubHeaderId);
 			print_r($theSubHeader);
 			//$dontPushRightSidebar = $theSubHeaderTitle == '' && get_post_meta($theSubHeader->ID, 'subheader_push_right_sidebar', TRUE) == 'off');
 		?>
