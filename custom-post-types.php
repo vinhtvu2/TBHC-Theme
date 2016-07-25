@@ -870,6 +870,13 @@ class Spotlight extends CustomPostType {
 				'desc' => 'Specify a full url to use as a redirect when the spotlight is clicked.',
 				'id'   => $prefix.'url_redirect',
 				'type' => 'text'
+			),
+			array(
+			'name' => 'Post To Home',
+			'desc' => 'Indicate whether this spotlight should be visible from the home page spotlights feed.',
+			'id'   => $prefix.'post_to_home',
+			'type' => 'checkbox',
+			'std' => 'off'
 			)
 		);
 	}
