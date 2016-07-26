@@ -345,11 +345,11 @@ function get_page_subheader( $post ) {
 		<div class="col-md-12 col-sm-12">
 			<div id="subheader" role="complementary">
 				<div class="row">
-					<?=if($sub_img){?>
+					<?php if($sub_img){ ?>
 						<div class="col-md-2 col-sm-2">
 							<?php echo wp_get_attachment_image( $sub_img, 'subpage-subimg', 0, $sub_img_atts ); ?>
 						</div>
-					<?=}?>
+					<?php } ?>
 					<div class="col-md-8 col-sm-8">
 						<blockquote class="subheader-quote">
 							<?php echo $subheader_post->post_content; ?>
