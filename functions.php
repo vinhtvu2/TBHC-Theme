@@ -341,8 +341,15 @@ function get_page_subheader( $post ) {
 			'alt'   => get_post_meta( $subheader, 'subheader_student_name', true ),
 			'title' => get_post_meta( $subheader, 'subheader_student_name', true ),
 		);
+		$adjustedColWidth = 8;
+		if(!$sub_img || !$student_img){
+				$adjustedColWidth = 10;
+			if(!$student_img && !$sub_img){
+				$adjustedColWidth = 12;
+			}
+		}
 	?>
-		<div class="col-md-12 col-sm-12">
+		<div class="col-md-10 col-sm-10 col-sm-push-2 col-md-push-2">
 			<div id="subheader" role="complementary">
 				<div class="row">
 					<?php if($sub_img){ ?>
@@ -350,7 +357,7 @@ function get_page_subheader( $post ) {
 							<?php echo wp_get_attachment_image( $sub_img, 'subpage-subimg', 0, $sub_img_atts ); ?>
 						</div>
 					<?php } ?>
-					<div class="col-md-8 col-sm-8">
+					<div class="col-md-<?= $adjustedColWidth ?> col-sm-<?= $adjustedColWidth ?>">
 						<blockquote class="subheader-quote">
 							<?php echo $subheader_post->post_content; ?>
 							<p class="subheader-author text-right"><?php echo $student_name; ?></p>
