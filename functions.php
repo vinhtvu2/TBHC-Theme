@@ -345,9 +345,11 @@ function get_page_subheader( $post ) {
 		<div class="col-md-12 col-sm-12">
 			<div id="subheader" role="complementary">
 				<div class="row">
-					<div class="col-md-2 col-sm-2">
-						<?php echo wp_get_attachment_image( $sub_img, 'subpage-subimg', 0, $sub_img_atts ); ?>
-					</div>
+					<?=if($sub_img){?>
+						<div class="col-md-2 col-sm-2">
+							<?php echo wp_get_attachment_image( $sub_img, 'subpage-subimg', 0, $sub_img_atts ); ?>
+						</div>
+					<?=}?>
 					<div class="col-md-8 col-sm-8">
 						<blockquote class="subheader-quote">
 							<?php echo $subheader_post->post_content; ?>
@@ -355,7 +357,9 @@ function get_page_subheader( $post ) {
 						</blockquote>
 					</div>
 				</div>
-				<?php echo wp_get_attachment_image( $student_img, 'subpage-studentimg', 0, $student_img_atts ); ?>
+				<?php if($student_img){
+				echo wp_get_attachment_image( $student_img, 'subpage-studentimg', 0, $student_img_atts ); 
+				}?>
 			</div>
 		</div>
 	<?php
