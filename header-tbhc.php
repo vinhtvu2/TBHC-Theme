@@ -61,7 +61,7 @@
 
 		<?php echo google_tag_manager(); ?>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
-			<?= $menu = wp_nav_menu(array(
+			<?php $menu = wp_nav_menu(array(
 				'theme_location' => 'header-menu',
 				'container' => 'false',
 				'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
