@@ -7136,13 +7136,13 @@ button.close {
   display: inline-block !important; }
 .ie8 .container {
   max-width: none !important;
-  width: 970px; }
+  width: 1170px; }
 
 .container {
   background-color: #FFF; }
   @media (min-width: 1200px) {
     .container {
-      width: 970px; } }
+      width: 1170px; } }
 
 @media (min-width: 992px) {
   .col-md-xpad {
@@ -7973,7 +7973,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 970px;
+  width: 1170px;
   margin: 0 auto; }
   @media (max-width: 991px) {
     #header-menu li {
