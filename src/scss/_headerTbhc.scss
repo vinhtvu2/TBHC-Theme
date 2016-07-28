@@ -1,7 +1,11 @@
 // Desktop nav
+#header-nav-wrap{
+  background-color: #fc0;
+}
 #header-menu {
   @include center-block();
-  background-color: #fc0;
+  width: $container-md;
+  margin: 0 auto;
 
   li {
     @media (max-width: $screen-sm-max) {
@@ -15,6 +19,7 @@
     font-weight: 400;
     padding-bottom: 20px;
     padding-top: 20px;
+    display: block;
 
     @media (max-width: $screen-sm-max) {
       font-size: 14.25px !important;

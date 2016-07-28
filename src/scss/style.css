@@ -7964,11 +7964,15 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
       margin-right: 5px;
       width: 12px; }
 
+#header-nav-wrap {
+  background-color: #fc0; }
+
 #header-menu {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: #fc0; }
+  width: 970px;
+  margin: 0 auto; }
   @media (max-width: 991px) {
     #header-menu li {
       padding: 0; } }
@@ -7977,7 +7981,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     font-size: 17px;
     font-weight: 400;
     padding-bottom: 20px;
-    padding-top: 20px; }
+    padding-top: 20px;
+    display: block; }
     @media (max-width: 991px) {
       #header-menu a {
         font-size: 14.25px !important; } }
