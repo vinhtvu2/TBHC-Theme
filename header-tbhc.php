@@ -70,8 +70,8 @@
 				'before' => '<strong>',
 				'after' => '</strong>',
 				));
-				echo preg_replace('/<\/li>\R<li/', '<\/li> <li', $menu);
-				echo preg_replace('/<\/li>\R<\/ul>\t+<\/nav>/', '</li><li class=\'thePusher\'>...</li></ul></nav>', $menu);
+				echo preg_replace("/<\/li>\R<li/", "<\/li> <li", $menu);
+				echo preg_replace("/<\/li>\R<\/ul>\t+<\/nav>/", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
 				echo $menu;
 			?>
 		</nav>
