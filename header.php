@@ -61,7 +61,7 @@
 
 		<?php echo google_tag_manager(); ?>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
-			<?php $menu = wp_nav_menu(array(
+			<?php /*$menu = wp_nav_menu(array(
 				'theme_location' => 'header-menu',
 				'container' => 'false',
 				'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
@@ -72,7 +72,7 @@
 				));
 				echo preg_replace("/<\/li>\R<li/", "<\/li> <li", $menu);
 				echo preg_replace("/<\/li>\R<\/ul>\t+<\/nav>/", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
-				echo $menu;
+				echo $menu;*/
 			?>
 		</nav>
 		<nav id="site-nav-xs" class="visible-xs-block navbar navbar-inverse">
