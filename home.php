@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_header('tbhc');?>
 	<?php $options = get_option(THEME_OPTIONS_NAME);?>
 	<?php $page    = get_page_by_title('Home');?>
 	<div class="row page-content nodescription" id="home" data-template="home-nodescription" role="main">
@@ -55,4 +55,4 @@
 <div class="container" id="home-footerwrap">
 	<div class="row">
 
-		<?php get_footer();?>
+		<?php get_footer('tbhc');?>

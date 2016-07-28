@@ -7993,6 +7993,10 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   @media print {
     #header-menu a[href]:after {
       content: ''; } }
+  #header-menu li.thePusher {
+    width: 100%;
+    height: 0;
+    visibility: hidden; }
 
 .no_nav_separator:after {
   content: '' !important; }
