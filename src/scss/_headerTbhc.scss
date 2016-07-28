@@ -1,0 +1,81 @@
+// Desktop nav
+#header-menu {
+  @include center-block();
+  background-color: #fc0
+
+  li {
+    @media (max-width: $screen-sm-max) {
+      padding: 0;
+    }
+  }
+
+  a {
+    color: #262626;
+    font-size: 17px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 14.25px !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #000;
+      color: #fc0;
+      text-decoration: none;
+    }
+  }
+
+  a[href]:after {
+    @media print {
+      content: '';
+    }
+  }
+}
+
+.no_nav_separator:after {
+  content: '' !important;
+}
+
+
+// Mobile nav
+#site-nav-xs {
+  border-radius: 4px;
+  margin: 10px 0 20px;
+
+  .navbar-brand {
+    color: #fff;
+    font-family: $font-family-serif, serif;
+    font-size: 20px;
+  }
+}
+
+#header-menu-xs {
+  font-family: $font-family-serif, serif;
+
+  li {
+    margin-bottom: 0;
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .last {
+    text-align: center;
+
+    a {
+      background-color: #fc0;
+      border-radius: 4px;
+      color: #000;
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 11px;
+      margin: 10px 15px;
+      padding: 6px 15px;
+    }
+  }
+}

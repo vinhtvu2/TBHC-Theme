@@ -1,4 +1,9 @@
 // Home Page - General
+
+ul{
+    list-style: none;
+}
+
 #home {
   .description {
     @media (max-width: $screen-xs-max) {
@@ -30,6 +35,7 @@
     font-size: 14px;
     margin: 11px 0;
     text-transform: uppercase;
+    color: #B38C0B;
   }
 
   h3 {
@@ -55,9 +61,9 @@
 
 // Home page - left column
 #home_leftcol {
-  h2 {
+  /*h2 {
     color: #E26906;
-  }
+  }*/
 
   a {
     color: #333;
@@ -68,7 +74,7 @@
   }
 }
 
-.home_spotlight_single {
+.home_spotlight_single, .home_opportunity_single {
   @include clearfix();
   margin-bottom: 20px;
 
@@ -77,7 +83,7 @@
     line-height: 18px;
   }
 
-  .spotlight_thumb {
+  .spotlight_thumb, .opportunity_thumb {
     background-position: center center;
     background-repeat: no-repeat;
     border-radius: 10px;
@@ -92,7 +98,7 @@
   }
 }
 
-.home_spotlight_title {
+.home_spotlight_title, .home_opportunity_title {
   line-height: 16px;
   margin-bottom: 5px;
 
@@ -111,7 +117,7 @@
   }
 }
 
-.home_spotlight_readmore {
+.home_spotlight_readmore, .home_opportunity_readmore {
   font-family: $font-family-sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -161,7 +167,7 @@
   }
 
   h2 {
-    color: #B38C0B;
+    /*color: #B38C0B;*/
 
     @include body-prefix('.ie8') {
       padding-bottom: 15px;
@@ -180,7 +186,7 @@
 
 // Home Page - Colleges Nav
 #home-supplemental {
-  background: #FFEFB3;
+  background: #FBFBFB;
   font-size: 12px;
   margin-top: 30px;
   padding: 15px 0;
