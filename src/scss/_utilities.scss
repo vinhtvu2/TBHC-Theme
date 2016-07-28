@@ -35,6 +35,7 @@
 
 // Disable -lg breakpoint
 .container {
+    background-color: #FFF;
   @media (min-width: $screen-lg-min) {
     width: $container-md;
   }
