@@ -72,7 +72,7 @@
 				));
 				echo preg_replace("/<\/li>\R<li/", "<\/li> <li", $menu);
 				echo preg_replace("/<\/li>\R<\/ul>\t+<\/nav>/", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
-				echo $menu;
+				//echo $menu;
 			?>
 		</nav>
 		<nav id="site-nav-xs" class="visible-xs-block navbar navbar-inverse">
