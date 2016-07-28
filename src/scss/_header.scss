@@ -1,8 +1,6 @@
 // Desktop nav
 #header-menu {
   @include center-block();
-  padding-bottom: 20px;
-  padding-top: 20px;
   background-color: #fc0;
   li {
     @media (max-width: $screen-sm-max) {
@@ -15,6 +13,8 @@
     font-size: 17px;
     font-weight: 400;
     padding: 7px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 
     @media (max-width: $screen-sm-max) {
       font-size: 14.25px !important;
