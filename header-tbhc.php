@@ -70,6 +70,7 @@
 				'before' => '<strong>',
 				'after' => '</strong>',
 				));
+				print_r($menu);
 				$menu = str_replace("</li><li", "</li> <li", $menu);
 				$menu = str_replace("</li></ul></nav>", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
 				echo $menu;
