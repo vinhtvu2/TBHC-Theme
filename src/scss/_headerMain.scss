@@ -1,11 +1,8 @@
 // Desktop nav
-#header-nav-wrap{
-  background-color: #fc0;
-}
 #header-menu {
   @include center-block();
-  width: $container-md;
-  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 
   li {
     @media (max-width: $screen-sm-max) {
@@ -17,9 +14,7 @@
     color: #262626;
     font-size: 17px;
     font-weight: 400;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    display: block;
+    padding: 7px;
 
     @media (max-width: $screen-sm-max) {
       font-size: 14.25px !important;
@@ -39,10 +34,55 @@
       content: '';
     }
   }
-  
-  li.thePusher{
-      height: 0;
-      visibility: hidden;
+
+  .last {
+    height: 25px;
+
+    &:after {
+      content: '' !important;
+    }
+
+    a {
+      background-color: #fc0;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.42857143;
+      margin-bottom: 0;
+      margin-top: -5px;
+      padding: 4px 12px;
+      text-align: center;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
+
+      @media (min-width: $screen-md-min) {
+        @include body-prefix('.ie9') {
+          top: 1px;
+        }
+      }
+
+      @media (max-width: $screen-sm-max) {
+        font-size: 11px !important;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #000;
+        color: #fff;
+      }
+    }
   }
 }
 
