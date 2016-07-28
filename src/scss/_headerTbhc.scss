@@ -1,7 +1,7 @@
 // Desktop nav
 #header-menu {
   @include center-block();
-  background-color: #fc0
+  background-color: #fc0;
 
   li {
     @media (max-width: $screen-sm-max) {
