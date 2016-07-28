@@ -61,7 +61,7 @@
 
 		<?php echo google_tag_manager(); ?>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
-			<?php $menu = wp_nav_menu(array(
+			<?= $menu = wp_nav_menu(array(
 				'theme_location' => 'header-menu',
 				'container' => 'false',
 				'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
@@ -70,9 +70,8 @@
 				'before' => '<strong>',
 				'after' => '</strong>',
 				));
-				print_r($menu);
 				$menu = str_replace("</li><li", "</li> <li", $menu);
-				//$menu = str_replace("</li></ul></nav>", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
+				$menu = str_replace("</li></ul></nav>", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
 				echo $menu;
 			?>
 		</nav>
