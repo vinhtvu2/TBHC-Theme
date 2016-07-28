@@ -1,7 +1,9 @@
 // Desktop nav
 #header-menu {
   @include center-block();
-  background-color: #fc0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
   li {
     @media (max-width: $screen-sm-max) {
       padding: 0;
@@ -11,11 +13,9 @@
   a {
     color: #262626;
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 400;
     padding: 7px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    display: block;
+
     @media (max-width: $screen-sm-max) {
       font-size: 14.25px !important;
     }
@@ -23,8 +23,8 @@
     &:hover,
     &:active,
     &:focus {
-      background-color: #FFF;
-      //color: #fc0;
+      background-color: #000;
+      color: #fc0;
       text-decoration: none;
     }
   }
@@ -35,7 +35,7 @@
     }
   }
 
-  /*.last {
+  .last {
     height: 25px;
 
     &:after {
@@ -83,7 +83,7 @@
         color: #fff;
       }
     }
-  }*/
+  }
 }
 
 .no_nav_separator:after {
