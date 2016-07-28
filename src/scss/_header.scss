@@ -1,9 +1,9 @@
 // Desktop nav
 #header-menu {
   @include center-block();
-  margin-bottom: 20px;
-  margin-top: 20px;
-
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #fc0;
   li {
     @media (max-width: $screen-sm-max) {
       padding: 0;

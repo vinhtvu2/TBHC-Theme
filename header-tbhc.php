@@ -36,7 +36,7 @@
 		}
 		?>
 
-		<?php
+		<?php /*
 		if ( is_page( 'Degree Search' ) || $post->post_type == 'degree' ) {
 			$styles = '<style>';
 			$program_types = get_terms( 'program_types', array( 'fields' => 'id=>slug' ) );
@@ -53,7 +53,7 @@
 			if ( $styles !== '<style></style>' ) {
 				echo $styles;
 			}
-		}
+		}*/
 		?>
 
 		<script type="text/javascript">
@@ -80,7 +80,41 @@
 	<body <?php echo body_class(); ?>>
 
 		<?php echo google_tag_manager(); ?>
-
+		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
+			<?=wp_nav_menu(array(
+				'theme_location' => 'header-menu',
+				'container' => 'false',
+				'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
+				'menu_id' => 'header-menu',
+				'walker' => new Bootstrap_Walker_Nav_Menu(),
+				'before' => '<strong>',
+				'after' => '</strong>',
+				));
+			?>
+		</nav>
+		<nav id="site-nav-xs" class="visible-xs-block navbar navbar-inverse">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-xs-collapse" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<span class="navbar-brand">Navigation</span>
+			</div>
+			<div class="collapse navbar-collapse" id="header-menu-xs-collapse">
+				<?php
+					wp_nav_menu( array(
+					'theme_location' => 'header-menu',
+					'container' => false,
+					'menu_class' => 'menu nav navbar-nav',
+					'menu_id' => 'header-menu-xs',
+					'walker' => new Bootstrap_Walker_Nav_Menu()
+					) );
+				?>
+			</div>
+		</nav>
+		
 		<div class="container">
 			<div class="row status-alert" id="status-alert-template" data-alert-id="">
 				<div class="col-md-12 col-sm-12 alert-wrap">
@@ -114,37 +148,3 @@
 				<h1><?php echo bloginfo( 'name' ); ?></h1>
 			</div>
 			<?php endif; ?>
-			<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
-				<?=wp_nav_menu(array(
-					'theme_location' => 'header-menu',
-					'container' => 'false',
-					'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
-					'menu_id' => 'header-menu',
-					'walker' => new Bootstrap_Walker_Nav_Menu(),
-					'before' => '<strong>',
-					'after' => '</strong>',
-					));
-				?>
-			</nav>
-			<nav id="site-nav-xs" class="visible-xs-block navbar navbar-inverse">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-xs-collapse" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<span class="navbar-brand">Navigation</span>
-				</div>
-				<div class="collapse navbar-collapse" id="header-menu-xs-collapse">
-					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'header-menu',
-						'container' => false,
-						'menu_class' => 'menu nav navbar-nav',
-						'menu_id' => 'header-menu-xs',
-						'walker' => new Bootstrap_Walker_Nav_Menu()
-					) );
-					?>
-				</div>
-			</nav>
