@@ -92,7 +92,7 @@
 		</div>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
 			<?php 
-				add_filter( 'wp_nav_menu_{$menu->slug}_items', 'add_pusher_to_nav', 10, 2 );
+				add_filter( 'wp_nav_menu_header-menu_items', 'add_pusher_to_nav', 10, 2 );
 				
 				function add_pusher_to_nav( $items, $args )
 				{
