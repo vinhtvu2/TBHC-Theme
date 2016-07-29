@@ -14,8 +14,14 @@
 }
 #header-menu {
   @include center-block();
-  width: $container-lg;
   margin: 0 auto;
+
+  @media (max-width: $screen-md-max){
+      width: $container-md;
+  }
+  @media (max-width: $screen-lg-max){
+      width: $container-lg;
+  }
 
   li {
     @media (max-width: $screen-sm-max) {
