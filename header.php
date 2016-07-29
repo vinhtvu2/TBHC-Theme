@@ -92,7 +92,14 @@
 		</div>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
 			<?php 
-				echo preg_replace("/<\/li>\R<\/ul>\t+<\/nav>/", "</li><li class='thePusher'>...</li></ul></nav>", wp_nav_menu(array(
+				add_filter( 'wp_nav_menu_{$menu->slug}_items', 'add_pusher_to_nav', 10, 2 );
+				
+				function add_pusher_to_nav( $items, $args )
+				{
+					$items .= '<li class=\'thePusher\'>...</li>';
+					return $items;
+				}
+				wp_nav_menu(array(
 					'theme_location' => 'header-menu',
 					'container' => 'false',
 					'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
