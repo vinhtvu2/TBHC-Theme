@@ -7966,6 +7966,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
       margin-right: 5px;
       width: 12px; }
 
+.jumbotron#logo {
+  background-color: #3d3c3c; }
+
 #header-nav-wrap {
   background-color: #fc0; }
 

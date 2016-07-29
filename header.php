@@ -60,6 +60,9 @@
 	<body <?php echo body_class(); ?>>
 
 		<?php echo google_tag_manager(); ?>
+		<div class="jumbo" id="jumbo-logo">
+			<img src="/static/img/TbhcLogo.png" alt="The Burnett Honors College">
+		</div>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
 			<?php 
 				ob_start();
