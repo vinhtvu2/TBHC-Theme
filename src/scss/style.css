@@ -36,7 +36,7 @@ a:active, a:hover {
 abbr[title] {
   border-bottom: 1px dotted; }
 
-b, strong {
+b, strong, #header-menu li.last strong a, #header-menu li.last strong {
   font-weight: bold; }
 
 dfn {
@@ -8016,9 +8016,12 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   @media print {
     #header-menu a[href]:after {
       content: ''; } }
-  #header-menu li.last {
+  #header-menu li.last, #header-menu #header-menu li.last strong, #header-menu li.last #header-menu strong, #header-menu #header-menu li.last strong a, #header-menu li.last strong #header-menu a {
     height: 0;
     visibility: hidden;
+    padding: 0;
+    margin: 0; }
+  #header-menu li.last, #header-menu #header-menu li.last strong, #header-menu li.last #header-menu strong, #header-menu #header-menu li.last strong a, #header-menu li.last strong #header-menu a {
     width: 100%; }
 
 .no_nav_separator:after {
@@ -8081,7 +8084,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   @media (max-width: 767px) {
     #footer-menu li {
       letter-spacing: 0.7px; } }
-  #footer-menu li.last {
+  #footer-menu li.last, #footer-menu #header-menu li.last strong, #header-menu li.last #footer-menu strong, #footer-menu #header-menu li.last strong a, #header-menu li.last strong #footer-menu a {
     border-right: 0 solid transparent; }
 #footer-menu a {
   color: #a6a6a6;
@@ -8705,7 +8708,7 @@ ul {
   @media (max-width: 767px) {
     #academics-search .lead {
       font-size: 18px; } }
-  #academics-search .lead strong, #academics-search .lead b {
+  #academics-search .lead strong, #academics-search .lead #header-menu li.last strong a, #header-menu li.last strong #academics-search .lead a, #academics-search .lead #header-menu li.last strong, #header-menu li.last #academics-search .lead strong, #academics-search .lead b {
     font-family: 'Gotham SSm 4r', 'Gotham SSm A', 'Gotham SSm B';
     font-style: normal;
     font-weight: 400; }

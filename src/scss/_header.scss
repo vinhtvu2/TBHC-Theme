@@ -73,6 +73,16 @@
     li.last {
         height: 0;
         visibility: hidden;
+        padding: 0;
+        margin: 0;
+        strong{
+            @extend li.last;
+            a{
+                @extend strong;
+            }
+        }
+    }
+    li.last{
         width: 100%;
     }
 }
