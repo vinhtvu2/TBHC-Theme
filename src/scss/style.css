@@ -8004,11 +8004,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     #header-menu {
       width: 1170px; } }
   #header-menu li {
+    padding: 0;
     display: table-cell;
     text-align: center; }
-    @media (max-width: 991px) {
-      #header-menu li {
-        padding: 0; } }
   #header-menu a {
     color: #262626;
     font-size: 17px;
@@ -8020,8 +8018,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
       #header-menu a {
         font-size: 14.25px !important; } }
     #header-menu a:hover, #header-menu a:active, #header-menu a:focus {
-      background-color: #000;
-      color: #fc0;
+      background-color: #FFF;
       text-decoration: none; }
   @media print {
     #header-menu a[href]:after {

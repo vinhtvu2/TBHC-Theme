@@ -38,9 +38,7 @@
 
 
     li {
-        @media (max-width: $screen-sm-max) {
-            padding: 0;
-        }
+        padding: 0;
         display: table-cell;
         text-align: center;
     }
@@ -60,8 +58,7 @@
         &:hover,
         &:active,
         &:focus {
-            background-color: #000;
-            color: #fc0;
+            background-color: #FFF;
             text-decoration: none;
         }
     }
