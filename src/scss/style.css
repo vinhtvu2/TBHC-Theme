@@ -7973,6 +7973,12 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     width: 85% !important;
     margin: 0 auto;
     display: block; }
+  @media (min-width: 992px) {
+    #jumbotron-logo {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    #jumbotron-logo {
+      width: 1170px; } }
 
 #header-nav-wrap {
   background-color: #fc0;
@@ -7983,7 +7989,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   margin-left: auto;
   margin-right: auto;
   margin: 0 auto; }
-  @media (max-width: 1199px) {
+  @media (min-width: 992px) {
     #header-menu {
       width: 970px; } }
   @media (min-width: 1200px) {
@@ -8326,7 +8332,7 @@ ul {
   .home_spotlight_single > a[href]:after, .home_spotlight_title a[href]:after, .news .item > .image:after {
     content: ''; } }
 
-@media (max-width: 991px) {
+@media (min-width: 992px) {
   body {
     background-color: #d9d6d6; } }
 

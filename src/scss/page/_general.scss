@@ -1,5 +1,5 @@
 body{
-    @media (max-width: $screen-sm-max) {
+    @media (min-width: $screen-md-min) {
         background-color:#d9d6d6;
     }
 }
