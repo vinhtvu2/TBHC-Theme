@@ -6,13 +6,13 @@
         width: 85% !important;
         margin: 0 auto;
         display: block;
-      }
-      @media (min-width: $screen-md-min){
+        @media (min-width: $screen-md-min){
           width: $container-md;
         }
         @media (min-width: $screen-lg-min){
       width: $container-lg;
   }
+      }
 }
 #header-nav-wrap{
   background-color: #fc0;
