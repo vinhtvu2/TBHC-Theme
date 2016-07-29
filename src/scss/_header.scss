@@ -1,117 +1,120 @@
 // Desktop nav
-#jumbotron-logo{
-      background-color: #3d3c3c;
-      padding: 20px; 
-      img{
+#jumbotron-logo {
+    background-color: #3d3c3c;
+    padding: 20px;
+
+    img {
         width: 85%;
         margin: 0 auto;
         display: block;
-        @media (min-width: $screen-md-min){
-          width: $container-md * .85;
-                  @media (min-width: $screen-lg-min){
-      width: $container-lg *.85;
-  }
+
+        @media (min-width: $screen-md-min) {
+            width: $container-md * .85;
         }
-      }
+    }
 }
-#header-nav-wrap{
-  background-color: #fc0;
-  width: 100%;
+
+#header-nav-wrap {
+    background-color: #fc0;
+    width: 100%;
 }
+
 #header-menu {
-  @include center-block();
-  margin: 0 auto;
+    @include center-block();
+    margin: 0 auto;
 
-  @media (min-width: $screen-sm-min){
-      width: $container-sm;
-  @media (min-width: $screen-md-min){
-      width: $container-md;
-        @media (min-width: $screen-lg-min){
-      width: $container-lg;
-  }
-  }
-  }
-
-
-  li {
-    @media (max-width: $screen-sm-max) {
-      padding: 0;
-    }
-  }
-
-  a {
-    color: #262626;
-    font-size: 17px;
-    font-weight: 400;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    display: block;
-
-    @media (max-width: $screen-sm-max) {
-      font-size: 14.25px !important;
+    @media (min-width: $screen-sm-min) {
+        width: $container-sm;
     }
 
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: #000;
-      color: #fc0;
-      text-decoration: none;
+    @media (min-width: $screen-md-min) {
+        width: $container-md;
     }
-  }
 
-  a[href]:after {
-    @media print {
-      content: '';
+    @media (min-width: $screen-lg-min) {
+        width: $container-lg;
     }
-  }
-  
-  li.thePusher{
-      height: 0;
-      visibility: hidden;
-  }
+
+
+    li {
+        @media (max-width: $screen-sm-max) {
+            padding: 0;
+        }
+    }
+
+    a {
+        color: #262626;
+        font-size: 17px;
+        font-weight: 400;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        display: block;
+
+        @media (max-width: $screen-sm-max) {
+            font-size: 14.25px !important;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: #000;
+            color: #fc0;
+            text-decoration: none;
+        }
+    }
+
+    a[href]:after {
+        @media print {
+            content: '';
+        }
+    }
+
+    li.thePusher {
+        height: 0;
+        visibility: hidden;
+    }
 }
 
 .no_nav_separator:after {
-  content: '' !important;
+    content: '' !important;
 }
 
 
 // Mobile nav
 #site-nav-xs {
-  //border-radius: 4px;
-  margin: 0;
+    //border-radius: 4px;
+    margin: 0;
 
-  .navbar-brand {
-    color: #fff;
-    font-family: $font-family-serif, serif;
-    font-size: 20px;
-  }
+    .navbar-brand {
+        color: #fff;
+        font-family: $font-family-serif, serif;
+        font-size: 20px;
+    }
 }
 
 #header-menu-xs {
-  font-family: $font-family-serif, serif;
+    font-family: $font-family-serif, serif;
 
-  li {
-    margin-bottom: 0;
-  }
-
-  a {
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .last {
-    text-align: center;
+    li {
+        margin-bottom: 0;
+    }
 
     a {
-      background-color: #fc0;
-      border-radius: 4px;
-      color: #000;
-      font-family: Verdana, Geneva, sans-serif;
-      font-size: 11px;
-      margin: 10px 15px;
-      padding: 6px 15px;
+        font-size: 14px;
+        font-weight: bold;
     }
-  }
+
+    .last {
+        text-align: center;
+
+        a {
+            background-color: #fc0;
+            border-radius: 4px;
+            color: #000;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 11px;
+            margin: 10px 15px;
+            padding: 6px 15px;
+        }
+    }
 }
