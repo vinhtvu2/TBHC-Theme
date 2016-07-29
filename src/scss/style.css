@@ -8016,7 +8016,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   @media print {
     #header-menu a[href]:after {
       content: ''; } }
-  #header-menu .last {
+  #header-menu li.last {
     height: 0;
     visibility: hidden;
     width: 100%; }
