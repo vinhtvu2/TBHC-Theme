@@ -92,15 +92,6 @@
 		</div>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
 			<?php 
-				add_filter( 'wp_nav_menu_items', 'add_pusher_to_nav', 10, 2 );
-				
-				function add_pusher_to_nav( $items, $args )
-				{
-					if($args->theme_location == 'header-menu'){
-						$items .= "<li class='thePusher'>...</li>";
-					}
-					return $items;
-				}
 				wp_nav_menu(array(
 					'theme_location' => 'header-menu',
 					'container' => 'false',
