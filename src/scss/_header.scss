@@ -8,10 +8,10 @@
         display: block;
         @media (min-width: $screen-md-min){
           width: $container-md;
-        }
-        @media (min-width: $screen-lg-min){
+                  @media (min-width: $screen-lg-min){
       width: $container-lg;
   }
+        }
       }
 }
 #header-nav-wrap{
@@ -22,12 +22,16 @@
   @include center-block();
   margin: 0 auto;
 
+  @media (min-width: $screen-sm-min){
+      width: $container-sm;
   @media (min-width: $screen-md-min){
       width: $container-md;
-  }
-  @media (min-width: $screen-lg-min){
+        @media (min-width: $screen-lg-min){
       width: $container-lg;
   }
+  }
+  }
+
 
   li {
     @media (max-width: $screen-sm-max) {

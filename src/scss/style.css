@@ -7975,10 +7975,10 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     display: block; }
     @media (min-width: 992px) {
       #jumbotron-logo img {
-        width: 970px; } }
-    @media (min-width: 1200px) {
-      #jumbotron-logo img {
-        width: 1170px; } }
+        width: 970px; }
+        @media (min-width: 1200px) {
+          #jumbotron-logo img {
+            width: 1170px; } } }
 
 #header-nav-wrap {
   background-color: #fc0;
@@ -7989,12 +7989,15 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   margin-left: auto;
   margin-right: auto;
   margin: 0 auto; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     #header-menu {
-      width: 970px; } }
-  @media (min-width: 1200px) {
-    #header-menu {
-      width: 1170px; } }
+      width: 750px; }
+      @media (min-width: 992px) {
+        #header-menu {
+          width: 970px; }
+          @media (min-width: 1200px) {
+            #header-menu {
+              width: 1170px; } } } }
   @media (max-width: 991px) {
     #header-menu li {
       padding: 0; } }
