@@ -92,7 +92,7 @@
 		</div>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
 			<?php 
-				wp_nav_menu(array(
+				echo wp_nav_menu(array(
 					'theme_location' => 'header-menu',
 					'container' => 'false',
 					'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
