@@ -322,7 +322,7 @@ add_filter( 'wp_nav_menu_items', 'add_pusher_to_nav', 10, 2 );
 function add_pusher_to_nav( $items, $args )
 {
 	if($args->theme_location == 'header-menu'){
-		$items .= "...";
+		$items .= "<li>...</li>";
 	}
 	return $items;
 }
