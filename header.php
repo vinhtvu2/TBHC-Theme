@@ -60,8 +60,8 @@
 	<body <?php echo body_class(); ?>>
 
 		<?php echo google_tag_manager(); ?>
-		<div class="jumbo" id="jumbo-logo">
-			<div id="tbhcLogo" style="background: url(<?php bloginfo('stylesheet_directory'); ?>/static/img/TbhcLogo.png">
+		<div class="jumbotron" id="jumbotron-logo">
+			<div id="tbhcLogo" style="background: url(<?php bloginfo('stylesheet_directory'); ?>/static/img/TbhcLogo.png) left center no-repeat;">
 			</div>
 		</div>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
