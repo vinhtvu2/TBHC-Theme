@@ -7982,8 +7982,13 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 1170px;
   margin: 0 auto; }
+  @media (max-width: 1199px) {
+    #header-menu {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    #header-menu {
+      width: 1170px; } }
   @media (max-width: 991px) {
     #header-menu li {
       padding: 0; } }
