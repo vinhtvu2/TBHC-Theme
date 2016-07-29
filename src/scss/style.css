@@ -8023,7 +8023,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   content: '' !important; }
 
 #site-nav-xs {
-  margin: 0; }
+  margin: 0;
+  border: none; }
   #site-nav-xs .navbar-brand {
     color: #fff;
     font-family: Georgia, serif, serif;
