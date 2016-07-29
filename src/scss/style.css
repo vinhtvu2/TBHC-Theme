@@ -7967,13 +7967,16 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
       width: 12px; }
 
 #jumbotron-logo {
-  background-color: #3d3c3c; }
+  width: 75% !important;
+  background-color: #3d3c3c;
+  padding: 20px; }
   #jumbotron-logo img {
     margin: 0 auto;
     display: block; }
 
 #header-nav-wrap {
-  background-color: #fc0; }
+  background-color: #fc0;
+  width: 100%; }
 
 #header-menu {
   display: block;
@@ -8009,8 +8012,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   content: '' !important; }
 
 #site-nav-xs {
-  border-radius: 4px;
-  margin: 10px 0 20px; }
+  margin: 0; }
   #site-nav-xs .navbar-brand {
     color: #fff;
     font-family: Georgia, serif, serif;
@@ -8319,8 +8321,9 @@ ul {
   .home_spotlight_single > a[href]:after, .home_spotlight_title a[href]:after, .news .item > .image:after {
     content: ''; } }
 
-body {
-  background-color: #d9d6d6; }
+@media (max-width: 767px) {
+  body {
+    background-color: #d9d6d6; } }
 
 #page-title {
   border-bottom: 1px dotted #333;

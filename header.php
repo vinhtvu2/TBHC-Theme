@@ -60,28 +60,7 @@
 	<body <?php echo body_class(); ?>>
 
 		<?php echo google_tag_manager(); ?>
-		<div class="jumbotron" id="jumbotron-logo">
-			<img id="tbhcLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/TbhcLogo.png" alt="The Burnett Honors College">
-			</img>
-		</div>
-		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
-			<?php 
-				ob_start();
-				echo preg_replace("/<\/li>\R<li/", "<\/li> <li", wp_nav_menu(array(
-					'theme_location' => 'header-menu',
-					'container' => 'false',
-					'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
-					'menu_id' => 'header-menu',
-					'walker' => new Bootstrap_Walker_Nav_Menu(),
-					'before' => '<strong>',
-					'after' => '</strong>',
-					))
-				);
-				echo ob_get_clean();
-				//echo preg_replace("/<\/li>\R<\/ul>\t+<\/nav>/", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
-				/*echo $menu;*/
-			?>
-		</nav>
+		
 		<nav id="site-nav-xs" class="visible-xs-block navbar navbar-inverse">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-xs-collapse" aria-expanded="false">
@@ -103,6 +82,31 @@
 					) );
 				?>
 			</div>
+		</nav>
+		
+		<div id="jumbotron-logo">
+			<a href="http://tbhccmsdev.smca.ucf.edu">
+				<img id="tbhcLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/TbhcLogo.png" alt="The Burnett Honors College">
+				</img>
+			</a>
+		</div>
+		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
+			<?php 
+				ob_start();
+				echo preg_replace("/<\/li>\R<li/", "<\/li> <li", wp_nav_menu(array(
+					'theme_location' => 'header-menu',
+					'container' => 'false',
+					'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
+					'menu_id' => 'header-menu',
+					'walker' => new Bootstrap_Walker_Nav_Menu(),
+					'before' => '<strong>',
+					'after' => '</strong>',
+					))
+				);
+				echo ob_get_clean();
+				//echo preg_replace("/<\/li>\R<\/ul>\t+<\/nav>/", "</li><li class='thePusher'>...</li></ul></nav>", $menu);
+				/*echo $menu;*/
+			?>
 		</nav>
 		
 		<div class="container">

@@ -1,6 +1,8 @@
 // Desktop nav
 #jumbotron-logo{
+      width: 75% !important;
       background-color: #3d3c3c;
+      padding: 20px; 
       img{
         margin: 0 auto;
         display: block;
@@ -8,6 +10,7 @@
 }
 #header-nav-wrap{
   background-color: #fc0;
+  width: 100%;
 }
 #header-menu {
   @include center-block();
@@ -60,8 +63,8 @@
 
 // Mobile nav
 #site-nav-xs {
-  border-radius: 4px;
-  margin: 10px 0 20px;
+  //border-radius: 4px;
+  margin: 0;
 
   .navbar-brand {
     color: #fff;
