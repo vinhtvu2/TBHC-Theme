@@ -22,6 +22,7 @@
 #header-menu {
     @include center-block();
     margin: 0 auto;
+    text-align: justify;
 
     @media (min-width: $screen-sm-min) {
         width: $container-sm;
@@ -69,9 +70,10 @@
         }
     }
 
-    li.thePusher {
+    .last {
         height: 0;
         visibility: hidden;
+        width: 100%;
     }
 }
 

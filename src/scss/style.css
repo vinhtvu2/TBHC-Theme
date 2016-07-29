@@ -7985,7 +7985,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: justify; }
   @media (min-width: 768px) {
     #header-menu {
       width: 750px; } }
@@ -8015,9 +8016,10 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   @media print {
     #header-menu a[href]:after {
       content: ''; } }
-  #header-menu li.thePusher {
+  #header-menu .last {
     height: 0;
-    visibility: hidden; }
+    visibility: hidden;
+    width: 100%; }
 
 .no_nav_separator:after {
   content: '' !important; }
