@@ -4,6 +4,11 @@ body{
     }
 }
 
+.container{
+    opacity:.99;
+    z-index: 10;
+}
+
 // Subpages - title
 #page-title {
   border-bottom: 1px dotted #333;
