@@ -7969,7 +7969,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 #jumbotron-logo {
   background-color: #3d3c3c; }
   #jumbotron-logo img {
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: block; }
 
 #header-nav-wrap {
   background-color: #fc0; }
