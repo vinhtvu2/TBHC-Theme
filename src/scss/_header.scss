@@ -22,8 +22,8 @@
 #header-menu {
     @include center-block();
     margin: 0 auto;
-    text-align: justify;
-
+    //text-align: justify;
+    display: table;
     @media (min-width: $screen-sm-min) {
         width: $container-sm;
     }
@@ -41,6 +41,8 @@
         @media (max-width: $screen-sm-max) {
             padding: 0;
         }
+        display: table-cell;
+        text-align: center;
     }
 
     a {
@@ -70,21 +72,13 @@
         }
     }
 
-    li.last {
+    /*li.last {
         height: 0;
         visibility: hidden;
         padding: 0;
         margin: 0;
-        strong{
-            @extend li.last;
-            a{
-                @extend strong;
-            }
-        }
-    }
-    li.last{
         width: 100%;
-    }
+    }*/
 }
 
 .no_nav_separator:after {

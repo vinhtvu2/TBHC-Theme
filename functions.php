@@ -318,14 +318,14 @@ add_action( 'admin_menu', 'hide_admin_links' );
 /**
  * Tryn to add a menu item to header-menu
  **/
-add_filter( 'wp_nav_menu_items', 'add_pusher_to_nav', 10, 2 );
+/*add_filter( 'wp_nav_menu_items', 'add_pusher_to_nav', 10, 2 );
 function add_pusher_to_nav( $items, $args )
 {
 	if($args->theme_location == 'header-menu'){
 		$items .= "<li>...</li>";
 	}
 	return $items;
-}
+}*/
 
 /**
  * Adds a subheader to a page (if one is set for the page.)
