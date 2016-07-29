@@ -3,13 +3,13 @@
       background-color: #3d3c3c;
       padding: 20px; 
       img{
-        width: 85% !important;
+        width: 85%;
         margin: 0 auto;
         display: block;
         @media (min-width: $screen-md-min){
-          width: $container-md;
+          width: $container-md * .85;
                   @media (min-width: $screen-lg-min){
-      width: $container-lg;
+      width: $container-lg *.85;
   }
         }
       }

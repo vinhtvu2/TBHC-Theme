@@ -7970,15 +7970,15 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   background-color: #3d3c3c;
   padding: 20px; }
   #jumbotron-logo img {
-    width: 85% !important;
+    width: 85%;
     margin: 0 auto;
     display: block; }
     @media (min-width: 992px) {
       #jumbotron-logo img {
-        width: 970px; }
+        width: 824.5px; }
         @media (min-width: 1200px) {
           #jumbotron-logo img {
-            width: 1170px; } } }
+            width: 994.5px; } } }
 
 #header-nav-wrap {
   background-color: #fc0;
