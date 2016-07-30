@@ -8029,7 +8029,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 #site-nav-xs {
   margin: 0;
-  border: none; }
+  border: none;
+  background-color: #fc0; }
   #site-nav-xs .navbar-brand {
     color: #fff;
     font-family: Georgia, serif, serif;
@@ -8346,7 +8347,8 @@ ul {
 
 .container {
   opacity: 0.99;
-  z-index: 10; }
+  z-index: 10;
+  box-shadow: 0 3px 5px #000; }
 
 #page-title {
   border-bottom: 1px dotted #333;
