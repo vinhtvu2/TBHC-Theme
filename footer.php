@@ -1,6 +1,5 @@
 			<div id="footer">
 
-				<div id="footer-navwrap" role="navigation" class="screen-only">
 					<?=wp_nav_menu(array(
 						'theme_location' => 'footer-menu',
 						'container' => 'false',
@@ -11,6 +10,8 @@
 						'walker' => new Bootstrap_Walker_Nav_Menu()
 						));
 					?>
+<div id="footer-navwrap" role="navigation" class="screen-only">
+	
 				</div>
 
 				<?=wp_nav_menu(array(
