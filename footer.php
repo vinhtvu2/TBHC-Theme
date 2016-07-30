@@ -1,6 +1,7 @@
 			<div id="footer">
 
-					<?=wp_nav_menu(array(
+				<div id="footer-navwrap" role="navigation" class="screen-only">
+					<?=/*wp_nav_menu(array(
 						'theme_location' => 'footer-menu',
 						'container' => 'false',
 						'menu_class' => 'menu list-unstyled list-inline text-center',
@@ -9,9 +10,7 @@
 						'depth' => 1,
 						'walker' => new Bootstrap_Walker_Nav_Menu()
 						));
-					?>
-<div id="footer-navwrap" role="navigation" class="screen-only">
-	
+					*/?>
 				</div>
 
 				<?=wp_nav_menu(array(
@@ -40,7 +39,7 @@
 				</p>
 
 			</div>
-		<!--</div><!-- .container -->
+		</div><!-- .container -->
 	</body>
 	<?="\n".footer_()."\n"?>
 </html>
