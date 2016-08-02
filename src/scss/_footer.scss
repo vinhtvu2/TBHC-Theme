@@ -26,7 +26,7 @@
     @media (min-width: $screen-sm-min) {
         display: inline-block;
         border-right: 1px solid #a6a6a6;
-        &:last{
+        &:last-of-type{
             border-right: none;
         }
     }
