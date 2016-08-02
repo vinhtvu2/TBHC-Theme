@@ -12,6 +12,10 @@
   }
 }
 
+.col{
+    display: inline-block;
+}
+
 #footer-navwrap,
 #subfooter {
   @media (max-width: $screen-xs-max) {

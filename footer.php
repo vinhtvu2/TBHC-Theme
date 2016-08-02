@@ -3,9 +3,9 @@
 				<div class="collapse col">
 					<?=wp_nav_menu(array(
 						//'theme_location' => 'footer-menu',
+						'menu' => 31,
 						'container' => 'false',
 						'menu_class' => 'menu list-unstyled text-left',
-						'menu_id' => 'audience',
 						'fallback_cb' => false,
 						'depth' => 1,
 						'walker' => new Bootstrap_Walker_Nav_Menu()
@@ -15,9 +15,10 @@
 				<div class="collapse col">
 					<?=wp_nav_menu(array(
 						//'theme_location' => 'footer-menu',
+						'menu' => 6,
 						'container' => 'false',
 						'menu_class' => 'menu list-unstyled text-left',
-						'menu_id' => 'quick-links',
+						//'menu_id' => 'quick-links',
 						'fallback_cb' => false,
 						'depth' => 1,
 						'walker' => new Bootstrap_Walker_Nav_Menu()
@@ -33,7 +34,7 @@
 						'theme_location' => 'social-links',
 						'container' => 'div',
 						'container_id' => 'social-menu-wrap',
-						'menu_class' => 'menu list-unstyled text-left screen-only',
+						'menu_class' => 'menu list-unstyled list-inline text-left screen-only',
 						'menu_id' => 'social-menu',
 						'depth' => 1,
 						));
@@ -42,9 +43,10 @@
 				<div class="col">
 					<?=wp_nav_menu(array(
 						//'theme_location' => 'department-sites',
+						'menu' => 7,
 						'container' => 'div',
 						'menu_class' => 'menu list-unstyled text-left screen-only',
-						'menu_id' => 'department-sites',
+						//'menu_id' => 'department-sites',
 						'depth' => 1,
 						));
 					?>
