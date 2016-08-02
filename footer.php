@@ -53,12 +53,21 @@
 				</div>
 				<div class="col">
 					<p id="" role="contentinfo" class="vcard">
+						<a href="<?=site_url()?>" class="print-noexpand fn org url">
+							<span class="organization-name">The Burnett Honors College</span>
+						</a>
 						<div class="adr">
-							<div class="street-address">P.O. Box 161800 </div>
-							<div class="locality">Orlando</div>,
-							<div class="region">Florida</div>,
-							<div class="postal-code">32816-1800</div> |
-							<div class="tel"><a href="tel:4078232076">407.823.2076</a></div>
+							<div class="street-address">P.O. Box 161800</div>
+							<div>
+								<span class="locality">Orlando,</span>
+								<span class="region">FL</span>
+								<span class="postal-code">32816</span>
+							</div>
+							<div class="tel">
+								p.<a href="tel:4078232076">407.823.2076</a>
+								f.<a href="tel:4078236583">407.823.6583</a>
+								e.<a href="mailto:honors@ucf.edu">honors@ucf.edu</a>
+							</div>
 						</div>
 						<!--<br/>
 						<a href="<?=site_url()?>/feedback/">Comments and Feedback</a> | &copy;
