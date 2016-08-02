@@ -14,7 +14,7 @@
 				</div>
 				<div id="footer-logo">
 					<a href="http://tbhccmsdev.smca.ucf.edu">
-						<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooter.png" alt="The Burnett Honors College">
+						<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
 						</img>
 					</a>
 				</div>
