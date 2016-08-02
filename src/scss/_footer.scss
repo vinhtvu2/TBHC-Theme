@@ -109,13 +109,16 @@
 }
 
 #footer-logo {
-  padding-top: 10px;
-
-  a {
+    img{
+        margin: 0 auto;
+    }
+  //padding-top: 10px;
+  background-image: none;
+  /*a {
     @include sprite();
     background-position: -246px -46px;
     height: 45px;
     margin: auto;
     width: 123px;
-  }
+  }*/
 }
