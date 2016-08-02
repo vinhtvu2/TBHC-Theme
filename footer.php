@@ -30,7 +30,7 @@
 							</img>
 						</a>
 					<?=wp_nav_menu(array(
-						//'theme_location' => 'social-links',
+						'theme_location' => 'social-links',
 						'container' => 'div',
 						'container_id' => 'social-menu-wrap',
 						'menu_class' => 'menu list-unstyled text-left screen-only',
