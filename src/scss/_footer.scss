@@ -1,21 +1,33 @@
 #footer {
   border-top: 0;
   margin-top: -15px;
-  padding-top: 25px;
+  //padding-top: 35px;
   position: relative;
   width: 100%;
   z-index:10;
   background-color: #3d3c3c;
   color: #a6a6a6;
   a:hover {
-    color: #e50606;
+    color: #FFF;
+  }
+  #footer-navwrap{
+    @media (min-width: $screen-sm-min) {
+        width:100%;
+        padding: inherit 10px;
+        max-width: 1220px;
+    }
   }
 }
 
 .col{
+    padding-top: 35px;
     vertical-align: top;
     @media (min-width: $screen-sm-min) {
         display: inline-block;
+        border-right: 1px solid #a6a6a6;
+        &:last{
+            border-right: none;
+        }
     }
 }
 
