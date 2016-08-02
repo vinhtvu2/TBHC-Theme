@@ -13,7 +13,10 @@
 }
 
 .col{
-    display: inline-block;
+    vertical-align: top;
+    @media (min-width: $screen-sm-min) {
+        display: inline-block;
+    }
 }
 
 #footer-navwrap,

@@ -4,12 +4,11 @@
     padding: 35px;
 
     img {
-        width: 70%;
+        width: 85%;
         margin: 0 auto;
         display: block;
-
-        @media (min-width: $screen-md-min) {
-            width: $container-md * .85;
+        @media(min-width: $screen-sm-min){
+            width: 480px;        
         }
     }
 }
@@ -48,9 +47,9 @@
     a {
         color: #262626;
         font-size: 17px;
-        font-weight: 400;
-        padding-bottom: 20px;
-        padding-top: 20px;
+        font-weight: 600;
+        padding-bottom: 15px;
+        padding-top: 15px;
         display: block;
 
         @media (max-width: $screen-sm-max) {

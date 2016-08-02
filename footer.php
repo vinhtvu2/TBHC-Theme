@@ -1,5 +1,5 @@
 			<div id="footer">
-				
+				<div id="footer-navwrap">
 				<div class="collapse col">
 					<?=wp_nav_menu(array(
 						//'theme_location' => 'footer-menu',
@@ -25,7 +25,7 @@
 						));
 					?>
 				</div>
-				<div id="footerLogo">
+				<div id="footerLogo col">
 						<a href="http://tbhccmsdev.smca.ucf.edu">
 							<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
 							</img>
@@ -67,7 +67,7 @@
 						</a>-->
 					</p>
 				</div>
-			
+				</div>
 			
 			
 			
