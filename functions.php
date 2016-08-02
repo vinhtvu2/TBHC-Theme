@@ -3151,7 +3151,6 @@ function uploads_allow_json( $mimes ) {
 }
 add_filter( 'upload_mimes', 'uploads_allow_json' );
 
-
 /**
  * Conditional body class modifications.
  **/

@@ -7979,7 +7979,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 #header-nav-wrap {
   background-color: #fc0;
-  width: 100%; }
+  width: 100%;
+  position: relative;
+  z-index: 1000; }
 
 #header-menu {
   display: block;
@@ -8059,7 +8061,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   border-top: 0;
   margin-top: -15px;
   padding-top: 25px;
+  position: relative;
   width: 100%;
+  z-index: 10;
   background-color: #3d3c3c;
   color: #a6a6a6; }
   #footer a:hover {
@@ -8347,9 +8351,9 @@ ul {
     background-color: #d9d6d6; } }
 
 .container {
-  opacity: 0.99;
-  z-index: 10;
-  box-shadow: 0 4px 20px -4px #000; }
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 0 20px -4px rgba(0, 0, 0, 0.75); }
 
 #page-title {
   border-bottom: 1px dotted #333;

@@ -5,9 +5,10 @@ body{
 }
 
 .container{
-    opacity:.99;
-    z-index: 10;
-    box-shadow: 0 4px 20px -4px #000;
+    //opacity:.99;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 0 20px -4px rgba(0, 0, 0, 0.75);
 }
 
 // Subpages - title

@@ -1,5 +1,6 @@
 			<div id="footer">
 
+				<div id="footer-navwrap" role="navigation" class="screen-only">
 					<?=wp_nav_menu(array(
 						'theme_location' => 'footer-menu',
 						'container' => 'false',
@@ -11,7 +12,12 @@
 						));
 					?>
 				</div>
-
+				<div id="footer-logo">
+					<a href="http://tbhccmsdev.smca.ucf.edu">
+						<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooter.png" alt="The Burnett Honors College">
+						</img>
+					</a>
+				</div>
 				<?=wp_nav_menu(array(
 					'theme_location' => 'social-links',
 					'container' => 'div',

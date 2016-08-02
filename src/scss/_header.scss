@@ -17,6 +17,8 @@
 #header-nav-wrap {
     background-color: #fc0;
     width: 100%;
+    position: relative;
+    z-index: 1000;
 }
 
 #header-menu {
