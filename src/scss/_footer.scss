@@ -11,6 +11,7 @@
     color: #FFF;
   }
   #footer-navwrap{
+    margin: 0 auto;
     @media (min-width: $screen-sm-min) {
         width:100%;
         padding: inherit 10px;
