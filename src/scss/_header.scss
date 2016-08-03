@@ -31,6 +31,7 @@
     margin: 0 auto;
     //text-align: justify;
     display: table;
+    table-layout: fixed;
     @media (min-width: $screen-sm-min) {
         width: $container-sm;
     }
