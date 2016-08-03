@@ -4,7 +4,10 @@
 }
 #jumbotron-logo {
     background-color: #3d3c3c;
-    padding: 25px 35px 40px 35px;
+    padding: 15px 20px 25px 20px;
+    @media(min-width: $screen-sm-min){
+        padding: 30px 35px 45px 35px;
+    }
 
     img {
         width: 85%;
