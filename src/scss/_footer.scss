@@ -23,10 +23,9 @@
 
 .footerCol{
     padding-top: 35px;
-    height: 100%;
-    //vertical-align: top;
+    vertical-align: top;
     @media (min-width: $screen-sm-min) {
-        //display: table-cell;
+        display: table-cell;
         border-right: 1px solid #a6a6a6;
         &:last-of-type{
             border-right: none;
