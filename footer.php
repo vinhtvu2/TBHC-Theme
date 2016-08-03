@@ -1,23 +1,23 @@
 			<div id="footer">
-				<div id="footer-navwrap">
-					<div class="collapse col">
+				<div id="footer-navwrap" class="row">
+					<div class="col-xs-2 collapse col-md-push-">
 						<?=wp_nav_menu(array(
 							//'theme_location' => 'footer-menu',
 							'menu' => 31,
 							'container' => 'false',
-							'menu_class' => 'menu list-unstyled text-right',
+							'menu_class' => 'menu list-unstyled',
 							'fallback_cb' => false,
 							'depth' => 1,
 							'walker' => new Bootstrap_Walker_Nav_Menu()
 							));
 						?>				
 					</div>
-					<div class="collapse col">
+					<div class="col-xs-2 collapse">
 						<?=wp_nav_menu(array(
 							//'theme_location' => 'footer-menu',
 							'menu' => 6,
 							'container' => 'false',
-							'menu_class' => 'menu list-unstyled text-right',
+							'menu_class' => 'menu list-unstyled',
 							//'menu_id' => 'quick-links',
 							'fallback_cb' => false,
 							'depth' => 1,
@@ -25,33 +25,18 @@
 							));
 						?>
 					</div>
-					<div id="footerLogo" class="col">
-							<a href="http://tbhccmsdev.smca.ucf.edu">
-								<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
-								</img>
-							</a>
-						<?=wp_nav_menu(array(
-							'theme_location' => 'social-links',
-							'container' => 'div',
-							'container_id' => 'social-menu-wrap',
-							'menu_class' => 'menu list-unstyled list-inline text-left screen-only',
-							'menu_id' => 'social-menu',
-							'depth' => 1,
-							));
-						?>
-					</div>
-					<div class="col">
+					<div class="col-xs-4 col-md-2 col-md-push-2">
 						<?=wp_nav_menu(array(
 							//'theme_location' => 'department-sites',
 							'menu' => 7,
 							'container' => 'div',
-							'menu_class' => 'menu list-unstyled text-left screen-only',
+							'menu_class' => 'menu list-unstyled screen-only',
 							//'menu_id' => 'department-sites',
 							'depth' => 1,
 							));
 						?>
 					</div>
-					<div class="col">
+					<div class="col-xs-4 col-md-2 col-md-push-2">
 						<p id="contactInfo" role="contentinfo" class="vcard">
 							<a href="<?=site_url()?>" class="print-noexpand fn org url">
 								<span class="organization-name">The Burnett Honors College</span>
@@ -74,11 +59,26 @@
 								</div>
 							</div>
 							<!--<br/>
-							<a href="<?=site_url()?>/feedback/">Comments and Feedback</a> | &copy;
-							<a href="<?=site_url()?>" class="print-noexpand fn org url">
+								<a href="<?=site_url()?>/feedback/">Comments and Feedback</a> | &copy;
+								<a href="<?=site_url()?>" class="print-noexpand fn org url">
 								<span class="organization-name">The Burnett Honors College</span>
 							</a>-->
 						</p>
+					</div>
+					<div id="footer-logo" class="col-xs-4 col-md-2 col-md-pull-4">
+							<a href="http://tbhccmsdev.smca.ucf.edu">
+								<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
+								</img>
+							</a>
+						<?=wp_nav_menu(array(
+							'theme_location' => 'social-links',
+							'container' => 'div',
+							'container_id' => 'social-menu-wrap',
+							'menu_class' => 'menu list-unstyled list-inline text-left screen-only',
+							'menu_id' => 'social-menu',
+							'depth' => 1,
+							));
+						?>
 					</div>
 				</div>
 			</div>

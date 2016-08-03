@@ -17,14 +17,15 @@
         padding: inherit 10px;
         max-width: 1220px;
     }
+    display:table;
   }
 }
 
-.col{
+.footerCol{
     padding-top: 35px;
     vertical-align: top;
     @media (min-width: $screen-sm-min) {
-        display: inline-block;
+        display: table-cell;
         border-right: 1px solid #a6a6a6;
         &:last-of-type{
             border-right: none;
@@ -143,6 +144,7 @@
     img{
         margin: 0 auto;
         width: 100px;
+        display: block;
     }
   //padding-top: 10px;
   background-image: none;
