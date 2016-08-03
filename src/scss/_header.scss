@@ -64,7 +64,8 @@
 
         &:hover,
         &:active,
-        &:focus {
+        &:focus,
+        &.active {
             background-color: #FFF;
             text-decoration: none;
         }
