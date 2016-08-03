@@ -1,6 +1,6 @@
 			<div id="footer">
 				<div id="footer-navwrap">
-					<div class="hidden-sm footerCol">
+					<div class="hidden-sm hidden-xs footerCol">
 						<?=wp_nav_menu(array(
 							//'theme_location' => 'footer-menu',
 							'menu' => 31,
@@ -12,7 +12,7 @@
 							));
 						?>				
 					</div>
-					<div class="hidden-sm footerCol">
+					<div class="hidden-sm hidden-xs footerCol">
 						<?=wp_nav_menu(array(
 							//'theme_location' => 'footer-menu',
 							'menu' => 6,
