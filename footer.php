@@ -1,6 +1,6 @@
 			<div id="footer">
 				<div id="footer-navwrap" class="row">
-					<div class="col-xs-2 collapse col-md-push-">
+					<div class="col-xs-2 xs-hidden">
 						<?=wp_nav_menu(array(
 							//'theme_location' => 'footer-menu',
 							'menu' => 31,
@@ -12,7 +12,7 @@
 							));
 						?>				
 					</div>
-					<div class="col-xs-2 collapse">
+					<div class="col-xs-2 xs-hidden">
 						<?=wp_nav_menu(array(
 							//'theme_location' => 'footer-menu',
 							'menu' => 6,
