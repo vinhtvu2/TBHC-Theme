@@ -36,7 +36,22 @@
 							));
 						?>
 					</div>
-					<div class="col-xs-4 col-md-2 col-md-push-2">
+					<div id="footer-logo" class="col-xs-4 col-md-2 col-md-pull-2">
+						<a href="http://tbhccmsdev.smca.ucf.edu">
+							<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
+							</img>
+						</a>
+						<?=wp_nav_menu(array(
+							'theme_location' => 'social-links',
+							'container' => 'div',
+							'container_id' => 'social-menu-wrap',
+							'menu_class' => 'menu list-unstyled list-inline text-left screen-only',
+							'menu_id' => 'social-menu',
+							'depth' => 1,
+							));
+						?>
+					</div>
+					<div class="col-xs-4 col-md-2">
 						<p id="contactInfo" role="contentinfo" class="vcard">
 							<a href="<?=site_url()?>" class="print-noexpand fn org url">
 								<span class="organization-name">The Burnett Honors College</span>
@@ -64,21 +79,6 @@
 								<span class="organization-name">The Burnett Honors College</span>
 							</a>-->
 						</p>
-					</div>
-					<div id="footer-logo" class="col-xs-4 col-md-2 col-md-pull-4">
-							<a href="http://tbhccmsdev.smca.ucf.edu">
-								<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
-								</img>
-							</a>
-						<?=wp_nav_menu(array(
-							'theme_location' => 'social-links',
-							'container' => 'div',
-							'container_id' => 'social-menu-wrap',
-							'menu_class' => 'menu list-unstyled list-inline text-left screen-only',
-							'menu_id' => 'social-menu',
-							'depth' => 1,
-							));
-						?>
 					</div>
 				</div>
 			</div>
