@@ -372,7 +372,7 @@ body {
     }
 }
 /* bootstrap col offset for 5 col goodness */
-@media (min-width: $screen-sm) {
+@media (min-width: $screen-md) {
     .col-half-offset {
         margin-left: 4.166666667%;
     }

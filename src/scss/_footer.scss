@@ -2,12 +2,15 @@
   border-top: 0;
   margin-top: -25px;
   position: relative;
-  //width: 100%;
   z-index:10;
-  //background-color: #3d3c3c;
+  background-color: #3d3c3c;
   color: #6d6d6d;
-  a:hover {
-    color: #FFF;
+  overflow: hidden;
+  a{
+      color: #6d6d6d;
+      &:hover {
+        color: #FFF;
+      }
   }
   #footer-navwrap{
     margin: 0 auto;
