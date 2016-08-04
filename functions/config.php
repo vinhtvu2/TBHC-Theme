@@ -17,10 +17,11 @@ function __init__(){
 	add_image_size('home-thumb', 110, 110);
 	add_image_size('subpage-subimg', 160);
 	add_image_size('subpage-studentimg', 115, 280);
-	register_nav_menu('header-menu', __('Header Menu'));
-	register_nav_menu('ucf-colleges', __('UCF Colleges'));
-	register_nav_menu('footer-menu', __('Footer Menu'));
-	register_nav_menu('social-links', __('Social Links'));
+	register_nav_menu('header', __('Header Menu'));
+	register_nav_menu('footer-outer-left-collapse', __('Footer Outer Left Menu (Mobile Collapse)'));	
+	register_nav_menu('footer-inner-left-collapse', __('Footer Inner Left Menu (Mobile Collapse)'));
+	register_nav_menu('footer-inner-right', __('Footer Inner Right Menu (Mobile Left)'));
+	register_nav_menu('social-links', __('Social Links Menu'));
 	register_sidebar(array(
 		'name'          => __('Left Sidebar'),
 		'id'            => 'sidebar-left',

@@ -74,7 +74,7 @@
 			<div class="collapse navbar-collapse" id="header-menu-xs-collapse">
 				<?php
 					wp_nav_menu( array(
-					'theme_location' => 'header-menu',
+					'theme_location' => 'header',
 					'container' => false,
 					'menu_class' => 'menu nav navbar-nav',
 					'menu_id' => 'header-menu-xs',
@@ -93,7 +93,7 @@
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
 			<?php 
 				wp_nav_menu(array(
-					'theme_location' => 'header-menu',
+					'theme_location' => 'header',
 					'container' => 'false',
 					'menu_class' => 'menu list-unstyled list-inline text-center '.get_header_styles(),
 					'menu_id' => 'header-menu',
