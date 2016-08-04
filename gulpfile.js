@@ -12,7 +12,9 @@ var gulp = require('gulp'),
     jshintStylish = require('jshint-stylish'),
     scsslint = require('gulp-scss-lint'),
     autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+	less = require('gulp-less'),
+	es = require('event-stream');
 
 var gutil = require('gulp-util');
 
@@ -20,6 +22,7 @@ var configDefault = {
       devPath: './dev',
       scssPath: './src/scss',
       cssPath: './static/css',
+	  lessPath: './src/less',
       jsPath: './src/js',
       jsMinPath: './static/js',
       fontPath: './static/fonts',
@@ -64,10 +67,15 @@ gulp.task('scss-lint-dev', function() {
 });
 
 
-// Compile + bless primary scss files
+// Compile + bless primary scss files **ERIK EDITED THIS TO INCLUDE LESS COMPILATION why would i want to worry about a new task? concat streams, plz
 gulp.task('css-main', function() {
-  gulp.src(config.scssPath + '/style.scss')
-    .pipe(sass().on('error', sass.logError))
+  var sassyStuff = gulp.src(config.scssPath + '/style.scss')
+    .pipe(sass().on('error', sass.logError));
+	
+  var lessyStuff = gulp.src(config.lessPath + '/*.less')
+    .pipe(less().on('error', sass.logError));
+	
+  return es.concat(sassyStuff, lessyStuff)
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(rename('style.min.css'))
     .pipe(autoprefixer({
@@ -78,7 +86,6 @@ gulp.task('css-main', function() {
     .pipe(gulp.dest(config.cssPath))
     .pipe(browserSync.stream());
 });
-
 
 // Compile + bless admin scss
 gulp.task('css-admin', function() {
