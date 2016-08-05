@@ -27,6 +27,6 @@
 			<?php esi_include('do_shortcode','[events-widget]'); ?>
 			<?php esi_include('output_weather_data'); ?>
 		</div>
-
 	</div>
+</div>
 <?php get_footer();?>
