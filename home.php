@@ -28,5 +28,6 @@
 			<?php esi_include('output_weather_data'); ?>
 		</div>
 	</div>
+	</div>
 </div>
 <?php get_footer();?>
