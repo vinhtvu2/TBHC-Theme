@@ -6,6 +6,7 @@
   background-color: #3d3c3c;
   color: #6d6d6d;
   overflow: hidden;
+  clear: both;
   a{
       color: #6d6d6d;
       &:hover {
@@ -33,7 +34,7 @@
     }
     &:nth-of-type(3){
         text-align: right;
-        @media (min-width: $screen-sm-min) {
+        @media (min-width: $screen-md-min) {
             text-align: left;
         }
     }
@@ -51,12 +52,6 @@
     padding-left: $grid-gutter-width / 2;
     padding-right: $grid-gutter-width / 2;
   }
-}
-#subfooter{
-  background-color: #3d3c3c;
-  height: $grid-gutter-width;
-  width:100%;
-  color: #6d6d6d;
 }
 /*#footer-menu {
   @media (max-width: $screen-xs-max) {
@@ -98,7 +93,11 @@
   letter-spacing: .8px;
   line-height: 2;
   text-align: center;
-
+  position: relative;
+  background-color: #3d3c3c;
+  height: $grid-gutter-width;
+  width:100%;
+  color: #6d6d6d;
   a {
     color:  #a6a6a6;
   }
