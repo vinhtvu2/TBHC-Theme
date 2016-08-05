@@ -13,7 +13,6 @@
 			var CB_UID      = '<?php echo CB_UID; ?>';
 			var CB_DOMAIN   = '<?php echo CB_DOMAIN; ?>';
 		</script>
-		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
 		<?php endif;?>
 
 		<!--[if IE]>
@@ -56,7 +55,8 @@
 			var PRINT_HEADER_IMG			= '<?php echo THEME_IMG_URL.'/ucflogo-print.png'; ?>';
 
 		</script>
-
+		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.4.1.js"></script>
 	</head>
 	<body <?php echo body_class(); ?>>
 
