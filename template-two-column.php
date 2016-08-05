@@ -29,4 +29,5 @@
 			<?=get_sidebar('left');?>
 		</div>
 	</div>
+</div>
 <?php get_footer();?>
