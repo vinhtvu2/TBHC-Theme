@@ -33,4 +33,5 @@
 			<?=get_sidebar('right');?>
 		</div>
 	</div>
+</div>
 <?php get_footer();?>
