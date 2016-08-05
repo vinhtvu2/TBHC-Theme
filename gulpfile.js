@@ -67,15 +67,15 @@ gulp.task('scss-lint-dev', function() {
 });
 
 
-// Compile + bless primary scss files **ERIK EDITED THIS TO INCLUDE LESS COMPILATION why would i want to worry about a new task? concat streams, plz
+// Compile + bless primary scss files
 gulp.task('css-main', function() {
   var sassyStuff = gulp.src(config.scssPath + '/style.scss')
-    .pipe(sass().on('error', sass.logError));
+    .pipe(sass().on('error', sass.logError))
 	
-  var lessyStuff = gulp.src(config.lessPath + '/*.less')
-    .pipe(less().on('error', sass.logError));
+  //var lessyStuff = gulp.src(config.lessPath + '/*.less')
+    //.pipe(less().on('error', sass.logError));
 	
-  return es.concat(sassyStuff, lessyStuff)
+  //return es.concat(sassyStuff, lessyStuff)
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(rename('style.min.css'))
     .pipe(autoprefixer({

@@ -19,17 +19,27 @@
     @media (min-width: $screen-sm-min) {
         max-width: 1220px;
     }
-    //display:table;
   }
 }
 
 .footerCol{
     padding-top: 35px 5px 0 5px;
     vertical-align: top;
-    //display: table-cell;
     border-right: 1px solid #a6a6a6;
     margin-bottom: -1000px;
     padding-bottom: 1000px;
+    &:nth-of-type(){
+        text-align: right;
+        @media (min-width: $screen-sm-min) {
+            text-align: right;
+        }
+    }
+    &:nth-of-type(){
+        text-align: left;
+        @media (min-width: $screen-sm-min) {
+            text-align: left;
+        }
+    }
     &:last-of-type{
         border-right: none;
     }
