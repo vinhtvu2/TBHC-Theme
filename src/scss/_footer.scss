@@ -3,7 +3,7 @@
   margin-top: -25px;
   position: relative;
   z-index:10;
-  line-height: 25px;
+  line-height: 15px;
   background-color: #3d3c3c;
   color: #6d6d6d;
   overflow: hidden;
@@ -52,6 +52,10 @@
   @media (max-width: $screen-xs-max) {
     padding-left: $grid-gutter-width / 2;
     padding-right: $grid-gutter-width / 2;
+  }
+  ul li{
+      padding-top:5px;
+      padding-bottom:5px;
   }
 }
 /*#footer-menu {
