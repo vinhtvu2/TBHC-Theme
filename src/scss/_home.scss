@@ -184,59 +184,6 @@ ul{
 }
 
 
-// Home Page - Colleges Nav
-#home-supplemental {
-  background: #FBFBFB;
-  font-size: 12px;
-  margin-top: 30px;
-  padding: 15px 0;
-  width: 100%;
-
-  a:hover {
-    color: #e50606;
-  }
-
-  h3 {
-    font-family: $font-family-sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 3px;
-
-    @media (max-width: $screen-xs-max) {
-      margin-top: 20px;
-    }
-  }
-
-  aside {
-    overflow: auto; // Make sure floated content doesn't overflow out of the aside
-  }
-
-  #menu-ucf-colleges {
-    li {
-      float: left;
-      font-family: $font-family-sans-serif;
-      line-height: 15px;
-      padding: 4px 0;
-      width: 50%;
-
-      @media (max-width: 480px) {
-        display: inline-block;
-        float: none !important;
-        margin-right: 5px;
-        width: 100%;
-      }
-    }
-
-    a {
-      color: #262626;
-      font-size: 12px;
-      line-height: 15px;
-    }
-  }
-}
-
-
 // Misc. print overrides
 .home_spotlight_single > a[href]:after,
 .home_spotlight_title a[href]:after,

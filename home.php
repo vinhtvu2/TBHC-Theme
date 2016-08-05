@@ -1,7 +1,7 @@
 <?php get_header();?>
 <?php $options = get_option(THEME_OPTIONS_NAME);?>
 <?php $page    = get_page_by_title('Home');?>
-	<div class="row page-content nodescription" id="home" data-template="home-nodescription" role="main">
+	<div class="row" id="home" data-template="home-nodescription" role="main">
 		<div class="col-sm-15">
 			<?php
 				$args = array(
@@ -28,6 +28,4 @@
 			<?php esi_include('output_weather_data'); ?>
 		</div>
 	</div>
-	</div>
-</div>
 <?php get_footer();?>
