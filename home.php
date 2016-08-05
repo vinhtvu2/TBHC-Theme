@@ -1,6 +1,6 @@
-<?php get_header('tbhc');?>
-	<?php $options = get_option(THEME_OPTIONS_NAME);?>
-	<?php $page    = get_page_by_title('Home');?>
+<?php get_header();?>
+<?php $options = get_option(THEME_OPTIONS_NAME);?>
+<?php $page    = get_page_by_title('Home');?>
 	<div class="row page-content nodescription" id="home" data-template="home-nodescription" role="main">
 		<div class="col-sm-15">
 			<?php
@@ -29,4 +29,4 @@
 		</div>
 
 	</div>
-		<?php get_footer('tbhc');?>
+<?php get_footer();?>
