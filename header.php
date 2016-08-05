@@ -13,6 +13,7 @@
 			var CB_UID      = '<?php echo CB_UID; ?>';
 			var CB_DOMAIN   = '<?php echo CB_DOMAIN; ?>';
 		</script>
+		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
 		<?php endif;?>
 
 		<!--[if IE]>
