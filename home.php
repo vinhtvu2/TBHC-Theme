@@ -30,29 +30,4 @@
 
 	</div>
 </div>
-
-<!--<div class="container-fullwidth screen-only" id="home-supplemental">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-5 col-sm-5">
-				<aside>
-					<?=/*apply_filters('the_content', get_theme_option('home_desc'))*/?>
-				</aside>
-			</div>
-			<div class="col-md-6 col-sm-6 col-md-offset-1 col-sm-offset-1" role="navigation">
-				<h3>Colleges</h3>
-				<?=/*wp_nav_menu(array(
-					'theme_location' => 'ucf-colleges',
-					'container' => 'false',
-					'menu_class' => 'list-unstyled',
-					));*/
-				?>
-			</div>
-		</div>
-	</div>
-</div>-->
-
-<div class="container" id="home-footerwrap">
-	<div class="row">
-
 		<?php get_footer('tbhc');?>
