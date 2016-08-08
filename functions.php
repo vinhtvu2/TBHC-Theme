@@ -440,8 +440,6 @@ function frontpage_spotlights() {
 		</div>
 		<?
 	}
-
-	print_r($spotlights);
 	
 	foreach($spotlights as $sp){
 		output_spotlight($sp);
@@ -543,8 +541,6 @@ function frontpage_opportunities() {
 	</div>
 	<?
 	}
-	
-	print_r($opportunities);
 	
 	foreach($opportunities as $op){
 		output_spotlight($op);
