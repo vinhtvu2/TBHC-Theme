@@ -441,7 +441,7 @@ function frontpage_spotlights() {
 		<?
 	}
 	
-	foreach($spotlight as $sp){
+	foreach($spotlights as $sp){
 		output_spotlight($sp);
 	}
 
