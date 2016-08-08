@@ -125,6 +125,9 @@
              color: #FFF;
              text-decoration: none;
         }
+        &:active{
+            background-color: #000;
+        }
     }
 
     .last {
