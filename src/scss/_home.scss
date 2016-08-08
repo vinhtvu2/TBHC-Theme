@@ -89,14 +89,18 @@ ul{
     border-radius: 10px;
     cursor: pointer;
     float: left;
-    height: 110px;
     margin-right: 15px;
     position: relative;
     text-indent: -9999px;
-    width: 110px;
   }
   .spotlight_thumb{
+      height: 110px;
+      width: 110px;
       margin-bottom: 15px;
+  }
+  .opportunity_thumb{
+      height: 66px;
+      width: 66px;
   }
 }
 
