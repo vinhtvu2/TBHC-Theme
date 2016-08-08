@@ -66,13 +66,10 @@
 									<span class="postal-code">32816</span>
 								</div>
 								<div class="tel">
-									<span>p.<a href="tel:4078232076">407.823.2076</a></span>
-								</div>
-								<div class="fax">
-									<span>f.<a href="tel:4078236583">407.823.6583</a></span>
+									<a href="tel:4078232076">407.823.2076</a>
 								</div>
 								<div class="email">
-									<span>e.<a href="mailto:honors@ucf.edu">honors@ucf.edu</a></span>
+									<a href="mailto:honors@ucf.edu">honors@ucf.edu</a>
 								</div>
 							</div>
 							<!--<br/>
