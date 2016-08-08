@@ -31,6 +31,7 @@
 .footerCol{
     padding: 0 10px 0 10px;
     vertical-align: top;
+    width: 50% !important;
     border-right: 1px solid #d9d6d6;
     margin-bottom: -1000px;
     padding-bottom: 1000px;
@@ -64,7 +65,9 @@
 }
 
 .col-xs-half{
-    width: 50%;
+    @media (max-width: $screen-md-min){
+        width: 50%;
+    }   
 }
 
 #contactInfo{
