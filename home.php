@@ -18,7 +18,7 @@
 			<p class="screen-only"><a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Spotlight Archive</a></p>
 		</div>
 		<div class="col-sm-5 col-md-xpad col-sm-xpad" id="home_centercol">
-			<h2>Opportunity</h2>
+			<h2>Opportunities</h2>
 			<?=frontpage_opportunities()?>
 			<p class="screen-only"><a href="<?=get_permalink(get_page_by_title('Opportunity Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Opportunity Archive</a></p>
 		</div>
