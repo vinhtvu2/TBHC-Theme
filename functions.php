@@ -441,45 +441,47 @@ function frontpage_spotlights() {
 		<?
 	}
 
+	print_r($spotlights);
+	
 	// If neither positions are set, or the two positions conflict with each
 	// other, just display them in the order they were retrieved:
 	if (($position_one == '' && $position_two == '') || ($position_one == $position_two)) {
-		output_spotlight($spotlight_one);
-		output_spotlight($spotlight_two);
+		//output_spotlight($spotlight_one);
+		//output_spotlight($spotlight_two);
 	}
 
 	// If one is set but not the other, respect the set spotlight's position
 	// and place the other one in the other slot:
 	else if ($position_one == '' && $position_two !== '') {
 		if ($position_two == 'top') {
-			output_spotlight($spotlight_two);
-			output_spotlight($spotlight_one);
+			//output_spotlight($spotlight_two);
+			//output_spotlight($spotlight_one);
 		}
 		else {
-			output_spotlight($spotlight_one);
-			output_spotlight($spotlight_two);
+			//output_spotlight($spotlight_one);
+			//output_spotlight($spotlight_two);
 		}
 	}
 	else if ($position_one !== '' && $position_two == '') {
 		if ($position_one == 'top') {
-			output_spotlight($spotlight_one);
-			output_spotlight($spotlight_two);
+			//output_spotlight($spotlight_one);
+			//output_spotlight($spotlight_two);
 		}
 		else {
-			output_spotlight($spotlight_two);
-			output_spotlight($spotlight_one);
+			//output_spotlight($spotlight_two);
+			//output_spotlight($spotlight_one);
 		}
 	}
 
 	// Otherwise, display them in their designated positions:
 	else {
 		if ($position_one == 'top') { // we can assume position_two is the opposite
-			output_spotlight($spotlight_one);
-			output_spotlight($spotlight_two);
+			//output_spotlight($spotlight_one);
+			//output_spotlight($spotlight_two);
 		}
 		else {
-			output_spotlight($spotlight_two);
-			output_spotlight($spotlight_one);
+			//output_spotlight($spotlight_two);
+			//output_spotlight($spotlight_one);
 		}
 	}
 }
@@ -538,45 +540,47 @@ function frontpage_opportunities() {
 	<?
 	}
 	
+	print_r($opportunities);
+	
 	// If neither positions are set, or the two positions conflict with each
 	// other, just display them in the order they were retrieved:
 	if (($position_one == '' && $position_two == '') || ($position_one == $position_two)) {
-		output_opportunity($opportunity_one);
-		output_opportunity($opportunity_two);
+		//output_opportunity($opportunity_one);
+		//output_opportunity($opportunity_two);
 	}
 	
 	// If one is set but not the other, respect the set opportunity's position
 	// and place the other one in the other slot:
 	else if ($position_one == '' && $position_two !== '') {
 		if ($position_two == 'top') {
-			output_opportunity($opportunity_two);
-			output_opportunity($opportunity_one);
+			//output_opportunity($opportunity_two);
+			/output_opportunity($opportunity_one);
 		}
 		else {
-			output_opportunity($opportunity_one);
-			output_opportunity($opportunity_two);
+			//output_opportunity($opportunity_one);
+			//output_opportunity($opportunity_two);
 		}
 	}
 	else if ($position_one !== '' && $position_two == '') {
 		if ($position_one == 'top') {
-			output_opportunity($opportunity_one);
-			output_opportunity($opportunity_two);
+			//output_opportunity($opportunity_one);
+			//output_opportunity($opportunity_two);
 		}
 		else {
-			output_opportunity($opportunity_two);
-			output_opportunity($opportunity_one);
+			//output_opportunity($opportunity_two);
+			//output_opportunity($opportunity_one);
 		}
 	}
 	
 	// Otherwise, display them in their designated positions:
 	else {
 		if ($position_one == 'top') { // we can assume position_two is the opposite
-			output_opportunity($opportunity_one);
-			output_opportunity($opportunity_two);
+			//output_opportunity($opportunity_one);
+			//output_opportunity($opportunity_two);
 		}
 		else {
-			output_opportunity($opportunity_two);
-			output_opportunity($opportunity_one);
+			//output_opportunity($opportunity_two);
+			//output_opportunity($opportunity_one);
 		}
 	}
 }
