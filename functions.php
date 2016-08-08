@@ -539,7 +539,7 @@ function frontpage_opportunities() {
 	}
 	
 	foreach($opportunities as $op){
-		output_spotlight($op);
+		output_opportunity($op);
 	}
 	
 	// If neither positions are set, or the two positions conflict with each
