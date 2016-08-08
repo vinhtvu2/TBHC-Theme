@@ -443,6 +443,10 @@ function frontpage_spotlights() {
 
 	print_r($spotlights);
 	
+	foreach($spotlights as $sp){
+		output_spotlight($sp);
+	}
+	
 	// If neither positions are set, or the two positions conflict with each
 	// other, just display them in the order they were retrieved:
 	if (($position_one == '' && $position_two == '') || ($position_one == $position_two)) {
@@ -542,6 +546,10 @@ function frontpage_opportunities() {
 	
 	print_r($opportunities);
 	
+	foreach($opportunities as $op){
+		output_spotlight($op);
+	}
+	
 	// If neither positions are set, or the two positions conflict with each
 	// other, just display them in the order they were retrieved:
 	if (($position_one == '' && $position_two == '') || ($position_one == $position_two)) {
@@ -554,7 +562,7 @@ function frontpage_opportunities() {
 	else if ($position_one == '' && $position_two !== '') {
 		if ($position_two == 'top') {
 			//output_opportunity($opportunity_two);
-			/output_opportunity($opportunity_one);
+			//output_opportunity($opportunity_one);
 		}
 		else {
 			//output_opportunity($opportunity_one);
