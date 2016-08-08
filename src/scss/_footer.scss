@@ -34,7 +34,7 @@
     border-right: 1px solid #d9d6d6;
     margin-bottom: -1000px;
     text-align: left;
-    @media(min-width: $screen-md-min){
+    @media(min-width: $screen-sm-min){
         padding: 10px 10px 1000px 10px;
     }
     &:nth-of-type(4){
@@ -146,7 +146,7 @@
 }
 
 #footer-logo { 
-    @media (min-width: $screen-md-min){
+    @media (min-width: $screen-sm-min){
         border-right: 1px solid #d9d6d6;
     }
     img{
