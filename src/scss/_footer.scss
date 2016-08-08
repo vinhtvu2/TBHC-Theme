@@ -29,14 +29,13 @@
 }
 
 .footerCol{
-    padding: 0 10px 0 10px;
+    padding: 0 10px 1000px 10px;
     vertical-align: top;
     border-right: 1px solid #d9d6d6;
     margin-bottom: -1000px;
-    padding-bottom: 1000px;
     text-align: left;
     @media(min-width: $screen-md-min){
-        padding: 10px 10px 0 10px;
+        padding: 10px 10px 1000px 10px;
     }
     &:nth-of-type(4){
         @media(min-width: $screen-md-min){
@@ -146,8 +145,10 @@
   }
 }
 
-#footer-logo {
-    border-right: 1px solid #d9d6d6;
+#footer-logo { 
+    @media (min-width: $screen-md-min){
+        border-right: 1px solid #d9d6d6;
+    }
     img{
         margin: 0 auto;
         width: 75px;
