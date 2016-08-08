@@ -441,9 +441,9 @@ function frontpage_spotlights() {
 		<?
 	}
 	
-	foreach($spotlights as $sp){
-		output_spotlight($sp);
-	}
+	//foreach($spotlights as $sp){
+	//	output_spotlight($sp);
+	//}
 
 	// If neither positions are set, or the two positions conflict with each
 	// other, just display them in the order they were retrieved:
