@@ -90,8 +90,6 @@
 						<li><a href="<?php echo $url ?>">Home</a></li>
 						<?php 
 						    $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
-							foreach($crumbs as $crumb){
-							ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
 							$url = "http://tbhccmsdev.smca.ucf.edu";
 							foreach($crumbs as $crumb){
 								$url .= "/".$crumb;
