@@ -1,20 +1,5 @@
 			<div id="footer">
 				<div id="footer-navwrap" class="row">
-					<div id="footer-logo" class="col-xs-15 col-md-3 col-md-pull-3">
-						<a href="http://tbhccmsdev.smca.ucf.edu">
-							<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
-							</img>
-						</a>
-						<?=wp_nav_menu(array(
-							'theme_location' => 'social-links',
-							'container' => 'div',
-							'container_id' => 'social-menu-wrap',
-							'menu_class' => 'menu list-unstyled list-inline screen-only',
-							'menu_id' => 'social-menu',
-							'depth' => 1,
-							));
-						?>
-					</div>				
 					<div class="hidden-sm hidden-xs footerCol col-md-3">
 						<?=wp_nav_menu(array(
 							'theme_location' => 'footer-outer-left-collapse',
@@ -41,6 +26,21 @@
 							));
 						?>
 					</div>
+					<div id="footer-logo" class="col-xs-15 col-md-3 col-md-pull-3">
+						<a href="http://tbhccmsdev.smca.ucf.edu">
+							<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
+							</img>
+						</a>
+						<?=wp_nav_menu(array(
+							'theme_location' => 'social-links',
+							'container' => 'div',
+							'container_id' => 'social-menu-wrap',
+							'menu_class' => 'menu list-unstyled list-inline screen-only',
+							'menu_id' => 'social-menu',
+							'depth' => 1,
+							));
+						?>
+					</div>				
 					<div class="footerCol col-xs-5 col-md-3 col-md-push-3">
 						<?=wp_nav_menu(array(
 							'theme_location' => 'footer-inner-right',
