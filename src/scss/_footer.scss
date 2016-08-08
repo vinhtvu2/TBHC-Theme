@@ -147,6 +147,8 @@
 
 #footer-logo { 
     @media (min-width: $screen-sm-min){
+        padding: 10px 10px 1000px 10px;
+        margin-bottom: -1000px;
         border-right: 1px solid #d9d6d6;
     }
     img{
@@ -155,7 +157,6 @@
         display: block;
         @media (min-width: $screen-md-min){
             width: 100px;
-            padding-top: 15px;
         }
     }
   background-image: none;
