@@ -26,7 +26,7 @@
 							));
 						?>
 					</div>
-					<div id="footer-logo" class="col-xs-15 col-sm-5 col-sm-push-5 col-md-3">
+					<div id="footer-logo" class="col-xs-15 col-sm-5 col-sm-push-5 col-md-push-0 col-md-3">
 						<a href="http://tbhccmsdev.smca.ucf.edu">
 							<img id="tbhcFooterLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/WebsiteFooterShort.png" alt="The Burnett Honors College">
 							</img>
@@ -41,7 +41,7 @@
 							));
 						?>
 					</div>				
-					<div class="footerCol col-xs-half col-sm-5 col-sm-pull-5 col-md-3">
+					<div class="footerCol col-xs-half col-sm-5 col-sm-pull-5 col-md-pull-0 col-md-3">
 						<?=wp_nav_menu(array(
 							'theme_location' => 'footer-inner-right',
 							//'menu' => 7,
