@@ -441,6 +441,7 @@ function frontpage_spotlights() {
 		<?
 	}
 	
+	print_r($spotlights);
 	//foreach($spotlights as $sp){
 	//	output_spotlight($sp);
 	//}
@@ -542,6 +543,7 @@ function frontpage_opportunities() {
 	<?
 	}
 	
+	print_r($opportunities);
 	//foreach($opportunities as $op){
 	//		output_opportunity($op);
 	//}
