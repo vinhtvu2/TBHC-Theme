@@ -94,7 +94,7 @@
 							foreach($crumbs as $crumb){
 								$url .= "/".$crumb;
 							?>
-							<li><a href="<?php echo $url; ?>"><?php echo $crumb; ?></a></li>
+							<li><a href="<?php echo $url; ?>"><?=$crumb?><?php echo $crumb; ?></a></li>
 						<?php } ?>
 					</ul>
 				</div>			
