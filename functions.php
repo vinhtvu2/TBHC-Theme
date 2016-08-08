@@ -441,9 +441,9 @@ function frontpage_spotlights() {
 		<?
 	}
 	
-	//foreach($spotlights as $sp){
-	//	output_spotlight($sp);
-	//}
+	foreach($spotlights as $sp){
+		output_spotlight($sp);
+	}
 
 	// If neither positions are set, or the two positions conflict with each
 	// other, just display them in the order they were retrieved:
@@ -542,9 +542,9 @@ function frontpage_opportunities() {
 	<?
 	}
 	
-	foreach($opportunities as $op){
-			output_opportunity($op);
-	}
+	//foreach($opportunities as $op){
+	//		output_opportunity($op);
+	//}
 	
 	// If neither positions are set, or the two positions conflict with each
 	// other, just display them in the order they were retrieved:
