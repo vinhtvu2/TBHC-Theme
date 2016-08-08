@@ -1,6 +1,6 @@
 #footer {
   border-top: 0;
-  margin-top: -25px;
+  padding-top: 20px;
   position: relative;
   z-index:10;
   line-height: 15px;
@@ -14,6 +14,10 @@
         color: #FFF;
       }
   }
+  @media(min-width: $screen-md-min){
+      padding-top: 0 px;
+      margin-top: -25px;
+  }
   #footer-navwrap{
     margin: 0 auto;
     width:100%;
@@ -25,23 +29,21 @@
 }
 
 .footerCol{
-    padding: 35px 10px 0 10px;
+    padding: 0 10px 0 10px;
     vertical-align: top;
     width: 50% !important;
     border-right: 1px solid #d9d6d6;
     margin-bottom: -1000px;
     padding-bottom: 1000px;
-    &:nth-of-type(1), &:nth-of-type(2){
+    text-align: right;
+    @media (min-width: $screen-md-min){
+        padding-top: 35px;
+    }
+    &:nth-of-type(4), &:nth-of-type(5){
         text-align: right;
     }
     &:nth-of-type(3){
         text-align: right;
-        @media (min-width: $screen-md-min) {
-            text-align: left;
-        }
-    }
-    &:nth-of-type(5){
-        text-align: left;
     }
     &:last-of-type{
         border-right: none;
@@ -173,8 +175,11 @@
 #footer-logo {
     img{
         margin: 0 auto;
-        width: 100px;
+        width: 75px;
         display: block;
+        @media (min-width: $screen-md-min){
+            width: 100px;
+        }
     }
   //padding-top: 10px;
   background-image: none;
