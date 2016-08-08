@@ -85,19 +85,13 @@
 				</div>
 			</div>
 			<div id="subfooter">
-				<div class="breadcrumb">
-					<ul>
-						<li><a href="<?php echo $url ?>">Home</a></li>
-						<?php 
-						    $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
-							$url = "http://tbhccmsdev.smca.ucf.edu";
-							foreach($crumbs as $crumb){
-								$url .= "/".$crumb;
-							?>
-							<li><a href="<?php echo $url; ?>"><?=$crumb?><?php echo $crumb; ?></a></li>
-						<?php } ?>
-					</ul>
-				</div>			
+				<?=
+					$crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+					print_r($crumbs);
+					foreach($crumbs as $crumb){
+						echo ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
+					}
+				?>
 			</div>
 		</div><!-- .container -->
 	</body>
