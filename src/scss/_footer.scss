@@ -5,7 +5,7 @@
   z-index:10;
   line-height: 15px;
   background-color: #3d3c3c;
-  color: #6d6d6d;
+  color: #d9d6d6;
   overflow: hidden;
   clear: both;
   a{
@@ -19,7 +19,7 @@
     width:100%;
     padding: 0 10px;
     @media (min-width: $screen-sm-min) {
-        max-width: 1700px;
+        max-width: $container-lg;
     }
   }
 }
@@ -106,9 +106,9 @@
   background-color: #3d3c3c;
   height: $grid-gutter-width;
   width:100%;
-  color: #6d6d6d;
+  color: #d9d6d6;
   a {
-    color:  #a6a6a6;
+    color:  #d9d6d6;
   }
 }
 

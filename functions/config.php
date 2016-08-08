@@ -179,22 +179,22 @@ Config::$custom_post_types = array(
 	'Person',
 	'Slider',
 	'Spotlight',
+	'Opportunity',
 	'Subheader',
 	'AZIndexLink',
 	'Announcement',
 	'Post',
-	'Degree',
-	'Opportunity'
+	//'Degree',
 );
 
 Config::$custom_taxonomies = array(
 	'OrganizationalGroups',
 	'Keywords',
 	'AudienceRoles',
-	'ProgramTypes',
-	'Colleges',
-	'Departments',
-	'DegreeKeywords'
+	//'ProgramTypes',
+	//'Colleges',
+	//'Departments',
+	//'DegreeKeywords'
 );
 
 
@@ -282,7 +282,7 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['cb_domain'],
 		)),
 	),
-	'Degrees' => array(
+	/*'Degrees' => array(
 		new TextField(array(
 			'name'        => 'Undergraduate catalog URL',
 			'id'          => THEME_OPTIONS_NAME.'[undergrad_catalog_url]',
@@ -362,7 +362,7 @@ Config::$theme_settings = array(
 			'description' => 'The number of degrees to display per page on the degee search page',
 			'value'       => $theme_options['degrees_per_page'],
 		)),
-	),
+	),*/
 	'Events' => array(
 		new SelectField(array(
 			'name'        => 'Events Max Items',
