@@ -41,7 +41,7 @@
 							));
 						?>
 					</div>				
-					<div class="footerCol col-xs-5 col-md-3 col-md-push-3">
+					<div class="footerCol col-xs-half col-md-3 col-md-push-3">
 						<?=wp_nav_menu(array(
 							'theme_location' => 'footer-inner-right',
 							//'menu' => 7,
@@ -53,7 +53,7 @@
 							));
 						?>
 					</div>	
-					<div class="footerCol col-xs-5 col-md-3">
+					<div class="footerCol col-xs-half col-md-3">
 						<div id="contactInfo" role="contentinfo" class="vcard">
 							<a href="<?=site_url()?>" class="print-noexpand fn org url">
 								<span class="organization-name">The Burnett Honors College</span>
