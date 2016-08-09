@@ -23,6 +23,17 @@ body {
         margin: 0;
         float: left;
         width: 25%;
+
+        &:hover a {
+            .overlay {
+                background-color: rgba(0, 0, 0, 0.50);
+            }
+
+            .profile-short {
+                visibility: visible;
+            }
+        }
+
         a {
             .group {
                 position: absolute;
@@ -55,8 +66,8 @@ body {
                 width: 100%;
             }
 
-            .profile-short{
-                color:#fff;
+            .profile-short {
+                color: #fff;
                 position: absolute;
                 top: 40%;
                 text-align: center;
@@ -65,19 +76,11 @@ body {
                 visibility: hidden;
             }
 
-            .overlay{
+            .overlay {
                 width: 100%;
                 height: 100%;
                 position: absolute;
                 top: 0;
-            }
-        }
-            &:hover a {
-            .overlay{
-            background-color: rgba(0, 0, 0, 0.50);
-            }
-            .profile-short{
-                visibility:visible;
             }
         }
     }
