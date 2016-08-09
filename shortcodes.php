@@ -280,11 +280,13 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-list"><?
+	?><div class="person-profile-grid"><?
 		$count = 0;
 		foreach($people as $person) {
 			
 			print_r($person);
+			$taxonomy_names = get_object_taxonomies( $post );
+			print_r( $taxonomy_names );
 			
 			$image_url = get_featured_image_url($person->ID);
 			
