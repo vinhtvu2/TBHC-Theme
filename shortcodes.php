@@ -285,8 +285,8 @@ function sc_person_profile_grid($atts) {
 		foreach($people as $person) {
 			
 			print_r($person);
-			$taxonomy_names = get_object_taxonomies($person);
-			print_r( $taxonomy_names );
+			$term_list = wp_get_post_terms($person->ID, 'org_groups', array("fields" => "name"));
+			print_r($term_list);
 			
 			$image_url = get_featured_image_url($person->ID);
 			
