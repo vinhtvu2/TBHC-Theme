@@ -289,9 +289,9 @@ function sc_person_profile_grid($atts) {
 			$terms = array_filter($term_list, function($obj) {
 				return $obj->parent == 11;
 			});
-			$terms = array_map(function($obj){
+			$terms = implode(", ", array_map(function($obj){
 				return $obj->name;
-			}, $terms);
+			}, $terms));
 			
 			$image_url = get_featured_image_url($person->ID);
 			
