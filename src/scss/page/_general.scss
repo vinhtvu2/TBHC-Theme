@@ -81,6 +81,12 @@ body {
 
             .profile-short {
                 visibility: visible;
+                z-index: 1000;
+            }
+            img{
+                -ms-transform: scale(1.2, 1.2); /* IE 9 */
+                -webkit-transform: scale(1.2, 1.2); /* Safari */
+                transform: scale(1.2, 1.2);
             }
         }
     }
