@@ -280,7 +280,7 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-grid"><?
+	?><div class="person-profile-grid"><div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
 			
@@ -296,12 +296,12 @@ function sc_person_profile_grid($atts) {
 			$image_url = get_featured_image_url($person->ID);
 			
 			$link = ($person->post_content != '') ? True : False;
-			if( ($count % $row_size) == 0) {
+			/*if( ($count % $row_size) == 0) {
 				if($count > 0) {
 				?></div><?
 			}
 			?><div class="row"><?
-			}
+			}*/
 			
 		?>
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
@@ -325,7 +325,8 @@ function sc_person_profile_grid($atts) {
 		<?
 			$count++;
 		}
-	?>	</div>
+	?>		</div>
+		</div>
 	</div>
 	<?
 	return ob_get_clean();
