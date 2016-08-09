@@ -284,13 +284,11 @@ function sc_person_profile_grid($atts) {
 		$count = 0;
 		foreach($people as $person) {
 			
-			print_r($person);
+			$staffOGID = get_term_by('name', 'staff', 'org_groups')->term_id;
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
-			print_r($term_list);
-			print_r(get_term_by('name', 'staff', 'org_groups')->term_id);
-			//print_r(array_filter($term_list, function($v, $k) {
-				//return $k == 'parent' && $v == 11;
-			//}
+			print_r(array_filter($term_list, function($v, $k) {
+				return $k == 'parent' && $v == $staffOGID;
+			}
 			
 			$image_url = get_featured_image_url($person->ID);
 			
