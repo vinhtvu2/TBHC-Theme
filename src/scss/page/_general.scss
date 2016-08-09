@@ -74,12 +74,14 @@ body {
             }
         }
 
-        &:hover a .overlay {
-            background-color: rgba(0, 0, 0, 0.50);
-        }
+        &:hover a {
+            .overlay {
+                background-color: rgba(0, 0, 0, 0.50);
+            }
 
-        &:hover a .profile-short {
-            visibility: visible;
+            .profile-short {
+                visibility: visible;
+            }
         }
     }
 }
