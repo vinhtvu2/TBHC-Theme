@@ -23,9 +23,8 @@ body {
         margin: 0;
         float: left;
         width: 25%;
-
+        overflow:hidden;
         a {
-            overflow:hidden;
             .group {
                 position: absolute;
                 bottom: 20px;
