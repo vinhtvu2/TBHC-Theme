@@ -24,16 +24,6 @@ body {
         float: left;
         width: 25%;
 
-        &:hover a {
-            .overlay {
-                background-color: rgba(0, 0, 0, 0.50);
-            }
-
-            .profile-short {
-                visibility: visible;
-            }
-        }
-
         a {
             .group {
                 position: absolute;
@@ -81,6 +71,16 @@ body {
                 height: 100%;
                 position: absolute;
                 top: 0;
+            }
+        }
+
+        &:hover a {
+            .overlay {
+                background-color: rgba(0, 0, 0, 0.50);
+            }
+
+            .profile-short {
+                visibility: visible;
             }
         }
     }
