@@ -288,7 +288,7 @@ function sc_person_profile_grid($atts) {
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 			print_r($term_list);
 			print_r(array_filter($term_list, function($v, $k) {
-				return $k == 'parent' && $v == get_term_by('name', 'Staff', 'org_groups');
+				return $k == 'parent' && $v == get_term_by('name', 'Staff', 'org_groups')->ID;
 			}
 			
 			$image_url = get_featured_image_url($person->ID);
