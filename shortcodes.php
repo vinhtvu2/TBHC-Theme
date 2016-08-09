@@ -286,9 +286,10 @@ function sc_person_profile_grid($atts) {
 			
 			$staffOGID = get_term_by('name', 'staff', 'org_groups')->term_id;
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
-			print_r(array_filter($term_list, function($obj) {
+			$terms = array_filter($term_list, function($obj) {
 				return $obj->parent == 11;
-			}));
+			});
+			$terms = implode(",", array_column($terms, 'name'));
 			
 			$image_url = get_featured_image_url($person->ID);
 			
@@ -314,7 +315,7 @@ function sc_person_profile_grid($atts) {
 					</h4>		
 				</div>
 				<span class="group">
-					
+					<?=$terms?>
 				</span>
 				<div class="overlay"></div>
 			<? if($link) {?></a><?}?>
