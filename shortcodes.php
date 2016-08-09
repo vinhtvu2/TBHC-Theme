@@ -285,7 +285,7 @@ function sc_person_profile_grid($atts) {
 		foreach($people as $person) {
 			
 			print_r($person);
-			$taxonomy_names = get_object_taxonomies( $post );
+			$taxonomy_names = get_object_taxonomies($person);
 			print_r( $taxonomy_names );
 			
 			$image_url = get_featured_image_url($person->ID);
