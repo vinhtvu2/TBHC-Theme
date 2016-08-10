@@ -33,6 +33,7 @@
     display: table;
     table-layout: fixed;
     width: 100%;
+    max-width: $container-lg;
     @media (min-width: $screen-sm-min) {
         max-width: $container-sm;
     }
