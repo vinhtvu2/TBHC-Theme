@@ -72,6 +72,12 @@ body {
                 position: absolute;
                 top: 0;
             }
+            .profile-long{
+                visibility:hidden;
+            }
+            .profile-long:target{
+                visibility:visible;
+            }
         }
 
         &:hover a {
@@ -89,6 +95,7 @@ body {
                 transform: scale(1.2, 1.2);
             }
         }
+
     }
 }
 
