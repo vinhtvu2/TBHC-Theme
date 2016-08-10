@@ -280,14 +280,14 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-grid"><div class="row"><?
+	?><div class="<?=$org_group?>person-profile-grid"><div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
 			
-			$staffOGID = get_term_by('name', 'staff', 'org_groups')->term_id;
+			$OGID = get_term_by('name', $org_groups, 'org_groups')->term_id;
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 			$terms = array_filter($term_list, function($obj) {
-				return $obj->parent == 11;
+				return $obj->parent == OGID;
 			});
 			$terms = implode(", ", array_map(function($obj){
 				return $obj->name;
@@ -305,7 +305,7 @@ function sc_person_profile_grid($atts) {
 			
 		?>
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
-			<? if($link) {?><a href="#<?=$person->ID?>"><? } ?>
+			<? if($link) {?><a href="#person-grid-<?=$person->ID?>"><? } ?>
 				<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 				<div class="profile-short">
 					<h4 class="title">
@@ -320,7 +320,7 @@ function sc_person_profile_grid($atts) {
 					<?=$terms?>
 				</span>
 				<div class="overlay"></div>
-				<div id="<?=$person->ID?>" class="profile-long">
+				<div id="person-grid-<?=$person->ID?>" class="profile-long">
 					<?=get_permalink($person->ID)?>
 				</div>
 			<? if($link) {?></a><?}?>

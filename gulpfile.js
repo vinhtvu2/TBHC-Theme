@@ -148,7 +148,8 @@ gulp.task('js-main', function() {
     config.componentsPath + '/jquery.cookie/jquery.cookie.js',
     config.componentsPath + '/jquery.cycle.all/index.js',
     config.jsPath + '/webcom-base.js',
-    config.jsPath + '/script.js'
+    config.jsPath + '/script.js',
+	config.componentsPath + '/respond/index.js'
   ];
 
   gulp.src(minified)
