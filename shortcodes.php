@@ -287,13 +287,13 @@ function sc_person_profile_grid($atts) {
 			$OGID = get_term_by('name', $org_groups, 'org_groups')->term_id;
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 			$terms = array_filter($term_list, function($obj) {
-				return $obj->parent == OGID;
+				return $obj->parent == OGID->term_id;
 			});
 			$terms = implode(", ", array_map(function($obj){
 				return $obj->name;
 			}, $terms));
 			
-			$image_url = get_featured_image_url($person->ID);
+			$image_url = get_featured_image_url($person->ID, 'person-grid-image');
 			
 			$link = ($person->post_content != '') ? True : False;
 			/*if( ($count % $row_size) == 0) {
