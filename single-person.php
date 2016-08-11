@@ -27,7 +27,7 @@
 				<span class="contact">
 					<? if(count($phones)) { ?>
 					<? foreach($phones as $phone) { ?>
-						<a href="tel:<?=$phone?>"><?=$phone?></a><?=if($phones[$phone] != count($phones)){?>, <?}?>
+						<a href="tel:<?=$phone?>"><?=$phone?></a><?if($phones[$phone] != count($phones)){?>, <?}?>
 					<? } ?>
 					<? } ?>
 					<? if($email != '') { ?>
