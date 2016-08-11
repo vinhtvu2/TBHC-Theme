@@ -15,7 +15,7 @@
 		<div class="col-md-3 col-sm-3 details">
 			<?
 				$title = get_post_meta($post->ID, 'person_jobtitle', True);
-				$image_url = get_featured_image_url($post->ID);
+				$image_url = has_post_thumbnail($post) && ($thumbnail_id = get_post_thumbnail_id($post)) && ($image = wp_get_attachment_image_src($thumbnail_id, 'person-grid-image')) ? $image[0] : null;
 				$email = get_post_meta($post->ID, 'person_email', True);
 				$phones = Person::get_phones($post);
 			?>
@@ -31,7 +31,7 @@
 			<? if(count($phones)) { ?>
 				<ul class="phones list-unstyled">
 					<? foreach($phones as $phone) { ?>
-						<li><?=$phone?></li>
+						<li><a href="tel:<?=$phone?>"><?=$phone?></a></li>
 					<? } ?>
 				</ul>
 			<? } ?>
