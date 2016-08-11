@@ -1,10 +1,15 @@
 #centerpiece_slider {
-  height: 338px;
+  height: 400px;
   margin: 0 auto 30px;
   overflow: hidden;
   position: relative;
-  width: 940px;
+  width: 1140px;
   z-index: 1;
+
+  @media (max-width: $screen-md-max) {
+    height: 338px;
+    width: 940px;
+  }
 
   @media (max-width: $screen-sm-max) {
     height: 260px;
@@ -23,10 +28,14 @@
   }
 
   ul {
-    height: 338px;
+    height: 400px;
     margin-bottom: 0;
     margin-left: 0;
     overflow: hidden;
+
+    @media (max-width: $screen-md-max) {
+      height: 338px;
+    }
 
     @media (max-width: $screen-sm-max) {
       height: 260px;
@@ -83,8 +92,13 @@
   object,
   iframe,
   embed {
-    height: 338px;
-    width: 940px;
+    height: 400px;
+    width: 1140px;
+
+    @media (max-width: $screen-md-max) {
+      height: 338px;
+      width: 940px;
+    }
 
     @media (max-width: $screen-sm-max) {
       height: 260px;
@@ -107,8 +121,8 @@
   iframe,
   embed {
     @include body-prefix('.ie8') {
-      height: 338px;
-      width: 940px;
+      height: 400px;
+      width: 1140px;
       zoom: 1;
     }
   }
