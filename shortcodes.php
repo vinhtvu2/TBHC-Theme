@@ -293,7 +293,7 @@ function sc_person_profile_grid($atts) {
 				return $obj->name;
 			}, $terms));
 			
-			$image = get_the_post_thumbnail($person, 'person-grid-image');
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'profile-grid-image');
 			$image_url = get_featured_image_url($person->ID);
 			$link = ($person->post_content != '') ? True : False;
 			/*if( ($count % $row_size) == 0) {
