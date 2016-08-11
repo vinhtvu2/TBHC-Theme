@@ -16,7 +16,7 @@ function __init__(){
 	add_image_size('centerpiece-image', 940, 338, true);
 	add_image_size('centerpiece-image-wide',1140, 400, true); 	// Crops!
 	add_image_size('home-thumb', 110, 110);
-	add_image_size('profile-grid-image', 281, 281);
+	add_image_size('profile-grid-image', 281, 281, true);
 	add_image_size('opp-thumb', 66, 66, true);
 	add_image_size('subpage-subimg', 160);
 	add_image_size('subpage-studentimg', 115, 280);
