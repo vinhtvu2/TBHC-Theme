@@ -15,7 +15,7 @@
 		<div class="col-md-3 col-sm-3 details">
 			<?
 				$title = get_post_meta($post->ID, 'person_jobtitle', True);
-				$image_url = get_featured_image_url($post->ID);
+				$image_url = get_featured_image_url($post->ID, 'person-grid-image');
 				$email = get_post_meta($post->ID, 'person_email', True);
 				$phones = Person::get_phones($post);
 			?>
