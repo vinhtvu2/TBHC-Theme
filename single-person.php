@@ -19,7 +19,7 @@
 				$email = get_post_meta($post->ID, 'person_email', True);
 				$phones = Person::get_phones($post);
 			?>
-			<img src="<?=$image ? $image : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
+			<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 		</div>
 		<div class="col-md-12 col-sm-12">
 			<div class="contact">
