@@ -22,21 +22,20 @@
 			<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 		</div>
 		<div class="col-md-12 col-sm-12">
-			<div class="contact">
-				<? if(count($phones)) { ?>
-					<ul class="phones list-unstyled">
-						<? foreach($phones as $phone) { ?>
-							<li><a href="tel:<?=$phone?>"><?=$phone?></a></li>
-						<? } ?>
-					</ul>
-				<? } ?>
-				<? if($email != '') { ?>
-					<a class="email" href="mailto:<?=$email?>"><?=$email?></a>
-				<? } ?>
-				<hr />
-			</div>
 			<article role="main">
 				<h2><?=$post->post_title?><?=($title == '') ?: ' - '.$title ?></h2>
+				<div class="contact">
+					<? if(count($phones)) { ?>
+						<ul class="list-unstyled">
+							<? foreach($phones as $phone) { ?>
+								<li><a href="tel:<?=$phone?>" class="phones"><?=$phone?></a></li>
+							<? } ?>
+							<? if($email != '') { ?>
+								<li><a class="email" href="mailto:<?=$email?>"><?=$email?></a></li>
+							<? } ?>
+						</ul>
+					<? } ?>
+				</div>
 				<?=$content = str_replace(']]>', ']]>', apply_filters('the_content', $post->post_content))?>
 			</article>
 		</div>
