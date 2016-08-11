@@ -316,9 +316,11 @@ function sc_person_profile_grid($atts) {
 						</small>
 					</h4>		
 				</div>
-				<span class="group">
-					<?=$terms?>
-				</span>
+				<div class="group">
+					<span class="group-inner">
+						<?=$terms?>
+					</span>
+				</div>
 				<div class="overlay"></div>
 			<? if($link) {?></a><?}?>
 		</div>
