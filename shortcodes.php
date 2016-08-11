@@ -293,7 +293,7 @@ function sc_person_profile_grid($atts) {
 				return $obj->name;
 			}, $terms));
 			
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'profile-grid-image');
+			$image = the_post_thumbnail($person, 'profile-grid-image');
 			$image_url = get_featured_image_url($person->ID);
 			$link = ($person->post_content != '') ? True : False;
 			/*if( ($count % $row_size) == 0) {
@@ -307,7 +307,7 @@ function sc_person_profile_grid($atts) {
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
 			<?=$image[0]?>
 			<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><? } ?>
-				<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
+				<img src="<?=$image ? $image : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 				<div class="profile-short">
 					<h4 class="title">
 							<?=Person::get_name($person);?>
