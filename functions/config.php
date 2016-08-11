@@ -13,7 +13,8 @@ function __init__(){
 	add_theme_support( 'title-tag' );
 	add_image_size('homepage', 620);
 	add_image_size('homepage-secondary', 540);
-	add_image_size('centerpiece-image', 940, 338, true); 	// Crops!
+	add_image_size('centerpiece-image', 940, 338, true);
+	add_image_size('centerpiece-image-wide',1140, 400, true); 	// Crops!
 	add_image_size('home-thumb', 110, 110);
 	add_image_size('opp-thumb', 66, 66);
 	add_image_size('subpage-subimg', 160);

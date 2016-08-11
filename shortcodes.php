@@ -382,8 +382,8 @@ add_shortcode('person-profile-grid', 'sc_person_profile_grid');
 				if ( ($s !== '') && ($s !== NULL) ) {
 					$s = (int)$s;
 
-					$slide_image_url = wp_get_attachment_image_src($slide_image[$s], 'centerpiece-image');
-					$slide_video_thumb_url = wp_get_attachment_image_src($slide_video_thumb[$s], 'centerpiece-image');
+					$slide_image_url = wp_get_attachment_image_src($slide_image[$s], 'centerpiece-image-wide');
+					$slide_video_thumb_url = wp_get_attachment_image_src($slide_video_thumb[$s], 'centerpiece-image-wide');
 
 					$slide_single_duration = (!empty($slide_duration[$s]) ? $slide_duration[$s] : '6');
 
