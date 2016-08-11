@@ -19,7 +19,9 @@ body {
 }
 
 .person_profile .contact{
-     
+    @media (max-width: $screen-xs-max) {
+        padding-top: 15px;
+    }
 }
 
 .person-profile-grid .row {
