@@ -31,9 +31,9 @@
 					</ul>
 				<? } ?>
 				<? if($email != '') { ?>
-					<hr />
 					<a class="email" href="mailto:<?=$email?>"><?=$email?></a>
 				<? } ?>
+				<hr />
 			</div>
 			<article role="main">
 				<h2><?=$post->post_title?><?=($title == '') ?: ' - '.$title ?></h2>
