@@ -293,8 +293,9 @@ function sc_person_profile_grid($atts) {
 				return $obj->name;
 			}, $terms));
 			
-			$image_url = get_featured_image_url($person->ID, 'person-grid-image');
-			print_r($image_url);
+			$image = get_the_post_thumbnail($post, 'person-grid-image');
+			$image_url = get_featured_image_url($post->ID);
+			print_r($image);
 			$link = ($person->post_content != '') ? True : False;
 			/*if( ($count % $row_size) == 0) {
 				if($count > 0) {
