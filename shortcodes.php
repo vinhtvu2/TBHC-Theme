@@ -294,7 +294,7 @@ function sc_person_profile_grid($atts) {
 			}, $terms));
 			
 			$image_url = get_featured_image_url($person->ID, 'person-grid-image');
-			
+			print_r($image_url);
 			$link = ($person->post_content != '') ? True : False;
 			/*if( ($count % $row_size) == 0) {
 				if($count > 0) {
