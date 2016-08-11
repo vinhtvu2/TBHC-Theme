@@ -305,7 +305,7 @@ function sc_person_profile_grid($atts) {
 			
 		?>
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
-			<?=$image?>
+			<?=print_r($image);?>
 			<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><? } ?>
 				<img src="<?=$image ? $image : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 				<div class="profile-short">
