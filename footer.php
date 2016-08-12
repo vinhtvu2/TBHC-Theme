@@ -91,7 +91,6 @@
 				?>
 			</div>
 		</div><!-- .container -->
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>		
 	</body>
 	<?="\n".footer_()."\n"?>
 </html>
