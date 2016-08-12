@@ -18,6 +18,7 @@
 				$image_url = get_featured_image_url($post->ID, 'person-grid-image');
 				$email = get_post_meta($post->ID, 'person_email', True);
 				$phones = Person::get_phones($post);
+				$office = get_post_meta($post->ID, 'person_office', True);
 			?>
 			<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 		</div>
@@ -32,6 +33,9 @@
 							<? } ?>
 							<? if($email != '') { ?>
 								<li><a class="email" href="mailto:<?=$email?>"><?=$email?></a></li>
+							<? } ?>
+							<? if($office != '') { ?>
+								<li><span class="office"><?=$office?></span></li>
 							<? } ?>
 						</ul>
 					<? } ?>

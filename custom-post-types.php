@@ -711,6 +711,12 @@ class Person extends CustomPostType
 					'type'    => 'text',
 				),
 				array(
+					'name'	=> __('Office'),
+					'desc'	=> __(''),
+					'id'	=> $this->options('name').'_office';
+					'type'	=> 'text';
+				),
+				array(
 					'name'    => __('Order By Name'),
 					'desc'    => __('Name used for sorting. Leaving this field blank may lead to an unexpected sort order.'),
 					'id'      => $this->options('name').'_orderby_name',

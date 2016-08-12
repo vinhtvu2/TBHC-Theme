@@ -27,6 +27,7 @@ body {
 .person-profile-grid .row {
     display: table;
     width:100%;
+    margin: 0 auto !important;
     .person-profile-wrap {
         display: block;
         padding: 0;
@@ -86,6 +87,7 @@ body {
                 .title{
                     text-transform: uppercase;
                     font-size: 18px;
+                    line-height: 1;
                 }
                 small{
                     color: #fff;
