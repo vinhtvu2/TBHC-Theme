@@ -713,8 +713,8 @@ class Person extends CustomPostType
 				array(
 					'name'	=> __('Office'),
 					'desc'	=> __(''),
-					'id'	=> $this->options('name').'_office';
-					'type'	=> 'text';
+					'id'	=> $this->options('name').'_office',
+					'type'	=> 'text',
 				),
 				array(
 					'name'    => __('Order By Name'),
