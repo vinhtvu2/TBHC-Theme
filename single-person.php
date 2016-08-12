@@ -29,13 +29,13 @@
 					<? if(count($phones)) { ?>
 						<ul class="list-unstyled">
 							<? foreach($phones as $phone) { ?>
-								<li><a href="tel:<?=$phone?>" class="phones"><?=$phone?></a></li>
+								<li><i class="glyphicon glyphicon-earphone"></i><a href="tel:<?=$phone?>" class="phones"><?=$phone?></a></li>
 							<? } ?>
 							<? if($email != '') { ?>
-								<li><a class="email" href="mailto:<?=$email?>"><?=$email?></a></li>
+								<li><i class="glyphicon glyphicon-envelope"></i><a class="email" href="mailto:<?=$email?>"><?=$email?></a></li>
 							<? } ?>
 							<? if($office != '') { ?>
-								<li><span class="office"><?=$office?></span></li>
+								<li><i class="glyphicon glyphicon-map-marker"></i><span class="office"><?=$office?></span></li>
 							<? } ?>
 						</ul>
 					<? } ?>
