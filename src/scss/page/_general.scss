@@ -55,7 +55,7 @@ body {
                 line-height: 90px;
                 font-weight: 700;
                 text-transform: uppercase;
-                padding-right: 20px;
+                padding-right: 5px;
                 color: #fff;
                 -webkit-box-sizing: border-box;
                 -moz-box-sizing: border-box;
@@ -70,7 +70,7 @@ body {
                     line-height:normal;
                     vertical-align:bottom;
                     display:inline-block;
-                    padding-bottom: 10px;
+                    //padding-bottom: 10px;
                     opacity:1;
                     transition: opacity 0.5s ease;
                 }
@@ -84,6 +84,7 @@ body {
             .profile-short {
                 transition: opacity 0.5s ease;
                 color: #fff;
+                padding: 5px;
                 position: absolute;
                 top: 40%;
                 text-align: center;
