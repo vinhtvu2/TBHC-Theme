@@ -915,7 +915,7 @@ class Spotlight extends CustomPostType {
 						$link = $ext_link; 
 					}					
 				?>
-				<li><a href="<?=$link?>"><?=$spotlight->post_title?></a><span class="spotlight_start_date"><?=$start_date?></span><span class="spotlight_end_date"><?=$end_date?></span></li>
+				<li><a href="<?=$link?>"><?=$spotlight->post_title?></a><span class="spotlight_start_date"><?=get_field('spotlight_start_date',$spotlight->ID)?></span><span class="spotlight_end_date"><?=$end_date?></span></li>
 			<?php
 			}
 			?>
