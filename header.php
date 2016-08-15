@@ -2,7 +2,7 @@
 <html lang="en-US">
 	<head>
 		<?="\n".header_()."\n"?>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<?php echo google_tag_manager_dl(); ?>
 
