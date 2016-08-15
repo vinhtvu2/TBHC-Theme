@@ -909,9 +909,9 @@ class Spotlight extends CustomPostType {
 				<?php
 					$link = get_permalink($opportunity->ID);
 					$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
-					$start_date = get_post_meta($spotlight->ID, 'spotlight_start_date', TRUE);
+					//$start_date = get_post_meta($spotlight->ID, 'spotlight_start_date', TRUE);
 					//$start_date = isset($start_date) ? new Date($start_date) : NULL; 
-					$end_date = get_post_meta($spotlight->ID, 'spotlight_end_date', TRUE);
+					//$end_date = get_post_meta($spotlight->ID, 'spotlight_end_date', TRUE);
 					//$end_date = isset($end_date) ? new Date($end_date) : NULL; 
 					if($ext_link){
 						$link = $ext_link; 
@@ -921,17 +921,7 @@ class Spotlight extends CustomPostType {
 					<a href="<?=$link?>">
 						<?=$spotlight->post_title?>
 					</a>
-					<? if(isset($start_date)){ ?>
-						<span class="spotlight_start_date">
-							<?=$start_date->format('m/d/Y')?>
-						</span>
-						<? if(isset($end_date)){ ?>
-						&nbsp;&nbsp;-&nbsp;&nbsp;
-						<span class="spotlight_end_date">
-							<?=$end_date->format('m/d/Y')?>
-						</span>
-						<? } ?>
-					<? } ?>
+					
 				</li>
 			<?php
 			}
