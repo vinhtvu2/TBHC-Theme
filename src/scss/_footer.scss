@@ -73,7 +73,12 @@
 }
 
 #contactInfo{
-    line-height: 25px;
+    //line-height: 25px;
+    .organization-name, .adr>span, .adr>div{
+        display: block;
+        padding: 5px 0;
+        line-height: 15px;
+    }
 }
 
 #subfooter {
