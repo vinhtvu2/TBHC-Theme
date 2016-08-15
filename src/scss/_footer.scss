@@ -66,9 +66,10 @@
 }
 
 .col-xs-half{
-    @media (max-width: $screen-sm-min){
-        width: 50%;
-        float: left;
+    width: 50%;
+    float: left;
+    @media (min-width: $screen-sm-min){
+        width: auto;
     }   
 }
 
