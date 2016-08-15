@@ -921,7 +921,7 @@ class Spotlight extends CustomPostType {
 					<a href="<?=$link?>">
 						<?=$spotlight->post_title?>
 					</a>
-					<? if(isset($start_date)){ ?>
+					<? if($start_date){ ?>
 						<span class="spotlight_start_date">
 							<?=$start_date?>
 						</span>
