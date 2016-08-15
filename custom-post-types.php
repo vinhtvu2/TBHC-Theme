@@ -909,11 +909,13 @@ class Spotlight extends CustomPostType {
 				<?php
 					$link = get_permalink($opportunity->ID);
 					$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
+					$start_date = get_post_meta($spotlight->ID, 'spotlight_start_date', TRUE);
+					$end_date = get_post_meta($spotlight->ID, 'spotlight_end_date', TRUE);
 					if($ext_link){
 						$link = $ext_link; 
 					}					
 				?>
-				<li><a href="<?=$link?>"><?=$spotlight->post_title?></a></li>
+				<li><a href="<?=$link?>"><?=$spotlight->post_title?></a><span class="spotlight_start_date"><?=$start_date?></span><span class="spotlight_end_date"><?=$end_date?></span></li>
 			<?php
 			}
 			?>
