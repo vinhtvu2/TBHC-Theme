@@ -930,7 +930,7 @@ class Spotlight extends CustomPostType {
 							<?=$start_date->format('m/d/Y')?>
 						</span>
 						<? if($end_date){ ?>
-						&nbsp;&nbsp;-&nbsp;&nbsp;
+						&nbsp;-&nbsp;
 						<span class="spotlight_end_date">
 							<?=$end_date->format('m/d/Y')?>
 						</span>

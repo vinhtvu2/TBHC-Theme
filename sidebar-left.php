@@ -15,12 +15,12 @@
 
 	if ($more_info_nav_val) {
 		$moreinfo_title = $more_info_nav_val_title !== '' ? $more_info_nav_val_title : 'More Information';
-		print '<h3 id="sidebar_l_moreinfo" class="sidebar_title">'.$moreinfo_title.':</h3>';
+		//print '<h3 id="sidebar_l_moreinfo" class="sidebar_title">'.$moreinfo_title.':</h3>';
 
 		$args = array(
 			'menu' => $more_info_nav_val,
 			'container' => 'false',
-			'menu_class' => 'sidebar_nav list-unstyled',
+			'menu_class' => 'sidebar_nav list-unstyled furtherInfo',
 			'before' => '<strong>',
 			'after' => '</strong>'
 		);

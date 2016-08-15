@@ -219,8 +219,17 @@ body {
     }
 
     li {
-        font-size: 12px;
+        //font-size: 12px;
+        line-height: 18px;
         padding-bottom: 8px;
+        padding-top: 8px;
+        border-bottom: 1px solid #333;
+    }
+
+    .furtherInfo{
+        border: 1px solid #333;
+        background: #f7f7f7;
+        border-bottom: none;
     }
 
     .sidebar_title {
