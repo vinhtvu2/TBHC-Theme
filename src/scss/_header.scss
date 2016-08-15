@@ -118,6 +118,10 @@
 
     li {
         margin-bottom: 0;
+        &.active a{
+            background-color: #000;
+            color: #FFF !important;
+        }
     }
 
     a {
@@ -130,7 +134,7 @@
              color: #FFF;
              text-decoration: none;
         }
-        &.active{
+        &:active{
             background-color: #000;
             color: #FFF !important;
         }
