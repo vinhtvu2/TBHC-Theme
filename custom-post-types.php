@@ -921,11 +921,11 @@ class Spotlight extends CustomPostType {
 					<a href="<?=$link?>">
 						<?=$spotlight->post_title?>
 					</a>
-					<? if($start_date){ ?>
+					<? if(isset($start_date)){ ?>
 						<span class="spotlight_start_date">
 							<?=$start_date->format('m/d/Y')?>
 						</span>
-						<? if($end_date){ ?>
+						<? if(isset($end_date)){ ?>
 						&nbsp;&nbsp;-&nbsp;&nbsp;
 						<span class="spotlight_end_date">
 							<?=$end_date->format('m/d/Y')?>
