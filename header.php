@@ -56,7 +56,7 @@
 		</script>
 		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
-		<!--[if lt IE 9]>
+		<!--[if IE]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">"</script>			
 		<![endif]-->
 		</head>
