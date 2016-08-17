@@ -3,7 +3,7 @@
 	<head>
 		<?="\n".header_()."\n"?>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<?php echo google_tag_manager_dl(); ?>
 
 		<?php if ( CB_UID ): ?>
@@ -14,10 +14,6 @@
 			var CB_DOMAIN   = '<?php echo CB_DOMAIN; ?>';
 		</script>
 		<?php endif;?>
-
-		<!--[if IE]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 
 		<?php
 		// Always load webfont css for Degree posts and the 404 template.
@@ -57,6 +53,7 @@
 		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
 		<!--[if IE]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>			
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">"</script>			
 		<![endif]-->
 		</head>
