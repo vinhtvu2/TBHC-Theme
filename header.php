@@ -51,7 +51,7 @@
 
 		</script>
 		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.0.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.3.0.min.js"></script>
 		<!--[if IE]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>			
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.1/respond.min.js">"</script>			
