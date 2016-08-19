@@ -91,6 +91,9 @@
 				?>
 			</div>
 		</div><!-- .container -->
+		<!--[if IE]>
+			<script src="https://cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>			
+		<![endif]-->
 	</body>
 	<?="\n".footer_()."\n"?>
 </html>
