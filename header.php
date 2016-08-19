@@ -54,7 +54,7 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
 		<!--[if IE]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>			
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">"</script>			
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.1/respond.min.js">"</script>			
 		<![endif]-->
 		</head>
 	<body <?php echo body_class(); ?>>
