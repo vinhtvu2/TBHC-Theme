@@ -172,6 +172,39 @@ function manage_opportunity_columns( $column, $post_id ) {
 }
 add_action('manage_opportunity_posts_custom_column', 'manage_opportunity_columns', 10, 2);
 
+/*
+ * Custom grid stuff for people (persons)
+ * */
+// Custom columns for 'people (persons)' post type
+function edit_people_columns() {
+	$columns = array(
+	'cb'          => '<input type="checkbox" />',
+	'title'       => 'Title',
+	'categories' 		  => 'Categories',	
+	'orderby' => 'Sort Name',
+	'publish_date'=> 'Date'
+	);
+	return $columns;
+}
+add_action('manage_edit-people_columns', 'edit_people_columns');
+
+// Custom columns content for 'people (persons)'
+function manage_people_columns( $column, $post_id ) {
+	global $post;
+	switch ( $column ) {
+		case 'publish_date':
+		if ($post->post_status == 'publish') {
+			print 'Published'.'<br/>'.get_post_time('Y/m/d', true, $post->ID);
+		}
+		break;
+		case 'orderby':
+		print get_post_meta($post->ID, 'person_orderby', true)
+		break;
+		default:
+		break;
+	}
+}
+add_action('manage_people_posts_custom_column', 'manage_people_columns', 10, 2);
 
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.
