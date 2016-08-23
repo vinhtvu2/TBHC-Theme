@@ -188,6 +188,11 @@ function edit_people_columns() {
 }
 add_action('manage_edit-person_columns', 'edit_people_columns');
 
+function manage_people_columns_orgGroup_terms($term){
+	$termLink = get_term_link($term);
+	return '<a href="'.$termLink.'">'.$term->name.'</a>';
+}
+
 // Custom columns content for 'people (persons)'
 function manage_people_columns( $column, $post_id ) {
 	global $post;
@@ -203,7 +208,7 @@ function manage_people_columns( $column, $post_id ) {
 		case 'org_group':
 			$theseTerms = get_the_terms($post, 'org_groups');
 			if($theseTerms && (array)$theseTerms === $theseTerms){
-				$theseTerms = array_map('get_term_link', $theseTerms);			
+				$theseTerms = array_map('manage_people_columns_orgGroup_terms', $theseTerms);			
 				print implode(', ',$theseTerms);
 			}
 		break;
