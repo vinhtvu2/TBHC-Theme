@@ -60,7 +60,7 @@
 
 		<?php echo google_tag_manager(); ?>
 		
-		<nav id="site-nav-xs" class="visible-xs-block navbar navbar-inverse">
+		<nav id="site-nav-xs" class="visible-xs-block navbar navbar-inverse" style="<?=get_theme_option('navbar_bg_color') ? 'background-color:'.get_theme_option('navbar_bg_color').' !important;' : ''?>">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-xs-collapse" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
@@ -88,7 +88,7 @@
 				<img id="tbhcLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/TbhcLogo.png" alt="The Burnett Honors College"/>
 			</a>
 		</div>
-		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">
+		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs" style="<?=get_theme_option('navbar_bg_color') ? 'background-color:'.get_theme_option('navbar_bg_color').' !important;' : ''?>">
 			<?php 
 				wp_nav_menu(array(
 					'theme_location' => 'header',
