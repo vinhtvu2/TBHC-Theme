@@ -54,6 +54,7 @@
         padding: 0;
         display: table-cell;
         text-align: center;
+        color: #262626;
         &.active strong a{
             color:white;
             background-color:  #3d3c3c;
@@ -61,7 +62,6 @@
     }
 
     a {
-        color: #262626;
         font-size: 17px;
         font-weight: 400;
         padding-bottom: 15px;
