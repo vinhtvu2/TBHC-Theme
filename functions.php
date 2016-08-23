@@ -180,7 +180,7 @@ function edit_people_columns() {
 	$columns = array(
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
-	'categories' 		  => 'Categories',	
+	'org_group' 		  => 'Organizational Group',	
 	'orderby' => 'Sort Name',
 	'publish_date'=> 'Date'
 	);
@@ -200,11 +200,27 @@ function manage_people_columns( $column, $post_id ) {
 		case 'orderby':
 		print get_post_meta($post->ID, 'person_orderby_name', true);
 		break;
+		case 'org_group':
+			$theseTerms = get_the_terms($post, 'org_groups');
+			if($theseTerms && (array)$theseTerms === $theseTerms){
+				$theseTerms = array_map('get_term_link', $theseTerms);			
+				print implode(', ',$theseTerms);
+			}
+		break;
 		default:
 		break;
 	}
 }
 add_action('manage_person_posts_custom_column', 'manage_people_columns', 10, 2);
+
+// Sortable custom columns for 'persons/people'
+function sortable_people_columns( $columns ) {
+	$columns['orderby'] = 'orderby';
+	$columns['published_date'] = 'published_date';
+	return $columns;
+}
+add_action('manage_edit-person_sortable_columns', 'sortable_people_columns');
+
 
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.
