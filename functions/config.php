@@ -557,6 +557,12 @@ Config::$theme_settings = array(
 			),
 			'value'       => $theme_options['bootstrap_menu_styles'],
 	    )),
+		new TextField(array(
+			'name'        => 'Header Background Color',
+			'id'          => THEME_OPTIONS_NAME.'[header_bg_color]',
+			'description' => 'Override the default theme header color using the defined HEX color code (eg #FFFFFF for white).',
+			'value'       => $theme_options['header_bg_color'],
+		)),
 	),
 	'Web Fonts' => array(
 		/* This theme uses the webfonts published to ucf.edu/partnerships. The hosted font files are within that theme. */

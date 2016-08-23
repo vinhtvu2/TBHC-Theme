@@ -478,20 +478,20 @@ function frontpage_spotlights() {
 		?>
 		<div class="home_spotlight_single">
 		
-			<a href="<?=$link?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">
+			<a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">
 				<?php
 					$thumb_id = get_post_thumbnail_id($spotlight->ID);
 					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
 					$thumb_src = $thumb_src[0];
 				?>
 				<?php if ($thumb_src) { ?>
-				<img class="print-only spotlight_thumb" src="<?=$thumb_src?>" />
-				<div class="screen-only spotlight_thumb" style="background-image:url('<?=$thumb_src?>');"><?=$spotlight->post_title?></div>
+				<img class="print-only spotlight_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
+				<div class="screen-only spotlight_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($spotlight->post_title)?></div>
 				<?php } ?>
 			</a>
-			<h3 class="home_spotlight_title"><a href="<?=$link?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>"><?=$spotlight->post_title?></a></h3>
+			<h3 class="home_spotlight_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>"><?=$spotlight->post_title?></a></h3>
 			<?=truncateHtml($spotlight->post_content, 200)?>
-			<p><a class="home_spotlight_readmore ga-event" href="<?=$link?>" target="_blank" data-ga-action="Spotlight Link" data-ga-label="<?=$spotlight->post_title?>">Read More…</a></p>
+			<p><a class="home_spotlight_readmore ga-event" href="<?=esc_attr($link)?>" target="_blank" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">Read More…</a></p>
 		</div>
 		<?
 	}
@@ -575,20 +575,20 @@ function frontpage_opportunities() {
 		
 	?>
 	<div class="home_opportunity_single">
-		<a href="<?=$link?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=$opportunity->post_title?>">
+		<a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
 			<?php
 				$thumb_id = get_post_thumbnail_id($opportunity->ID);
 				$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
 				$thumb_src = $thumb_src[0];
 			?>
 			<?php if ($thumb_src) { ?>
-				<img class="print-only opportunity_thumb" src="<?=$thumb_src?>" />
-				<div class="screen-only opportunity_thumb" style="background-image:url('<?=$thumb_src?>');"><?=$opportunity->post_title?></div>
+				<img class="print-only opportunity_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
+				<div class="screen-only opportunity_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($opportunity->post_title)?></div>
 			<?php } ?>
 		</a>
-		<h3 class="home_opportunity_title"><a href="<?=$link?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=$opportunity->post_title?>"><?=$opportunity->post_title?></a></h3>
+		<h3 class="home_opportunity_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>"><?=$opportunity->post_title?></a></h3>
 		<?=truncateHtml($opportunity->post_content, 200)?>
-		<p><a class="home_opportunity_readmore ga-event" href="<?=$link?>" target="_blank" data-ga-action="Opportunity Link" data-ga-label="<?=$opportunity->post_title?>">Read More…</a></p>
+		<p><a class="home_opportunity_readmore ga-event" href="<?=esc_attr($link)?>" target="_blank" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">Read More…</a></p>
 	</div>
 	<?
 	}

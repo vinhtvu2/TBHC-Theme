@@ -307,8 +307,8 @@ function sc_person_profile_grid($atts) {
 			
 		?>
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
-			<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><? } ?>
-				<img src="<?=$image ? $image[0] : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
+			<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
+				<img src="<?=esc_attr($image ? $image[0] : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg')?>" />
 				<div class="profile-short">
 					<h4 class="title">
 							<?=Person::get_name($person);?>

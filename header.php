@@ -83,10 +83,9 @@
 			</div>
 		</nav>
 		
-		<div id="jumbotron-logo">
+		<div id="jumbotron-logo" style="<?=get_theme_option('header_bg_color') ? 'background-color:'.get_theme_option('header_bg_color').' !important;' : ''?>">
 			<a href="http://tbhccmsdev.smca.ucf.edu">
-				<img id="tbhcLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/TbhcLogo.png" alt="The Burnett Honors College">
-				</img>
+				<img id="tbhcLogo" src="<?php bloginfo('stylesheet_directory'); ?>/static/img/TbhcLogo.png" alt="The Burnett Honors College"/>
 			</a>
 		</div>
 		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs">

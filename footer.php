@@ -77,7 +77,7 @@
 								<a href="<?=site_url()?>" class="print-noexpand fn org url">
 								<span class="organization-name">The Burnett Honors College</span>
 							</a>-->
-						</p>
+						</div>
 					</div>
 				</div>
 			</div>

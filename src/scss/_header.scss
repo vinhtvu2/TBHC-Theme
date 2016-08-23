@@ -55,8 +55,7 @@
         display: table-cell;
         text-align: center;
         &.active strong a{
-            color:white !important;
-            background-color:  #3d3c3c;
+            background-color: #FFF;
         }
     }
 
@@ -75,8 +74,7 @@
         &:hover,
         &:active,
         &:focus {
-            background-color: #3d3c3c;
-            color: white;
+            background-color: #FFF;
             text-decoration: none;
         }
     }
