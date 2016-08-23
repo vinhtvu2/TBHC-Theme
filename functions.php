@@ -198,7 +198,7 @@ function manage_people_columns( $column, $post_id ) {
 		}
 		break;
 		case 'orderby':
-		print get_post_meta($post->ID, 'person_orderby', true);
+		print get_post_meta($post->ID, 'person_orderby_name', true);
 		break;
 		default:
 		break;
