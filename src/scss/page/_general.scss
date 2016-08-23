@@ -216,7 +216,9 @@ body {
         border-bottom: 1px solid #cbcbcb;
         &.current-page-parent{
             background-color: #3d3c3c;
-            color: white;
+            a{
+                color: white;
+            }
         }
         &:hover, &:active, &:focus{
             color: #FFF;
