@@ -221,7 +221,8 @@ add_action('manage_person_posts_custom_column', 'manage_people_columns', 10, 2);
 // Sortable custom columns for 'persons/people'
 function sortable_people_columns( $columns ) {
 	$columns['orderby'] = 'orderby';
-	$columns['published_date'] = 'published_date';
+	$columns['publish_date'] = 'publish_date';
+	$columns['org_group'] = 'org_group';
 	return $columns;
 }
 add_action('manage_edit-person_sortable_columns', 'sortable_people_columns');
