@@ -677,8 +677,8 @@ class Person extends CustomPostType
 		$use_thumbnails = True,
 		$use_order      = True,
 		$taxonomies     = array('org_groups', 'category'),
-		$default_orderby = 'person_orderby_name',
-		$default_order = 'ASC';
+		$orderby = 'person_orderby_name',
+		$order = 'ASC';
 
 		public function fields(){
 			$fields = array(
