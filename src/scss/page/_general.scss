@@ -216,14 +216,16 @@ body {
         border-bottom: 1px solid #cbcbcb;
         &.current-menu-item{
             background-color: #3d3c3c;
-            a{
+            strong a{
                 color: white;
             }
         }
         &:hover, &:active, &:focus{
-            color: #FFF;
-            text-decoration: none;
             background-color: #3d3c3c;
+            strong a{
+                color: #FFF;
+                text-decoration: none;
+            }
         }
         
     }
