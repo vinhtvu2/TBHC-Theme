@@ -186,7 +186,7 @@ function edit_people_columns() {
 	);
 	return $columns;
 }
-add_action('manage_edit-people_columns', 'edit_people_columns');
+add_action('manage_edit-person_columns', 'edit_people_columns');
 
 // Custom columns content for 'people (persons)'
 function manage_people_columns( $column, $post_id ) {
@@ -204,7 +204,7 @@ function manage_people_columns( $column, $post_id ) {
 		break;
 	}
 }
-add_action('manage_people_posts_custom_column', 'manage_people_columns', 10, 2);
+add_action('manage_person_posts_custom_column', 'manage_people_columns', 10, 2);
 
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.
