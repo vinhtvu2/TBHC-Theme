@@ -54,7 +54,7 @@
         padding: 0;
         display: table-cell;
         text-align: center;
-        &.active strong a{
+        &.active strong a, &.current-page-ancestor strong a{
             background-color: #FFF;
         }
     }
