@@ -207,16 +207,16 @@ body {
     border-bottom: none;
     li{
         border-bottom: 1px solid #cbcbcb;
-        &.current-menu-item strong a, strong a:hover, strong a:active, strong a:focus {
+        &.current-menu-item>strong>a, strong>a:hover, strong>a:active, strong>a:focus {
             background-color: #3d3c3c;
             color: #FFF;
             text-decoration: none;
         }
-        strong a {
-            ul li strong a{
+        >strong>a {
+            ul>li>strong>a{
                 background: #eaeaea;
                 color: #333;
-                &.current-menu-item strong a, &:hover strong a, &:active strong a, &:focus strong a{
+                &.current-menu-item>strong>a, &:hover>strong>a, &:active>strong>a, &:focus>strong>a{
                     background-color: #3d3c3c;
                     color: white;
                 }
