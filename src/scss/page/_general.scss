@@ -205,7 +205,7 @@ body {
     border: 1px solid #cbcbcb;
     background: #eaeaea;
     border-bottom: none;
-    li{
+    >li{
         border-bottom: 1px solid #cbcbcb;
         &.current-menu-item>strong>a, strong>a:hover, strong>a:active, strong>a:focus {
             background-color: #3d3c3c;
