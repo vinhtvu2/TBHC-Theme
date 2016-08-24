@@ -1,4 +1,4 @@
-			<div id="footer">
+			<div id="footer" style="<?=get_theme_option('footer_bg_color') ? 'background-color:'.get_theme_option('footer_bg_color').' !important;' : ''?>">
 				<div id="footer-navwrap" class="row">
 					<div class="hidden-sm hidden-xs footerCol col-md-3">
 						<?=wp_nav_menu(array(
@@ -81,19 +81,15 @@
 					</div>
 				</div>
 			</div>
-			<div id="subfooter">
+			<div id="subfooter" style="<?=get_theme_option('footer_bg_color') ? 'background-color:'.get_theme_option('footer_bg_color').' !important;' : ''?>">
 				<?=
 					$crumbs = explode("/",$_SERVER["REQUEST_URI"]);
-					print_r($crumbs);
 					foreach($crumbs as $crumb){
 						echo ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
 					}
 				?>
 			</div>
 		</div><!-- .container -->
-		<!--[if IE]>
-			<script src="https://cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>			
-		<![endif]-->
 	</body>
 	<?="\n".footer_()."\n"?>
 </html>

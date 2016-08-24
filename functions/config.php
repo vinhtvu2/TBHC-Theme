@@ -569,6 +569,12 @@ Config::$theme_settings = array(
 			'description' => 'Override the default theme navbar color using the defined HEX color code (eg #FFFFFF for white).<br/>**Affects both mobile and desktop nav',
 			'value'       => $theme_options['navbar_bg_color'],
 		)),
+		new TextField(array(
+			'name'        => 'Footer Background Color',
+			'id'          => THEME_OPTIONS_NAME.'[footer_bg_color]',
+			'description' => 'Override the default theme footer color using the defined HEX color code (eg #FFFFFF for white).',
+			'value'       => $theme_options['footer_bg_color'],
+		)),
 	),
 	'Web Fonts' => array(
 		/* This theme uses the webfonts published to ucf.edu/partnerships. The hosted font files are within that theme. */
