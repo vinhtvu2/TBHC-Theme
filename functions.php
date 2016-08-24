@@ -490,8 +490,24 @@ function frontpage_spotlights() {
 	$args = array(
 		'post_type' 	=> 'spotlight',
 		'post_status'   => 'publish',
-		'meta_key' => 'spotlight_post_to_home',
-		'meta_value' => 'on'
+		'meta_query'	=> array(
+			array(
+				'key'	=>	'spotlight_post_to_home',
+				'value'	=>	'on',
+			),
+			array(
+				'key'	=>	'spotlight_start_date',
+				'value'	=>	date('Y-m-d'),
+				'compare'	=>	'>=',
+				'type'	=>	'NUMERIC',
+			),
+			array(
+				'key'	=>	'spotlight_end_date',
+				'value'	=>	date('Y-m-d'),
+				'compare'	=>	'<=',
+				'type'	=>	'NUMERIC',			
+			),
+		),
 	);
 	$spotlights = get_posts($args);
 
@@ -588,8 +604,24 @@ function frontpage_opportunities() {
 	$args = array(
 	'post_type' 	=> 'opportunity',
 	'post_status'   => 'publish',
-	'meta_key' => 'opportunity_post_to_home',
-	'meta_value' => 'on'
+		'meta_query'	=> array(
+			array(
+				'key'	=>	'opportunity_post_to_home',
+				'value'	=>	'on',
+			),
+			array(
+				'key'	=>	'opportunity_start_date',
+				'value'	=>	date('Y-m-d'),
+				'compare'	=>	'>=',
+				'type'	=>	'NUMERIC',
+			),
+			array(
+				'key'	=>	'opportunity_end_date',
+				'value'	=>	date('Y-m-d'),
+				'compare'	=>	'<=',
+				'type'	=>	'NUMERIC',			
+			),
+		),
 	);
 	$opportunities = get_posts($args);
 	
