@@ -187,8 +187,11 @@ body {
     margin-bottom: 20px;
 
     li {
-        line-height: 17px;
+        line-height: 18px;
         padding-bottom: 8px;
+        padding-top: 8px;
+        padding-left: 8px;
+        display: block;
     }
 
     a {

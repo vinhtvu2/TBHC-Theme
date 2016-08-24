@@ -843,8 +843,31 @@ class Opportunity extends CustomPostType {
 	<ul class="opportunity-list">
 		<?php
 			rsort($objects);
+			$start_date = get_post_meta($opportunity->ID, 'opportunity_start_date', TRUE);
+			$end_date = get_post_meta($opportunity->ID, 'opportunity_end_date', TRUE);
+			if($ext_link){
+				$link = $ext_link; 
+			}			
+			if($start_date){
+				$start_date = new DateTime($start_date);
+			}
+			if($end_date){
+				$end_date = new DateTime($end_date);
+			}
 			foreach ($objects as $opportunity) { ?>
-			<li><a href="<?=get_permalink($opportunity->ID)?>"><?=$opportunity->post_title?></a></li>
+			<li><a href="<?=get_permalink($opportunity->ID)?>"><?=$opportunity->post_title?></a>
+				<? if($start_date){ ?>
+					<span class="opportunity_start_date">
+						<?=$start_date->format('m/d/Y')?>
+					</span>
+					<? if($end_date){ ?>
+						&nbsp;-&nbsp;
+						<span class="opportunity_end_date">
+							<?=$end_date->format('m/d/Y')?>
+						</span>
+					<? } ?>
+				<? } ?>
+			</li>
 			<?php
 			}
 		?>

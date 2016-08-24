@@ -115,11 +115,22 @@ function edit_spotlight_columns() {
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
 	'post' 		  => 'Post',	
-	'publish_date'=> 'Date'
+	'publish_date'=> 'Date',
+	'start_date'	=> 'Adv Start Date',
+	'end_date'	=> 'Adv End Date'
 	);
 	return $columns;
 }
 add_action('manage_edit-spotlight_columns', 'edit_spotlight_columns');
+
+function sortable_spotlight_columns( $columns ) {
+	$columns['post'] = 'post';
+	$columns['publish_date'] = 'publish_date';
+	$columns['start_date'] = 'start_date';
+	$columns['end_date'] = 'end_date';
+	return $columns;
+}
+add_action('manage_edit-spotlight_sortable_columns', 'sortable_spotlight_columns');
 
 // Custom columns content for 'spotlight'
 function manage_spotlight_columns( $column, $post_id ) {
@@ -131,6 +142,16 @@ function manage_spotlight_columns( $column, $post_id ) {
 		case 'publish_date':
 			if ($post->post_status == 'publish') {
 				print 'Published'.'<br/>'.get_post_time('Y/m/d', true, $post->ID);
+			}
+		break;
+		case 'start_date':
+			if(get_post_meta($post->ID,'spotlight_start_date',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_start_date', TRUE)))
+			}
+		break;
+		case 'end_date':
+			if(get_post_meta($post->ID,'spotlight_end_date',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_end_date', TRUE)))
 			}
 		break;
 		default:
@@ -148,11 +169,22 @@ function edit_opportunity_columns() {
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
 	'post' 		  => 'Post',	
-	'publish_date'=> 'Date'
+	'publish_date'=> 'Date',
+	'start_date'	=> 'Adv Start Date',
+	'end_date'	=> 'Adv End Date'
 	);
 	return $columns;
 }
 add_action('manage_edit-opportunity_columns', 'edit_opportunity_columns');
+
+function sortable_opportunity_columns( $columns ) {
+	$columns['orderby'] = 'orderby';
+	$columns['publish_date'] = 'publish_date';
+	$columns['start_date'] = 'start_date';
+	$columns['end_date'] = 'end_date';
+	return $columns;
+}
+add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
 
 // Custom columns content for 'opportunity'
 function manage_opportunity_columns( $column, $post_id ) {
@@ -165,6 +197,16 @@ function manage_opportunity_columns( $column, $post_id ) {
 		if ($post->post_status == 'publish') {
 			print 'Published'.'<br/>'.get_post_time('Y/m/d', true, $post->ID);
 		}
+		break;
+		case 'start_date':
+			if(get_post_meta($post->ID,'opportunity_start_date',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start_date', TRUE)))
+			}
+		break;
+		case 'end_date':
+			if(get_post_meta($post->ID,'opportunity_end_date',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_end_date', TRUE)))
+			}
 		break;
 		default:
 		break;
