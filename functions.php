@@ -115,7 +115,7 @@ function edit_spotlight_columns() {
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
 	'start_date'	=> 'Adv Start Date',
-	'end_date'	=> 'Adv End Date'
+	'end_date'	=> 'Adv End Date',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
@@ -169,7 +169,7 @@ function edit_opportunity_columns() {
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
 	'start_date'	=> 'Adv Start Date',
-	'end_date'	=> 'Adv End Date'
+	'end_date'	=> 'Adv End Date',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
