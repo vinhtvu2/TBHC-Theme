@@ -146,6 +146,7 @@ function manage_spotlight_columns( $column, $post_id ) {
 		break;
 		case 'start_date':
 			if(get_post_meta($post->ID,'spotlight_start_date',true)){
+				print get_post_meta($post->ID,'spotlight_start_date',true);
 				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_start_date', TRUE)));
 			}
 		break;
