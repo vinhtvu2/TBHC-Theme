@@ -212,16 +212,16 @@ body {
             color: #FFF;
             text-decoration: none;
         }
-        >strong>a {
-            ul>li>strong>a{
-                background: #eaeaea;
-                color: #333;
-                &.current-menu-item>strong>a, &:hover>strong>a, &:active>strong>a, &:focus>strong>a{
-                    background-color: #3d3c3c;
-                    color: white;
-                }
-            }
-        }        
+    }
+}
+
+.sub-menu{
+    padding: 0;
+    >li{
+        border-top: 1px solid #cbcbcb;
+        >strong>a{
+            padding-left: 15px;
+        }
     }
 }
 
