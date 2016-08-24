@@ -207,18 +207,14 @@ body {
     border-bottom: none;
     li{
         border-bottom: 1px solid #cbcbcb;
-        &.current-menu-item{
+        &.current-menu-item strong a{
             background-color: #3d3c3c;
-            strong a{
-                color: white;
-            }
+            color: white;
         }
-        &:hover, &:active, &:focus{
+        &:hover strong a, &:active strong a, &:focus strong a{
             background-color: #3d3c3c;
-            strong a{
-                color: #FFF;
-                text-decoration: none;
-            }
+            color: #FFF;
+            text-decoration: none;
         }        
     }
 }
