@@ -495,7 +495,7 @@ function frontpage_spotlights() {
 				'key'	=>	'spotlight_post_to_home',
 				'value'	=>	'on',
 			),
-			array(
+			/*array(
 				'key'	=>	'spotlight_start',
 				'value'	=>	date('Ymd'),
 				'compare'	=>	'>=',
@@ -504,7 +504,7 @@ function frontpage_spotlights() {
 				'key'	=>	'spotlight_end',
 				'value'	=>	date('Ymd'),
 				'compare'	=>	'<=',
-			),
+			),*/
 		),
 	);
 	$spotlights = get_posts($args);
