@@ -961,7 +961,7 @@ class Spotlight extends CustomPostType {
 						</span>
 						<? } ?>
 					<? } ?>
-					<span>Category:&nbsp;<?=get_post_meta($spotlight-ID, 'spotlight_category', true)?></span>
+					<span>Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?></span>
 				</li>
 			<?php
 			}
