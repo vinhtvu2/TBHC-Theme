@@ -114,10 +114,10 @@ function edit_spotlight_columns() {
 	$columns = array(
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
-	'post' 		  => 'Post',	
-	'publish_date'=> 'Date',
 	'start_date'	=> 'Adv Start Date',
 	'end_date'	=> 'Adv End Date'
+	'post' 		  => 'Post',	
+	'publish_date'=> 'Date',
 	);
 	return $columns;
 }
@@ -168,10 +168,10 @@ function edit_opportunity_columns() {
 	$columns = array(
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
-	'post' 		  => 'Post',	
-	'publish_date'=> 'Date',
 	'start_date'	=> 'Adv Start Date',
 	'end_date'	=> 'Adv End Date'
+	'post' 		  => 'Post',	
+	'publish_date'=> 'Date',
 	);
 	return $columns;
 }
