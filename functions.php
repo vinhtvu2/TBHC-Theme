@@ -508,7 +508,7 @@ function frontpage_spotlights() {
 		),
 	);
 	$spotlights = get_posts($args);
-	print_r $spotlights;
+	print_r($spotlights);
 	if(empty($spotlights)){
 		$args = array(
 			'numberofposts' => 2,
@@ -517,7 +517,7 @@ function frontpage_spotlights() {
 			);
 		$spotlights = get_posts($args);
 	}
-	print_r $spotlights;
+	print_r($spotlights);
 	$spotlight_one = $spotlights[0];
 	$spotlight_two = $spotlights[1];
 
