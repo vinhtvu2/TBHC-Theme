@@ -951,17 +951,13 @@ class Spotlight extends CustomPostType {
 						<?=$spotlight->post_title?>
 					</a>
 					<? if($start_date){ ?>
-						<span class="spotlight_start_date">
-							<?=$start_date->format('m/d/Y')?>
-						</span>
-						<? if($end_date){ ?>
-						<span>-</span>
-						<span class="spotlight_end_date">
-							<?=$end_date->format('m/d/Y')?>
-						</span>
-						<? } ?>
+						<div class="spotlight_start_date">
+							<?=$start_date->format('l, F jS, Y')?>
+						</div>
 					<? } ?>
-					<span>Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?></span>
+					<div>
+						Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?>
+					</div>
 				</li>
 			<?php
 			}
