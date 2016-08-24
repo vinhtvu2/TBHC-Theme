@@ -497,15 +497,13 @@ function frontpage_spotlights() {
 			),
 			array(
 				'key'	=>	'spotlight_start',
-				'value'	=>	date('Y-m-d'),
+				'value'	=>	date('Ymd'),
 				'compare'	=>	'>=',
-				'type'	=>	'NUMERIC',
 			),
 			array(
 				'key'	=>	'spotlight_end',
-				'value'	=>	date('Y-m-d'),
+				'value'	=>	date('Ymd'),
 				'compare'	=>	'<=',
-				'type'	=>	'NUMERIC',			
 			),
 		),
 	);
@@ -611,15 +609,13 @@ function frontpage_opportunities() {
 			),
 			array(
 				'key'	=>	'opportunity_start',
-				'value'	=>	date('Y-m-d'),
+				'value'	=>	date('Ymd'),
 				'compare'	=>	'>=',
-				'type'	=>	'NUMERIC',
 			),
 			array(
 				'key'	=>	'opportunity_end',
-				'value'	=>	date('Y-m-d'),
+				'value'	=>	date('Ymd'),
 				'compare'	=>	'<=',
-				'type'	=>	'NUMERIC',			
 			),
 		),
 	);
