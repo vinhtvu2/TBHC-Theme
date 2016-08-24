@@ -845,29 +845,37 @@ class Opportunity extends CustomPostType {
 			rsort($objects);
 			foreach ($objects as $opportunity) { 
 				$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
-				$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
+				$time = '';
+				$location = '';
 				if($ext_link){
 					$link = $ext_link; 
 				}			
 				if($start_date){
 					$start_date = new DateTime($start_date);
 				}
-				if($end_date){
-					$end_date = new DateTime($end_date);
-				}
 			?>
-			<li><a href="<?=get_permalink($opportunity->ID)?>"><?=$opportunity->post_title?></a>
+			<li>
+				<a href="<?=get_permalink($opportunity->ID)?>">
+					<?=$opportunity->post_title?>
+				</a>
 				<? if($start_date){ ?>
-					<span class="opportunity_start_date">
-						<?=$start_date->format('m/d/Y')?>
-					</span>
-					<? if($end_date){ ?>
-						&nbsp;-&nbsp;
-						<span class="opportunity_end_date">
-							<?=$end_date->format('m/d/Y')?>
-						</span>
-					<? } ?>
+					<div class="opportunity_info">
+						Date: <?=$start_date->format('l, F jS, Y')?>
+					</div>
 				<? } ?>
+				<? if($time){ ?>
+					<div class="opportunity_info">
+						Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
+					</div>
+				<? } ?>
+				<? if($location){ ?>
+					<div class="opportunity_info">
+						Location: <?=get_post_meta($opportunity->ID, 'opportunity_location', true)?>
+					</div>
+				<? } ?>
+				<div class="text-right spotlight_category">
+					Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
+				</div>
 			</li>
 			<?php
 			}
@@ -935,15 +943,11 @@ class Spotlight extends CustomPostType {
 				$link = get_permalink($opportunity->ID);
 				$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
 				$start_date = get_post_meta($spotlight->ID, 'spotlight_start', TRUE);
-				$end_date = get_post_meta($spotlight->ID, 'spotlight_end', TRUE);
 				if($ext_link){
 					$link = $ext_link; 
 				}			
 				if($start_date){
 					$start_date = new DateTime($start_date);
-				}
-				if($end_date){
-					$end_date = new DateTime($end_date);
 				}
 			?>
 				<li>
@@ -951,11 +955,11 @@ class Spotlight extends CustomPostType {
 						<?=$spotlight->post_title?>
 					</a>
 					<? if($start_date){ ?>
-						<div class="spotlight_start_date">
+						<div class="spotlight_info">
 							<?=$start_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
-					<div class="text-right">
+					<div class="text-right spotlight_category">
 						Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?>
 					</div>
 				</li>
