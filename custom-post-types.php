@@ -844,8 +844,8 @@ class Opportunity extends CustomPostType {
 		<?php
 			rsort($objects);
 			foreach ($objects as $opportunity) { 
-				$start_date = get_post_meta($opportunity->ID, 'opportunity_start_date', TRUE);
-				$end_date = get_post_meta($opportunity->ID, 'opportunity_end_date', TRUE);
+				$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
+				$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
 				if($ext_link){
 					$link = $ext_link; 
 				}			
@@ -934,8 +934,8 @@ class Spotlight extends CustomPostType {
 			foreach ($objects as $spotlight) { 
 				$link = get_permalink($opportunity->ID);
 				$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
-				$start_date = get_post_meta($spotlight->ID, 'spotlight_start_date', TRUE);
-				$end_date = get_post_meta($spotlight->ID, 'spotlight_end_date', TRUE);
+				$start_date = get_post_meta($spotlight->ID, 'spotlight_start', TRUE);
+				$end_date = get_post_meta($spotlight->ID, 'spotlight_end', TRUE);
 				if($ext_link){
 					$link = $ext_link; 
 				}			
