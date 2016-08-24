@@ -279,6 +279,13 @@ function sortable_people_columns( $columns ) {
 }
 add_action('manage_edit-person_sortable_columns', 'sortable_people_columns');
 
+function get_people_from_org_group(){
+	echo do_shortcode('[person-profile-grid org_groups="'.$_POST['org_group'].'"]');
+	die();
+}
+
+add_action( 'wp_ajax_get_people_from_org_group', 'get_people_from_org_group' );
+add_action( 'wp_ajax_nopriv_get_people_from_org_group', 'get_people_from_org_group' );
 
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.

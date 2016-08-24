@@ -282,7 +282,8 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="<?=$org_group?>person-profile-grid"><?
+	?><div class="<?=$org_group?>person-profile-grid">
+		<div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
 			
@@ -298,12 +299,12 @@ function sc_person_profile_grid($atts) {
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image' );
 			$image_url = get_featured_image_url($person->ID);
 			$link = ($person->post_content != '') ? True : False;
-			if( ($count % $row_size) == 0) {
+			/*if( ($count % $row_size) == 0) {
 				if($count > 0) {
 				?></div><?
 			}
 			?><div class="row"><?
-			}
+			}*/
 			
 		?>
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
@@ -329,9 +330,19 @@ function sc_person_profile_grid($atts) {
 		<?
 			$count++;
 		}
-	?>		</div>
+	?>		<!--</div>-->
 		</div>
 	</div>
+	<script>
+		function getProfilesForDept(inp){
+			jQuery.get('http://tbhccmsdev.smca.ucf.edu', {
+				action : 'get_people_from_org_group',
+				org_group: inp
+			}, function(res){
+				jQuery('.person-profile-grid').replaceWith(res);
+			});
+		}
+	</script>
 	<?
 	return ob_get_clean();
 }
