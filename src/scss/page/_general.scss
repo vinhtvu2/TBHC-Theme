@@ -222,6 +222,11 @@ body {
         >strong>a{
             padding-left: 20px !important;
         }
+        &.current-menu-item>strong>a, strong>a:hover, strong>a:active, strong>a:focus {
+            background-color: #3d3c3c;
+            color: #FFF;
+            text-decoration: none;
+        }
     }
 }
 
