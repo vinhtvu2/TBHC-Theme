@@ -146,12 +146,12 @@ function manage_spotlight_columns( $column, $post_id ) {
 		break;
 		case 'start_date':
 			if(get_post_meta($post->ID,'spotlight_start_date',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_start_date', TRUE)))
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_start_date', TRUE)));
 			}
 		break;
 		case 'end_date':
 			if(get_post_meta($post->ID,'spotlight_end_date',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_end_date', TRUE)))
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_end_date', TRUE)));
 			}
 		break;
 		default:
@@ -200,12 +200,12 @@ function manage_opportunity_columns( $column, $post_id ) {
 		break;
 		case 'start_date':
 			if(get_post_meta($post->ID,'opportunity_start_date',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start_date', TRUE)))
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start_date', TRUE)));
 			}
 		break;
 		case 'end_date':
 			if(get_post_meta($post->ID,'opportunity_end_date',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_end_date', TRUE)))
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_end_date', TRUE)));
 			}
 		break;
 		default:
