@@ -498,13 +498,13 @@ function frontpage_spotlights() {
 			array(
 				'key'	=>	'spotlight_start',
 				'value'	=>	date('Ymd'),
-				'compare'	=>	'>=',
+				'compare'	=>	'<=',
 			),
-			/*array(
+			array(
 				'key'	=>	'spotlight_end',
 				'value'	=>	date('Ymd'),
-				'compare'	=>	'<=',
-			),*/
+				'compare'	=>	'>=',
+			),
 		),
 	);
 	$spotlights = get_posts($args);
@@ -610,12 +610,12 @@ function frontpage_opportunities() {
 			array(
 				'key'	=>	'opportunity_start',
 				'value'	=>	date('Ymd'),
-				'compare'	=>	'>=',
+				'compare'	=>	'<=',
 			),
 			array(
 				'key'	=>	'opportunity_end',
 				'value'	=>	date('Ymd'),
-				'compare'	=>	'<=',
+				'compare'	=>	'>=',
 			),
 		),
 	);
