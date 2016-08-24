@@ -186,14 +186,6 @@ body {
     font-size: 13px;
     margin-bottom: 20px;
 
-    li {
-        line-height: 18px;
-        padding-bottom: 8px;
-        padding-top: 8px;
-        padding-left: 8px;
-        display: block;
-    }
-
     a {
         color: #333;
         font-weight: normal;
@@ -214,8 +206,6 @@ body {
     background: #eaeaea;
     border-bottom: none;
     li{
-        padding-top: 8px;
-        padding-left: 8px;
         border-bottom: 1px solid #cbcbcb;
         &.current-menu-item{
             background-color: #3d3c3c;
@@ -229,6 +219,13 @@ body {
                 color: #FFF;
                 text-decoration: none;
             }
+        }
+        strong a{
+            line-height: 18px;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            padding-left: 8px;
+            display: block;
         }
         
     }
