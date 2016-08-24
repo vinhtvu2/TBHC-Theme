@@ -207,7 +207,7 @@ body {
     border-bottom: none;
     li{
         border-bottom: 1px solid #cbcbcb;
-        &.current-menu-item strong a, &:hover strong a, &:active strong a, &:focus strong a{
+        &.current-menu-item strong a, strong a:hover, strong a:active, strong a:focus {
             background-color: #3d3c3c;
             color: #FFF;
             text-decoration: none;
