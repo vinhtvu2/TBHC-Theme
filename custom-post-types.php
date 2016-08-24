@@ -955,7 +955,7 @@ class Spotlight extends CustomPostType {
 							<?=$start_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
-					<div>
+					<div class="text-right">
 						Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?>
 					</div>
 				</li>

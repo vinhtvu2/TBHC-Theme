@@ -522,3 +522,13 @@ body {
         }
     }
 }
+ul.spotlight-list{
+    padding:0;
+    a{
+        font-size:1.5em;
+        line-height:1.5em;
+    }
+    div{
+        font-style:italic;
+    }
+}
