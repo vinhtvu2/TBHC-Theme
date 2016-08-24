@@ -955,12 +955,13 @@ class Spotlight extends CustomPostType {
 							<?=$start_date->format('m/d/Y')?>
 						</span>
 						<? if($end_date){ ?>
-						&nbsp;-&nbsp;
+						<span>-</span>
 						<span class="spotlight_end_date">
 							<?=$end_date->format('m/d/Y')?>
 						</span>
 						<? } ?>
 					<? } ?>
+					<span>Category:&nbsp;<?=get_post_meta($spotlight-ID, 'spotlight_category', true)?></span>
 				</li>
 			<?php
 			}

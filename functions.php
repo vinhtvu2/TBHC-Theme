@@ -116,6 +116,7 @@ function edit_spotlight_columns() {
 	'title'       => 'Title',
 	'spotlight_start'	=> 'Adv Start Date',
 	'spotlight_end'	=> 'Adv End Date',
+	'spotlight_category'	=> 'Category',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
@@ -128,6 +129,7 @@ function sortable_spotlight_columns( $columns ) {
 	$columns['publish_date'] = 'publish_date';
 	$columns['spotlight_start'] = 'spotlight_start';
 	$columns['spotlight_end'] = 'spotlight_end';
+	$columns['spotlight_category'] = 'spotlight_category';
 	return $columns;
 }
 add_action('manage_edit-spotlight_sortable_columns', 'sortable_spotlight_columns');
@@ -154,6 +156,9 @@ function manage_spotlight_columns( $column, $post_id ) {
 				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_end', TRUE)));
 			}
 		break;
+		case 'spotlight_category':
+			print get_post_meta($post->ID, 'spotlight_category', true);
+		break;
 		default:
 		break;
 	}
@@ -170,6 +175,7 @@ function edit_opportunity_columns() {
 	'title'       => 'Title',
 	'opportunity_start'	=> 'Adv Start Date',
 	'opportunity_end'	=> 'Adv End Date',
+	'opportunity_category'	=> 'Category',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
@@ -182,6 +188,7 @@ function sortable_opportunity_columns( $columns ) {
 	$columns['publish_date'] = 'publish_date';
 	$columns['opportunity_start'] = 'opportunity_start';
 	$columns['opportunity_end'] = 'opportunity_end';
+	$columns['opportunity_category'] = 'opportunity_category';
 	return $columns;
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
@@ -208,6 +215,9 @@ function manage_opportunity_columns( $column, $post_id ) {
 				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_end', TRUE)));
 			}
 		break;
+		case 'spotlight_category':
+			print get_post_meta($post->ID, 'opportunity_category', true);
+		break;		
 		default:
 		break;
 	}
