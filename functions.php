@@ -114,8 +114,8 @@ function edit_spotlight_columns() {
 	$columns = array(
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
-	'spotlight_start_date'	=> 'Adv Start Date',
-	'spotlight_end_date'	=> 'Adv End Date',
+	'spotlight_start'	=> 'Adv Start Date',
+	'spotlight_end'	=> 'Adv End Date',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
@@ -126,8 +126,8 @@ add_action('manage_edit-spotlight_columns', 'edit_spotlight_columns');
 function sortable_spotlight_columns( $columns ) {
 	$columns['post'] = 'post';
 	$columns['publish_date'] = 'publish_date';
-	$columns['spotlight_start_date'] = 'spotlight_start_date';
-	$columns['spotlight_end_date'] = 'spotlight_end_date';
+	$columns['spotlight_start'] = 'spotlight_start';
+	$columns['spotlight_end'] = 'spotlight_end';
 	return $columns;
 }
 add_action('manage_edit-spotlight_sortable_columns', 'sortable_spotlight_columns');
@@ -144,15 +144,15 @@ function manage_spotlight_columns( $column, $post_id ) {
 				print 'Published'.'<br/>'.get_post_time('Y/m/d', true, $post->ID);
 			}
 		break;
-		case 'spotlight_start_date':
-			if(get_post_meta($post->ID,'spotlight_start_date',true)){
-				print get_post_meta($post->ID,'spotlight_start_date',true);
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_start_date', TRUE)));
+		case 'spotlight_start':
+			if(get_post_meta($post->ID,'spotlight_start',true)){
+				print get_post_meta($post->ID,'spotlight_start',true);
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_start', TRUE)));
 			}
 		break;
-		case 'spotlight_end_date':
-			if(get_post_meta($post->ID,'spotlight_end_date',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_end_date', TRUE)));
+		case 'spotlight_end':
+			if(get_post_meta($post->ID,'spotlight_end',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'spotlight_end', TRUE)));
 			}
 		break;
 		default:
@@ -169,8 +169,8 @@ function edit_opportunity_columns() {
 	$columns = array(
 	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
-	'opportunity_start_date'	=> 'Adv Start Date',
-	'opportunity_end_date'	=> 'Adv End Date',
+	'opportunity_start'	=> 'Adv Start Date',
+	'opportunity_end'	=> 'Adv End Date',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
@@ -181,8 +181,8 @@ add_action('manage_edit-opportunity_columns', 'edit_opportunity_columns');
 function sortable_opportunity_columns( $columns ) {
 	$columns['orderby'] = 'orderby';
 	$columns['publish_date'] = 'publish_date';
-	$columns['opportunity_start_date'] = 'opportunity_start_date';
-	$columns['opportunity_end_date'] = 'opportunity_end_date';
+	$columns['opportunity_start'] = 'opportunity_start';
+	$columns['opportunity_end'] = 'opportunity_end';
 	return $columns;
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
@@ -199,14 +199,14 @@ function manage_opportunity_columns( $column, $post_id ) {
 			print 'Published'.'<br/>'.get_post_time('Y/m/d', true, $post->ID);
 		}
 		break;
-		case 'opportunity_start_date':
-			if(get_post_meta($post->ID,'opportunity_start_date',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start_date', TRUE)));
+		case 'opportunity_start':
+			if(get_post_meta($post->ID,'opportunity_start',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start', TRUE)));
 			}
 		break;
-		case 'opportunity_end_date':
-			if(get_post_meta($post->ID,'opportunity_end_date',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_end_date', TRUE)));
+		case 'opportunity_end':
+			if(get_post_meta($post->ID,'opportunity_end',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_end', TRUE)));
 			}
 		break;
 		default:
@@ -497,13 +497,13 @@ function frontpage_spotlights() {
 				'value'	=>	'on',
 			),
 			array(
-				'key'	=>	'spotlight_start_date',
+				'key'	=>	'spotlight_start',
 				'value'	=>	date('Y-m-d'),
 				'compare'	=>	'>=',
 				'type'	=>	'NUMERIC',
 			),
 			array(
-				'key'	=>	'spotlight_end_date',
+				'key'	=>	'spotlight_end',
 				'value'	=>	date('Y-m-d'),
 				'compare'	=>	'<=',
 				'type'	=>	'NUMERIC',			
@@ -611,13 +611,13 @@ function frontpage_opportunities() {
 				'value'	=>	'on',
 			),
 			array(
-				'key'	=>	'opportunity_start_date',
+				'key'	=>	'opportunity_start',
 				'value'	=>	date('Y-m-d'),
 				'compare'	=>	'>=',
 				'type'	=>	'NUMERIC',
 			),
 			array(
-				'key'	=>	'opportunity_end_date',
+				'key'	=>	'opportunity_end',
 				'value'	=>	date('Y-m-d'),
 				'compare'	=>	'<=',
 				'type'	=>	'NUMERIC',			
