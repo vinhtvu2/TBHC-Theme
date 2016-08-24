@@ -495,12 +495,12 @@ function frontpage_spotlights() {
 				'key'	=>	'spotlight_post_to_home',
 				'value'	=>	'on',
 			),
-			/*array(
+			array(
 				'key'	=>	'spotlight_start',
 				'value'	=>	date('Ymd'),
 				'compare'	=>	'>=',
 			),
-			array(
+			/*array(
 				'key'	=>	'spotlight_end',
 				'value'	=>	date('Ymd'),
 				'compare'	=>	'<=',
