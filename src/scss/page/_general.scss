@@ -219,13 +219,7 @@ body {
                 color: #FFF;
                 text-decoration: none;
             }
-        }
-        strong a{
-            line-height: 18px;
-            padding: 8px;
-            display: block;
-        }
-        
+        }        
     }
 }
 
@@ -245,6 +239,11 @@ body {
         @media (max-width: $screen-sm-max) {
             margin-bottom: 5px;
         }
+    }
+    ul li strong a{
+        line-height: 18px;
+        padding: 8px;
+        display: block;
     }
 }
 
