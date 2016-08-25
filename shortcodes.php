@@ -285,7 +285,7 @@ function sc_person_profile_grid($atts) {
 	
 	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>">
 		<? if($dropdown){ 
-			str_replace(
+			echo str_replace(
 				'<select',
 				'<select change=\'getProfilesForDept(\'this.value\')\'',
 				wp_dropdown_categories(
