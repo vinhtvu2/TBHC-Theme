@@ -1595,7 +1595,7 @@ if (typeof jQuery != 'undefined'){
 
 function getProfilesForDept(inp){
 	var ajaxUrl = $(".person-profile-grid").data("url");
-	jQuery.get(ajaxUrl, {
+	jQuery.post(ajaxUrl, {
 		action : 'get_people_from_org_group',
 		org_group: inp
 	}, function(res){
