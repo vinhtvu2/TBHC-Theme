@@ -260,6 +260,7 @@ add_shortcode('person-picture-list', 'sc_person_picture_list');
  * Custom Person List by Erik
  **/
 function sc_person_profile_grid($atts) {
+	remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;
@@ -341,8 +342,7 @@ function sc_person_profile_grid($atts) {
 					</span>
 				</div>
 				<div class="overlay"></div>
-			<? if($link) {?></a><?}?>
-		</div>
+			<? if($link) {?></a><?}?></div>
 		<?
 			$count++;
 		}
@@ -352,6 +352,7 @@ function sc_person_profile_grid($atts) {
 	
 	<?
 	return ob_get_clean();
+	add_filter('the_content','wpautop');		
 }
 add_shortcode('person-profile-grid', 'sc_person_profile_grid');
 
