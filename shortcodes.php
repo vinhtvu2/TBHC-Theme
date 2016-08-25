@@ -266,6 +266,7 @@ function sc_person_profile_grid($atts) {
 	$org_groups		= ($atts['org_groups']) ? $atts['org_groups'] : null;
 	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
 	$join			= ($atts['join']) ? $atts['join'] : 'or';
+	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
@@ -283,6 +284,13 @@ function sc_person_profile_grid($atts) {
 	ob_start();
 	
 	?><div class="<?=$org_group?>person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>">
+		<? if($dropdown){ 
+			wp_dropdown_categories(
+				array(
+					'taxonomy'	=>	'org_groups',
+				)
+			);
+		} ?>	
 		<div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
