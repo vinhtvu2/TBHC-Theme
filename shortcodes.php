@@ -283,11 +283,17 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="<?=$org_group?>person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>">
+	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>">
 		<? if($dropdown){ 
-			wp_dropdown_categories(
-				array(
-					'taxonomy'	=>	'org_groups',
+			str_replace(
+				'<select',
+				'<select change=\'getProfilesForDept(\'this.value\')\'',
+				wp_dropdown_categories(
+					array(
+						'taxonomy'	=>	'org_groups',
+						'value_field'	=>	'slug',
+						'class'	=>	'person-profile-grid-dropdown',
+					)
 				)
 			);
 		} ?>	
