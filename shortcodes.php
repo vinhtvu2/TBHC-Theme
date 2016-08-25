@@ -293,7 +293,8 @@ function sc_person_profile_grid($atts) {
 						'taxonomy'	=>	'org_groups',
 						'value_field'	=>	'slug',
 						'class'	=>	'person-profile-grid-dropdown',
-						'echo'	=> false
+						'echo'	=> false,
+						'selected'	=>	$org_groups,
 					)
 				)
 			);
