@@ -282,7 +282,7 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="<?=$org_group?>person-profile-grid">
+	?><div class="<?=$org_group?>person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>">
 		<div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
@@ -333,16 +333,7 @@ function sc_person_profile_grid($atts) {
 	?>		<!--</div>-->
 		</div>
 	</div>
-	<script>
-		function getProfilesForDept(inp){
-			jQuery.get('http://tbhccmsdev.smca.ucf.edu', {
-				action : 'get_people_from_org_group',
-				org_group: inp
-			}, function(res){
-				jQuery('.person-profile-grid').replaceWith(res);
-			});
-		}
-	</script>
+	
 	<?
 	return ob_get_clean();
 }

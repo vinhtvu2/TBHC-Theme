@@ -1592,3 +1592,13 @@ if (typeof jQuery != 'undefined'){
 } else {
   console.log('jQuery dependency failed to load');
 }
+
+function getProfilesForDept(inp){
+	var ajaxUrl = $(".person-profile-grid").data("url");
+	jQuery.get(ajaxUrl, {
+		action : 'get_people_from_org_group',
+		org_group: inp
+	}, function(res){
+		jQuery('.person-profile-grid').replaceWith(res);
+	});
+}

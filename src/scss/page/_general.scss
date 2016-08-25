@@ -32,6 +32,9 @@ body {
     width:100%;
     margin: 0 auto !important;
     .person-profile-wrap {
+        p{
+            margin:0;
+        }
         display: block;
         padding: 0;
         position: relative;
@@ -528,7 +531,7 @@ ul.spotlight-list, ul.opportunity-list{
         font-size:1.5em;
         line-height:1.5em;
     }
-    div{
+    .spotlight_info, .spotlight_category, .opportunity_info, .opportunity_category{
         font-style:italic;
     }
 }
