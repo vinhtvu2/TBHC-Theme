@@ -55,6 +55,9 @@
 		<!--[if IE]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>			
 		<![endif]-->
+		<!--[if lt IE 9]>
+			<link rel='stylesheet' id='style-min-css'  href='http://tbhccmsdev.smca.ucf.edu/wp-content/themes/TBHC-Theme/static/css/style-no-mqs.min.css' />
+		<![endif]-->
 		</head>
 	<body <?php echo body_class(); ?>>
 

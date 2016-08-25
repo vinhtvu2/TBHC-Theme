@@ -69,15 +69,25 @@ gulp.task('scss-lint-dev', function() {
 
 // Compile + bless primary scss files
 gulp.task('css-main', function() {
-  var sassyStuff = gulp.src(config.scssPath + '/style.scss')
+  gulp.src(config.scssPath + '/style.scss')
     .pipe(sass().on('error', sass.logError))
-	
-  //var lessyStuff = gulp.src(config.lessPath + '/*.less')
-    //.pipe(less().on('error', sass.logError));
-	
-  //return es.concat(sassyStuff, lessyStuff)
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(rename('style.min.css'))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions', 'ie >= 8'],
+      cascade: false
+    }))
+    .pipe(bless())
+    .pipe(gulp.dest(config.cssPath))
+    .pipe(browserSync.stream());
+});
+
+// Compile + bless primary ie8 styles
+gulp.task('css-ie-main', function() {
+  gulp.src(config.scssPath + '/style-no-mqs.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(rename('style-no-mqs.min.css'))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie >= 8'],
       cascade: false
