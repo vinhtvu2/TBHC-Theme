@@ -15,22 +15,38 @@
 
 // Remove media queries and flatten (mod of https://github.com/sass/sass/issues/408 chriseppstein's comment)
 $media-queries: true !default;
-$media-query-free-breakpoint: 900px;
-@mixin respond-to($min-width, $max-width: false) {
-  @if $media-queries {
-    @media screen and (min-width: $min-width) {
-       @if $max-width {
-         @media (max-width: $max-width) {
-            @content
-          }
-       } @else {
-         @content;
-       }
-     }
-  }
-  @else if $min-width <= $media-query-free-breakpoint and (not $max-width or $max-width and $max-width >= $media-query-free-breakpoint) {
-    @content;
-  }
+$media-queries-width: 900px;
+@mixin respond-min($width) {
+    // If we're outputting for a fixed media query set...
+    @if $media-queries {
+        // ...and if we should apply these rules...
+        @if $media-queries-width >= $width {
+            // ...output the content the user gave us.
+            @content;
+        }
+    }
+    @else {
+        // Otherwise, output it using a regular media query
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+@mixin respond-max($width) {
+    // If we're outputting for a fixed media query set...
+    @if $media-queries {
+        // ...and if we should apply these rules...
+        @if $media-queries-width <= $width {
+            // ...output the content the user gave us.
+            @content;
+        }
+    }
+    @else {
+        // Otherwise, output it using a regular media query
+        @media screen and (max-width: $width) {
+            @content;
+        }
+    }
 }
 
 // Adds font smoothing to an element
