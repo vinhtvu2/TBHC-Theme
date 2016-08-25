@@ -1597,7 +1597,7 @@ function getProfilesForDept(inp){
 	var ajaxUrl = $(".person-profile-grid").data("url");
 	jQuery.post(ajaxUrl, {
 		action : 'get_people_from_org_group',
-		org_group: inp
+		org_groups: inp
 	}, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
 	});
