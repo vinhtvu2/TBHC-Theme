@@ -645,7 +645,7 @@ Config::$styles = array(
 Config::$scripts = array(
 	array( 'admin' => True, 'src' => THEME_JS_URL.'/admin.min.js' ),
 	array( 'name' => 'ucfhb-script', 'src' => '//universityheader.ucf.edu/bar/js/university-header.js' ),
-	array( 'name' => 'theme-script', 'src' => THEME_JS_URL . '/script.min.js' ),
+	array( 'name' => 'theme-script', 'src' => THEME_JS_URL . '/script.min.js' ), array( 'name' => 'respond-script', 'src' => 'https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js' )
 );
 
 
