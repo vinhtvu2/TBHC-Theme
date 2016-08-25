@@ -287,7 +287,7 @@ function sc_person_profile_grid($atts) {
 		<? if($dropdown){ 
 			echo str_replace(
 				'<select',
-				'<select change="getProfilesForDept(\'this.value\')"',
+				'<select onchange="getProfilesForDept(this.value)"',
 				wp_dropdown_categories(
 					array(
 						'taxonomy'	=>	'org_groups',
