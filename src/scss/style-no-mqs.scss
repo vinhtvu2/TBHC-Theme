@@ -1,4 +1,6 @@
-$media-queries: false;
+$kill-media-queries: true;
+
+@import 'respond';
 
 // Variable overrides
 @import 'variables';
