@@ -296,7 +296,7 @@ function sc_person_profile_grid($atts) {
 						'class'	=>	'person-profile-grid-dropdown form-control',
 						'echo'	=> false,
 						'selected'	=>	$org_groups,
-						'child_of'	=>	$org_groups == 'staff' ? (int)get_term_by('slug', 'Staff', 'org_groups')->term_id : NULL,
+						'child_of'	=>	strtolower($org_groups) == 'staff' ? (int)get_term_by('slug', 'Staff', 'org_groups')->term_id : NULL,
 					)
 				)
 			);
