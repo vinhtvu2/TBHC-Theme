@@ -84,7 +84,7 @@ gulp.task('css-main', function() {
     .pipe(browserSync.stream());
 });
 
-// Compile + bless primary ie8 styles
+// Compile + bless primary ie8 styles *Erik's first bulid task woot
 gulp.task('css-ie-main', function() {
   gulp.src(config.scssPath + '/style-no-mqs.scss')
 	//.pipe(replace(/@media\s*\((min|max)-width:(?!.*\)\sand)/g, '@include respond-$1('))
