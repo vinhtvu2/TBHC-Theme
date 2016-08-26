@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 	less = require('gulp-less'),
 	es = require('event-stream'),
 	replace = require('gulp-replace'),
-	sassGlob = require('gulp-sass-glob');
+	postcss = require('gulp-postcss');
 
 var gutil = require('gulp-util');
 
@@ -87,9 +87,9 @@ gulp.task('css-main', function() {
 // Compile + bless primary ie8 styles
 gulp.task('css-ie-main', function() {
   gulp.src(config.scssPath + '/style-no-mqs.scss')
-	.pipe(sassGlob())
-	.pipe(replace(/@media\s*\((min|max)-width:(?!.*\)\sand)/g, '@include respond-$1('))
+	//.pipe(replace(/@media\s*\((min|max)-width:(?!.*\)\sand)/g, '@include respond-$1('))
 	.pipe(sass().on('error', sass.logError))
+	.pipe(postcss([require('oldie')({ /* options */ })]))
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(rename('style-no-mqs.min.css'))
     .pipe(autoprefixer({
