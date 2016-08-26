@@ -14,7 +14,9 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
 	less = require('gulp-less'),
-	es = require('event-stream');
+	es = require('event-stream'),
+	replace = require('gulp-replace'),
+	sassGlob = require('gulp-sass-glob');
 
 var gutil = require('gulp-util');
 
@@ -85,7 +87,9 @@ gulp.task('css-main', function() {
 // Compile + bless primary ie8 styles
 gulp.task('css-ie-main', function() {
   gulp.src(config.scssPath + '/style-no-mqs.scss')
-    .pipe(sass().on('error', sass.logError))
+	.pipe(sassGlob())
+	.pipe(replace(/@media\s*\((min|max)-width:(?!.*\)\sand)/g, '@include respond-$1('))
+	.pipe(sass().on('error', sass.logError))
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(rename('style-no-mqs.min.css'))
     .pipe(autoprefixer({
