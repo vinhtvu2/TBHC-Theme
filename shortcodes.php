@@ -269,7 +269,7 @@ function sc_person_profile_grid($atts) {
 	$join			= ($atts['join']) ? $atts['join'] : 'or';
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
 	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : 'org_groups';
-	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : true;
+	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : false;
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
