@@ -342,7 +342,7 @@ function sc_person_profile_grid($atts) {
 				<? if($show_org_group){ ?>
 					<div class="group">
 						<span class="group-inner">
-							<?=$terms?>
+							<?=$show_org_group ? $terms : ""?>
 						</span>
 					</div>
 				<? } ?>
