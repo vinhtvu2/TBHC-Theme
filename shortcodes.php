@@ -339,10 +339,10 @@ function sc_person_profile_grid($atts) {
 						</small>
 					</h4>		
 				</div>
-				<? if($show_org_group){ ?>
+				<? if($OGID == 11){ ?>
 					<div class="group">
 						<span class="group-inner">
-							<?=$show_org_group ? $terms : ""?>
+							<?=$OGID == 11 ? $terms : ""?>
 						</span>
 					</div>
 				<? } ?>
