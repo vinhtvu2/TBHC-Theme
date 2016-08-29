@@ -51,7 +51,10 @@ body {
             position: relative;
             margin: 0;
             float: left;
-            width: 25%;
+            width: 50%;
+            @media (min-width:$screen-xs-max){
+                width:25%;
+            }
             overflow: hidden;
 
             a {
@@ -504,7 +507,7 @@ body {
     }
 }
 
-#sidebar_r_facebook_wrap > iframe {
+#sidebar_l_facebook_wrap > iframe {
     margin-left: -10px;
     height: 80px !important;
     width: 230px !important;

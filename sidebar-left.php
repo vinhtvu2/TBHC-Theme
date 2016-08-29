@@ -7,12 +7,13 @@
 
 <?php
 
+	$show_facebook	 		= get_post_meta($post->ID, 'page_widget_l_showfacebook', TRUE);	
 	$more_info_nav_val 			= get_post_meta($post->ID, 'page_widget_l_moreinfo', TRUE);
 	$more_info_nav_val_title 	= get_post_meta($post->ID, 'page_widget_l_moreinfo_title', TRUE);
 	$secondary_nav_val 			= get_post_meta($post->ID, 'page_widget_l_secinfo', TRUE);
 	$secondary_nav_val_title 	= get_post_meta($post->ID, 'page_widget_l_secinfo_title', TRUE);
 	$show_colleges_val 			= get_post_meta($post->ID, 'page_widget_l_showcolleges', TRUE);
-
+	
 	if ($more_info_nav_val) {
 		$moreinfo_title = $more_info_nav_val_title !== '' ? $more_info_nav_val_title : 'More Information';
 		//print '<h3 id="sidebar_l_moreinfo" class="sidebar_title">'.$moreinfo_title.':</h3>';
@@ -55,5 +56,12 @@
 		wp_nav_menu($args);
 	}
 
-
+	// Facebook Link
+	if ($show_facebook == 'on') {	
+		print '<h3 id="sidebar_l_facebook" class="sidebar_title">Connect With TBHC</h3>';
+		print '<div id="sidebar_l_facebook_wrap" class="sidebar_l_wrap">';
+		print '<iframe src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com%2fTheBurnettHonorsCollege&amp;width=292&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe>';
+		print '</div>';
+	}	
+	
 ?>

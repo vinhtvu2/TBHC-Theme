@@ -538,6 +538,13 @@ class Page extends CustomPostType {
 					'std' => 'on',
 				),
 				array(
+					'name' => '<strong>Left Sidebar:</strong> Show Connect with UCF Facebook Link',
+					'desc' => '(Optional) Check this box to display the UCF on Facebook information in the <strong>left-hand sidebar.</strong>',
+					'id' => $prefix.'widget_l_showfacebook',
+					'type' => 'checkbox',
+					'std' => 'on',
+				),
+				array(
 					'name' => '<strong>Right Sidebar:</strong> Show UCF Today Stories',
 					'desc' => '(Optional) Check this box to display the UCF Today feed in the <strong>right-hand sidebar.</strong>',
 					'id' => $prefix.'widget_r_showtoday',
@@ -555,13 +562,6 @@ class Page extends CustomPostType {
 					'desc' => '(Optional) Designate the specific UCF Today feed to use for the UCF Today widget; e.g. "http://today.ucf.edu/tag/alumni/feed/"',
 					'id' => $prefix.'widget_r_today_feed',
 					'type' => 'text',
-				),
-				array(
-					'name' => '<strong>Right Sidebar:</strong> Show Connect with UCF Facebook Link',
-					'desc' => '(Optional) Check this box to display the UCF on Facebook information in the <strong>right-hand sidebar.</strong>',
-					'id' => $prefix.'widget_r_showfacebook',
-					'type' => 'checkbox',
-					'std' => 'on',
 				),
 				array(
 					'name' => '<strong>Right Sidebar:</strong> Embed Widget 1 Title',
