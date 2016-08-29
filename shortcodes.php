@@ -260,7 +260,7 @@ add_shortcode('person-picture-list', 'sc_person_picture_list');
  * Custom Person List by Erik
  **/
 function sc_person_profile_grid($atts) {
-	remove_filter('the_content','wpautop');
+	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;
@@ -268,6 +268,8 @@ function sc_person_profile_grid($atts) {
 	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
 	$join			= ($atts['join']) ? $atts['join'] : 'or';
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
+	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : 'org_groups';
+	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : true;
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
@@ -296,7 +298,7 @@ function sc_person_profile_grid($atts) {
 						'class'	=>	'person-profile-grid-dropdown form-control',
 						'echo'	=> false,
 						'selected'	=>	$org_groups,
-						'child_of'	=>	strtolower($org_groups) == 'staff' ? (int)get_term_by('slug', 'Staff', 'org_groups')->term_id : NULL,
+						'child_of'	=>	(int)get_term_by('slug', $dd_org_groups, 'org_groups')->term_id,
 					)
 				)
 			);
@@ -337,11 +339,13 @@ function sc_person_profile_grid($atts) {
 						</small>
 					</h4>		
 				</div>
-				<div class="group">
-					<span class="group-inner">
-						<?=$terms?>
-					</span>
-				</div>
+				<? if($show_org_group){ ?>
+					<div class="group">
+						<span class="group-inner">
+							<?=$terms?>
+						</span>
+					</div>
+				<? } ?>
 				<div class="overlay"></div>
 			<? if($link) {?></a><?}?></div>
 		<?
@@ -353,7 +357,7 @@ function sc_person_profile_grid($atts) {
 	
 	<?
 	return ob_get_clean();
-	add_filter('the_content','wpautop');		
+	//add_filter('the_content','wpautop');		
 }
 add_shortcode('person-profile-grid', 'sc_person_profile_grid');
 
