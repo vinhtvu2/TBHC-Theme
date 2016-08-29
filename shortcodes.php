@@ -338,13 +338,11 @@ function sc_person_profile_grid($atts) {
 						</small>
 					</h4>		
 				</div>
-				<? if($OGID == 11){ ?>
-					<div class="group">
-						<span class="group-inner">
-							<?=$OGID == 11 ? $terms : ""?>
-						</span>
-					</div>
-				<? } ?>
+				<div class="group">
+					<span class="group-inner">
+						<?=$OGID == 11 ? $terms : ""?>
+					</span>
+				</div>
 				<div class="overlay"></div>
 			<? if($link) {?></a><?}?></div>
 		<?

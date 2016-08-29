@@ -60,7 +60,7 @@
 	if ($show_facebook == 'on') {	
 		print '<h3 id="sidebar_l_facebook" class="sidebar_title">Connect With TBHC</h3>';
 		print '<div id="sidebar_l_facebook_wrap" class="sidebar_l_wrap">';
-		print '<iframe src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com%2fTheBurnettHonorsCollege&amp;width=292&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe>';
+		print '<iframe src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com%2fTheBurnettHonorsCollege&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe>';
 		print '</div>';
 	}	
 	
