@@ -311,7 +311,8 @@ function sc_person_profile_grid($atts) {
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 						
 			$terms = array_filter($term_list, function($obj) {
-				return (int)$obj->parent == (int)$OGID;//->term_id;
+					print_r($obj->parent);
+				return $obj->parent == $OGID;//->term_id;
 			});
 			//$terms = implode(", ", array_map(function($obj){
 			//	return $obj->name;
