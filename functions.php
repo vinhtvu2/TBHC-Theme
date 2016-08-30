@@ -280,7 +280,7 @@ function sortable_people_columns( $columns ) {
 add_action('manage_edit-person_sortable_columns', 'sortable_people_columns');
 
 function get_people_from_org_group(){
-	echo do_shortcode('[person-profile-grid org_groups=\''.$_REQUEST['org_groups'].'\' dropdown=true]');
+	echo do_shortcode('[person-profile-grid org_groups=\''.$_REQUEST['org_groups'].'\' dd_org_groups=\''.$_REQUEST['dd_org_groups'].'\' dropdown=true]');
 	die();
 }
 

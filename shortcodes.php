@@ -286,7 +286,7 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>">
+	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$org_groups?>">
 		<? if($dropdown){ 
 			echo str_replace(
 				'<select',
@@ -297,8 +297,8 @@ function sc_person_profile_grid($atts) {
 						'value_field'	=>	'slug',
 						'class'	=>	'person-profile-grid-dropdown form-control',
 						'echo'	=> false,
-						'selected'	=>	$org_groups,
-						'child_of'	=>	(int)get_term_by('slug', $dd_org_groups, 'org_groups')->term_id,
+						'selected'	=>	$dd_org_groups,
+						'child_of'	=>	(int)get_term_by('slug', $org_groups, 'org_groups')->term_id,
 					)
 				)
 			);
@@ -310,7 +310,7 @@ function sc_person_profile_grid($atts) {
 			$OGID = get_term_by('name', $org_groups, 'org_groups')->term_id;
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 			$terms = array_filter($term_list, function($obj) {
-				return $obj->parent == 11;//->term_id;
+				return $obj->parent == $OGID;//->term_id;
 			});
 			$terms = implode(", ", array_map(function($obj){
 				return $obj->name;
@@ -340,7 +340,7 @@ function sc_person_profile_grid($atts) {
 				</div>
 				<div class="group">
 					<span class="group-inner">
-						<?=$OGID == 11 ? $terms : ""?>
+						<?=$terms?>
 					</span>
 				</div>
 				<div class="overlay"></div>

@@ -451,7 +451,7 @@ class Page extends CustomPostType {
 		$use_metabox    = True,
 		$built_in       = True;
 
-	public static function get_subheaders() {
+	/*public static function get_subheaders() {
 		$args = array (
 			'numberposts' 	=> 20, // Arbitrary limit to prevent huge dropdowns
 			'post_type'		=> 'subheader',
@@ -464,7 +464,7 @@ class Page extends CustomPostType {
 			$subheader_array[$subheader->post_title] = $subheader->ID;
 		}
 		return $subheader_array;
-	}
+	}*/
 
 	public static function get_menus() {
 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
@@ -497,13 +497,13 @@ class Page extends CustomPostType {
 					'type' => 'checkbox',
 					'std' => 'off',
 				),
-				array(
+				/*array(
 					'name' => 'Subheader',
 					'desc' => '(Optional) Display a Subheader above the page\'s content.',
 					'id' => $prefix.'subheader',
 					'type' => 'select',
 					'options' => $this->get_subheaders(),
-				),
+				),*/
 				array(
 					'name' => '<strong>Left Sidebar:</strong> More Information Widget',
 					'desc' => '(Optional) Display a More Information widget in the <strong>left-hand sidebar</strong> that contains a given menu. Useful for adding links that are directly related to the page\'s content. Menus can be created in the <a href="'.get_admin_url().'nav-menus.php">menu editor</a>.',
@@ -991,62 +991,6 @@ class Post extends CustomPostType {
 }
 
 /**
- * Describes a sub header piece for secondary pages.
- *
- * @author Jo Greybill
- **/
-
-class Subheader extends CustomPostType {
-	public
-		$name           = 'subheader',
-		$plural_name    = 'Subheaders',
-		$singular_name  = 'Subheader',
-		$add_new_item   = 'Add New Subheader',
-		$edit_item      = 'Edit Subheader',
-		$new_item       = 'New Subheader',
-		$public         = True,
-		$use_editor     = True,
-		$use_thumbnails = False,
-		$use_title      = True,
-		$use_metabox    = True,
-		$use_shortcode	= False,
-		$taxonomies		= array('');
-
-	public function fields() {
-		$prefix = $this->options('name').'_';
-		return array(
-			array(
-				'name' => 'Push Right Sidebar ',
-				'desc' => 'Specify whether the right sidebar should be pushed down below the bottom of the subheader.',
-				'id' => $prefix.'push_right_sidebar',
-				'type' => 'checkbox',
-				'std' => 'off'
-			),
-			array(
-					'name' => 'Student Name/Major',
-					'desc' => 'Name and discipline of the quoted student; e.g. "John Doe, Political Science".',
-					'id' => $prefix.'student_name',
-					'type' => 'text',
-			),
-			array(
-					'name' => 'Sub Image',
-					'desc' => 'Image to be displayed on the left-hand side of the subheader.  Image should ideally be square.',
-					'id' => $prefix.'sub_image',
-					'type' => 'file',
-			),
-			array(
-					'name' => 'Student Image',
-					'desc' => 'Image to be displayed on the right-hand side of the subheader.  Image should be a full body shot of the student.',
-					'id' => $prefix.'student_image',
-					'type' => 'file',
-			),
-		);
-	}
-}
-
-
-
-/**
  * Describes a A-Z Index link.
  *
  * @author Jo Greybill
@@ -1464,209 +1408,3 @@ class Slider extends CustomPostType {
 		}
 	}
 }
-
-
-/**
- * Describes an undergraduate/graduate program.
- *
- * @author Jo Dickson
- **/
-class Degree extends CustomPostType{
-	public
-		$name           = 'degree',
-		$plural_name    = 'Degree Programs',
-		$singular_name  = 'Degree Program',
-		$add_new_item   = 'Add New Degree Program',
-		$edit_item      = 'Edit Degree Program',
-		$new_item       = 'New Degree Program',
-		$public         = True,
-		$use_editor     = True,
-		$use_thumbnails = False,
-		$use_order      = True,
-		$use_title      = True,
-		$use_metabox    = True,
-		$use_shortcode  = True,
-		$taxonomies     = array( 'program_types', 'colleges', 'departments', 'degree_keywords' );
-
-	public function fields(){
-		$prefix = $this->options('name').'_';
-		return array(
-			array(
-				'name'  => 'Required Hours',
-				'id'   => $prefix.'hours',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Description',
-				'desc' => 'Description provided for the degree.  This value should not be modified as it can be overridden upon degree import from the
-							search service.  Modify the post content instead to add additional degree information.',
-				'id'   => $prefix.'description',
-				'type' => 'textarea',
-			),
-			array(
-				'name'  => 'Website',
-				'id'   => $prefix.'website',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Catalog PDF',
-				'id'   => $prefix.'pdf',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Profile URL',
-				'id'   => $prefix.'profile_url',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Phone Number',
-				'id'   => $prefix.'phone',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Email',
-				'id'   => $prefix.'email',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Contacts',
-				'desc' => 'Individual contacts are stored delimited by "@@;@@". Individual fields for each contact are delimited by "@@,@@".',
-				'id'   => $prefix.'contacts',
-				'type' => 'textarea',
-			),
-			array(
-				'name'  => 'Hide Tuition Information',
-				'desc' => 'If checked tuition information will be hidden for this degree',
-				'id'   => $prefix.'hide_tuition',
-				'type' => 'checkbox'
-			),
-			array(
-				'name'  => 'Degree ID',
-				'desc' => 'degree_id in database. Do not modify this value.',
-				'id'   => $prefix.'id',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Degree Type ID',
-				'desc' => 'type_id in database. Do not modify this value.',
-				'id'   => $prefix.'type_id',
-				'type' => 'text',
-			),
-			array(
-				'name'  => 'Is Graduate Program',
-				'desc' => 'graduate value in database. Do not modify this value.',
-				'id'   => $prefix.'is_graduate',
-				'type' => 'text',
-			)
-		);
-	}
-
-	public static function is_graduate_program($degree) {
-		$is_graduate = get_post_meta( $degree->ID, 'degree_is_graduate', true );
-		if ( $is_graduate && intval( $is_graduate ) === 1 ) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Returns a degree's contacts and their phone/email info
-	 * in an array of arrays.
-	 **/
-	public static function get_degree_contacts( $degree ) {
-		$contact_info = get_post_meta( $degree->ID, 'degree_contacts', true );
-		$contact_array = array();
-
-		// Split single contacts
-		$contacts = explode( '@@;@@', $contact_info );
-		foreach ( $contacts as $key=>$contact ) {
-			if ( $contact ) {
-				// Split individual fields
-				$contact = explode( '@@,@@', $contact );
-
-				$newcontact = array();
-
-				foreach ( $contact as $fieldset ) {
-					// Split out field key/values
-					$fields = explode( '@@:@@', $fieldset );
-					// Only get fields we need. Don't include fields that can result in
-					// duplicate contacts after sorting uniques (e.g. contact_id).
-					if ( $fields[0] == 'contact_name' || $fields[0] == 'contact_phone' || $fields[0] == 'contact_email' ) {
-						$newcontact[$fields[0]] = str_replace( '@@,@', '', $fields[1] );
-					}
-				}
-
-				// Only add the contact to the list if there are at least 2 pieces of info available
-				// e.g. don't add just a person's name to the list
-				if ( count( $newcontact ) > 1 ) {
-					array_push( $contact_array, $newcontact );
-				}
-			}
-		}
-
-		return array_map( 'array_filter', array_unique( $contact_array, SORT_REGULAR ) );
-	}
-
-	/**
-	 * Registers the custom post type and any other ancillary actions that are
-	 * required for the post to function properly.
-	 **/
-	public function register(){
-		$registration = array(
-			'labels'     => $this->labels(),
-			'supports'   => $this->supports(),
-			'public'     => $this->options('public'),
-			'taxonomies' => $this->options('taxonomies'),
-			'_builtin'   => $this->options('built_in'),
-			'rewrite' => array(
-				'slug' => 'academics'
-			),
-		);
-
-		if ($this->options('use_order')){
-			$registration = array_merge($registration, array('hierarchical' => True,));
-		}
-
-		register_post_type($this->options('name'), $registration);
-
-		if ($this->options('use_shortcode')){
-			add_shortcode($this->options('name').'-list', array($this, 'shortcode'));
-		}
-	}
-
-	/**
-	 * Handles output for a list of objects, can be overridden for descendants.
-	 * If you want to override how a list of objects are outputted, override
-	 * this, if you just want to override how a single object is outputted, see
-	 * the toHTML method.
-	 **/
-	public function objectsToHTML($degrees, $css_classes){
-		if (count($degrees) < 1){ return '';}
-
-		// Group the degrees by program type (undergraduate/minor/graduate/cert).
-		$degrees = sort_grouped_degree_programs(group_posts_by_tax_terms('program_types', $degrees));
-		ob_start();
-		foreach ($degrees as $group=>$posts) {
-			$term = get_term($group, 'program_types')->name.'s';
-			$term_slug = get_term($group, 'program_types')->slug.'s';
-		?>
-		<h3 class="degree-list-heading" id="<?=$term_slug?>"><?=$term?></h3>
-		<?php if ($posts) { ?>
-		<ul class="degree-list">
-			<?php foreach ( $posts as $post ): ?>
-			<li class="program">
-				<a href="<?php echo get_permalink( $post->ID ); ?>">
-					<?php echo $post->post_title; ?>
-				</a>
-			</li>
-			<?php endforeach; ?>
-		</ul>
-		<?php } ?>
-		<hr />
-		<?php
-		}
-		$html = ob_get_clean();
-		return $html;
-	}
-}
-?>
