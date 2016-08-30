@@ -312,7 +312,7 @@ function sc_person_profile_grid($atts) {
 			$terms = array_filter($term_list, function($obj) {
 					print_r("parent".$obj->parent);
 					print_r("ogid".$OGID);
-					print_r("equiv".$obj->parent == 11);
+					print_r("equiv".($obj->parent == 11));
 				return $obj->parent == $OGID;//->term_id;
 			});
 			$terms = implode(", ", array_map(function($obj){
