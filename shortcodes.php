@@ -309,9 +309,7 @@ function sc_person_profile_grid($atts) {
 		foreach($people as $person) {
 			
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
-			
-			print_r($terms_list);
-			
+						
 			$terms = array_filter($term_list, function($obj) {
 				return $obj->parent == $OGID;//->term_id;
 			});
@@ -343,7 +341,7 @@ function sc_person_profile_grid($atts) {
 				</div>
 				<div class="group">
 					<span class="group-inner">
-						<?=$terms?>
+						<?=print_r($terms_list)?>
 					</span>
 				</div>
 				<div class="overlay"></div>
