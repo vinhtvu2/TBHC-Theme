@@ -341,7 +341,7 @@ function sc_person_profile_grid($atts) {
 				</div>
 				<div class="group">
 					<span class="group-inner">
-						<?=var_dump($terms)?>
+						<?=print_r($terms)?>
 					</span>
 				</div>
 				<div class="overlay"></div>
