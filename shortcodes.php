@@ -268,7 +268,7 @@ function sc_person_profile_grid($atts) {
 	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
 	$join			= ($atts['join']) ? $atts['join'] : 'or';
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
-	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : 'org_groups';
+	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : $org_groups;
 	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : false;
 	$OGKids 		= get_term_children($dd_org_groups, 'org_groups');	
 	$people 		= sc_object_list(
