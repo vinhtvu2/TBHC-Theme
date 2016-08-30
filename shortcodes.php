@@ -313,7 +313,7 @@ function sc_person_profile_grid($atts) {
 						
 			$terms = array_filter($term_list, function($obj) {
 					print_r($obj->term_id.', ');
-					print_r(in_array($obj->term_id, $OGKids));
+					print_r(in_array($obj->term_id, $OGKids.', '));
 				return in_array($obj->term_id, $OGKids);
 			});
 			$terms = implode(", ", array_map(function($obj){
