@@ -314,7 +314,7 @@ function sc_person_profile_grid($atts) {
 			var_dump($term_list);
 												
 			$terms = array_filter($term_list, function($thng) use($OGID) {			
-				return $thng->parent == $OGID && $thng->term_id != $OGID;
+				return $thng->parent == $OGID && !empty($thng->term_id);
 			});
 			$terms = implode(", ", array_map(function($blrp){
 				return $blrp->name;
