@@ -297,8 +297,8 @@ function sc_person_profile_grid($atts) {
 						'value_field'	=>	'slug',
 						'class'	=>	'person-profile-grid-dropdown form-control',
 						'echo'	=> false,
-						'selected'	=>	$dd_org_groups,
-						'child_of'	=>	(int)get_term_by('slug', $org_groups, 'org_groups')->term_id,
+						'selected'	=>	$org_groups,
+						'child_of'	=>	(int)get_term_by('slug', $dd_org_groups, 'org_groups')->term_id,
 					)
 				)
 			);
