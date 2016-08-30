@@ -287,8 +287,8 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	print_r(get_term_by('slug', $dd_org_groups, 'org_groups'));
-	print_r(get_term_by('name', $dd_org_groups, 'org_groups'));
+	print_r(get_term_by('slug', $dd_org_groups, 'org_groups')->term_id == 11);
+	print_r(get_term_by('name', $dd_org_groups, 'org_groups')->term_id == 11);
 
 	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>">
 		<? if($dropdown){ 
