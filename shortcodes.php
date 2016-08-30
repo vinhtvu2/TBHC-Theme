@@ -286,7 +286,7 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$org_groups?>">
+	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>">
 		<? if($dropdown){ 
 			echo str_replace(
 				'<select',
