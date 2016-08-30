@@ -270,7 +270,8 @@ function sc_person_profile_grid($atts) {
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
 	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : $org_groups;
 	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : false;
-	$OGKids 		= get_term_children(get_term_by('name', $dd_org_groups, 'org_groups')->term_id, 'org_groups');	
+	$OGID			= get_term_by('name', $dd_org_groups, 'org_groups')->term_id;
+	$OGKids 		= get_term_children($OGID, 'org_groups');	
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
@@ -312,7 +313,7 @@ function sc_person_profile_grid($atts) {
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 												
 			$terms = array_filter($term_list, function($thng) {
-				return in_array($thng->term_id, $OGKids);
+				return $thng->parent == $OGID;
 			});
 			$terms = implode(", ", array_map(function($blrp){
 				return $blrp->name;
