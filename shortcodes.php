@@ -304,27 +304,18 @@ function sc_person_profile_grid($atts) {
 				)
 			);
 		} 
-		print_r(gettype($OGKids[0]));			
-		print_r($OGKids);?>	
+		?>	
 		<div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
 			
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
-						
-			print_r($OGKids[0] == $term_list[0]->term_id);
-						
-			$terms = array_filter($term_list, function($obj) {
-					print_r(gettype($obj->term_id));
-					print_r(' ');
-					print_r($obj->term_id);
-					print_r(' - ');
-					print_r(in_array($obj->term_id, $OGKids));				
-					print_r(', ');
-				return in_array($obj->term_id, $OGKids);
+												
+			$terms = array_filter($term_list, function($thng) {
+				return in_array($thng->term_id, $OGKids);
 			});
-			$terms = implode(", ", array_map(function($obj){
-				return $obj->name;
+			$terms = implode(", ", array_map(function($blrp){
+				return $blrp->name;
 			}, $terms));
 			
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image', false, true );
