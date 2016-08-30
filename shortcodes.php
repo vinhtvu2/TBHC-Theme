@@ -270,7 +270,7 @@ function sc_person_profile_grid($atts) {
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
 	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : $org_groups;
 	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : false;
-	$OGKids 		= get_term_children(get_term_by('slug', $dd_org_groups, 'org_groups'), 'org_groups');	
+	$OGKids 		= get_term_children(get_term_by('name', $dd_org_groups, 'org_groups'), 'org_groups');	
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
