@@ -330,7 +330,7 @@ function sc_person_profile_grid($atts) {
 		?>
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
 			<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
-				<?php echo wp_get_attachment_image($person->ID, 'profile-grid-image');?>
+				<?php echo wp_get_attachment_image(get_post_thumbnail_id($person->ID), 'profile-grid-image');?>
 				<div class="profile-short">
 					<h4 class="title">
 							<?=Person::get_name($person);?>
