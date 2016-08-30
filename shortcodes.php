@@ -270,7 +270,7 @@ function sc_person_profile_grid($atts) {
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
 	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : 'org_groups';
 	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : false;
-	$OGID 			= (int)get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;	
+	$OGID 			= get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;	
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
@@ -287,7 +287,7 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	print_r(get_term_by('slug', $dd_org_groups, 'org_groups')->term_id == 11);
+	print_r($OGID);
 	print_r(get_term_by('name', $dd_org_groups, 'org_groups')->term_id == 11);
 
 	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>">
