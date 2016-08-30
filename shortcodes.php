@@ -304,6 +304,7 @@ function sc_person_profile_grid($atts) {
 				)
 			);
 		} 
+		print_r(gettype($OGKids[0]));			
 		print_r($OGKids);?>	
 		<div class="row"><?
 		$count = 0;
