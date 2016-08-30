@@ -270,6 +270,7 @@ function sc_person_profile_grid($atts) {
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
 	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : 'org_groups';
 	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : false;
+	$OGID 			= (int)get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;	
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
@@ -298,7 +299,7 @@ function sc_person_profile_grid($atts) {
 						'class'	=>	'person-profile-grid-dropdown form-control',
 						'echo'	=> false,
 						'selected'	=>	$org_groups,
-						'child_of'	=>	(int)get_term_by('slug', $dd_org_groups, 'org_groups')->term_id,
+						'child_of'	=>	$OGID,
 					)
 				)
 			);
@@ -307,7 +308,6 @@ function sc_person_profile_grid($atts) {
 		$count = 0;
 		foreach($people as $person) {
 			
-			$OGID = get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 			$terms = array_filter($term_list, function($obj) {
 					print_r("parent".$obj->parent);
