@@ -313,9 +313,9 @@ function sc_person_profile_grid($atts) {
 			$terms = array_filter($term_list, function($obj) {
 				return in_array($obj, $OGKids);
 			});
-			$terms = implode(", ", array_map(function($obj){
-				return $obj->name;
-			}, $terms));
+			//$terms = implode(", ", array_map(function($obj){
+			//	return $obj->name;
+			//}, $terms));
 			
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image', false, true );
 			$image_url = get_featured_image_url($person->ID);
@@ -341,7 +341,7 @@ function sc_person_profile_grid($atts) {
 				</div>
 				<div class="group">
 					<span class="group-inner">
-						<?=$terms?>
+						<?=var_dump($terms)?>
 					</span>
 				</div>
 				<div class="overlay"></div>
