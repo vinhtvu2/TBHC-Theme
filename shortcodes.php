@@ -307,7 +307,7 @@ function sc_person_profile_grid($atts) {
 		$count = 0;
 		foreach($people as $person) {
 			
-			$OGID = get_term_by('name', $org_groups, 'org_groups')->term_id;
+			$OGID = get_term_by('name', $dd_org_groups, 'org_groups')->term_id;
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 			$terms = array_filter($term_list, function($obj) {
 				return $obj->parent == $OGID;//->term_id;
