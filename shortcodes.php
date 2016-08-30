@@ -287,6 +287,9 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
+	print_r(get_term_by('slug', $dd_org_groups, 'org_groups'));
+	print_r(get_term_by('name', $dd_org_groups, 'org_groups'));
+
 	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>">
 		<? if($dropdown){ 
 			echo str_replace(
@@ -310,9 +313,6 @@ function sc_person_profile_grid($atts) {
 			
 			$term_list = wp_get_post_terms($person->ID, 'org_groups');
 			$terms = array_filter($term_list, function($obj) {
-					print_r("parent".$obj->parent);
-					print_r("ogid".$OGID);
-					print_r("equiv".($obj->parent == 11));
 				return $obj->parent == $OGID;//->term_id;
 			});
 			$terms = implode(", ", array_map(function($obj){
