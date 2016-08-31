@@ -265,6 +265,7 @@ function sc_person_profile_grid($atts) {
 	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;
 	$org_groups		= ($atts['org_groups']) ? $atts['org_groups'] : null;
+	$org_groups2		= ($atts['org_groups2']) ? $atts['org_groups2'] : null;	
 	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
 	$join			= ($atts['join']) ? $atts['join'] : 'or';
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
@@ -273,18 +274,20 @@ function sc_person_profile_grid($atts) {
 	$dd2_org_groups	= ($atts['dd2_org_groups']) ? $atts['dd2_org_groups'] : NULL;	
 	$show_org_groups	= ($atts['show_org_groups']) ? $atts['show_org_groups'] : false;
 	$OGID			= get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;
+	$OGID2			= get_term_by('slug', $dd2_org_groups, 'org_groups');
+	$OGID2			= $OGID2 ? $OGID2->term_id : false;	
 	$people 		= sc_object_list(
+		array(
+			'type' => 'person',
+			'limit' => $limit,
+			'join' => $join,
+			'categories' => $categories,
+			'org_groups' => $org_groups	? implode(',', array($org_groups, $org_groups2)) : $org_groups,
+			'orderby' => 'person_orderby_name',
+			'order' => 'ASC'
+		),
 	array(
-	'type' => 'person',
-	'limit' => $limit,
-	'join' => $join,
-	'categories' => $categories,
-	'org_groups' => $org_groups,
-	'orderby' => 'person_orderby_name',
-	'order' => 'ASC'
-	),
-	array(
-	'objects_only' => True,
+		'objects_only' => True,
 	));
 	
 	ob_start();
@@ -307,7 +310,7 @@ function sc_person_profile_grid($atts) {
 				)
 			);
 		} 
-		if($dropdown2){ 
+		if($dropdown2 && $OGID2){ 
 			echo str_replace(
 				'<select',
 				'<select onchange="getProfilesForGrid($("#dd_org_groups").val(), this.value)"',
@@ -318,8 +321,8 @@ function sc_person_profile_grid($atts) {
 					'class'	=>	'person-profile-grid-dropdown form-control',
 					'id'	=>	'dd2_org_groups',
 					'echo'	=> false,
-					'selected'	=>	$org_groups,
-					'child_of'	=>	$OGID,
+					'selected'	=>	$org_groups2,
+					'child_of'	=>	$OGID2,
 					)
 				)
 			);
