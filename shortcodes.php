@@ -272,7 +272,7 @@ function sc_person_profile_grid($atts) {
 	$dropdown2		= ($atts['dropdown2']) ? $atts['dropdown2'] : false;
 	$dd2_org_groups	= ($atts['dd2_org_groups']) ? $atts['dd2_org_groups'] : NULL;	
 	$show_org_groups	= ($atts['show_org_groups']) ? $atts['show_org_groups'] : false;
-	$OGID			= get_term_by('name', $dd_org_groups, 'org_groups')->term_id;
+	$OGID			= get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
