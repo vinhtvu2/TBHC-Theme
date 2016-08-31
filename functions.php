@@ -280,7 +280,7 @@ function sortable_people_columns( $columns ) {
 add_action('manage_edit-person_sortable_columns', 'sortable_people_columns');
 
 function get_people_from_org_group(){
-	echo do_shortcode('[person-profile-grid org_groups=\''.$_REQUEST['org_groups'].'\' '.(!empty($_REQUEST['dd_org_groups']) ? 'dd_org_groups=\''.$_REQUEST['dd_org_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_org_groups']) ? 'dd2_org_groups=\''.$_REQUEST['dd2_org_groups'].'\' dropdown2=true ' : '') : '').'show_org_groups='.$_REQUEST['show_org_groups'].']');
+	echo do_shortcode('[person-profile-grid org_groups=\''.$_REQUEST['org_groups'].'\' '.!empty($_REQUEST['org_groups2']) ? 'org_groups2=\''.$_REQUEST['org_groups2'].'\' ' : ''.(!empty($_REQUEST['dd_org_groups']) ? ' dd_org_groups=\''.$_REQUEST['dd_org_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_org_groups']) ? 'dd2_org_groups=\''.$_REQUEST['dd2_org_groups'].'\' dropdown2=true ' : ' ') : ' ').'show_org_groups='.$_REQUEST['show_org_groups'].']');
 	die();
 }
 
