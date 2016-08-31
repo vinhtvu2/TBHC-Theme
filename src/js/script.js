@@ -1602,7 +1602,7 @@ function getProfilesForGrid(inp1, inp2){
 		action : 'get_people_from_org_group',
 		org_groups: inp1,
 		dd_org_groups: reqGrp,
-		show_org_groups: shwOrgs
+		show_org_groups: shwOrgs != undefined && shwOrgs ? shwOrgs : false
 	};
 	if(regGrp2){
 		data.dd2_org_groups = reqGrp2
