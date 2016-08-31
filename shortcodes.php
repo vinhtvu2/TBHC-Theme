@@ -314,7 +314,7 @@ function sc_person_profile_grid($atts) {
 		if($dropdown2 && $OGID2){ 
 			echo str_replace(
 				'<select',
-				'<select onchange="getProfilesForGrid($("#dd_org_groups").val(), this.value)"',
+				'<select onchange="getProfilesForGrid($(\'#dd_org_groups\').val(), this.value)"',
 				wp_dropdown_categories(
 					array(
 					'taxonomy'	=>	'org_groups',

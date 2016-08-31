@@ -1605,7 +1605,7 @@ function getProfilesForGrid(inp1, inp2){
 		show_org_groups: shwOrgs != undefined && shwOrgs ? shwOrgs : false
 	};
 	if(regGrp2){
-		data.dd2_org_groups = reqGrp2
+		data.dd2_org_groups = reqGrp2;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
