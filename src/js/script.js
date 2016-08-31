@@ -1606,6 +1606,7 @@ function getProfilesForGrid(inp1, inp2){
 	};
 	if(regGrp2){
 		data.dd2_org_groups = regGrp2;
+		data.org_groups2 = inp2;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
