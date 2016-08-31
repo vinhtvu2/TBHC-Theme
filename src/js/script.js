@@ -1603,7 +1603,7 @@ function getProfilesForGrid(inp1, inp2){
 		org_groups: inp1,
 		dd_org_groups: reqGrp,
 		dd2_org_groups: reqGrp2,
-		show_org_groups = shwOrgs
+		show_org_groups: shwOrgs
 	}, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
 	});
