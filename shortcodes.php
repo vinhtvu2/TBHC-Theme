@@ -289,7 +289,7 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwGrp="<?=$show_org_groups?>>">
+	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwGrp="<?=$show_org_groups?>">
 		<? if($dropdown){ 
 			echo str_replace(
 				'<select',
@@ -301,7 +301,7 @@ function sc_person_profile_grid($atts) {
 						'class'	=>	'person-profile-grid-dropdown form-control',
 						'id'	=>	'dd_org_groups',
 						'echo'	=> false,
-						'selected'	=>	$org_groups,
+						'selected'	=>	$dd_org_groups,
 						'child_of'	=>	$OGID,
 					)
 				)
@@ -318,7 +318,7 @@ function sc_person_profile_grid($atts) {
 					'class'	=>	'person-profile-grid-dropdown form-control',
 					'id'	=>	'dd2_org_groups',
 					'echo'	=> false,
-					'selected'	=>	$org_groups,
+					'selected'	=>	$dd2_org_groups,
 					'child_of'	=>	$OGID,
 					)
 				)
