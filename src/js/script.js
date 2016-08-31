@@ -1598,8 +1598,10 @@ function getProfilesForGrid(inp1, inp2){
 	var reqGrp = $(".person-profile-grid").data("group");
 	var regGrp2 = $(".person-profile-grid").data("group2");
 	var shwOrgs = $(".person-profile-grid").data("shwgrp");
+	var jn = $(".person-profile-grid").data("jn");
 	var data = {
 		action : 'get_people_from_org_group',
+		join : jn,
 		org_groups: inp1,
 		dd_org_groups: reqGrp,
 		show_org_groups: shwOrgs != undefined && shwOrgs ? shwOrgs : false

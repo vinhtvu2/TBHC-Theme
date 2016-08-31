@@ -292,7 +292,7 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwgrp="<?=$show_org_groups?>">
+	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwgrp="<?=$show_org_groups?>" data-jn="<?=$join?>">
 		<? if($dropdown){ 
 			echo str_replace(
 				'<select',
