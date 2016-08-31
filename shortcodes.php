@@ -272,7 +272,7 @@ function sc_person_profile_grid($atts) {
 	$dropdown2		= ($atts['dropdown2']) ? $atts['dropdown2'] : false;
 	$dd2_org_groups	= ($atts['dd2_org_groups']) ? $atts['dd2_org_groups'] : NULL;	
 	$show_org_groups	= ($atts['show_org_groups']) ? $atts['show_org_groups'] : false;
-	$OGID			= get_term_by('name', $dd_org_groups, 'org_groups')->term_id;
+	$OGID			= get_term_by('name', $org_groups, 'org_groups')->term_id;
 	$people 		= sc_object_list(
 	array(
 	'type' => 'person',
@@ -301,7 +301,7 @@ function sc_person_profile_grid($atts) {
 						'class'	=>	'person-profile-grid-dropdown form-control',
 						'id'	=>	'dd_org_groups',
 						'echo'	=> false,
-						'selected'	=>	$dd_org_groups,
+						'selected'	=>	$org_groups,
 						'child_of'	=>	$OGID,
 					)
 				)
@@ -318,7 +318,7 @@ function sc_person_profile_grid($atts) {
 					'class'	=>	'person-profile-grid-dropdown form-control',
 					'id'	=>	'dd2_org_groups',
 					'echo'	=> false,
-					'selected'	=>	$dd2_org_groups,
+					'selected'	=>	$org_groups,
 					'child_of'	=>	$OGID,
 					)
 				)
@@ -329,14 +329,16 @@ function sc_person_profile_grid($atts) {
 		$count = 0;
 		foreach($people as $person) {
 			
-			$term_list = wp_get_post_terms($person->ID, 'org_groups');
-																								
-			$terms = array_filter($term_list, function($thng) use($OGID) {			
-				return $thng->parent == $OGID && !empty($thng->parent);
-			});
-			$terms = implode(", ", array_map(function($blrp){
-				return $blrp->name;
-			}, $terms));
+			if($show_org_groups){
+				$term_list = wp_get_post_terms($person->ID, 'org_groups');
+																									
+				$terms = array_filter($term_list, function($thng) use($OGID) {			
+					return $thng->parent == $OGID && !empty($thng->parent);
+				});
+				$terms = implode(", ", array_map(function($blrp){
+					return $blrp->name;
+				}, $terms));
+			}
 			
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image', false, true );
 			$image_url = get_featured_image_url($person->ID);
