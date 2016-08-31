@@ -364,7 +364,7 @@ function sc_person_profile_grid($atts) {
 				</div>
 				<div class="group">
 					<span class="group-inner">
-						<?=if($show_org_groups){$terms}?>
+						<?=if($show_org_groups){ echo $terms; }?>
 					</span>
 				</div>
 				<div class="overlay"></div>
