@@ -1593,13 +1593,17 @@ if (typeof jQuery != 'undefined'){
   console.log('jQuery dependency failed to load');
 }
 
-function getProfilesForDept(inp){
+function getProfilesForGrid(inp1, inp2){
 	var ajaxUrl = $(".person-profile-grid").data("url");
 	var reqGrp = $(".person-profile-grid").data("group");
+	var regGrp2 = $(".person-profile-grid").data("group2");
+	var shwOrgs = $(".person-profile-grid").data("shwGrp");
 	jQuery.post(ajaxUrl, {
 		action : 'get_people_from_org_group',
-		org_groups: inp,
-		dd_org_groups: reqGrp
+		org_groups: inp1,
+		dd_org_groups: reqGrp,
+		dd2_org_groups: reqGrp2,
+		show_org_groups = shwOrgs
 	}, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
 	});

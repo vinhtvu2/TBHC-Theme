@@ -269,7 +269,9 @@ function sc_person_profile_grid($atts) {
 	$join			= ($atts['join']) ? $atts['join'] : 'or';
 	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
 	$dd_org_groups	= ($atts['dd_org_groups']) ? $atts['dd_org_groups'] : $org_groups;
-	$show_org_group	= ($atts['show_org_group']) ? $atts['show_org_group'] : false;
+	$dropdown2		= ($atts['dropdown2']) ? $atts['dropdown2'] : false;
+	$dd2_org_groups	= ($atts['dd2_org_groups']) ? $atts['dd2_org_groups'] : NULL;	
+	$show_org_groups	= ($atts['show_org_groups']) ? $atts['show_org_groups'] : false;
 	$OGID			= get_term_by('name', $dd_org_groups, 'org_groups')->term_id;
 	$people 		= sc_object_list(
 	array(
@@ -287,19 +289,37 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>">
+	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwGrp="<?=$show_org_groups?>>">
 		<? if($dropdown){ 
 			echo str_replace(
 				'<select',
-				'<select onchange="getProfilesForDept(this.value)"',
+				'<select onchange="getProfilesForGrid(this.value'.$dropdown2 ? ', $("#dd2_org_groups").val()' : ''.')"',
 				wp_dropdown_categories(
 					array(
 						'taxonomy'	=>	'org_groups',
 						'value_field'	=>	'slug',
 						'class'	=>	'person-profile-grid-dropdown form-control',
+						'id'	=>	'dd_org_groups',
 						'echo'	=> false,
 						'selected'	=>	$org_groups,
 						'child_of'	=>	$OGID,
+					)
+				)
+			);
+		} 
+		if($dropdown2){ 
+			echo str_replace(
+				'<select',
+				'<select onchange="getProfilesForGrid($("#dd_org_groups").val(), this.value)"',
+				wp_dropdown_categories(
+					array(
+					'taxonomy'	=>	'org_groups',
+					'value_field'	=>	'slug',
+					'class'	=>	'person-profile-grid-dropdown form-control',
+					'id'	=>	'dd2_org_groups',
+					'echo'	=> false,
+					'selected'	=>	$org_groups,
+					'child_of'	=>	$OGID,
 					)
 				)
 			);
@@ -342,7 +362,7 @@ function sc_person_profile_grid($atts) {
 				</div>
 				<div class="group">
 					<span class="group-inner">
-						<?=$terms?>
+						<?=$show_org_groups ? $terms : ""?>
 					</span>
 				</div>
 				<div class="overlay"></div>
