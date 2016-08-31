@@ -1597,7 +1597,7 @@ function getProfilesForGrid(inp1, inp2){
 	var ajaxUrl = $(".person-profile-grid").data("url");
 	var reqGrp = $(".person-profile-grid").data("group");
 	var regGrp2 = $(".person-profile-grid").data("group2");
-	var shwOrgs = $(".person-profile-grid").data("shwGrp");
+	var shwOrgs = $(".person-profile-grid").data("shwgrp");
 	var data = {
 		action : 'get_people_from_org_group',
 		org_groups: inp1,
