@@ -1604,7 +1604,7 @@ function getProfilesForGrid(inp1, inp2){
 		dd_org_groups: reqGrp,
 		show_org_groups: shwOrgs != undefined && shwOrgs ? shwOrgs : false
 	};
-	if(regGrp2){
+	if(regGrp2 != undefined && regGrp2 != null){
 		data.dd2_org_groups = reqGrp2;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
