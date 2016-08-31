@@ -1602,7 +1602,7 @@ function getProfilesForGrid(inp1, inp2){
 		action : 'get_people_from_org_group',
 		org_groups: inp1,
 		dd_org_groups: reqGrp,
-		dd2_org_groups: reqGrp2,
+		dd2_org_groups: reqGrp2 ? regGrp2 : null,
 		show_org_groups: shwOrgs
 	}, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
