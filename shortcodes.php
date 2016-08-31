@@ -276,6 +276,7 @@ function sc_person_profile_grid($atts) {
 	$OGID			= get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;
 	$OGID2			= get_term_by('slug', $dd2_org_groups, 'org_groups');
 	$OGID2			= $OGID2 ? $OGID2->term_id : false;	
+	echo $org_groups2 ? implode(',', array($org_groups, $org_groups2)) : $org_groups;
 	$people 		= sc_object_list(
 		array(
 			'type' => 'person',
