@@ -283,7 +283,9 @@ function sc_person_profile_grid($atts) {
 			'limit' => $limit,
 			'join' => $join,
 			'categories' => $categories,
-			'org_groups' => $org_groups2 ? array($org_groups, $org_groups2) : $org_groups,
+			'org_groups' => $org_groups2 ? array(
+				$org_groups, $org_groups2
+			) : $org_groups,
 			'orderby' => 'person_orderby_name',
 			'order' => 'ASC'
 		),
