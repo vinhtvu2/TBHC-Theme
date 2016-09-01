@@ -300,7 +300,7 @@ function sc_person_profile_grid($atts) {
 				'taxonomy' => 'org_groups',
 				'field'    => 'slug',
 				'terms'    => array( 'team-leader-year-2016', 'team-leader-session-monday' ),
-				'operator' => 'IN',
+				'operator' => 'AND',
 				'include_children'	=> true,
 			),
 		),
