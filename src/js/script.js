@@ -1598,6 +1598,7 @@ function getProfilesForGrid(inp1, inp2){
 	var reqGrp = $(".person-profile-grid").data("group");
 	var regGrp2 = $(".person-profile-grid").data("group2");
 	var shwOrgs = $(".person-profile-grid").data("shwgrp");
+	var oprtr = $(".person-profile-grid").data("oprtr");	
 	var jn = $(".person-profile-grid").data("jn");
 	var data = {
 		action : 'get_people_from_org_group',
@@ -1609,6 +1610,9 @@ function getProfilesForGrid(inp1, inp2){
 	if(regGrp2){
 		data.dd2_org_groups = regGrp2;
 		data.org_groups2 = inp2;
+	}
+	if(oprtr){
+		data.operator = oprtr;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
