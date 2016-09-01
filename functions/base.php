@@ -1118,6 +1118,9 @@ function sc_object_list($attrs, $options = array()){
 	);
 
 	$query = new WP_Query($query_array);
+	
+	print_r($query);
+	
 	global $post;
 	$objects = array();
 	while($query->have_posts()){
