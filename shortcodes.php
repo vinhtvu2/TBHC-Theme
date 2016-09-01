@@ -335,8 +335,7 @@ function sc_person_profile_grid($atts) {
 		<div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
-			print($show_org_groups == "true");
-			if($show_org_groups == true){
+			if(strtolower($show_org_groups) == "true"){
 				$term_list = wp_get_post_terms($person->ID, 'org_groups');
 																									
 				$terms = array_filter($term_list, function($thng) use($OGID, $OGID2) {			
@@ -371,7 +370,7 @@ function sc_person_profile_grid($atts) {
 				</div>
 				<div class="group">
 					<span class="group-inner">
-						<?php if($show_org_groups == true){ print($show_org_groups);print($terms); } ?>
+						<?php if(strtolower($show_org_groups) == "true"){ print($show_org_groups);print($terms); } ?>
 					</span>
 				</div>
 				<div class="overlay"></div>
