@@ -339,8 +339,8 @@ function sc_person_profile_grid($atts) {
 			if($show_org_groups == true){
 				$term_list = wp_get_post_terms($person->ID, 'org_groups');
 																									
-				$terms = array_filter($term_list, function($thng) use($OGID) {			
-					return $thng->parent == $OGID && !empty($thng->parent);
+				$terms = array_filter($term_list, function($thng) use($OGID, $OGID2) {			
+					return !empty($thng->parent) && ($thng->parent == $OGID || ($OGID2 != false && $thng->parent == $OGID2));
 				});
 				$terms = implode(", ", array_map(function($blrp){
 					return $blrp->name;
