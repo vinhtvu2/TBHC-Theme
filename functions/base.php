@@ -1109,9 +1109,6 @@ function sc_object_list($attrs, $options = array()){
 		
 		$tax_queries[] = $taxArr;
 	}
-
-	print_r($tax_queries);
-	print('<br/><br/>');
 	
 	# perform query
 	$query_array = array(
@@ -1124,10 +1121,7 @@ function sc_object_list($attrs, $options = array()){
 		'offset'         => $params['offset']
 	);
 
-	$query = new WP_Query($query_array);
-	
-	print_r($query);
-	
+	$query = new WP_Query($query_array);	
 	global $post;
 	$objects = array();
 	while($query->have_posts()){
