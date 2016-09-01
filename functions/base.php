@@ -1100,6 +1100,7 @@ function sc_object_list($attrs, $options = array()){
 			'taxonomy' => $tax,
 			'field' => 'slug',
 			'terms' => $terms,
+			'operator' => $params['join'],
 		);
 	}
 
