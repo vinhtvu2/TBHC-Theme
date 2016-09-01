@@ -1101,9 +1101,8 @@ function sc_object_list($attrs, $options = array()){
 			'taxonomy' => $tax,
 			'field' => 'slug',
 			'terms' => $terms,
-			if($params['operator']){
-				'operator' => $params['operator']
-			}
+			'operator' => $params['operator']
+
 		);
 	}
 
