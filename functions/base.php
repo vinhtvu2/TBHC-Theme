@@ -1106,6 +1106,9 @@ function sc_object_list($attrs, $options = array()){
 		);
 	}
 
+	print_r($tax_queries);
+	print('<br/><br/>');
+	
 	# perform query
 	$query_array = array(
 		'tax_query'      => $tax_queries,
