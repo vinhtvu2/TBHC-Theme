@@ -451,21 +451,6 @@ class Page extends CustomPostType {
 		$use_metabox    = True,
 		$built_in       = True;
 
-	/*public static function get_subheaders() {
-		$args = array (
-			'numberposts' 	=> 20, // Arbitrary limit to prevent huge dropdowns
-			'post_type'		=> 'subheader',
-			'post_status'	=> 'publish'
-		);
-		$subheaders = get_posts($args);
-
-		$subheader_array = array();
-		foreach ($subheaders as $subheader) {
-			$subheader_array[$subheader->post_title] = $subheader->ID;
-		}
-		return $subheader_array;
-	}*/
-
 	public static function get_menus() {
 		$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
 		$menu_array = array();

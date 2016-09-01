@@ -160,4 +160,28 @@ class AudienceRoles extends CustomTaxonomy
 
 		$hierarchical = True;
 } // END class
+
+/**
+ * Describes spotlight and opportunity taxonomies
+	*
+ * @author Chris Conover
+**/
+class EventGroups extends CustomTaxonomy
+{
+	public
+	$name               = 'event_groups',
+	$general_name       = 'Event Groups',
+	$singular_name      = 'Event Group',
+	$search_items       = 'Search Event Groups',
+	$popular_items      = 'Popular Event Groups',
+	$all_times          = 'All Event Groups',
+	$parent_item        = 'Parent Event Group',
+	$parent_item_colon  = 'Parent Event Group:',
+	$edit_item          = 'Edit Event Group',
+	$update_item        = 'Update Event Group',
+	$add_new_item       = 'Add New Event Group',
+	$new_item_name      = 'New Tag Event Group',
+	
+	$hierarchical = True;
+} // END class
 ?>

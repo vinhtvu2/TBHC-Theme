@@ -103,62 +103,6 @@ define('FALL_MONTH_END', 12); 		// Dec
 define('UNDERGRAD_CATALOG_URL', !empty( $theme_options['undergrad_catalog_url'] ) ? $theme_options['undergrad_catalog_url'] : 'http://catalog.ucf.edu');
 define('GRAD_CATALOG_URL', !empty( $theme_options['grad_catalog_url'] ) ? $theme_options['grad_catalog_url'] : 'http://graduatecatalog.ucf.edu');
 
-# Desired order of degree program types in degree lists, by program slug
-define('DEGREE_PROGRAM_ORDER', serialize(array(
-	'undergraduate-degree',
-	'articulated-program',
-	'accelerated-program',
-	'minor',
-	'graduate-degree',
-	'certificate',
-)));
-
-/**
- * All valid degree search parameters.  Any GET params passed to the degree
- * search that aren't in this array are ignored.
- *
- * If a param must *always* have some fallback value (e.g. a param for radio
- * buttons), set it below.
- * Otherwise, each value below should be empty (e.g. an empty string '' or
- * array() ).
- **/
-define( 'DEGREE_SEARCH_PAGE_COUNT', !empty( $theme_options['degrees_per_page'] ) ? $theme_options['degrees_per_page'] : 100 );
-
-define( 'DEGREE_SEARCH_PARAMS', serialize( array(
-	'program-type' => array(),
-	'college' => array(),
-	'sort-by' => 'title',
-	'search-query' => '',
-	'default' => 0,
-	'offset' => 0,
-	'search-default' => 0
-) ) );
-
-# Params specifically for the default view.
-define( 'DEGREE_SEARCH_DEFAULT_PARAMS', serialize( array(
-	'program-type' => array(),
-	'college' => array(),
-	'sort-by' => 'title',
-	'search-query' => '',
-	'default' => 1,
-	'offset' => 0,
-	'search-default' => 0
-) ) );
-
-# Params specifically for the default search view (view that should used
-# immediately following the default view, if a user performs a search without
-# modifying any filters beforehand.  Added to force program type options from
-# the default view off, and to search all program types instead.)
-define( 'DEGREE_SEARCH_S_DEFAULT_PARAMS', serialize( array(
-	'program-type' => array(),
-	'college' => array(),
-	'sort-by' => 'title',
-	'search-query' => '',
-	'default' => 0,
-	'offset' => 0,
-	'search-default' => 1
-) ) );
-
 # Domain/path of site (for cookies)
 list($domain, $path) = explode('.edu', get_site_url());
 $domain = preg_replace('/^(http|https):\/\//','',$domain).'.edu';
@@ -183,21 +127,16 @@ Config::$custom_post_types = array(
 	'Slider',
 	'Spotlight',
 	'Opportunity',
-	//'Subheader',
 	'AZIndexLink',
 	'Announcement',
 	'Post',
-	//'Degree',
 );
 
 Config::$custom_taxonomies = array(
 	'OrganizationalGroups',
 	'Keywords',
 	'AudienceRoles',
-	//'ProgramTypes',
-	//'Colleges',
-	//'Departments',
-	//'DegreeKeywords'
+	'EventGroups'
 );
 
 
