@@ -795,7 +795,8 @@ class Opportunity extends CustomPostType {
 	$use_thumbnails = True,
 	$use_title      = True,
 	$use_metabox    = True,
-	$use_shortcode	= True;
+	$use_shortcode	= True,
+	$taxonomies     = array('event_groups', 'category');	
 	
 	public function fields() {
 		$prefix = $this->options('name').'_';
@@ -891,7 +892,9 @@ class Spotlight extends CustomPostType {
 		$use_thumbnails = True,
 		$use_title      = True,
 		$use_metabox    = True,
-		$use_shortcode	= True;
+		$use_shortcode	= True,
+		$taxonomies     = array('event_groups', 'category');	
+	
 
 	public function fields() {
 		$prefix = $this->options('name').'_';
