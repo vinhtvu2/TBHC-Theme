@@ -335,7 +335,7 @@ function sc_person_profile_grid($atts) {
 		<div class="row"><?
 		$count = 0;
 		foreach($people as $person) {
-			
+			print((bool)$show_org_groups);
 			if($show_org_groups == true){
 				$term_list = wp_get_post_terms($person->ID, 'org_groups');
 																									
