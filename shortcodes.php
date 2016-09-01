@@ -296,11 +296,19 @@ function sc_person_profile_grid($atts) {
 	$args = array(
 		'post_type' => 'people',
 		'tax_query' => array(
+			'relation' 	=> 'AND',
 			array(
 				'taxonomy' => 'org_groups',
 				'field'    => 'slug',
-				'terms'    => array( 'team-leader-year-2016', 'team-leader-session-monday' ),
-				'operator' => 'AND',
+				'terms'    => array( 'team-leader-year-2016'),
+				'operator' => 'IN',
+				'include_children'	=> true,
+			),
+			array(
+				'taxonomy' => 'org_groups',
+				'field'    => 'slug',
+				'terms'    => array( 'team-leader-session-monday'),
+				'operator' => 'IN',
 				'include_children'	=> true,
 			),
 		),
