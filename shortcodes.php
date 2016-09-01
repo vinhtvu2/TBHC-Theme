@@ -301,7 +301,6 @@ function sc_person_profile_grid($atts) {
 				'field'    => 'slug',
 				'terms'    => array( 'team-leader-year-2016', 'team-leader-session-monday' ),
 				'operator' => 'AND',
-				'include_children'	=> true,
 			),
 		),
 	);
