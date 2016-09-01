@@ -116,7 +116,7 @@ function edit_spotlight_columns() {
 	'title'       => 'Title',
 	'spotlight_start'	=> 'Adv Start Date',
 	'spotlight_end'	=> 'Adv End Date',
-	'spotlight_category'	=> 'Category',
+	'spotlight_category' => 'Category',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
@@ -175,7 +175,7 @@ function edit_opportunity_columns() {
 	'title'       => 'Title',
 	'opportunity_start'	=> 'Adv Start Date',
 	'opportunity_end'	=> 'Adv End Date',
-	'opportunity_category'	=> 'Category',
+	'event_groups'	=> 'Event Groups',
 	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
@@ -188,7 +188,7 @@ function sortable_opportunity_columns( $columns ) {
 	$columns['publish_date'] = 'publish_date';
 	$columns['opportunity_start'] = 'opportunity_start';
 	$columns['opportunity_end'] = 'opportunity_end';
-	$columns['opportunity_category'] = 'opportunity_category';
+	$columns['event_group'] = 'event_groups';	
 	return $columns;
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
@@ -215,8 +215,12 @@ function manage_opportunity_columns( $column, $post_id ) {
 				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_end', TRUE)));
 			}
 		break;
-		case 'spotlight_category':
-			print get_post_meta($post->ID, 'opportunity_category', true);
+		case 'event_groups':
+		$theseTerms = get_the_terms($post, 'event_groups');
+		if($theseTerms && (array)$theseTerms === $theseTerms){
+			$theseTerms = array_map('manage_columns_terms', $theseTerms);			
+			print implode(', ',$theseTerms);
+		}
 		break;		
 		default:
 		break;
@@ -240,7 +244,7 @@ function edit_people_columns() {
 }
 add_action('manage_edit-person_columns', 'edit_people_columns');
 
-function manage_people_columns_orgGroup_terms($term){
+function manage_columns_terms($term){
 	$termLink = get_term_link($term);
 	return '<a href="'.$termLink.'">'.$term->name.'</a>';
 }
@@ -260,7 +264,7 @@ function manage_people_columns( $column, $post_id ) {
 		case 'org_group':
 			$theseTerms = get_the_terms($post, 'org_groups');
 			if($theseTerms && (array)$theseTerms === $theseTerms){
-				$theseTerms = array_map('manage_people_columns_orgGroup_terms', $theseTerms);			
+				$theseTerms = array_map('manage_columns_terms', $theseTerms);			
 				print implode(', ',$theseTerms);
 			}
 		break;
