@@ -296,7 +296,6 @@ function sc_person_profile_grid($atts) {
 	$args = array(
 		'post_type' => 'people',
 		'tax_query' => array(
-			'relation' => 'AND',
 			array(
 				'taxonomy' => 'org_groups',
 				'field'    => 'slug',
