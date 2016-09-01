@@ -275,7 +275,8 @@ function sc_person_profile_grid($atts) {
 	$show_org_groups	= ($atts['show_org_groups']) ? $atts['show_org_groups'] : false;
 	$OGID			= get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;
 	$OGID2			= get_term_by('slug', $dd2_org_groups, 'org_groups');
-	$OGID2			= $OGID2 ? $OGID2->term_id : false;	
+	$OGID2			= $OGID2 ? $OGID2->term_id : false;
+	$operator		= ($atts['operator']) ? $atts['operator'] : NULL;
 	$people 		= sc_object_list(
 		array(
 			'type' => 'person',
@@ -284,7 +285,8 @@ function sc_person_profile_grid($atts) {
 			'categories' => $categories,
 			'org_groups' => $org_groups2 ? $org_groups.' '.$org_groups2 : $org_groups,
 			'orderby' => 'person_orderby_name',
-			'order' => 'ASC'
+			'order' => 'ASC',
+			'operator' => $operator
 		),
 	array(
 		'objects_only' => True,

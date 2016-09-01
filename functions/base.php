@@ -1101,7 +1101,9 @@ function sc_object_list($attrs, $options = array()){
 			'taxonomy' => $tax,
 			'field' => 'slug',
 			'terms' => $terms,
-			'operator' => $params['operator'],
+			if($params['operator']){
+				'operator' => $params['operator']
+			}
 		);
 	}
 
@@ -1117,6 +1119,9 @@ function sc_object_list($attrs, $options = array()){
 	);
 
 	$query = new WP_Query($query_array);
+	
+	print_r($query);
+	
 	global $post;
 	$objects = array();
 	while($query->have_posts()){
