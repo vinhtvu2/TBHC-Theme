@@ -1035,7 +1035,7 @@ function sc_object_list($attrs, $options = array()){
 	$default_options = array(
 		'default_content' => null,
 		'sort_func' => null,
-		'objects_only' => False
+		'objects_only' => False,
 	);
 
 	extract(array_merge($default_options, $options));
@@ -1048,7 +1048,8 @@ function sc_object_list($attrs, $options = array()){
 		'class'   => '',
 		'orderby' => 'menu_order title',
 		'order'   => 'ASC',
-		'offset'  => 0
+		'offset'  => 0,
+		'operator' => null,
 	);
 	$params = array_merge($default_attrs, $attrs);
 
@@ -1100,6 +1101,7 @@ function sc_object_list($attrs, $options = array()){
 			'taxonomy' => $tax,
 			'field' => 'slug',
 			'terms' => $terms,
+			'operator' => $params['operator'],
 		);
 	}
 

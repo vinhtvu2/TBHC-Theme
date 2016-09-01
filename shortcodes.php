@@ -292,20 +292,6 @@ function sc_person_profile_grid($atts) {
 	
 	ob_start();
 	
-	
-	$args = array(
-		'post_type' => 'person',
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'org_groups',
-				'field'    => 'slug',
-				'terms'    => array( 'team-leader-year-2016', 'team-leader-session-monday' ),
-			),
-		),
-	);
-	$query = new WP_Query( $args );
-	print_r($query);
-	
 	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwgrp="<?=$show_org_groups?>" data-jn="<?=$join?>">
 		<? if($dropdown){ 
 			echo str_replace(
