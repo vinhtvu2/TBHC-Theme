@@ -1097,13 +1097,17 @@ function sc_object_list($attrs, $options = array()){
 			$tax = $translate[$tax];
 		}
 
-		$tax_queries[] = array(
+		$taxArr = array(
 			'taxonomy' => $tax,
 			'field' => 'slug',
 			'terms' => $terms,
-			'operator' => $params['operator']
-
 		);
+		
+		if($params['operator'] && is_array($terms) && sizeof($terms) > 1){
+			$taxArr['operator'] = $params['operator'];
+		}
+		
+		$tax_queries[] = $taxArr;
 	}
 
 	print_r($tax_queries);
