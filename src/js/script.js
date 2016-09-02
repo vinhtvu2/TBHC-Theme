@@ -1626,6 +1626,7 @@ function getOppsForGrid(inp1, inp2){
 	var oprtr = $(".opportunity-grid").data("oprtr");	
 	var jn = $(".opportunity-grid").data("jn");
 	var shwOptAll = $(".opportunity-grid").data("allopt");
+	var shwOptAll2 = $(".opportunity-grid").data("allopt2");	
 	var data = {
 		action : 'get_opps_from_event_group',
 		join : jn,
@@ -1641,6 +1642,9 @@ function getOppsForGrid(inp1, inp2){
 	}
 	if(shwOptAll){
 		data.show_option_all = shwOptAll;
+	}
+	if(shwOptAll2){
+		data.show_option_all2 = shwOptAll2;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
 		jQuery('.opportunity-grid').replaceWith(res);

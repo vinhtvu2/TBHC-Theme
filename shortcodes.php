@@ -446,7 +446,7 @@ function sc_opportunity_grid($atts) {
 				wp_dropdown_categories($args)
 			);
 		} 
-		if($dropdown2 && $OGID2){ 
+		if($dropdown2 && $EGID2){ 
 			$args2 = array(
 				'taxonomy'	=>	'event_groups',
 				'value_field'	=>	'slug',
