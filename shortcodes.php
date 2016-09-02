@@ -462,7 +462,7 @@ function sc_opportunity_grid($atts) {
 			}			
 			echo str_replace(
 				'<select',
-				'<select onchange="getOppsForGrid($(\'#dd_org_groups\').val(), this.value)"',
+				'<select onchange="getOppsForGrid($(\'#dd_event_groups\').val(), this.value)"',
 				wp_dropdown_categories($args2)
 			);
 		} 
