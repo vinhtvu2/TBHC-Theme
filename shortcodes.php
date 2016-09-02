@@ -425,7 +425,7 @@ function sc_opportunity_grid($atts) {
 	));
 	
 	ob_start();
-	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allOpt="<?=$show_option_all?>">
+	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>">
 		<? if($dropdown){ 
 			$args = array(
 				'taxonomy'	=>	'event_groups',

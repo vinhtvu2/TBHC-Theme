@@ -1625,7 +1625,7 @@ function getOppsForGrid(inp1, inp2){
 	var shwOrgs = $(".opportunity-grid").data("shwgrp");
 	var oprtr = $(".opportunity-grid").data("oprtr");	
 	var jn = $(".opportunity-grid").data("jn");
-	var shwOptAll = $(".opportunity-grid").data("allOpt");
+	var shwOptAll = $(".opportunity-grid").data("allopt");
 	var data = {
 		action : 'get_opps_from_event_group',
 		join : jn,
