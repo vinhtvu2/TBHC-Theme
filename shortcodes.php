@@ -431,7 +431,7 @@ function sc_opportunity_grid($atts) {
 				wp_dropdown_categories(
 					array(
 						'taxonomy'	=>	'event_groups',
-						'include'	=>	array($EGID),
+						'include'	=>	array(strval($EGID)),
 						'value_field'	=>	'slug',
 						'class'	=>	'opportunity-grid-dropdown form-control',
 						'id'	=>	'dd_event_groups',
@@ -450,7 +450,7 @@ function sc_opportunity_grid($atts) {
 				wp_dropdown_categories(
 					array(
 					'taxonomy'	=>	'event_groups',
-					'include'	=>	array($EGID2),
+					'include'	=>	array(strval($EGID2)),
 					'value_field'	=>	'slug',
 					'class'	=>	'opportunity-grid-dropdown form-control',
 					'id'	=>	'dd2_event_groups',
