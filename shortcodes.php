@@ -403,6 +403,8 @@ function sc_opportunity_grid($atts) {
 	$dd_event_groups	= ($atts['dd_event_groups']) ? $atts['dd_event_groups'] : $event_groups;
 	$dropdown2		= ($atts['dropdown2']) ? $atts['dropdown2'] : false;
 	$dd2_event_groups	= ($atts['dd2_event_groups']) ? $atts['dd2_event_groups'] : NULL;	
+	$show_option_all	= ($atts['show_option_all']) ? $atts['show_option_all'] : null;
+	$show_option_all2	= ($atts['show_option_all2']) ? $atts['show_option_all2'] : null;	
 	$EGID			= get_term_by('slug', $dd_event_groups, 'event_groups')->term_id;
 	$EGID2			= get_term_by('slug', $dd2_event_groups, 'event_groups');
 	$EGID2			= $EGID2 ? $EGID2->term_id : false;
@@ -423,43 +425,45 @@ function sc_opportunity_grid($atts) {
 	));
 	
 	ob_start();
-	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>">
+	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allOpt="<?=$show_option_all?>">
 		<? if($dropdown){ 
+			$args = array(
+				'taxonomy'	=>	'event_groups',
+				'value_field'	=>	'slug',
+				'class'	=>	'opportunity-grid-dropdown form-control',
+				'id'	=>	'dd_event_groups',
+				'name'	=>	'dd_event_groups',
+				'echo'	=> false,
+				'selected'	=>	$event_groups,
+				'child_of'	=>	$EGID,
+			)			
+			if(!empty($show_option_all)){
+				$args['show_option_all'] = $show_option_all;
+			}
 			echo str_replace(
 				'<select',
 				'<select onchange="getOppsForGrid(this.value'.($dropdown2 ? ', $(\'#dd2_event_groups\').val()' : '').')"',
-				wp_dropdown_categories(
-					array(
-						'taxonomy'	=>	'event_groups',
-						'include'	=>	array(strval($EGID)),
-						'value_field'	=>	'slug',
-						'class'	=>	'opportunity-grid-dropdown form-control',
-						'id'	=>	'dd_event_groups',
-						'name'	=>	'dd_event_groups',
-						'echo'	=> false,
-						'selected'	=>	$event_groups,
-						//'child_of'	=>	$EGID,
-					)
-				)
+				wp_dropdown_categories($args)
 			);
 		} 
 		if($dropdown2 && $OGID2){ 
+			$args2 = array(
+				'taxonomy'	=>	'event_groups',
+				'value_field'	=>	'slug',
+				'class'	=>	'opportunity-grid-dropdown form-control',
+				'id'	=>	'dd2_event_groups',
+				'name'	=>	'dd2_event_groups',			
+				'echo'	=> false,
+				'selected'	=>	$event_groups2,
+				'child_of'	=>	$EGID2,
+			)
+			if(!empty($show_option_all2)){
+				$args['show_option_all'] = $show_option_all2;
+			}			
 			echo str_replace(
 				'<select',
 				'<select onchange="getOppsForGrid($(\'#dd_org_groups\').val(), this.value)"',
-				wp_dropdown_categories(
-					array(
-					'taxonomy'	=>	'event_groups',
-					'include'	=>	array(strval($EGID2)),
-					'value_field'	=>	'slug',
-					'class'	=>	'opportunity-grid-dropdown form-control',
-					'id'	=>	'dd2_event_groups',
-					'name'	=>	'dd2_event_groups',			
-					'echo'	=> false,
-					'selected'	=>	$event_groups2,
-					'child_of'	=>	$EGID2,
-					)
-				)
+				wp_dropdown_categories($args2)
 			);
 		} 
 		?>	

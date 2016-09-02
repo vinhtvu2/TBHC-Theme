@@ -292,7 +292,7 @@ add_action( 'wp_ajax_get_people_from_org_group', 'get_people_from_org_group' );
 add_action( 'wp_ajax_nopriv_get_people_from_org_group', 'get_people_from_org_group' );
 
 function get_opps_from_event_group(){
-	echo do_shortcode('[opportunity-grid event_groups=\''.$_REQUEST['event_groups'].'\' '.(!empty($_REQUEST['event_groups2']) ? 'event_groups2=\''.$_REQUEST['event_groups2'].'\' ' : '').(!empty($_REQUEST['dd_event_groups']) ? ' dd_event_groups=\''.$_REQUEST['dd_event_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_event_groups']) ? 'dd2_event_groups=\''.$_REQUEST['dd2_event_groups'].'\' dropdown2=true ' : ' ') : ' ').(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' ').(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\'' : ' ').']');
+	echo do_shortcode('[opportunity-grid event_groups=\''.($_REQUEST['event_groups'] ? $_REQUEST['event_groups'] : $_REQUEST['dd_event_groups']).'\' '.(!empty($_REQUEST['event_groups2']) ? 'event_groups2=\''.$_REQUEST['event_groups2'].'\' ' : '').(!empty($_REQUEST['dd_event_groups']) ? ' dd_event_groups=\''.$_REQUEST['dd_event_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_event_groups']) ? 'dd2_event_groups=\''.$_REQUEST['dd2_event_groups'].'\' dropdown2=true ' : ' ') : ' ').(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' ').(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\'' : ' ').(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'] : ' ').'\' ]');
 	die();
 }
 
