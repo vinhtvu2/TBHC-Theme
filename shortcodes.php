@@ -438,7 +438,7 @@ function sc_opportunity_grid($atts) {
 						'name'	=>	'dd_event_groups',
 						'echo'	=> false,
 						'selected'	=>	$event_groups,
-						'child_of'	=>	$EGID,
+						//'child_of'	=>	$EGID,
 					)
 				)
 			);
