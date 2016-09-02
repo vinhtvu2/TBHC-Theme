@@ -436,7 +436,7 @@ function sc_opportunity_grid($atts) {
 				'echo'	=> false,
 				'selected'	=>	$event_groups,
 				'child_of'	=>	$EGID,
-			)			
+			);
 			if(!empty($show_option_all)){
 				$args['show_option_all'] = $show_option_all;
 			}
@@ -456,7 +456,7 @@ function sc_opportunity_grid($atts) {
 				'echo'	=> false,
 				'selected'	=>	$event_groups2,
 				'child_of'	=>	$EGID2,
-			)
+			);
 			if(!empty($show_option_all2)){
 				$args['show_option_all'] = $show_option_all2;
 			}			
