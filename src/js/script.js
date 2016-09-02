@@ -1618,3 +1618,27 @@ function getProfilesForGrid(inp1, inp2){
 		jQuery('.person-profile-grid').replaceWith(res);
 	});
 }
+function getOppsForGrid(inp1, inp2){
+	var ajaxUrl = $(".opportunity-grid").data("url");
+	var reqGrp = $(".opportunity-grid").data("group");
+	var reqGrp2 = $(".opportunity-grid").data("group2");
+	var shwOrgs = $(".opportunity-grid").data("shwgrp");
+	var oprtr = $(".opportunity-grid").data("oprtr");	
+	var jn = $(".opportunity-grid").data("jn");
+	var data = {
+		action : 'get_opps_from_event_group',
+		join : jn,
+		event_groups: inp1,
+		dd_event_groups: reqGrp,
+	};
+	if(reqGrp2){
+		data.dd2_event_groups = reqGrp2;
+		data.event_groups2 = inp2;
+	}
+	if(oprtr){
+		data.operator = oprtr;
+	}
+	jQuery.post(ajaxUrl, data, function(res){
+		jQuery('.opportunity-grid').replaceWith(res);
+	});
+}

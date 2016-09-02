@@ -389,6 +389,131 @@ function sc_person_profile_grid($atts) {
 add_shortcode('person-profile-grid', 'sc_person_profile_grid');
 
 /**
+ * Custom Opp List by Erik
+ **/
+function sc_opportunity_grid($atts) {
+	//remove_filter('the_content','wpautop');
+	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
+	$categories		= ($atts['categories']) ? $atts['categories'] : null;	
+	$event_groups		= ($atts['event_groups']) ? $atts['event_groups'] : null;
+	$event_groups2		= ($atts['event_groups2']) ? $atts['event_groups2'] : null;	
+	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
+	$join			= ($atts['join']) ? $atts['join'] : 'or';
+	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
+	$dd_event_groups	= ($atts['dd_event_groups']) ? $atts['dd_event_groups'] : $event_groups;
+	$dropdown2		= ($atts['dropdown2']) ? $atts['dropdown2'] : false;
+	$dd2_event_groups	= ($atts['dd2_event_groups']) ? $atts['dd2_event_groups'] : NULL;	
+	$EGID			= get_term_by('slug', $dd_event_groups, 'event_groups')->term_id;
+	$EGID2			= get_term_by('slug', $dd2_event_groups, 'event_groups');
+	$EGID2			= $EGID2 ? $EGID2->term_id : false;
+	$operator		= ($atts['operator']) ? $atts['operator'] : NULL;
+	$opps 		= sc_object_list(
+		array(
+			'type' => 'opportunity',
+			'limit' => $limit,
+			'join' => $join,
+			'categories' => $categories,
+			'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
+			'orderby' => 'opportunity_end',
+			'order' => 'DESC',
+			'operator' => $operator
+		),
+	array(
+		'objects_only' => True,
+	));
+	
+	ob_start();
+	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>">
+		<? if($dropdown){ 
+			echo str_replace(
+				'<select',
+				'<select onchange="getOppsForGrid(this.value'.($dropdown2 ? ', $(\'#dd2_event_groups\').val()' : '').')"',
+				wp_dropdown_categories(
+					array(
+						'taxonomy'	=>	'event_groups',
+						'value_field'	=>	'slug',
+						'class'	=>	'opportunity-grid-dropdown form-control',
+						'id'	=>	'dd_event_groups',
+						'name'	=>	'dd_event_groups',
+						'echo'	=> false,
+						'selected'	=>	$event_groups,
+						'child_of'	=>	$EGID,
+					)
+				)
+			);
+		} 
+		if($dropdown2 && $OGID2){ 
+			echo str_replace(
+				'<select',
+				'<select onchange="getOppsForGrid($(\'#dd_org_groups\').val(), this.value)"',
+				wp_dropdown_categories(
+					array(
+					'taxonomy'	=>	'event_groups',
+					'value_field'	=>	'slug',
+					'class'	=>	'opportunity-grid-dropdown form-control',
+					'id'	=>	'dd2_event_groups',
+					'name'	=>	'dd2_event_groups',			
+					'echo'	=> false,
+					'selected'	=>	$event_groups2,
+					'child_of'	=>	$EGID2,
+					)
+				)
+			);
+		} 
+		?>	
+		<ul class="opportunity-list">
+			<?php
+				rsort($objects);
+				foreach ($objects as $opportunity) { 
+					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
+					$time = '';
+					$location = '';
+					if($ext_link){
+						$link = $ext_link; 
+					}			
+					if($start_date){
+						$start_date = new DateTime($start_date);
+					}
+				?>
+				<li>
+					<a href="<?=get_permalink($opportunity->ID)?>">
+						<?=$opportunity->post_title?>
+					</a>
+					<? if($start_date){ ?>
+						<div class="opportunity_info">
+							Date: <?=$start_date->format('l, F jS, Y')?>
+						</div>
+					<? } ?>
+					<? if($time){ ?>
+						<div class="opportunity_info">
+							Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
+						</div>
+					<? } ?>
+					<? if($location){ ?>
+						<div class="opportunity_info">
+							Location: <?=get_post_meta($opportunity->ID, 'opportunity_location', true)?>
+						</div>
+					<? } ?>
+					<div class="text-right spotlight_category">
+						Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
+					</div>
+				</li>
+				<?php
+				}
+			?>
+		</ul>
+	</div>
+	
+	<?
+	return ob_get_clean();
+	//add_filter('the_content','wpautop');		
+}
+add_shortcode('opportunity-grid', 'sc_opportunity_grid');
+
+
+
+
+/**
  * Centerpiece Slider
  **/
 	function sc_centerpiece_slider( $atts, $content = null ) {
