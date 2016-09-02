@@ -458,7 +458,7 @@ function sc_opportunity_grid($atts) {
 				'child_of'	=>	$EGID2,
 			);
 			if(!empty($show_option_all2)){
-				$args['show_option_all'] = $show_option_all2;
+				$args['show_option_all2'] = $show_option_all2;
 			}			
 			echo str_replace(
 				'<select',
