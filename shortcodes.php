@@ -463,8 +463,8 @@ function sc_opportunity_grid($atts) {
 		?>	
 		<ul class="opportunity-list">
 			<?php
-				rsort($objects);
-				foreach ($objects as $opportunity) { 
+				rsort($opps);
+				foreach ($opps as $opportunity) { 
 					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
 					$time = '';
 					$location = '';
