@@ -60,8 +60,8 @@
 		
 		<!-- Cheaty style overrides (cuz, yaknow... cascading styles) -->
 		<style>
-			#jumbotron-logo img{
-				@media(min-width: 770px){
+			@media(min-width: 770px){
+				#jumbotron-logo img{
 					width: <?=get_theme_option('header_width_desktop')?>;        
 				}			
 			}
