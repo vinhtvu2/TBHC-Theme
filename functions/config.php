@@ -429,7 +429,7 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['header_logo'],
 			'default'	  => 'http://tbhccmsdev.smca.ucf.edu/wp-content/themes/TBHC-Theme/static/img/TbhcLogo.png'
 		)),
-		/*new TextField(array(
+		new TextField(array(
 			'name'        => 'Header Desktop Width',
 			'id'          => THEME_OPTIONS_NAME.'[header_width_desktop]',
 			'description' => 'Override the default theme header logo desktop width (does not affect mobile).<br/><em>Suggested units: px (constant width)</em>',
@@ -470,7 +470,7 @@ Config::$theme_settings = array(
 			'description' => 'Override the default theme header bottom pad on mobile (does not affect desktop).<br/><em>Suggested units: px (constant width)</em>',
 			'value'       => $theme_options['header_bottom_pad_mobile'],
 			'default'	  => '25px',
-		)),*/
+		)),
 		new TextField(array(
 				'name'        => 'NavBar Background Color',
 				'id'          => THEME_OPTIONS_NAME.'[navbar_bg_color]',

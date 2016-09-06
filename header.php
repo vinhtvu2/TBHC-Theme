@@ -14,7 +14,6 @@
 			var CB_DOMAIN   = '<?php echo CB_DOMAIN; ?>';
 		</script>
 		<?php endif;?>
-
 		<?php
 		// Always load webfont css for Degree posts and the 404 template.
 		if ( $post->post_type == 'degree' || is_404() ) {
@@ -58,6 +57,15 @@
 		<!--[if lt IE 9]>
 			<link rel='stylesheet' id='style-min-css'  href='http://tbhccmsdev.smca.ucf.edu/wp-content/themes/TBHC-Theme/static/css/style-no-mqs.min.css' />
 		<![endif]-->
+		
+		<!-- Cheaty style overrides (cuz, yaknow... cascading styles) -->
+		<style>
+			#jumbotron-logo img{
+				@media(min-width: 770px){
+					width: <?=get_theme_option('header_width_desktop')?>;        
+				}			
+			}
+		</style>
 		</head>
 	<body <?php echo body_class(); ?>>
 
