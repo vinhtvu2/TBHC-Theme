@@ -1600,6 +1600,8 @@ function getProfilesForGrid(inp1, inp2){
 	var shwOrgs = $(".person-profile-grid").data("shwgrp");
 	var oprtr = $(".person-profile-grid").data("oprtr");	
 	var jn = $(".person-profile-grid").data("jn");
+	var shwOptAll = $(".person-profile-grid").data("allopt");
+	var shwOptAll2 = $(".person-profile-grid").data("allopt2");		
 	var data = {
 		action : 'get_people_from_org_group',
 		join : jn,
@@ -1613,6 +1615,12 @@ function getProfilesForGrid(inp1, inp2){
 	}
 	if(oprtr){
 		data.operator = oprtr;
+	}
+	if(shwOptAll){
+		data.show_option_all = shwOptAll;
+	}
+	if(shwOptAll2){
+		data.show_option_all2 = shwOptAll2;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
 		jQuery('.person-profile-grid').replaceWith(res);
