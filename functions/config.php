@@ -472,16 +472,18 @@ Config::$theme_settings = array(
 			'default'	  => '25px',
 		)),
 		new TextField(array(
-				'name'        => 'NavBar Background Color',
-				'id'          => THEME_OPTIONS_NAME.'[navbar_bg_color]',
-				'description' => 'Override the default theme navbar color using the defined HEX color code (eg #FFFFFF for white).<br/>**Affects both mobile and desktop nav',
-				'value'       => $theme_options['navbar_bg_color'],
+			'name'        => 'NavBar Background Color',
+			'id'          => THEME_OPTIONS_NAME.'[navbar_bg_color]',
+			'description' => 'Override the default theme navbar color using the defined HEX color code (eg #FFFFFF for white).<br/>**Affects both mobile and desktop nav',
+			'value'       => $theme_options['navbar_bg_color'],
+			'default'	  => '#ffcc00'	
 		)),
 		new TextField(array(
 			'name'        => 'Footer Background Color',
 			'id'          => THEME_OPTIONS_NAME.'[footer_bg_color]',
 			'description' => 'Override the default theme footer color using the defined HEX color code (eg #FFFFFF for white).',
 			'value'       => $theme_options['footer_bg_color'],
+			'default'	  => '#3d3c3c'	
 		)),
 		new TextField(array(
 			'name'        => 'Footer Logo Url',

@@ -60,7 +60,18 @@
 		
 		<!-- Cheaty style overrides (cuz, yaknow... cascading styles) -->
 		<style>
+			#jumbotron-logo{
+				padding-top: <?=get_theme_option('header_top_pad_mobile')?>;
+				padding-bottom: <?=get_theme_option('header_bottom_pad_mobile')?>;
+			}
+			#jumbotron-logo img{
+				width: <?=get_theme_option('header_width_mobile')?>;        
+			}						
 			@media(min-width: 770px){
+				#jumbotron-logo{
+					padding-top: <?=get_theme_option('header_top_pad_desktop')?>;
+					padding-bottom: <?=get_theme_option('header_bottom_pad_desktop')?>;
+				}
 				#jumbotron-logo img{
 					width: <?=get_theme_option('header_width_desktop')?>;        
 				}			
