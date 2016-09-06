@@ -420,6 +420,56 @@ Config::$theme_settings = array(
 			'id'          => THEME_OPTIONS_NAME.'[header_bg_color]',
 			'description' => 'Override the default theme header color using the defined HEX color code (eg #FFFFFF for white).',
 			'value'       => $theme_options['header_bg_color'],
+			'default'	  => '#3d3c3c'	
+		)),
+		new TextField(array(
+			'name'        => 'Header Logo Url',
+			'id'          => THEME_OPTIONS_NAME.'[header_logo]',
+			'description' => 'Override the default theme header logo using the defined url.',
+			'value'       => $theme_options['header_logo'],
+			'default'	  => bloginfo('stylesheet_directory').'/static/img/TbhcLogo.png'
+		)),
+		new TextField(array(
+		'name'        => 'Header Desktop Width',
+		'id'          => THEME_OPTIONS_NAME.'[header_width_desktop]',
+		'description' => 'Override the default theme header logo desktop width (does not affect mobile).<br/><em>Suggested units: px (constant width)</em>',
+		'value'       => $theme_options['header_width_desktop'],
+		'default'	  => '480px',
+		)),
+		new TextField(array(
+		'name'        => 'Header Desktop Padding Top',
+		'id'          => THEME_OPTIONS_NAME.'[header_top_pad_desktop]',
+		'description' => 'Override the default theme header top pad (does not affect mobile).<br/><em>Suggested units: px (constant width)</em>',
+		'value'       => $theme_options['header_top_pad_desktop'],
+		'default'	  => '35px',
+		)),
+		new TextField(array(
+		'name'        => 'Header Desktop Padding Bottom',
+		'id'          => THEME_OPTIONS_NAME.'[header_bottom_pad_desktop]',
+		'description' => 'Override the default theme header bottom pad (does not affect mobile).<br/><em>Suggested units: px (constant width)</em>',
+		'value'       => $theme_options['header_bottom_pad_desktop'],
+		'default'	  => '45px',
+		)),
+		new TextField(array(
+		'name'        => 'Header Mobile Width',
+		'id'          => THEME_OPTIONS_NAME.'[header_width_mobile]',
+		'description' => 'Override the default theme header logo mobile width (does not affect desktop).<br/><em>Suggested units: % (variable width)</em>',
+		'value'       => $theme_options['header_width_mobile'],
+		'default'	  => '95%',
+		)),
+		new TextField(array(
+		'name'        => 'Header Padding Top',
+		'id'          => THEME_OPTIONS_NAME.'[header_top_pad_mobile]',
+		'description' => 'Override the default theme header top pad on mobile (does not affect desktop).<br/><em>Suggested units: px (constant width)</em>',
+		'value'       => $theme_options['header_top_pad_mobile'],
+		'default'	  => '15px',
+		)),
+		new TextField(array(
+		'name'        => 'Header Padding Bottom',
+		'id'          => THEME_OPTIONS_NAME.'[header_bottom_pad_mobile]',
+		'description' => 'Override the default theme header bottom pad on mobile (does not affect desktop).<br/><em>Suggested units: px (constant width)</em>',
+		'value'       => $theme_options['header_bottom_pad_mobile'],
+		'default'	  => '25px',
 		)),
 		new TextField(array(
 			'name'        => 'NavBar Background Color',
@@ -432,6 +482,13 @@ Config::$theme_settings = array(
 			'id'          => THEME_OPTIONS_NAME.'[footer_bg_color]',
 			'description' => 'Override the default theme footer color using the defined HEX color code (eg #FFFFFF for white).',
 			'value'       => $theme_options['footer_bg_color'],
+		)),
+		new TextField(array(
+		'name'        => 'Footer Logo Url',
+		'id'          => THEME_OPTIONS_NAME.'[footer_logo]',
+		'description' => 'Override the default theme footer logo using the defined url.',
+		'value'       => $theme_options['footer_logo'],
+		'default'	  => bloginfo('stylesheet_directory').'/static/img/WebsiteFooterShort.png'
 		)),
 	),
 	'Web Fonts' => array(

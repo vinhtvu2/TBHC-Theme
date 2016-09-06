@@ -276,6 +276,8 @@ function sc_person_profile_grid($atts) {
 	$OGID			= get_term_by('slug', $dd_org_groups, 'org_groups')->term_id;
 	$OGID2			= get_term_by('slug', $dd2_org_groups, 'org_groups');
 	$OGID2			= $OGID2 ? $OGID2->term_id : false;
+	$show_option_all	= ($atts['show_option_all']) ? $atts['show_option_all'] : null;
+	$show_option_all2	= ($atts['show_option_all2']) ? $atts['show_option_all2'] : null;		
 	$operator		= ($atts['operator']) ? $atts['operator'] : NULL;
 	$people 		= sc_object_list(
 		array(
@@ -296,39 +298,43 @@ function sc_person_profile_grid($atts) {
 	
 	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwgrp="<?=$show_org_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>">
 		<? if($dropdown){ 
+			$args = array(
+				'taxonomy'	=>	'org_groups',
+				'value_field'	=>	'slug',
+				'class'	=>	'person-profile-grid-dropdown form-control',
+				'id'	=>	'dd_org_groups',
+				'name'	=>	'dd_org_groups',
+				'echo'	=> false,
+				'selected'	=>	$org_groups,
+				'child_of'	=>	$OGID,
+			);
+			if(!empty($show_option_all)){
+				$args['show_option_all'] = $show_option_all;
+			}			
 			echo str_replace(
 				'<select',
 				'<select onchange="getProfilesForGrid(this.value'.($dropdown2 ? ', $(\'#dd2_org_groups\').val()' : '').')"',
-				wp_dropdown_categories(
-					array(
-						'taxonomy'	=>	'org_groups',
-						'value_field'	=>	'slug',
-						'class'	=>	'person-profile-grid-dropdown form-control',
-						'id'	=>	'dd_org_groups',
-						'name'	=>	'dd_org_groups',
-						'echo'	=> false,
-						'selected'	=>	$org_groups,
-						'child_of'	=>	$OGID,
-					)
-				)
+				wp_dropdown_categories($args)
 			);
 		} 
 		if($dropdown2 && $OGID2){ 
+			$args2 = array(
+				'taxonomy'	=>	'org_groups',
+				'value_field'	=>	'slug',
+				'class'	=>	'person-profile-grid-dropdown form-control',
+				'id'	=>	'dd2_org_groups',
+				'name'	=>	'dd2_org_groups',			
+				'echo'	=> false,
+				'selected'	=>	$org_groups2,
+				'child_of'	=>	$OGID2,
+			);	
+			if(!empty($show_option_all2)){
+				$args['show_option_all2'] = $show_option_all2;
+			}						
 			echo str_replace(
 				'<select',
 				'<select onchange="getProfilesForGrid($(\'#dd_org_groups\').val(), this.value)"',
-				wp_dropdown_categories(
-					array(
-					'taxonomy'	=>	'org_groups',
-					'value_field'	=>	'slug',
-					'class'	=>	'person-profile-grid-dropdown form-control',
-					'id'	=>	'dd2_org_groups',
-					'name'	=>	'dd2_org_groups',			
-					'echo'	=> false,
-					'selected'	=>	$org_groups2,
-					'child_of'	=>	$OGID2,
-					)
-				)
+				wp_dropdown_categories($args2)
 			);
 		} 
 		?>	
