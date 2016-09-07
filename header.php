@@ -119,8 +119,7 @@
 					'menu_id' => 'header-menu',
 					'walker' => new Bootstrap_Walker_Nav_Menu(),
 					'before' => '<strong>',
-					'after' => '</strong>',
-					'link_after' => '<div class="menu-item-panel"></div>'
+					'after' => '</strong><div class="menu-item-panel"></div>',
 					)
 				);
 				/*
