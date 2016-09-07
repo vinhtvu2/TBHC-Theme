@@ -352,7 +352,6 @@ function sc_person_profile_grid($atts) {
 				}, $terms));
 			}
 			$imageT = get_image_tag(get_post_thumbnail_id($person->ID), 'alt text', 'title text', 'None', 'profile-grid-image');
-			print_r($imageT);
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image', false);
 			$image_url = get_featured_image_url($person->ID);
 			$link = ($person->post_content != '') ? True : False;
@@ -365,6 +364,7 @@ function sc_person_profile_grid($atts) {
 		?>
 		<div class="col-md-2 col-sm-2 person-profile-wrap">
 			<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
+				<?=$imageT?>				
 				<img src="<?=esc_attr($image ? $image[0] : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg')?>" />
 				<div class="profile-short">
 					<h4 class="title">
