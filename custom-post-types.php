@@ -402,6 +402,7 @@ class Video extends CustomPostType{
 }
 
 
+//get rid of
 class Publication extends CustomPostType{
 	public
 		$name           = 'publication',
@@ -826,47 +827,47 @@ class Opportunity extends CustomPostType {
 	
 	public function objectsToHTML($objects, $css_classes) {
 	ob_start();?>
-	<ul class="opportunity-list">
-		<?php
-			rsort($objects);
-			foreach ($objects as $opportunity) { 
-				$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
-				$time = '';
-				$location = '';
-				if($ext_link){
-					$link = $ext_link; 
-				}			
-				if($start_date){
-					$start_date = new DateTime($start_date);
+		<ul class="opportunity-list">
+			<?php
+				rsort($objects);
+				foreach ($objects as $opportunity) { 
+					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
+					$time = '';
+					$location = '';
+					if($ext_link){
+						$link = $ext_link; 
+					}			
+					if($start_date){
+						$start_date = new DateTime($start_date);
+					}
+				?>
+				<li>
+					<a href="<?=get_permalink($opportunity->ID)?>">
+						<?=$opportunity->post_title?>
+					</a>
+					<? if($start_date){ ?>
+						<div class="opportunity_info">
+							Date: <?=$start_date->format('l, F jS, Y')?>
+						</div>
+					<? } ?>
+					<? if($time){ ?>
+						<div class="opportunity_info">
+							Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
+						</div>
+					<? } ?>
+					<? if($location){ ?>
+						<div class="opportunity_info">
+							Location: <?=get_post_meta($opportunity->ID, 'opportunity_location', true)?>
+						</div>
+					<? } ?>
+					<div class="text-right spotlight_category">
+						Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
+					</div>
+				</li>
+				<?php
 				}
 			?>
-			<li>
-				<a href="<?=get_permalink($opportunity->ID)?>">
-					<?=$opportunity->post_title?>
-				</a>
-				<? if($start_date){ ?>
-					<div class="opportunity_info">
-						Date: <?=$start_date->format('l, F jS, Y')?>
-					</div>
-				<? } ?>
-				<? if($time){ ?>
-					<div class="opportunity_info">
-						Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
-					</div>
-				<? } ?>
-				<? if($location){ ?>
-					<div class="opportunity_info">
-						Location: <?=get_post_meta($opportunity->ID, 'opportunity_location', true)?>
-					</div>
-				<? } ?>
-				<div class="text-right spotlight_category">
-					Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
-				</div>
-			</li>
-			<?php
-			}
-		?>
-	</ul>
+		</ul>
 	<?php
 	}
 	
