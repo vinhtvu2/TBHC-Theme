@@ -1658,3 +1658,20 @@ function getOppsForGrid(inp1, inp2){
 		jQuery('.opportunity-grid').replaceWith(res);
 	});
 }
+(function(){
+	if($("div.row#home[role='main']")){
+		var link = $("#header-menu li");
+		$.each(link, function(){
+			$(this).on("hover", function(){
+				if(!$("#site-nav-xs").is("visible")){
+					var tagClass = $(this).attr("class").split(" ")[$(this).attr("class").split(" ").length - 1];
+					$.post("get_nav_panel", {
+							id: tagClass.replace(/\D/, ''),
+						}, function(res){
+							$('.menu-item-dropdown').html(res);
+					});
+				}
+			});
+		})
+	}
+})();

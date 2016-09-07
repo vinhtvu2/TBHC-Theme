@@ -1962,5 +1962,15 @@ function google_tag_manager_dl() {
 	return ob_get_clean();
 }
 
+/*
+ *	Erik made ajax call for the nav panels 
+ */
+function get_nav_panel(id){
+	echo "Got the id ".id." and processed it.";
+	die();
+}
+
+add_action( 'wp_ajax_get_nav_panel', 'get_nav_panel' );
+add_action( 'wp_ajax_nopriv_get_nav_panel', 'get_nav_panel' );
 ?>
 
