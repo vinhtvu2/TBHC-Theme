@@ -1659,7 +1659,7 @@ function getOppsForGrid(inp1, inp2){
 	});
 }
 (function(){
-	if($("div.row#home[role='main']")){
+	if($("div.row#home[role='main']").length){
 		var link = $("#header-menu li");
 		var ajaxUrl = $("#header-nav-wrap").data("url");
 		$.each(link, function(){
