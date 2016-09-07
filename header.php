@@ -120,6 +120,7 @@
 					'walker' => new Bootstrap_Walker_Nav_Menu(),
 					'before' => '<strong>',
 					'after' => '</strong>',
+					'link_after' => '<div class="menu-item-panel"></div>'
 					)
 				);
 				/*
