@@ -110,7 +110,7 @@
 				<img id="tbhcLogo" src="<?=get_theme_option('header_logo')?>" alt="The Burnett Honors College"/>
 			</a>
 		</div>
-		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs" style="<?=get_theme_option('navbar_bg_color') ? 'background-color:'.get_theme_option('navbar_bg_color').' !important;' : ''?>">
+		<nav id="header-nav-wrap" role="navigation" class="screen-only hidden-xs" data-url="<?=admin_url( 'admin-ajax.php' )?>" style="<?=get_theme_option('navbar_bg_color') ? 'background-color:'.get_theme_option('navbar_bg_color').' !important;' : ''?>">
 			<?php 
 				wp_nav_menu(array(
 					'theme_location' => 'header',
