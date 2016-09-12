@@ -1670,7 +1670,7 @@ function getOppsForGrid(inp1, inp2){
 							id: tagClass.replace(/\D/, ''),
 							action: "get_nav_panel",
 						}, function(res){
-							$(this).child('.menu-item-dropdown').html(res);
+							$(this).children('.menu-item-dropdown')[0].html(res);
 					});
 				}
 			});
