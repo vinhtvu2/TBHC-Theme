@@ -654,14 +654,17 @@ function frontpage_opportunities() {
 	);
 	$opportunities = get_posts($args);
 	
-	if(sizeof($opportunities) <= 0){
+	/*if(empty($opportunities)){
 		$args = array(
-		'numberposts' => 2,
+		'numberposts' => 4,
 		'post_type' 	=> 'opportunity',
-		'post_status'   => 'publish',		
+		'post_status'   => 'publish',
+		'meta_key'		=> 'opportunity_end',
+		'orderby'		=> 'meta_value_num',
+		'order'			=> 'DESC',		
 		);
 		$opportunities = get_posts($args);
-	}
+	}*/
 	
 	//$opportunities = rsort($opportunities);
 		
