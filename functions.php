@@ -632,15 +632,15 @@ function frontpage_opportunities() {
 		'numberposts' => 4,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
-		//'meta_key'		=> 'opportunity_end',
-		//'orderby'		=> 'meta_value_num',
-		//'order'			=> 'DESC',
+		'meta_key'		=> 'opportunity_end',
+		'orderby'		=> 'meta_value_num',
+		'order'			=> 'DESC',
 		'meta_query'	=> array(
-			array(
+			/*array(
 				'key'	=>	'opportunity_post_to_home',
 				'value'	=>	'on',
-			),
-			/*array(
+			),*/
+			array(
 				'key'	=>	'opportunity_start',
 				'value'	=>	date('Ymd'),
 				'compare'	=>	'<=',
@@ -649,7 +649,7 @@ function frontpage_opportunities() {
 				'key'	=>	'opportunity_end',
 				'value'	=>	date('Ymd'),
 				'compare'	=>	'>=',
-			),*/
+			),
 		),
 	);
 	$opportunities = get_posts($args);
