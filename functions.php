@@ -642,12 +642,12 @@ function frontpage_opportunities() {
 			),*/
 			array(
 				'key'	=>	'opportunity_start',
-				'value'	=>	date('Ymd'),
+				'value'	=>	date('Ymd', mktime(0,0,0)),
 				'compare'	=>	'<=',
 			),
 			array(
 				'key'	=>	'opportunity_end',
-				'value'	=>	date('Ymd'),
+				'value'	=>	date('Ymd', mktime(0,0,0)),
 				'compare'	=>	'>=',
 			),
 		),
