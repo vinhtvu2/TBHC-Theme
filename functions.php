@@ -634,7 +634,7 @@ function frontpage_opportunities() {
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
 		'orderby'		=> 'meta_value_num',
-		'order'			=> 'ASC',
+		'order'			=> 'DESC',
 		'meta_query'	=> array(
 			array(
 				'key'	=>	'opportunity_post_to_home',
@@ -661,7 +661,7 @@ function frontpage_opportunities() {
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
 		'orderby'		=> 'meta_value_num',
-		'order'			=> 'ASC',		
+		'order'			=> 'DESC',		
 		);
 		$opportunities = get_posts($args);
 	}
