@@ -654,7 +654,7 @@ function frontpage_opportunities() {
 	);
 	$opportunities = get_posts($args);
 	
-	if(empty($opportunities)){
+	if(sizeof($opportunities) <= 0){
 		$args = array(
 		'numberposts' => 2,
 		'post_type' 	=> 'opportunity',
