@@ -656,7 +656,7 @@ function frontpage_opportunities() {
 	
 	if(empty($opportunities)){
 		$args = array(
-		'numberposts' => 4,
+		'numberposts' => 2,
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',		
 		);
