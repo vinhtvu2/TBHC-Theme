@@ -665,6 +665,8 @@ function frontpage_opportunities() {
 		);
 		$opportunities = get_posts($args);
 	}
+	
+	$opportunities = rsort($opportunities);
 		
 	$opportunity_one = $opportunities[0];
 	$opportunity_two = $opportunities[1];
