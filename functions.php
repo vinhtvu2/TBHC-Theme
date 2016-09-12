@@ -657,10 +657,13 @@ function frontpage_opportunities() {
 	
 	if(empty($opportunities)){
 		$args = array(
-		'numberposts' => 2,
-		'post_per_page'	=> 2,
+		'numberposts' => 4,
+		'post_per_page'	=> 4,
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
+		'meta_key'		=> 'opportunity_end',
+		'orderby'		=> 'meta_value_num',
+		'order'			=> 'DESC',		
 		);
 		$opportunities = get_posts($args);
 	}
