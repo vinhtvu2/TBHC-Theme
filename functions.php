@@ -632,7 +632,7 @@ function frontpage_opportunities() {
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'      => 'opportunity_end',
-		'orderby' 		=> 'meta_value_num',
+		'orderby' 		=> 'meta_value',
 		'order'			=> 'DESC',
 		'meta_query'	=> array(
 			array(
