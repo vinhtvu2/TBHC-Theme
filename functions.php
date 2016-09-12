@@ -629,12 +629,11 @@ function frontpage_spotlights() {
 **/
 function frontpage_opportunities() {
 	$args = array(
-		'posts_per_page'=> 4,
 		'numberposts' => 4,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
-		'orderby'		=> 'meta_value_num',
+		'orderby'		=> 'meta_value',
 		'order'			=> 'DESC',
 		'meta_query'	=> array(
 			array(
@@ -658,11 +657,10 @@ function frontpage_opportunities() {
 	if(empty($opportunities)){
 		$args = array(
 		'numberposts' => 4,
-		'post_per_page'	=> 4,
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
-		'orderby'		=> 'meta_value_num',
+		'orderby'		=> 'meta_value',
 		'order'			=> 'DESC',		
 		);
 		$opportunities = get_posts($args);
