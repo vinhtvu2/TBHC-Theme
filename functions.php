@@ -197,7 +197,7 @@ add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_col
 function manage_opportunity_columns( $column, $post_id ) {
 	global $post;
 	switch ( $column ) {
-		case 'opportunity_post_to_home':
+		case 'post':
 		print get_post_meta( $post->ID, 'opportunity_post_to_home', true );
 		break;
 		case 'publish_date':
