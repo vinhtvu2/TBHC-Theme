@@ -1658,7 +1658,7 @@ function getOppsForGrid(inp1, inp2){
 		jQuery('.opportunity-grid').replaceWith(res);
 	});
 }
-/*(function(){
+(function(){
 	if($("div.row#home[role='main']").length){
 		var link = $("#header-menu li");
 		var ajaxUrl = $("#header-nav-wrap").data("url");
@@ -1670,10 +1670,10 @@ function getOppsForGrid(inp1, inp2){
 							id: tagClass.replace(/\D/, ''),
 							action: "get_nav_panel",
 						}, function(res){
-							$('.menu-item-dropdown').html(res);
+							$(this).child('.menu-item-dropdown').html(res);
 					});
 				}
 			});
 		})
 	}
-})();*/
+})();
