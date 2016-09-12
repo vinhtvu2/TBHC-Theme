@@ -119,7 +119,7 @@
 					'menu_id' => 'header-menu',
 					'walker' => new Bootstrap_Walker_Nav_Menu(),
 					'before' => '<strong>',
-					'after' => '</strong>',
+					'after' => '</strong><div class="menu-item-dropdown"></div>',
 					)
 				);
 				/*
@@ -132,7 +132,6 @@
 				 * */
 			?>
 		</nav>
-		<div class="menu-item-dropdown"></div>
 		<div class="container">
 			<div class="row status-alert" id="status-alert-template" data-alert-id="">
 				<div class="col-md-12 col-sm-12 alert-wrap">

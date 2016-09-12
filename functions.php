@@ -176,7 +176,7 @@ function edit_opportunity_columns() {
 	'opportunity_start'	=> 'Adv Start Date',
 	'opportunity_end'	=> 'Adv End Date',
 	'event_groups'	=> 'Event Groups',
-	'post' 		  => 'Post',	
+	'opportunity_post_to_home' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
 	return $columns;
@@ -197,7 +197,7 @@ add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_col
 function manage_opportunity_columns( $column, $post_id ) {
 	global $post;
 	switch ( $column ) {
-		case 'post':
+		case 'opportunity_post_to_home':
 		print get_post_meta( $post->ID, 'opportunity_post_to_home', true );
 		break;
 		case 'publish_date':
@@ -631,21 +631,23 @@ function frontpage_opportunities() {
 	$args = array(
 	'post_type' 	=> 'opportunity',
 	'post_status'   => 'publish',
-		'meta_query'	=> array(
-			array(
-				'key'	=>	'opportunity_post_to_home',
-				'value'	=>	'on',
-			),
-			array(
-				'key'	=>	'opportunity_start',
-				'value'	=>	date('Ymd'),
-				'compare'	=>	'<=',
-			),
-			array(
-				'key'	=>	'opportunity_end',
-				'value'	=>	date('Ymd'),
-				'compare'	=>	'>=',
-			),
+	'meta_key'      => 'opportunity_end',
+	'orderby' 		=> 'meta_value_num',
+	'order'			=> 'DESC'
+	'meta_query'	=> array(
+		array(
+			'key'	=>	'opportunity_post_to_home',
+			'value'	=>	'on',
+		),
+		array(
+			'key'	=>	'opportunity_start',
+			'value'	=>	date('Ymd'),
+			'compare'	=>	'<=',
+		),
+		array(
+			'key'	=>	'opportunity_end',
+			'value'	=>	date('Ymd'),
+			'compare'	=>	'>=',
 		),
 	);
 	$opportunities = get_posts($args);
@@ -658,7 +660,9 @@ function frontpage_opportunities() {
 		);
 		$opportunities = get_posts($args);
 	}
-		
+	
+	$opportunities = rsort
+	
 	$opportunity_one = $opportunities[0];
 	$opportunity_two = $opportunities[1];
 	
