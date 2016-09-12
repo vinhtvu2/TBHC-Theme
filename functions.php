@@ -176,7 +176,7 @@ function edit_opportunity_columns() {
 	'opportunity_start'	=> 'Adv Start Date',
 	'opportunity_end'	=> 'Adv End Date',
 	'event_groups'	=> 'Event Groups',
-	'opportunity_post_to_home' 		  => 'Post',	
+	'post' 		  => 'Post',	
 	'publish_date'=> 'Date',
 	);
 	return $columns;
@@ -629,8 +629,12 @@ function frontpage_spotlights() {
 **/
 function frontpage_opportunities() {
 	$args = array(
+		'numberofposts' => 4,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
+		'meta_key'		=> 'opportunity_end',
+		'orderby'		=> 'meta_value_num',
+		'order'			=> 'DESC',
 		'meta_query'	=> array(
 			array(
 				'key'	=>	'opportunity_post_to_home',
@@ -658,9 +662,7 @@ function frontpage_opportunities() {
 		);
 		$opportunities = get_posts($args);
 	}
-	
-	$opportunities = rsort
-	
+		
 	$opportunity_one = $opportunities[0];
 	$opportunity_two = $opportunities[1];
 	
