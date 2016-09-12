@@ -654,7 +654,7 @@ function frontpage_opportunities() {
 	);
 	$opportunities = get_posts($args);
 	
-	/*if(empty($opportunities)){
+	if(empty($opportunities)){
 		$args = array(
 		'numberposts' => 4,
 		'post_type' 	=> 'opportunity',
@@ -664,7 +664,7 @@ function frontpage_opportunities() {
 		'order'			=> 'DESC',		
 		);
 		$opportunities = get_posts($args);
-	}*/
+	}
 	
 	//$opportunities = rsort($opportunities);
 		
@@ -690,6 +690,7 @@ function frontpage_opportunities() {
 				$thumb_src = $thumb_src[0];
 			?>
 			<?php if ($thumb_src) { ?>
+				<?=get_post_meta($opportunity->ID, 'opportunity_end')?>
 				<img class="print-only opportunity_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
 				<div class="screen-only opportunity_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($opportunity->post_title)?></div>
 			<?php } ?>
