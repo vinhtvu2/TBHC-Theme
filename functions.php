@@ -630,7 +630,7 @@ function frontpage_spotlights() {
 function frontpage_opportunities() {
 	$args = array(
 		'posts_per_page'=> 4,
-		'numberofposts' => 4,	
+		'numberposts' => 4,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
@@ -657,7 +657,8 @@ function frontpage_opportunities() {
 	
 	if(empty($opportunities)){
 		$args = array(
-		'numberofposts' => 2,
+		'numberposts' => 2,
+		'post_per_page'	=> 2,
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		);
