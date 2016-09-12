@@ -629,6 +629,7 @@ function frontpage_spotlights() {
 **/
 function frontpage_opportunities() {
 	$args = array(
+		'posts_per_page'=> 4,
 		'numberofposts' => 4,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
