@@ -632,10 +632,10 @@ function frontpage_opportunities() {
 		'numberposts' => 4,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
-		'meta_key'		=> 'opportunity_end',
+		//'meta_key'		=> 'opportunity_end',
 		'orderby'		=> 'meta_value_num',
 		'order'			=> 'DESC',
-		'meta_query'	=> array(
+		/*'meta_query'	=> array(
 			array(
 				'key'	=>	'opportunity_post_to_home',
 				'value'	=>	'on',
@@ -650,7 +650,7 @@ function frontpage_opportunities() {
 				'value'	=>	date('Ymd'),
 				'compare'	=>	'>=',
 			),
-		),
+		),*/
 	);
 	$opportunities = get_posts($args);
 	
