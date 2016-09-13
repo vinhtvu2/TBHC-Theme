@@ -57,7 +57,7 @@ body {
             }
             overflow: hidden;
 
-            a {
+            a, & {
                 .group {
                     position: absolute;
                     bottom: 20px;
@@ -138,7 +138,7 @@ body {
             }*/
             }
 
-            &:hover a {
+            &:hover a, &:hover {
                 .group {
                     .group-inner {
                         opacity: 0;
