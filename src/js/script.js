@@ -1665,16 +1665,19 @@ function getOppsForGrid(inp1, inp2){
 		$.each(link, function(){
 			$(this).on("hover", function(){
 				var ths = $(this);
-				if(!$("#site-nav-xs").is("visible") && ths.children('.menu-item-dropdown').html() == ""){
+				var mid = ths.children('.menu-item-dropdown');
+				if(!$("#site-nav-xs").is("visible") && mid.html() == ""){
+					$("#header-menu .menu-item-dropdown").removeClass("active");
 					var tagClass = ths.attr("class").split(" ");
 					tagClass = $.grep(tagClass, function(elem) {
 						return elem.toLowerCase().match(/^menu-item-\d*$/g);
-					})[0]; 
+					})[0];
+					mid.addClass("active");
 					$.post(ajaxUrl, {
 							id: tagClass.replace(/\D/g, ''),
 							action: "get_nav_panel",
 						}, function(res){
-							ths.children('.menu-item-dropdown').html(res);
+							mid.html(res);
 					});
 				}
 			});
