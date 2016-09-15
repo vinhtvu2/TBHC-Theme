@@ -1666,13 +1666,14 @@ function getOppsForGrid(inp1, inp2){
 			$(this).on("hover", function(){
 				var ths = $(this);
 				if(!$("#site-nav-xs").is("visible") && ths.children('.menu-item-dropdown').html() == ""){
-					var tagClass = ths.attr("class").split(" ")[ths.attr("class").split(" ").length - 1];
+					var tagClass = ths.attr("class").split(" ");
+					tagClass = $.grep(tagClass, function(elem) {
+						return elem.toLowerCase().match(/^menu-item-\d*$/g);
+					})[0]; 
 					$.post(ajaxUrl, {
 							id: tagClass.replace(/\D/, ''),
 							action: "get_nav_panel",
 						}, function(res){
-							console.log(ths);
-							console.log(res);
 							ths.children('.menu-item-dropdown').html(res);
 					});
 				}
