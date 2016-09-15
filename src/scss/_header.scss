@@ -64,7 +64,7 @@
             position: fixed;
             width: 100%;
             left: 0;
-            .active{
+            &.active{
                 display:block;
                 opacity: 1;
             }
