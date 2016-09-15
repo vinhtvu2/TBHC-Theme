@@ -1666,8 +1666,6 @@ function getOppsForGrid(inp1, inp2){
 			$(this).on("hover", function(){
 				var ths = $(this);
 				var mid = ths.children('.menu-item-dropdown');
-				$("#header-menu .menu-item-dropdown").removeClass("active");				
-				mid.addClass("active");
 				if(!$("#site-nav-xs").is("visible") && mid.html() == ""){
 					var tagClass = ths.attr("class").split(" ");
 					tagClass = $.grep(tagClass, function(elem) {
