@@ -1671,7 +1671,7 @@ function getOppsForGrid(inp1, inp2){
 						return elem.toLowerCase().match(/^menu-item-\d*$/g);
 					})[0]; 
 					$.post(ajaxUrl, {
-							id: tagClass.replaceAll(/\D/, ''),
+							id: tagClass.replace(/\D/g, ''),
 							action: "get_nav_panel",
 						}, function(res){
 							ths.children('.menu-item-dropdown').html(res);
