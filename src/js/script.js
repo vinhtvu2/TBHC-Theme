@@ -1666,13 +1666,13 @@ function getOppsForGrid(inp1, inp2){
 			$(this).on("hover", function(){
 				var ths = $(this);
 				var mid = ths.children('.menu-item-dropdown');
+				$("#header-menu .menu-item-dropdown").removeClass("active");				
+				mid.addClass("active");
 				if(!$("#site-nav-xs").is("visible") && mid.html() == ""){
-					$("#header-menu .menu-item-dropdown").removeClass("active");
 					var tagClass = ths.attr("class").split(" ");
 					tagClass = $.grep(tagClass, function(elem) {
 						return elem.toLowerCase().match(/^menu-item-\d*$/g);
 					})[0];
-					mid.addClass("active");
 					$.post(ajaxUrl, {
 							id: tagClass.replace(/\D/g, ''),
 							action: "get_nav_panel",
