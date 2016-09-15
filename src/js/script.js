@@ -1664,12 +1664,14 @@ function getOppsForGrid(inp1, inp2){
 		var ajaxUrl = $("#header-nav-wrap").data("url");
 		$.each(link, function(){
 			$(this).on("hover", function(){
-				if(!$("#site-nav-xs").is("visible")){
+				if(!$("#site-nav-xs").is("visible") && $(this).children('.menu-item-dropdown').html() == ""){
 					var tagClass = $(this).attr("class").split(" ")[$(this).attr("class").split(" ").length - 1];
 					$.post(ajaxUrl, {
 							id: tagClass.replace(/\D/, ''),
 							action: "get_nav_panel",
 						}, function(res){
+							console.log($(this));
+							console.log(res);
 							$(this).children('.menu-item-dropdown').html(res);
 					});
 				}
