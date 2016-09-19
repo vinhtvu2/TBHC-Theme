@@ -1397,3 +1397,4 @@ class Slider extends CustomPostType {
 		}
 	}
 }
+?>
