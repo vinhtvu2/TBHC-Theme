@@ -53,7 +53,9 @@ add_action('after_setup_theme', '__init__');
 
 
 # Set theme constants
-#define('DEBUG', True);                  # Always on
+define( 'WP_DEBUG', true );
+define( 'SCRIPT_DEBUG', true );
+define('DEBUG', True);                  # Always on
 #define('DEBUG', False);                 # Always off
 define('DEBUG', isset($_GET['debug'])); # Enable via get parameter
 define('THEME_URL', get_stylesheet_directory_uri());
