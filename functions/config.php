@@ -121,21 +121,21 @@ define('LDAP_HOST', 'net.ucf.edu');
 Config::$custom_post_types = array(
 	'Video',
 	'Document',
-	'Publication',
+	//'Publication',
 	'Page',
 	'Person',
 	'Slider',
 	'Spotlight',
 	'Opportunity',
 	'AZIndexLink',
-	'Announcement',
+	//'Announcement',
 	'Post',
 );
 
 Config::$custom_taxonomies = array(
 	'OrganizationalGroups',
 	'Keywords',
-	'AudienceRoles',
+	//'AudienceRoles',
 	'EventGroups'
 );
 
