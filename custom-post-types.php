@@ -435,11 +435,11 @@ class NavDropdown extends CustomPostType{
 		$prefix = $this->options('name').'_';
 		return array(
 			array(
-				'name'  => print_r(wp_get_nav_menu_items('header')),
+				'name'  => 'Menu Item',
 				'desc' => '',
 				'id'   => $prefix.'menu_item',
 				'type' => 'select',
-				'options' => array('opt1','opt2')//$this->get_menus(),
+				'options' => array('opt1' => 1, '2' => 'opt2')//$this->get_menus(),
 			),
 		);
 	}
