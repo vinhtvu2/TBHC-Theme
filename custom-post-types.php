@@ -419,8 +419,9 @@ class NavDropdown extends CustomPostType{
 		$use_metabox    = True;
 
 	public function toHTML($navDD){
-	ob_start();?>
-	<? return ob_get_clean();
+	//ob_start();?>
+	<? //return ob_get_clean();
+	return $this->get_terms();
 	}
 
 	public static function get_menus() {
@@ -429,21 +430,21 @@ class NavDropdown extends CustomPostType{
 		
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 		print_r($menu_items);
-		foreach ($menu_items as $menu) {
-			$menu_array[$menu->name] = $menu->term_id;
-		}
-		return $menu_array;
+		//foreach ($menu_items as $menu) {
+		//	$menu_array[$menu->name] = $menu->term_id;
+		//}
+		//return $menu_array;
 	}
 	
 	public function fields(){
 		$prefix = $this->options('name').'_';
 		return array(
 			array(
-				'name'  => 'Menu Item',
-				'desc' => '',
-				'id'   => $prefix.'menu_item',
-				'type' => 'select',
-				'options' => $this->get_terms(),
+				//'name'  => 'Menu Item',
+				//'desc' => '',
+				//'id'   => $prefix.'menu_item',
+				//'type' => 'select',
+				//'options' => $this->get_terms(),
 			),
 		);
 	}
