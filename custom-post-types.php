@@ -420,18 +420,11 @@ class NavDropdown extends CustomPostType{
 
 	public function toHTML(){
 	ob_start();?>
-	<?= get_registered_nav_menus()['header'] ?>	
-	<ul>
-	<li>li1</li>
-	<li>li2</li>
-	</ul>
 	<? return ob_get_clean();
 	}
 
 	public static function get_menus() {
-		$locations = get_nav_menu_locations();
-		$menu = wp_get_nav_menu_object( $locations['header'] );
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
+		$menu_items = wp_get_nav_menu_items('header');
 		foreach ($menu_items as $menu) {
 			$menu_array[$menu->name] = $menu->term_id;
 		}
