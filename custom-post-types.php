@@ -406,8 +406,8 @@ function get_menus_test() {
 	//print_r($locations);
 	//$reg = wp_get_registered_nav_menus();
 	//print_r($reg);
-	//$menu_items = wp_get_nav_menu_items('header');
-	print_r("bloop");
+	$randthing = wp_get_nav_menu_items('header');
+	print_r($randthing);
 }
 
 //get rid of
