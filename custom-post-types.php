@@ -418,7 +418,7 @@ class NavDropdown extends CustomPostType{
 		$use_title      = True,
 		$use_metabox    = True;
 
-	public function toHTML($navDD){
+	public function toHTML(){
 	ob_start();?>
 	<?= get_registered_nav_menus()['header'] ?>	
 	<ul>
