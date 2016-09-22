@@ -1975,7 +1975,8 @@ function google_tag_manager_dl() {
  *	Erik made ajax call for the nav panels 
  */
 function get_nav_panel(){
-	echo "Got the id ".$_REQUEST['id']." and processed it.";
+	$pst = get_post($_REQUEST['id']);
+	echo $pst->post_content;
 	die();
 }
 
