@@ -439,7 +439,7 @@ class NavDropdown extends CustomPostType{
 				'desc' => '',
 				'id'   => $prefix.'menu_item',
 				'type' => 'select',
-				'options' => array('opt1' => 1, '2' => 'opt2')//$this->get_menus(),
+				'options' => $this->get_menus(),
 			),
 		);
 	}
