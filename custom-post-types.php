@@ -426,9 +426,7 @@ class NavDropdown extends CustomPostType{
 	public static function get_menus() {
 		$locations = get_nav_menu_locations();
 		$menu = wp_get_nav_menu_object( $locations['header'] );
-		
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
-		print_r($menu_items);
 		foreach ($menu_items as $menu) {
 			$menu_array[$menu->name] = $menu->term_id;
 		}
