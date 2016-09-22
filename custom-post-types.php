@@ -419,18 +419,19 @@ class NavDropdown extends CustomPostType{
 		$use_metabox    = True;
 
 	public function toHTML($navDD){
-		return "";
+	ob_start();?>
+	<? return ob_get_clean();
 	}
 
 	public function fields(){
 		$prefix = $this->options('name').'_';
 		return array(
 			array(
-				'name'  => 'Menu Item',
-				'desc' => '',
-				'id'   => $prefix.'menu_item',
-				'type' => 'select',
-				'options' => $this->wp_get_nav_menu_items('header'),
+			//	'name'  => 'Menu Item',
+			//	'desc' => '',
+			//	'id'   => $prefix.'menu_item',
+			//	'type' => 'select',
+			//	'options' => $this->wp_get_nav_menu_items('header'),
 			),
 		);
 	}
