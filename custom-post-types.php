@@ -402,10 +402,10 @@ class Video extends CustomPostType{
 }
 
 function get_menus_test() {
-	//$locations = wp_get_nav_menu_locations();
+	$randthing2 = get_nav_menu_locations();
 	$randthing = get_registered_nav_menus();
-	$randthing2 = wp_get_nav_menu_items($randthing['header']);
-	print_r($randthing2);
+	print_r($randthing);
+	print_r($randthing2);	
 }
 
 //get rid of
