@@ -403,7 +403,7 @@ class Video extends CustomPostType{
 
 function get_menus_test() {
 	//$locations = wp_get_nav_menu_locations();
-	$randthing = wp_get_registered_nav_menus();
+	$randthing = get_registered_nav_menus();
 	//$randthing = wp_get_nav_menu_items('header');
 	print_r($randthing);
 }
