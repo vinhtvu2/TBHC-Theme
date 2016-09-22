@@ -1981,9 +1981,9 @@ function get_nav_panel(){
 				'key'   => 'nav_dropdown_menu_item',
 				'value' => $_REQUEST['id'],
 			)
-		)
+		),
 	);
-	$items = get_post($args);	
+	$items = get_posts($args);	
 	print_r($items);
 	echo "Got the id ".$_REQUEST['id']." and processed it.";
 	die();
