@@ -12,7 +12,6 @@
 				echo do_shortcode('[centerpiece id="'.$latest_centerpiece[0]->ID.'"]');
 				?>
 		</div>
-		<?= get_menus_test() ?>
 		<div class="col-sm-5 col-md-xpad col-sm-xpad" id="home_leftcol">
 			<h2>Spotlight</h2>
 			<?=frontpage_spotlights()?>
@@ -30,4 +29,6 @@
 		</div>
 	</div>
 </div><!--[container]-->
+		<?php get_menus_test(); ?>
+
 <?php get_footer();?>
