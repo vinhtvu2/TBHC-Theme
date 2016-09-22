@@ -1975,6 +1975,12 @@ function google_tag_manager_dl() {
  *	Erik made ajax call for the nav panels 
  */
 function get_nav_panel(){
+	$locations = get_nav_menu_locations();		
+	$args = array(
+		'include' => $_REQUEST['id']
+	);
+	$menu_items = wp_get_nav_menu_items($locations['header'], $args);	
+	print_r($menu_items);
 	echo "Got the id ".$_REQUEST['id']." and processed it.";
 	die();
 }
