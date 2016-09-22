@@ -401,7 +401,7 @@ class Video extends CustomPostType{
 	}
 }
 
-public function get_menus_test() {
+function get_menus_test() {
 	$menu_items = wp_get_nav_menu_items('header');
 	print_r($menu_items);
 }
