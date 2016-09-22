@@ -29,6 +29,4 @@
 		</div>
 	</div>
 </div><!--[container]-->
-		<?php get_menus_test(); ?>
-
 <?php get_footer();?>

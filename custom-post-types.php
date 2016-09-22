@@ -401,15 +401,6 @@ class Video extends CustomPostType{
 	}
 }
 
-function get_menus_test() {
-	$randthing2 = get_nav_menu_locations();
-	$randthing = get_registered_nav_menus();
-	$randthing3 = wp_get_nav_menu_items($randthing2['header']);
-	print_r($randthing);
-	print_r($randthing2);
-	print_r($randthing3);	
-}
-
 //get rid of
 class NavDropdown extends CustomPostType{
 	public
@@ -432,9 +423,10 @@ class NavDropdown extends CustomPostType{
 	}
 
 	public static function get_menus() {
-		$menu_items = wp_get_nav_menu_items('header');
+		$locations = get_nav_menu_locations();		
+		$menu_items = wp_get_nav_menu_items($locations['header']);
 		foreach ($menu_items as $menu) {
-			$menu_array[$menu->name] = $menu->term_id;
+			$menu_array[$menu->title] = $menu->ID;
 		}
 		return $menu_array;
 	}
