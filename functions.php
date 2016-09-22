@@ -1980,7 +1980,7 @@ function get_nav_panel(){
 		'meta_query' => array(
 			array(
 				'key'   => 'nav_dropdown_menu_item',
-				'value' => $_REQUEST['id'],
+				'value' => intval($_REQUEST['id']),
 			)
 		),
 	);
