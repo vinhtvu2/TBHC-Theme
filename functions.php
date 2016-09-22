@@ -1980,10 +1980,11 @@ function get_nav_panel(){
 			array(
 				'key'   => 'nav_dropdown_menu_item',
 				'value' => $_REQUEST['id'],
+				'compare' => '=',
 			)
 		),
 	);
-	$items = get_posts($args);	
+	$items = WP_Query($args);	
 	print_r($items);
 	echo "Got the id ".$_REQUEST['id']." and processed it.";
 	die();
