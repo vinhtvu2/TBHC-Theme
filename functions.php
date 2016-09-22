@@ -1976,15 +1976,15 @@ function google_tag_manager_dl() {
  */
 function get_nav_panel(){
 	$args = array(
+		'numberposts' => 1,
 		'meta_query' => array(
 			array(
 				'key'   => 'nav_dropdown_menu_item',
 				'value' => $_REQUEST['id'],
-				'compare' => '=',
 			)
 		),
 	);
-	$items = new WP_Query($args);	
+	$items = get_posts($args);	
 	print_r($items);
 	echo "Got the id ".$_REQUEST['id']." and processed it.";
 	die();
