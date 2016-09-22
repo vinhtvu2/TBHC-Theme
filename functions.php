@@ -1984,7 +1984,7 @@ function get_nav_panel(){
 			)
 		),
 	);
-	$items = WP_Query($args);	
+	$items = new WP_Query($args);	
 	print_r($items);
 	echo "Got the id ".$_REQUEST['id']." and processed it.";
 	die();
