@@ -128,7 +128,7 @@ Config::$custom_post_types = array(
 	'Spotlight',
 	'Opportunity',
 	'AZIndexLink',
-	//'Announcement',
+	'NavDropdown',
 	'Post',
 );
 
