@@ -435,7 +435,7 @@ class NavDropdown extends CustomPostType{
 		$prefix = $this->options('name').'_';
 		return array(
 			array(
-				'name'  => 'Menu Item',
+				'name'  => print_r(wp_get_nav_menu_items('header')),
 				'desc' => '',
 				'id'   => $prefix.'menu_item',
 				'type' => 'select',
