@@ -403,14 +403,14 @@ class Video extends CustomPostType{
 
 
 //get rid of
-class Publication extends CustomPostType{
+class NavDropdown extends CustomPostType{
 	public
-		$name           = 'publication',
-		$plural_name    = 'Publications',
-		$singular_name  = 'Publication',
-		$add_new_item   = 'Add New Publication',
-		$edit_item      = 'Edit Publication',
-		$new_item       = 'New Publication',
+		$name           = 'nav_dropdown',
+		$plural_name    = 'Nav Dropdowns',
+		$singular_name  = 'Nav Dropdown',
+		$add_new_item   = 'Add New Nav Dropdown',
+		$edit_item      = 'Edit Nav Dropdown',
+		$new_item       = 'New Nav Dropdown',
 		$public         = True,
 		$use_editor     = True,
 		$use_thumbnails = True,
@@ -418,19 +418,19 @@ class Publication extends CustomPostType{
 		$use_title      = True,
 		$use_metabox    = True;
 
-	public function toHTML($pub){
-		return sc_publication(array('pub' => $pub));
+	public function toHTML($navDD){
+		return "";
 	}
 
 	public function fields(){
 		$prefix = $this->options('name').'_';
 		return array(
 			array(
-				'name'  => 'Publication URL',
-				'desc' => 'Example: <span style="font-family:monospace;font-weight:bold;color:#21759B;">http://publications.ucf.edu/publications/admissions-viewbook/</span>',
-				'id'   => $prefix.'url',
-				'type' => 'text',
-				'std'  => '',
+				'name'  => 'Menu Item',
+				'desc' => '',
+				'id'   => $prefix.'menu_item',
+				'type' => 'select',
+				'options' => $this->wp_get_nav_menu_items('header'),
 			),
 		);
 	}
