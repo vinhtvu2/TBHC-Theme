@@ -404,8 +404,10 @@ class Video extends CustomPostType{
 function get_menus_test() {
 	$randthing2 = get_nav_menu_locations();
 	$randthing = get_registered_nav_menus();
+	$randthing3 = wp_get_nav_menu_items($randthing2['header']);
 	print_r($randthing);
-	print_r($randthing2);	
+	print_r($randthing2);
+	print_r($randthing3);	
 }
 
 //get rid of
