@@ -420,6 +420,7 @@ class NavDropdown extends CustomPostType{
 
 	public function toHTML($navDD){
 	ob_start();?>
+	<?= print_r(get_nav_menu_locations()) ?>
 	<? return ob_get_clean();
 	}
 
