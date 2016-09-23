@@ -1987,7 +1987,9 @@ function get_nav_panel(){
 	);
 	$items = get_posts($args);
 	if(is_array($items) && !empty($items)){
+		echo apply_filters( 'siteorigin_panels_before_content', '<div class="content-holder">', $panels_data = false, $items[0]->ID );
 		print_r(siteorigin_panels_render($post_id = $items[0]->ID));
+		echo apply_filters( 'siteorigin_panels_after_content', '</div>', $panels_data = false, $items[0]->ID );
 	}else{
 		print_r("Please check back later! This panel is under maintenance!");
 	}
