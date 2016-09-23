@@ -49,6 +49,12 @@
         max-width: $container-lg;
     }
 
+    .menu-item-dropdown{
+        li{
+            position: relative;
+            display: block;
+        }
+    }
 
     li {
         padding: 0;
@@ -99,13 +105,6 @@
 
 .no_nav_separator:after {
     content: '' !important;
-}
-
-.menu-item-dropdown{
-    li{
-        position: relative;
-        display: block;
-    }
 }
 
 // Mobile nav
