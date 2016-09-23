@@ -1976,17 +1976,21 @@ function google_tag_manager_dl() {
  */
 function get_nav_panel(){
 	$args = array(
+		'posts_per_page'	=>	1,
 		'post_type'	=>	'nav_dropdown',
 		'meta_query' => array(
 			array(
 				'key'   => 'nav_dropdown_menu_item',
-				'value' => '131',
+				'value' => $_REQUEST['id'],
 			)
 		),
 	);
-	$items = get_posts($args);	
-	print_r($items);
-	echo "Got the id ".$_REQUEST['id']." and processed it.";
+	$items = get_posts($args);
+	if(is_array($items) && !empty($items)){
+		print_r($items);
+	}else{
+		print_r("Please check back later! This panel is under maintenance!");
+	}
 	die();
 }
 
