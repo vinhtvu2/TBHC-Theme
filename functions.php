@@ -1987,7 +1987,7 @@ function get_nav_panel(){
 	);
 	$items = get_posts($args);
 	if(is_array($items) && !empty($items)){
-		print_r(apply_filters('the_content', $items[0]->post_content));
+		print_r(get_post($items[0]->ID));
 	}else{
 		print_r("Please check back later! This panel is under maintenance!");
 	}
