@@ -1988,11 +1988,11 @@ function get_nav_panel(){
 	$items = get_posts($args);
 	$htmlOut = "";
 	if(is_array($items) && !empty($items)){
-		htmlOut.apply_filters( 'siteorigin_panels_before_content', '<div class="content-holder">', $panels_data = false, $items[0]->ID );
-		htmlOut.siteorigin_panels_render($post_id = $items[0]->ID);
-		htmlOut.apply_filters( 'siteorigin_panels_after_content', '</div>', $panels_data = false, $items[0]->ID );
+		htmlOut .= apply_filters( 'siteorigin_panels_before_content', '<div class="content-holder">', $panels_data = false, $items[0]->ID );
+		htmlOut .= siteorigin_panels_render($post_id = $items[0]->ID);
+		htmlOut .= apply_filters( 'siteorigin_panels_after_content', '</div>', $panels_data = false, $items[0]->ID );
 	}else{
-		htmlOut."Please check back later! This panel is under maintenance!";
+		htmlOut .= "Please check back later! This panel is under maintenance!";
 	}
 	$css = siteorigin_panels_generate_css($items[0]->ID);
 	wp_send_json(array(
