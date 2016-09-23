@@ -1551,4 +1551,12 @@ function sc_social_share_buttons( $atts, $content='' ) {
 
 add_shortcode( 'social-share-buttons', 'sc_social_share_buttons' );
 
+// Nabbed from STEPHANIE LEARY http://stephanieleary.com/2010/07/call-a-navigation-menu-using-a-shortcode/
+// props where props are due (coulda done it, but lazy)	-E
+function print_menu_shortcode($atts, $content = null) {
+    extract(shortcode_atts(array( 'name' => null, ), $atts));
+    return wp_nav_menu( array( 'menu' => $name, 'echo' => false ) );
+}
+add_shortcode('menu', 'print_menu_shortcode');
+
 ?>
