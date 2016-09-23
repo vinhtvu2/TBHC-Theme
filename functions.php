@@ -1976,13 +1976,13 @@ function google_tag_manager_dl() {
  */
 function get_nav_panel(){
 	$args = array(
-		'post_type'	=>	'nav_dropdown'
-		/*'meta_query' => array(
+		'post_type'	=>	'nav_dropdown',
+		'meta_query' => array(
 			array(
 				'key'   => 'nav_dropdown_menu_item',
-				'value' => intval($_REQUEST['id']),
+				'value' => '131',
 			)
-		),*/
+		),
 	);
 	$items = get_posts($args);	
 	print_r($items);
