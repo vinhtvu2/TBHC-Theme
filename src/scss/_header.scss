@@ -50,7 +50,7 @@
     }
 
 
-    li {
+    li :not(.menu-item-dropdown li) {
         padding: 0;
         display: table-cell;
         text-align: center;
