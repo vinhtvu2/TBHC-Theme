@@ -1677,7 +1677,7 @@ function getOppsForGrid(inp1, inp2){
 						}, function(res){
 							console.log(res);
 							mid.html(res.html);
-							var inlineCss = '<style type="text/css" media="all" id="siteorigin-panels-grid-' + tagClass.replace(/\D/g, ''), + '">' + res.css + '</style>';
+							var inlineCss = '<style type="text/css" media="all" id="siteorigin-panels-grid-' + tagClass.replace(/\D/g, '') + '">' + res.css + '</style>';
 							$("head").append(inlineCss);
 					});
 				}
