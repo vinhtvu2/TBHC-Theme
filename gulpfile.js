@@ -168,7 +168,7 @@ gulp.task('js-main', function() {
 
   gulp.src(minified)
     .pipe(concat('script.min.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest(config.jsMinPath))
     .pipe(browserSync.stream());
 });
