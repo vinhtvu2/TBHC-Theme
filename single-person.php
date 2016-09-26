@@ -49,16 +49,16 @@
 				if(strpos(wp_get_referer(), "distinguished-speaker") > 0){ //or type = dist speaker ?> 
 					<ul class="list-unstyled">
 						<? if($title != '') { ?>
-							<li><i class="glyphicon glyphicon-earphone"></i><span class="title"><?=$title?></span></li>
+							<li><i class="glyphicon glyphicon-info-sign"></i><span class="title"><?=$title?></span></li>
 						<? } ?>
 						<? if($time != '') { ?>
-							<li><i class="glyphicon glyphicon-envelope"></i><span class="time"><?=$time?></span></li>
+							<li><i class="glyphicon glyphicon-time"></i><span class="time"><?=$time?></span></li>
 						<? } ?>
 						<? if($date != '') { ?>
-							<li><i class="glyphicon glyphicon-map-marker"></i><span class="date"><?=$date?></span></li>
+							<li><i class="glyphicon glyphicon-calendar"></i><span class="date"><?=$date?></span></li>
 						<? } ?>
 						<? if($location != '') { ?>
-							<li><i class="glyphicon glyphicon-map-marker"></i><span class="location"><?=$location?></span></li>
+							<li><i class="glyphicon glyphicon-globe"></i><span class="location"><?=$location?></span></li>
 						<? } ?>
 					</ul>	
 				<? } ?>
