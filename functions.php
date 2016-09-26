@@ -629,7 +629,7 @@ function frontpage_spotlights() {
 **/
 function frontpage_opportunities() {
 	$args = array(
-		'numberposts' => 4,	
+		//'numberposts' => 4,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
@@ -656,7 +656,7 @@ function frontpage_opportunities() {
 	
 	if(empty($opportunities)){
 		$args = array(
-		'numberposts' => 4,
+		//'numberposts' => 4,
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
@@ -665,6 +665,8 @@ function frontpage_opportunities() {
 		);
 		$opportunities = get_posts($args);
 	}
+	
+	$opportunities = array_splice($opportunities, 0, 4);
 	
 	//$opportunities = rsort($opportunities);
 		
