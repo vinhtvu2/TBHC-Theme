@@ -669,7 +669,8 @@ function frontpage_opportunities() {
 	function compare($a, $b){
 		$a_diff = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_diff = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
-		//$a_diff = $a_diff->diff(date('Ymd', mktime(0,0,0)));
+		$a_diff = $a_diff->diff(new DateTime());
+		$b_diff = $b_diff->diff(new DateTime());
 		if ($a_diff == $b_diff) {
 			// If they have the same depth, return 0
 			return 0;
