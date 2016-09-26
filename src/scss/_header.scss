@@ -51,8 +51,9 @@
 
     .menu-item-dropdown{
         li{
-            position: relative;
+            position: absolute;
             display: block;
+            visibility: hidden;
         }
     }
 
@@ -65,10 +66,11 @@
         }
         &:hover .menu-item-dropdown{
             opacity: 1;
+            visibility: visible;
         }
         .menu-item-dropdown{
             opacity: 0;
-            transition: opacity 2s;
+            transition: opacity 2s visibility 2s;
             position: absolute;
             width: 100%;
             left: 0;
