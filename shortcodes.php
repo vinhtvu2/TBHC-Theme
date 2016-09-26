@@ -478,6 +478,7 @@ function sc_opportunity_grid($atts) {
 				rsort($opps);
 				foreach ($opps as $opportunity) { 
 					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
+					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
 					$time = '';
 					$location = '';
 					if($ext_link){
@@ -486,15 +487,18 @@ function sc_opportunity_grid($atts) {
 					if($start_date){
 						$start_date = new DateTime($start_date);
 					}
+					if($end_date){
+						$end_date = new DateTime($end_date);
+					}
 					$link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);					
 				?>
 				<li>
 					<a href="<?=$link?>">
 						<?=$opportunity->post_title?>
 					</a>
-					<? if($start_date){ ?>
+					<? if($end_date){ ?>
 						<div class="opportunity_info">
-							Date: <?=$start_date->format('l, F jS, Y')?>
+							Date: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
 					<? if($time){ ?>
