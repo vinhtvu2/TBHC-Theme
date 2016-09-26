@@ -680,7 +680,7 @@ function frontpage_opportunities() {
 	}
 	var_dump($opportunities);
 	usort($opportunities, 'compare');
-	var_dump($opportunities)
+	var_dump($opportunities);
 	
 	$opportunities = array_splice($opportunities, 0, 4);
 	
