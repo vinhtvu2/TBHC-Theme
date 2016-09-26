@@ -475,7 +475,7 @@ function sc_opportunity_grid($atts) {
 		?>	
 		<ul class="opportunity-list">
 			<?php
-				rsort($opps);
+				//rsort($opps);
 				foreach ($opps as $opportunity) { 
 					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
 					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
@@ -498,7 +498,8 @@ function sc_opportunity_grid($atts) {
 					</a>
 					<? if($end_date){ ?>
 						<div class="opportunity_info">
-							Date: <?=$end_date->format('l, F jS, Y')?>
+							Date Available: <?=$start_date->format('l, F jS, Y')?>
+							Date Closed: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
 					<? if($time){ ?>
