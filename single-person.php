@@ -31,7 +31,7 @@
 			<article role="main">
 				<h2><?=$post->post_title?><?=($title == '') ?: ' - '.$title ?></h2>
 				<div class="contact">
-				<?if(strpos(wp_get_referer(), "distinguished-speaker") < 0 ){ //and type = staff
+				<?if(strpos(wp_get_referer(), "distinguished-speaker") === false){ //and type = staff
 					if(count($phones)) { ?>
 						<ul class="list-unstyled">
 						<? foreach($phones as $phone) { ?>
