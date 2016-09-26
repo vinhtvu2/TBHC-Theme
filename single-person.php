@@ -46,7 +46,7 @@
 						<? } ?>
 					</ul>
 				<? }
-				if(strpos(wp_get_referer(), "distinguished-speaker") >= 0){ //or type = dist speaker ?> 
+				if(strpos(wp_get_referer(), "distinguished-speaker") > 0){ //or type = dist speaker ?> 
 					<ul class="list-unstyled">
 						<? if($title != '') { ?>
 							<li><i class="glyphicon glyphicon-earphone"></i><span class="title"><?=$title?></span></li>
