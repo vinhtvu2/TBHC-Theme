@@ -499,6 +499,7 @@ function sc_opportunity_grid($atts) {
 					<? if($end_date){ ?>
 						<div class="opportunity_info">
 							Date Available: <?=$start_date->format('l, F jS, Y')?>
+							<br/>
 							Date Closed: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
