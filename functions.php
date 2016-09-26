@@ -678,7 +678,9 @@ function frontpage_opportunities() {
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		return ($a_diff < $b_diff) ? -1 : 1;
 	}
+	var_dump($opportunities);
 	usort($opportunities, 'compare');
+	var_dump($opportunities)
 	
 	$opportunities = array_splice($opportunities, 0, 4);
 	
