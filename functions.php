@@ -665,7 +665,20 @@ function frontpage_opportunities() {
 		);
 		$opportunities = get_posts($args);
 	}
+	// Takes two values ($a and $b) and returns either -1, 0 or 1
+	function compare($a, $b){
+		$a_end = get_post_meta($a->ID, 'opportunity_end', TRUE);
+		$b_end = get_post_meta($b->ID, 'opportunity_end', TRUE);
+		if ($a_end == $b_end) {
+			// If they have the same depth, return 0
+			return 0;
+		}
+		// If depth_a is smaller than depth_b, return -1; otherwise return 1
+		return ($a_end < $b_end) ? -1 : 1;
+	}
+	usort($opportunities, 'compare');
 	var_dump($opportunities);
+	
 	$opportunities = array_splice($opportunities, 0, 4);
 	
 	//$opportunities = rsort($opportunities);
