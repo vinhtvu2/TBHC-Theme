@@ -679,7 +679,6 @@ function frontpage_opportunities() {
 		return ($a_diff < $b_diff) ? -1 : 1;
 	}
 	usort($opportunities, 'compare');
-	var_dump($opportunities);
 	
 	$opportunities = array_splice($opportunities, 0, 4);
 	
