@@ -849,9 +849,10 @@ class Opportunity extends CustomPostType {
 					if($start_date){
 						$start_date = new DateTime($start_date);
 					}
+					$link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);
 				?>
 				<li>
-					<a href="<?=get_permalink($opportunity->ID)?>">
+					<a href="<?=$link?>">
 						<?=$opportunity->post_title?>
 					</a>
 					<? if($start_date){ ?>

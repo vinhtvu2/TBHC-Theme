@@ -329,10 +329,11 @@ body {
     }
 
     a {
-        border-bottom: 1px solid #ccc;
+        color: #3e769a;
+        //border-bottom: 1px solid #ccc;
 
         &:hover {
-            border-bottom: 1px solid #e50606;
+            border-bottom: 1px solid #8f3931;
             text-decoration: none;
         }
     }
