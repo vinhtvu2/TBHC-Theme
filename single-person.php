@@ -14,7 +14,12 @@
 		</div>
 		<div class="col-md-3 col-sm-3 details">
 			<?
+				global $wp;
+				$current_url = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
 				$title = get_post_meta($post->ID, 'person_jobtitle', True);
+				$time = get_post_meta($post->ID, 'dist_speaker_time', True);
+				$date = get_post_meta($post->ID, 'dist_speaker_date', True);
+				$location = get_post_meta($post->ID, 'dist_speaker_location', True);
 				$image_url = get_featured_image_url($post->ID, 'person-grid-image');
 				$email = get_post_meta($post->ID, 'person_email', True);
 				$phones = Person::get_phones($post);
@@ -26,19 +31,37 @@
 			<article role="main">
 				<h2><?=$post->post_title?><?=($title == '') ?: ' - '.$title ?></h2>
 				<div class="contact">
-					<? if(count($phones)) { ?>
+				<?if(strpos($_SERVER["QUERY_STRING"], "distinguished-speaker") < 0){
+					if(count($phones)) { ?>
 						<ul class="list-unstyled">
-							<? foreach($phones as $phone) { ?>
-								<li><i class="glyphicon glyphicon-earphone"></i><a href="tel:<?=$phone?>" class="phones"><?=$phone?></a></li>
-							<? } ?>
-							<? if($email != '') { ?>
-								<li><i class="glyphicon glyphicon-envelope"></i><a class="email" href="mailto:<?=$email?>"><?=$email?></a></li>
-							<? } ?>
-							<? if($office != '') { ?>
-								<li><i class="glyphicon glyphicon-map-marker"></i><span class="office"><?=$office?></span></li>
-							<? } ?>
-						</ul>
-					<? } ?>
+						<? foreach($phones as $phone) { ?>
+							<li><i class="glyphicon glyphicon-earphone"></i><a href="tel:<?=$phone?>" class="phones"><?=$phone?></a></li>
+						<? }
+						} ?>
+						<? if($email != '') { ?>
+							<li><i class="glyphicon glyphicon-envelope"></i><a class="email" href="mailto:<?=$email?>"><?=$email?></a></li>
+						<? } ?>
+						<? if($office != '') { ?>
+							<li><i class="glyphicon glyphicon-map-marker"></i><span class="office"><?=$office?></span></li>
+						<? } ?>
+					</ul>
+				<? }
+				if(strpos($_SERVER["QUERY_STRING"], "distinguished-speaker") >= 0){ ?>
+					<ul class="list-unstyled">
+						<? if($title != '') { ?>
+							<li><i class="glyphicon glyphicon-earphone"></i><span class="title"><?=$title?></span></li>
+						<? } ?>
+						<? if($time != '') { ?>
+							<li><i class="glyphicon glyphicon-envelope"></i><span class="time"><?=$time?></span></li>
+						<? } ?>
+						<? if($date != '') { ?>
+							<li><i class="glyphicon glyphicon-map-marker"></i><span class="date"><?=$date?></span></li>
+						<? } ?>
+						<? if($location != '') { ?>
+							<li><i class="glyphicon glyphicon-map-marker"></i><span class="location"><?=$location?></span></li>
+						<? } ?>
+					</ul>	
+				<? } ?>
 				</div>
 				<?=$content = str_replace(']]>', ']]>', apply_filters('the_content', $post->post_content))?>
 			</article>
