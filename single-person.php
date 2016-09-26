@@ -31,8 +31,7 @@
 			<article role="main">
 				<h2><?=$post->post_title?><?=($title == '') ?: ' - '.$title ?></h2>
 				<div class="contact">
-				<? print_r(wp_get_referer()) ?>
-				<?if(strpos($_SERVER["QUERY_STRING"], "distinguished-speaker") < 0){
+				<?if(strpos(wp_get_referer(), "distinguished-speaker") < 0 ){ //and type = staff
 					if(count($phones)) { ?>
 						<ul class="list-unstyled">
 						<? foreach($phones as $phone) { ?>
@@ -47,7 +46,7 @@
 						<? } ?>
 					</ul>
 				<? }
-				if(strpos($_SERVER["QUERY_STRING"], "distinguished-speaker") >= 0){ ?>
+				if(strpos(wp_get_referer(), "distinguished-speaker") >= 0){ //or type = dist speaker ?> 
 					<ul class="list-unstyled">
 						<? if($title != '') { ?>
 							<li><i class="glyphicon glyphicon-earphone"></i><span class="title"><?=$title?></span></li>
