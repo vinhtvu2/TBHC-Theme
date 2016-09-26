@@ -31,6 +31,7 @@
 			<article role="main">
 				<h2><?=$post->post_title?><?=($title == '') ?: ' - '.$title ?></h2>
 				<div class="contact">
+				<?= $_SERVER["QUERY_STRING"] ?>
 				<?if(strpos($_SERVER["QUERY_STRING"], "distinguished-speaker") < 0){
 					if(count($phones)) { ?>
 						<ul class="list-unstyled">
