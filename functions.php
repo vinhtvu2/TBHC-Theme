@@ -629,7 +629,7 @@ function frontpage_spotlights() {
 **/
 function frontpage_opportunities() {
 	$args = array(
-		//'numberposts' => -1,	
+		'numberposts' => -1,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
