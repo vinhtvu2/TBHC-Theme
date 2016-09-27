@@ -675,7 +675,7 @@ function frontpage_opportunities() {
 		$b_diff = $b_diff->diff($dt);
 		if ($a_diff == $b_diff) {
 			// If they have the same depth, compare titles
-			return 0;//strcomp($a->post_title, $b->post_title);
+			return strcmp($a->post_title, $b->post_title);
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		return ($a_diff < $b_diff) ? -1 : 1;
