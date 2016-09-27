@@ -673,6 +673,7 @@ function frontpage_opportunities() {
 		$b_diff = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		$a_diff = $a_diff->diff($dt);
 		$b_diff = $b_diff->diff($dt);
+		var_dump($a_diff);
 		if ($a_diff == $b_diff) {
 			// If they have the same depth, compare titles
 			return strcmp($a->post_title, $b->post_title);
@@ -683,7 +684,7 @@ function frontpage_opportunities() {
 	//var_dump($opportunities);
 	usort($opportunities, 'compare');
 	rsort($opportunities);
-	//var_dump($opportunities);
+	var_dump($opportunities);
 	
 	$opportunities = array_splice($opportunities, 0, 4);
 	
