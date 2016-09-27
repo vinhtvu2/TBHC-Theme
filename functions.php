@@ -666,7 +666,6 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	var_dump($opportunities);
 	
 	// Takes two values ($a and $b) and returns either -1, 0 or 1
 	function compare($a, $b){
@@ -683,7 +682,7 @@ function frontpage_opportunities() {
 	}
 	//var_dump($opportunities);
 	usort($opportunities, 'compare');
-	//var_dump($opportunities);
+	var_dump($opportunities);
 	
 	$opportunities = array_splice($opportunities, 0, 4);
 	
