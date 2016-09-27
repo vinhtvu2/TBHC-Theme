@@ -666,7 +666,8 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	$dt = new DateTime('Ymd');	
+	$dt = new DateTime();	
+	var_dump($dt);
 	// Takes two values ($a and $b) and returns either -1, 0 or 1
 	function compare($a, $b){
 		$a_diff = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
