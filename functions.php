@@ -666,16 +666,16 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	
+	$dt = new DateTime();	
 	// Takes two values ($a and $b) and returns either -1, 0 or 1
 	function compare($a, $b){
 		$a_diff = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_diff = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
-		$a_diff = $a_diff->diff(new DateTime());
-		$b_diff = $b_diff->diff(new DateTime());
+		$a_diff = $a_diff->diff($dt);
+		$b_diff = $b_diff->diff($dt);
 		if ($a_diff == $b_diff) {
 			// If they have the same depth, compare titles
-			return 0;//strcomp($a->post_title, $b->post_title);
+			return strcomp($a->post_title, $b->post_title);
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		return ($a_diff < $b_diff) ? -1 : 1;
