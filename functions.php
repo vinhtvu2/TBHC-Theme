@@ -664,9 +664,10 @@ function frontpage_opportunities() {
 		//'order'			=> 'DESC',		
 		);
 		$opportunities = get_posts($args);
-		
-		var_dump($opportunities);
 	}
+	
+	var_dump($opportunities);
+	
 	// Takes two values ($a and $b) and returns either -1, 0 or 1
 	function compare($a, $b){
 		$a_diff = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
