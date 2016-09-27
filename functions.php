@@ -678,10 +678,11 @@ function frontpage_opportunities() {
 			return strcmp($a->post_title, $b->post_title);
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
-		return ($a_diff > $b_diff) ? -1 : 1;
+		return ($a_diff < $b_diff) ? -1 : 1;
 	}
 	//var_dump($opportunities);
 	usort($opportunities, 'compare');
+	rsort($opportunities);
 	var_dump($opportunities);
 	
 	$opportunities = array_splice($opportunities, 0, 4);
