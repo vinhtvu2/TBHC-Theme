@@ -629,17 +629,17 @@ function frontpage_spotlights() {
 **/
 function frontpage_opportunities() {
 	$args = array(
-		//'numberposts' => 4,	
+		//'numberposts' => -1,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
 		//'orderby'		=> 'meta_value_num',
 		//'order'			=> 'DESC',
-		/*'meta_query'	=> array(
-			array(
+		'meta_query'	=> array(
+			/*array(
 				'key'	=>	'opportunity_post_to_home',
 				'value'	=>	'on',
-			),
+			),*/
 			array(
 				'key'	=>	'opportunity_start',
 				'value'	=>	date('Ymd', mktime(0,0,0)),
@@ -650,13 +650,13 @@ function frontpage_opportunities() {
 				'value'	=>	date('Ymd', mktime(0,0,0)),
 				'compare'	=>	'>=',
 			),
-		),*/
+		),
 	);
 	$opportunities = get_posts($args);
 	
 	if(empty($opportunities)){
 		$args = array(
-		//'numberposts' => 4,
+		'numberposts' => -1,
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
 		'meta_key'		=> 'opportunity_end',
