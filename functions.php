@@ -635,11 +635,11 @@ function frontpage_opportunities() {
 		'meta_key'		=> 'opportunity_end',
 		//'orderby'		=> 'meta_value_num',
 		//'order'			=> 'DESC',
-		'meta_query'	=> array(
-			/*array(
+		/*'meta_query'	=> array(
+			array(
 				'key'	=>	'opportunity_post_to_home',
 				'value'	=>	'on',
-			),*/
+			),
 			array(
 				'key'	=>	'opportunity_start',
 				'value'	=>	date('Ymd', mktime(0,0,0)),
@@ -650,7 +650,7 @@ function frontpage_opportunities() {
 				'value'	=>	date('Ymd', mktime(0,0,0)),
 				'compare'	=>	'>=',
 			),
-		),
+		),*/
 	);
 	$opportunities = get_posts($args);
 	
@@ -664,6 +664,8 @@ function frontpage_opportunities() {
 		//'order'			=> 'DESC',		
 		);
 		$opportunities = get_posts($args);
+		
+		var_dump($opportunities);
 	}
 	// Takes two values ($a and $b) and returns either -1, 0 or 1
 	function compare($a, $b){
