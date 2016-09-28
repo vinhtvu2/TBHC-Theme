@@ -674,7 +674,7 @@ function frontpage_opportunities() {
 		$b_diff = $b_dt->diff($dt);
 		if ($a_diff->days == $b_diff->days) {
 			// If they have the same depth, compare titles
-			return strcmp($a->post_title, $b->post_title);
+			return 0;//strcmp($a->post_title, $b->post_title);
 		}
 		var_dump("NEW CHALLENGER!");
 		var_dump($a_diff->days);		
