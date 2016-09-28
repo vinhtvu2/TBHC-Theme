@@ -673,8 +673,8 @@ function frontpage_opportunities() {
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		var_dump($a_dt);		
-		$a_diff = $a_dt->format('U') - $dt->format('U');
-		$b_diff = $b_dt->format('U') - $dt->format('U');
+		$a_diff = intval($a_dt->format('U')) - intval($dt->format('U'));
+		$b_diff = intval($b_dt->format('U')) - intval($dt->format('U'));
 		var_dump($a_diff);
 		if ($a_diff == $b_diff) {
 			// If they have the same depth, compare titles
