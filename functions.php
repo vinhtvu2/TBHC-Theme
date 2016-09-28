@@ -666,15 +666,15 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	$dt = new DateTime();	
+	$dt = date('Ymd');	
 	var_dump($dt);
 	// Takes two values ($a and $b) and returns either -1, 0 or 1
 	function compare($a, $b){
-		$a_diff = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
-		$b_diff = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
-		var_dump($a_diff);		
-		$a_diff = $a_diff->diff($dt);
-		$b_diff = $b_diff->diff($dt);
+		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
+		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
+		var_dump($a_dt);		
+		$a_diff = $a_dt->format('U') - $dt->format('U');
+		$b_diff = $b_dt->format('U') - $dt->format('U');
 		var_dump($a_diff);
 		if ($a_diff == $b_diff) {
 			// If they have the same depth, compare titles
