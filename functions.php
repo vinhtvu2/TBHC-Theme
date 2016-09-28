@@ -666,8 +666,8 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	// Takes two values ($a and $b) and returns either -1, 0 or 1
-	function compare($a, $b, $dt){
+	$dt = new DateTime();	
+	usort($opportunities, function($a, $b)use($dt){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		var_dump($a_dt);		
@@ -681,10 +681,7 @@ function frontpage_opportunities() {
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		return ($a_diff < $b_diff) ? -1 : 1;
-	}
-	//var_dump($opportunities);
-	$dt = new DateTime();	
-	usort($opportunities, create_function('$a, $b', 'return compare($a, $b, $dt);'));
+	});
 	rsort($opportunities);
 	var_dump($opportunities);
 	
