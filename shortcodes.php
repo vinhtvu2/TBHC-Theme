@@ -569,6 +569,7 @@ add_shortcode('opportunity-grid', 'sc_opportunity_grid');
 			$rounded_corners		= get_post_meta($post->ID, 'ss_slider_rounded_corners', TRUE);
 
 
+			$output = isset($output) ? $output : "";
 			// #centerpiece_slider must contain an image placeholder set to the max
 			// slide width in order to trigger responsive styles properly--
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
