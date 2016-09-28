@@ -678,7 +678,9 @@ function frontpage_opportunities() {
 		}
 		var_dump(error_get_last());
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
-		return ($a_diff->days < $b_diff->days) ? -1 : 1;
+		$res = ($a_diff->days < $b_diff->days) ? -1 : 1;
+		var_dump($res);
+		return $res;
 	});
 	var_dump($opportunities);
 	
