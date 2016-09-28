@@ -676,13 +676,14 @@ function frontpage_opportunities() {
 			// If they have the same depth, compare titles
 			return strcmp($a->post_title, $b->post_title);
 		}
-		print("NEW CHALLENGER!");
-		var_dump($a_diff->days);
+		var_dump("NEW CHALLENGER!");
+		var_dump($a_diff->days);		
 		var_dump($a->post_title);
-		print("- vs -");
+		var_dump("- vs -");
 		var_dump($b_diff->days);		
 		var_dump($b->post_title);
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
+		var_dump("RESULT");
 		$res = ($a_diff->days < $b_diff->days) ? -1 : 1;
 		var_dump($res);
 		return $res;
