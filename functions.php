@@ -666,27 +666,8 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	$dt = new DateTime();
-	$t_dt = new DateTime();
-	var_dump($dt->diff($t_dt));
-	// Takes two values ($a and $b) and returns either -1, 0 or 1
-	function compare($a, $b){
-		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
-		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
-		var_dump($a_dt);		
-		$a_diff = $a_dt->diff($dt);
-		var_dump(error_get_last());
-		$b_diff = $b_dt->diff($dt);
-		var_dump($a_diff);
-		if ($a_diff == $b_diff) {
-			// If they have the same depth, compare titles
-			return strcmp($a->post_title, $b->post_title);
-		}
-		// If depth_a is smaller than depth_b, return -1; otherwise return 1
-		return ($a_diff < $b_diff) ? -1 : 1;
-	}
 	//var_dump($opportunities);
-	usort($opportunities, 'compare');
+	usort($opportunities, array('DateTimeCompare', 'compare'));
 	rsort($opportunities);
 	var_dump($opportunities);
 	
@@ -771,6 +752,26 @@ function frontpage_opportunities() {
 			//output_opportunity($opportunity_two);
 			//output_opportunity($opportunity_one);
 		}
+	}
+}
+
+class DateTimeCompare{
+	private static $dt = new DateTime();
+	// Takes two values ($a and $b) and returns either -1, 0 or 1
+	static function compare($a, $b){
+		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
+		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
+		var_dump($a_dt);		
+		$a_diff = $a_dt->diff(self->$dt);
+		var_dump(error_get_last());
+		$b_diff = $b_dt->diff(self->$dt);
+		var_dump($a_diff);
+		if ($a_diff == $b_diff) {
+			// If they have the same depth, compare titles
+			return strcmp($a->post_title, $b->post_title);
+		}
+		// If depth_a is smaller than depth_b, return -1; otherwise return 1
+		return ($a_diff < $b_diff) ? -1 : 1;
 	}
 }
 
