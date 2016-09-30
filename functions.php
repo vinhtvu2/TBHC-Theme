@@ -667,7 +667,7 @@ function frontpage_opportunities() {
 	}
 	
 	$dt = new DateTime();	
-	usort($opps, function($a, $b)use($dt){
+	usort($opportunities, function($a, $b)use($dt){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		$a_dt = $a_dt->getTimestamp() - $dt->getTimestamp();
