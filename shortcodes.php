@@ -202,6 +202,7 @@ add_shortcode('video', 'sc_video');
 /**
  * Person picture lists
  **/
+ // sort by job title deans -> directors -> coordinators
 function sc_person_picture_list($atts) {
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
@@ -221,6 +222,19 @@ function sc_person_picture_list($atts) {
 							'objects_only' => True,
 						));
 
+	usort($people, function($a, $b){
+		$a_order = get_post_meta($a->ID, 'person_orderby_name', true);
+		$b_order = get_post_meta($a->ID, 'person_orderby_name', true);
+		if ($a_order == $b_order){
+			// If they have the same depth, compare titles
+			return strcmp($a->post_title, $b->post_title);
+		}
+		// If depth_a is smaller than depth_b, return -1; otherwise return 1
+		$res = ($a_order < $b_order) ? -1 : 1;
+		return $res;
+	});
+	
+						
 	ob_start();
 
 	?><div class="person-picture-list"><?
@@ -425,13 +439,6 @@ function sc_opportunity_grid($atts) {
 			'orderby' => 'meta_value_num',
 			'order' => 'DESC',
 			'meta_key'	=> 'opportunity_end',
-			'meta_query'	=> array(
-				array(
-					'key'	=>	'opportunity_end',
-					'value'	=>	date('Ymd', mktime(0,0,0)),
-					'compare'	=>	'<=',				
-				)
-			),
 			'operator' => $operator
 		),
 	array(
