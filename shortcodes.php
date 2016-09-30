@@ -437,14 +437,15 @@ function sc_opportunity_grid($atts) {
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		$a_dt = $a_dt->getTimestamp() - $dt->getTimestamp();
 		$b_dt = $b_dt->getTimestamp() - $dt->getTimestamp();
-		//$a_diff = $a_dt->diff($dt);
-		//$b_diff = $b_dt->diff($dt);
-		if ($a_dt == $b_dt){//$a_diff->days == $b_diff->days) {
+		if($b_dt < 0){
+			return -1;
+		}
+		if ($a_dt == $b_dt){
 			// If they have the same depth, compare titles
 			return strcmp($a->post_title, $b->post_title);
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
-		$res = ($a_dt < $b_dt) ? -1 : 1;//($a_diff->days < $b_diff->days) ? -1 : 1;
+		$res = ($a_dt < $b_dt) ? -1 : 1;
 		return $res;
 	});
 	
