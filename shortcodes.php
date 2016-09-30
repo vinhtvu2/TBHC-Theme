@@ -296,8 +296,8 @@ function sc_person_profile_grid($atts) {
 		'objects_only' => True,
 	));
 	usort($people, function($a, $b){
-		$a_title = get_post_meta($a->ID, 'person_title_suffix', true);
-		$b_title = get_post_meta($b->ID, 'person_title_suffix', true);
+		$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
+		$b_title = get_post_meta($b->ID, 'person_jobtitle', true);
 		$haystack = ["Dean", "Director", "Coordinator"];
 		foreach ($haystack as $item)	{
 			$a_r = strpos($a_title, $item);
