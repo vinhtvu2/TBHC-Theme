@@ -678,7 +678,7 @@ function frontpage_opportunities() {
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		$res = ($a_diff->days < $b_diff->days) ? -1 : 1;
-		print("\n(".$a->ID.")->".$a_diff->days." is ".$res > 0 ? "higher" : $res == 0 ? "equal" : "lower"." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ". $res == 0 ? "not " : ""."been moved".$res > 0 ? " down" : $res == 0 ? "" : " up.");
+		var_dump("\n(".$a->ID.")->".$a_diff->days." is ".$res > 0 ? "higher" : $res == 0 ? "equal" : "lower"." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ". $res == 0 ? "not " : ""."been moved".$res > 0 ? " down" : $res == 0 ? "" : " up.");
 		return $res;
 	});
 	//var_dump($opportunities);
