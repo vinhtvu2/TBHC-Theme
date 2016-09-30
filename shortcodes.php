@@ -433,10 +433,10 @@ function sc_opportunity_grid($atts) {
 	
 	$dt = new DateTime();	
 	usort($opps, function($a, $b)use($dt){
-		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
-		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
-		$a_diff = $a_dt->diff($dt);
-		$b_diff = $b_dt->diff($dt);
+		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE))->getTimestamp() - $dt->getTimestamp();
+		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE))->getTimestamp() - $dt->getTimestamp();
+		//$a_diff = $a_dt->diff($dt);
+		//$b_diff = $b_dt->diff($dt);
 		if ($a_dt == $b_dt){//$a_diff->days == $b_diff->days) {
 			// If they have the same depth, compare titles
 			return strcmp($a->post_title, $b->post_title);
@@ -519,7 +519,6 @@ function sc_opportunity_grid($atts) {
 							Date Close: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
-					<?= $end_date->diff(new DateTime())->days ?>
 					<? if($time){ ?>
 						<div class="opportunity_info">
 							Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
