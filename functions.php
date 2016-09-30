@@ -676,16 +676,9 @@ function frontpage_opportunities() {
 			// If they have the same depth, compare titles
 			return 0;//strcmp($a->post_title, $b->post_title);
 		}
-		var_dump("NEW CHALLENGER!");
-		var_dump($a_diff->days);		
-		var_dump($a->post_title);
-		var_dump("- vs -");
-		var_dump($b_diff->days);		
-		var_dump($b->post_title);
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
-		var_dump("RESULT");
 		$res = ($a_diff->days < $b_diff->days) ? -1 : 1;
-		var_dump($res);
+		echo "\n(".$a->ID.")->".$a_diff->days." is ".$res > 0 ? "higher" : $res == 0 ? "equal" : "lower"." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ". $res == 0 ? "not " : ""."been moved".$res > 0 ? " down" : $res == 0 ? "" : " up.";
 		return $res;
 	});
 	//var_dump($opportunities);
