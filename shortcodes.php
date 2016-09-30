@@ -299,24 +299,25 @@ function sc_person_profile_grid($atts) {
 		$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
 		$b_title = get_post_meta($b->ID, 'person_jobtitle', true);
 		$haystack = ["Dean", "Director", "Coordinator"];
+		$res = 0;		
 		foreach ($haystack as $item)	{
 			$a_r = strpos($a_title, $item);
 			$b_r = strpos($b_title, $item);
 			if($a_r >= 0 && $a_r !== false){
 				if($b_r >= 0 && $b_r !== false){
 						print($a_title." and ".$b_title." contain ".$item.".\n");
-					return $a_r < $b_r ? -1 : $a_r == $b_r ? 0 : 1; // both contain
+					$res = $a_r < $b_r ? -1 : $a_r == $b_r ? 0 : 1; // both contain
 					}else{
 					print("Only ".$a_title." contains ".$item.".\n");					
-					return -1; // only a contains
+					$res = -1; // only a contains
 				}
 				}else{
 				if($b_r >= 0 && $b_r !== false){
 					print("Only ".$b_title." contains ".$item.".\n");										
-					return 1; // only b contains
+					$res = 1; // only b contains
 					}else{ // neither contains
 					print("Neither ".$a_title." nor ".$b_title." contain ".$item.".\n");										
-					return $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
+					$res = $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
 				}
 			}
 		}
