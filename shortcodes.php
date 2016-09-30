@@ -304,7 +304,7 @@ function sc_person_profile_grid($atts) {
 			$b_r = strpos($b_title, $item);
 			if($a_r >= 0 && $a_r !== false){
 				if($b_r >= 0 && $b_r !== false){
-					return $a_r < $b_r; // both contain
+					return $a_r < $b_r ? -1 : $a_r == $b_r ? 0 : 1; // both contain
 					}else{
 					return -1; // only a contains
 				}
