@@ -435,7 +435,8 @@ function sc_opportunity_grid($atts) {
 	usort($opps, function($a, $b)use($dt){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
-		var_dump($a_dt->getTimestamp());
+		$a_dt = $a_dt->getTimestamp()) - $dt->getTimestamp();
+		$b_dt = $b_dt->getTimestamp()) - $dt->getTimestamp();
 		//$a_diff = $a_dt->diff($dt);
 		//$b_diff = $b_dt->diff($dt);
 		if ($a_dt == $b_dt){//$a_diff->days == $b_diff->days) {
