@@ -437,13 +437,12 @@ function sc_opportunity_grid($atts) {
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		$a_diff = $a_dt->diff($dt);
 		$b_diff = $b_dt->diff($dt);
-		$b = (object) array_merge( (array)$b, array( 'days' => $b_diff->days ) );
-		if ($a_diff->days == $b_diff->days) {
+		if ($a_dt == $b_dt){//$a_diff->days == $b_diff->days) {
 			// If they have the same depth, compare titles
 			return strcmp($a->post_title, $b->post_title);
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
-		$res = ($a_diff->days < $b_diff->days) ? -1 : 1;
+		$res = ($a_dt < $b_dt) ? -1 : 1;//($a_diff->days < $b_diff->days) ? -1 : 1;
 		return $res;
 	});
 	
@@ -520,7 +519,6 @@ function sc_opportunity_grid($atts) {
 							Date Close: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
-					<?= $opportunity->days ?>
 					<? if($time){ ?>
 						<div class="opportunity_info">
 							Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
