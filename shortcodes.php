@@ -437,9 +437,6 @@ function sc_opportunity_grid($atts) {
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		$a_dt = $a_dt->getTimestamp() - $dt->getTimestamp();
 		$b_dt = $b_dt->getTimestamp() - $dt->getTimestamp();
-		if($b_dt < 0){
-			return -1;
-		}
 		if ($a_dt == $b_dt){
 			// If they have the same depth, compare titles
 			return strcmp($a->post_title, $b->post_title);
