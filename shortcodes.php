@@ -425,6 +425,13 @@ function sc_opportunity_grid($atts) {
 			'orderby' => 'meta_value_num',
 			'order' => 'DESC',
 			'meta_key'	=> 'opportunity_end',
+			'meta_query'	=> array(
+				array(
+					'key'	=>	'opportunity_end',
+					'value'	=>	date('Ymd', mktime(0,0,0)),
+					'compare'	=>	'<=',				
+				)
+			),
 			'operator' => $operator
 		),
 	array(
