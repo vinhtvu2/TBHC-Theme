@@ -666,28 +666,22 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	$out = "";
 	$dt = new DateTime();	
 	usort($opportunities, function($a, $b)use($dt){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
 		$a_diff = $a_dt->diff($dt);
 		$b_diff = $b_dt->diff($dt);
-		$res = 0;
 		if ($a_diff->days == $b_diff->days) {
 			// If they have the same depth, compare titles
-			$res = 0;//strcmp($a->post_title, $b->post_title);
-			$out .= "\n(".$a->ID.")->".$a_diff->days." is ".($res > 0 ? "higher" : $res == 0 ? "equal" : "lower")." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ".($res == 0 ? "not " : "")."been moved".($res > 0 ? " down." : $res == 0 ? "." : " up.");
-			return $res;
+			return 0;//strcmp($a->post_title, $b->post_title);
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		$res = ($a_diff->days < $b_diff->days) ? -1 : 1;
-		$out .= "\n(".$a->ID.")->".$a_diff->days." is ".($res > 0 ? "higher" : $res == 0 ? "equal" : "lower")." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ".($res == 0 ? "not " : "")."been moved".($res > 0 ? " down." : $res == 0 ? "." : " up.");
 		return $res;
 	});
 	//var_dump($opportunities);
-	var_dump($out);
-	rsort($opportunities);
+	//$opportunities = array_reverse($opportunities);
 	$opportunities = array_splice($opportunities, 0, 4);
 	
 	//$opportunities = rsort($opportunities);
