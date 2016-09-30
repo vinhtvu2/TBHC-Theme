@@ -519,6 +519,7 @@ function sc_opportunity_grid($atts) {
 							Date Close: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
+					<?= $end_date->diff(new DateTime())->days ?>
 					<? if($time){ ?>
 						<div class="opportunity_info">
 							Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
