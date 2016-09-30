@@ -222,31 +222,7 @@ function sc_person_picture_list($atts) {
 							'objects_only' => True,
 						));
 
-	usort($people, function($a, $b){
-		$a_title = get_post_meta($a->ID, 'person_title_suffix', true);
-		$b_title = get_post_meta($b->ID, 'person_title_suffix', true);
-		$haystack = ["Dean", "Director", "Coordinator"];
-		foreach ($haystack as $item)	{
-			$a_r = strpos($a_title, $item);
-			$b_r = strpos($b_title, $item);
-			if($a_r >= 0 && $a_r !== false){
-				if($b_r >= 0 && $b_r !== false){
-					return $a_r < $b_r; // both contain
-				}else{
-					return -1; // only a contains
-				}
-			}else{
-					if($b_r >= 0 && $b_r !== false){
-						return 1; // only b contains
-					}else{ // neither contains
-						return $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
-					}
-			}
-		}
-		return $res;
-	});
-	
-						
+					
 	ob_start();
 
 	?><div class="person-picture-list"><?
@@ -319,6 +295,29 @@ function sc_person_profile_grid($atts) {
 	array(
 		'objects_only' => True,
 	));
+	usort($people, function($a, $b){
+		$a_title = get_post_meta($a->ID, 'person_title_suffix', true);
+		$b_title = get_post_meta($b->ID, 'person_title_suffix', true);
+		$haystack = ["Dean", "Director", "Coordinator"];
+		foreach ($haystack as $item)	{
+			$a_r = strpos($a_title, $item);
+			$b_r = strpos($b_title, $item);
+			if($a_r >= 0 && $a_r !== false){
+				if($b_r >= 0 && $b_r !== false){
+					return $a_r < $b_r; // both contain
+					}else{
+					return -1; // only a contains
+				}
+				}else{
+				if($b_r >= 0 && $b_r !== false){
+					return 1; // only b contains
+					}else{ // neither contains
+					return $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
+				}
+			}
+		}
+		return $res;
+	});
 	
 	ob_start();
 	
