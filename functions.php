@@ -666,12 +666,11 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
-	$dt = new DateTime();	
-	usort($opportunities, function($a, $b)use($dt){
+	usort($opportunities, function($a, $b{
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
-		$a_dt = $a_dt->getTimestamp() - $dt->getTimestamp();
-		$b_dt = $b_dt->getTimestamp() - $dt->getTimestamp();
+		$a_dt = $a_dt->getTimestamp();
+		$b_dt = $b_dt->getTimestamp();
 		if ($a_dt == $b_dt){
 			// If they have the same depth, compare titles
 			return strcmp($a->post_title, $b->post_title);
