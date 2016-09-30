@@ -666,6 +666,7 @@ function frontpage_opportunities() {
 		$opportunities = get_posts($args);
 	}
 	
+	$out = "";
 	$dt = new DateTime();	
 	usort($opportunities, function($a, $b)use($dt){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
@@ -676,18 +677,18 @@ function frontpage_opportunities() {
 		if ($a_diff->days == $b_diff->days) {
 			// If they have the same depth, compare titles
 			$res = 0;//strcmp($a->post_title, $b->post_title);
-			echo "\n(".$a->ID.")->".$a_diff->days." is ".$res > 0 ? "higher" : $res == 0 ? "equal" : "lower"." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ". $res == 0 ? "not " : ""."been moved".$res > 0 ? " down" : $res == 0 ? "" : " up.";
+			$out .= "\n(".$a->ID.")->".$a_diff->days." is ".$res > 0 ? "higher" : $res == 0 ? "equal" : "lower"." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ". $res == 0 ? "not " : ""."been moved".$res > 0 ? " down" : $res == 0 ? "" : " up.";
 			return $res;
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		$res = ($a_diff->days < $b_diff->days) ? -1 : 1;
-		echo "\n(".$a->ID.")->".$a_diff->days." is ".$res > 0 ? "higher" : $res == 0 ? "equal" : "lower"." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ". $res == 0 ? "not " : ""."been moved".$res > 0 ? " down" : $res == 0 ? "" : " up.";
+		$out .= "\n(".$a->ID.")->".$a_diff->days." is ".$res > 0 ? "higher" : $res == 0 ? "equal" : "lower"." than (".$b->ID.")->".$b_diff->days.".\n(".$b->ID.") has ". $res == 0 ? "not " : ""."been moved".$res > 0 ? " down" : $res == 0 ? "" : " up.";
 		return $res;
 	});
 	//var_dump($opportunities);
 	
 	rsort($opportunities);
-	
+	var_dump($out);
 	$opportunities = array_splice($opportunities, 0, 4);
 	
 	//$opportunities = rsort($opportunities);
@@ -705,24 +706,24 @@ function frontpage_opportunities() {
 			$link = $ext_link; 
 		}
 		
-	?>
-	<div class="home_opportunity_single">
-		<a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
-			<?php
-				$thumb_id = get_post_thumbnail_id($opportunity->ID);
-				$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
-				$thumb_src = $thumb_src[0];
-			?>
-			<?php if ($thumb_src) { ?>
-				<img class="print-only opportunity_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
-				<div class="screen-only opportunity_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($opportunity->post_title)?></div>
-			<?php } ?>
-		</a>
-		<h3 class="home_opportunity_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>"><?=$opportunity->post_title?></a></h3>
-		<?=truncateHtml($opportunity->post_content, 200)?>
-		<p><a class="home_opportunity_readmore ga-event" href="<?=esc_attr($link)?>" target="_blank" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">Read More…</a></p>
-	</div>
-	<?
+		?>
+		<div class="home_opportunity_single">
+			<a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
+				<?php
+					$thumb_id = get_post_thumbnail_id($opportunity->ID);
+					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
+					$thumb_src = $thumb_src[0];
+				?>
+				<?php if ($thumb_src) { ?>
+					<img class="print-only opportunity_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
+					<div class="screen-only opportunity_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($opportunity->post_title)?></div>
+				<?php } ?>
+			</a>
+			<h3 class="home_opportunity_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>"><?=$opportunity->post_title?></a></h3>
+			<?=truncateHtml($opportunity->post_content, 200)?>
+			<p><a class="home_opportunity_readmore ga-event" href="<?=esc_attr($link)?>" target="_blank" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">Read More…</a></p>
+		</div>
+		<?
 	}
 	
 	foreach($opportunities as $op){
