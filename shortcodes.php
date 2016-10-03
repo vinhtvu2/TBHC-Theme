@@ -613,10 +613,9 @@ function sc_spotlight_grid($atts) {
 	array(
 		'objects_only' => True,
 	));
-	var_dump($spots);
-	/*usort($opps, function($a, $b){
-		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
-		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
+	usort($opps, function($a, $b){
+		$a_dt = new DateTime(get_post_meta($a->ID, 'spotlight_end', TRUE));
+		$b_dt = new DateTime(get_post_meta($b->ID, 'spotlight_end', TRUE));
 		$a_dt = $a_dt->getTimestamp();
 		$b_dt = $b_dt->getTimestamp();
 		if ($a_dt == $b_dt){
@@ -626,7 +625,8 @@ function sc_spotlight_grid($atts) {
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		$res = ($a_dt < $b_dt) ? -1 : 1;
 		return $res;
-	});*/
+	});
+	var_dump($spots);	
 	/*
 	ob_start();
 	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
