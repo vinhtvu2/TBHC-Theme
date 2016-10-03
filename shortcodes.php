@@ -627,14 +627,14 @@ function sc_spotlight_grid($atts) {
 		return $res;
 	});
 	var_dump($spots);	
-	/*
+	
 	ob_start();
-	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
+	?><div class="spotlight-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
 		<? if($dropdown){ 
 			$args = array(
 				'taxonomy'	=>	'event_groups',
 				'value_field'	=>	'slug',
-				'class'	=>	'opportunity-grid-dropdown form-control',
+				'class'	=>	'spotlight-grid-dropdown form-control',
 				'id'	=>	'dd_event_groups',
 				'name'	=>	'dd_event_groups',
 				'echo'	=> false,
@@ -646,7 +646,7 @@ function sc_spotlight_grid($atts) {
 			}
 			echo str_replace(
 				'<select',
-				'<select onchange="getOppsForGrid(this.value'.($dropdown2 ? ', $(\'#dd2_event_groups\').val()' : '').')"',
+				'<select onchange="getSpotsForGrid(this.value'.($dropdown2 ? ', $(\'#dd2_event_groups\').val()' : '').')"',
 				wp_dropdown_categories($args)
 			);
 		} 
@@ -654,7 +654,7 @@ function sc_spotlight_grid($atts) {
 			$args2 = array(
 				'taxonomy'	=>	'event_groups',
 				'value_field'	=>	'slug',
-				'class'	=>	'opportunity-grid-dropdown form-control',
+				'class'	=>	'spotlight-grid-dropdown form-control',
 				'id'	=>	'dd2_event_groups',
 				'name'	=>	'dd2_event_groups',			
 				'echo'	=> false,
@@ -666,17 +666,17 @@ function sc_spotlight_grid($atts) {
 			}			
 			echo str_replace(
 				'<select',
-				'<select onchange="getOppsForGrid($(\'#dd_event_groups\').val(), this.value)"',
+				'<select onchange="getSpotsForGrid($(\'#dd_event_groups\').val(), this.value)"',
 				wp_dropdown_categories($args2)
 			);
 		} 
 		?>	
-		<ul class="opportunity-list">
+		<ul class="spotlight-list">
 			<?php
 				//rsort($opps);
-				foreach ($opps as $opportunity) { 
-					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
-					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
+				foreach ($spots as $spotlight) { 
+					$start_date = get_post_meta($spotlight->ID, 'spotlight_start', TRUE);
+					$end_date = get_post_meta($spotlight->ID, 'spotlight_end', TRUE);
 					$time = '';
 					$location = '';
 					if($ext_link){
@@ -688,31 +688,31 @@ function sc_spotlight_grid($atts) {
 					if($end_date){
 						$end_date = new DateTime($end_date);
 					}
-					$link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);					
+					$link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);					
 				?>
 				<li>
 					<a href="<?=$link?>">
-						<?=$opportunity->post_title?>
+						<?=$spotlight->post_title?>
 					</a>
 					<? if($end_date){ ?>
-						<div class="opportunity_info">
+						<div class="spotlight_info">
 							Date Available: <?=$start_date->format('l, F jS, Y')?>
 							<br/>
 							Date Close: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
 					<? if($time){ ?>
-						<div class="opportunity_info">
-							Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
+						<div class="spotlight_info">
+							Time: <?=get_post_meta($spotlight->ID, 'spotlight_time', true)?>
 						</div>
 					<? } ?>
 					<? if($location){ ?>
-						<div class="opportunity_info">
-							Location: <?=get_post_meta($opportunity->ID, 'opportunity_location', true)?>
+						<div class="spotlight_info">
+							Location: <?=get_post_meta($spotlight->ID, 'spotlight_location', true)?>
 						</div>
 					<? } ?>
 					<div class="text-right spotlight_category">
-						Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
+						Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?>
 					</div>
 				</li>
 				<?php
@@ -721,7 +721,7 @@ function sc_spotlight_grid($atts) {
 		</ul>
 	</div>
 	
-	<?*/
+	<?
 	return ob_get_clean();
 	//add_filter('the_content','wpautop');		
 }
