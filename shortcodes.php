@@ -580,7 +580,152 @@ function sc_opportunity_grid($atts) {
 }
 add_shortcode('opportunity-grid', 'sc_opportunity_grid');
 
-
+function sc_spotlight_grid($atts) {
+	//remove_filter('the_content','wpautop');
+	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
+	$categories		= ($atts['categories']) ? $atts['categories'] : null;	
+	$event_groups		= ($atts['event_groups']) ? $atts['event_groups'] : null;
+	$event_groups2		= ($atts['event_groups2']) ? $atts['event_groups2'] : null;	
+	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
+	$join			= ($atts['join']) ? $atts['join'] : 'or';
+	$dropdown		= ($atts['dropdown']) ? $atts['dropdown'] : false;
+	$dd_event_groups	= ($atts['dd_event_groups']) ? $atts['dd_event_groups'] : $event_groups;
+	$dropdown2		= ($atts['dropdown2']) ? $atts['dropdown2'] : false;
+	$dd2_event_groups	= ($atts['dd2_event_groups']) ? $atts['dd2_event_groups'] : NULL;	
+	$show_option_all	= ($atts['show_option_all']) ? $atts['show_option_all'] : null;
+	$show_option_all2	= ($atts['show_option_all2']) ? $atts['show_option_all2'] : null;	
+	$EGID			= get_term_by('slug', $dd_event_groups, 'event_groups')->term_id;
+	$EGID2			= get_term_by('slug', $dd2_event_groups, 'event_groups');
+	$EGID2			= $EGID2 ? $EGID2->term_id : false;
+	$operator		= ($atts['operator']) ? $atts['operator'] : NULL;
+	$spots 		= sc_object_list(
+		array(
+			'type' => 'spotlight',
+			'limit' => $limit,
+			'join' => $join,
+			'categories' => $categories,
+			'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
+			'orderby' => 'meta_value_num',
+			'order' => 'DESC',
+			'meta_key'	=> 'spotlight_end',
+			'operator' => $operator
+		),
+	array(
+		'objects_only' => True,
+	));
+	var_dump($spots);
+	/*usort($opps, function($a, $b){
+		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
+		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
+		$a_dt = $a_dt->getTimestamp();
+		$b_dt = $b_dt->getTimestamp();
+		if ($a_dt == $b_dt){
+			// If they have the same depth, compare titles
+			return strcmp($a->post_title, $b->post_title);
+		}
+		// If depth_a is smaller than depth_b, return -1; otherwise return 1
+		$res = ($a_dt < $b_dt) ? -1 : 1;
+		return $res;
+	});*/
+	/*
+	ob_start();
+	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
+		<? if($dropdown){ 
+			$args = array(
+				'taxonomy'	=>	'event_groups',
+				'value_field'	=>	'slug',
+				'class'	=>	'opportunity-grid-dropdown form-control',
+				'id'	=>	'dd_event_groups',
+				'name'	=>	'dd_event_groups',
+				'echo'	=> false,
+				'selected'	=>	$event_groups,
+				'child_of'	=>	$EGID,
+			);
+			if(!empty($show_option_all)){
+				$args['show_option_all'] = $show_option_all;
+			}
+			echo str_replace(
+				'<select',
+				'<select onchange="getOppsForGrid(this.value'.($dropdown2 ? ', $(\'#dd2_event_groups\').val()' : '').')"',
+				wp_dropdown_categories($args)
+			);
+		} 
+		if($dropdown2 && $EGID2){ 
+			$args2 = array(
+				'taxonomy'	=>	'event_groups',
+				'value_field'	=>	'slug',
+				'class'	=>	'opportunity-grid-dropdown form-control',
+				'id'	=>	'dd2_event_groups',
+				'name'	=>	'dd2_event_groups',			
+				'echo'	=> false,
+				'selected'	=>	$event_groups2,
+				'child_of'	=>	$EGID2,
+			);
+			if(!empty($show_option_all2)){
+				$args2['show_option_all2'] = $show_option_all2;
+			}			
+			echo str_replace(
+				'<select',
+				'<select onchange="getOppsForGrid($(\'#dd_event_groups\').val(), this.value)"',
+				wp_dropdown_categories($args2)
+			);
+		} 
+		?>	
+		<ul class="opportunity-list">
+			<?php
+				//rsort($opps);
+				foreach ($opps as $opportunity) { 
+					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
+					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
+					$time = '';
+					$location = '';
+					if($ext_link){
+						$link = $ext_link; 
+					}			
+					if($start_date){
+						$start_date = new DateTime($start_date);
+					}
+					if($end_date){
+						$end_date = new DateTime($end_date);
+					}
+					$link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);					
+				?>
+				<li>
+					<a href="<?=$link?>">
+						<?=$opportunity->post_title?>
+					</a>
+					<? if($end_date){ ?>
+						<div class="opportunity_info">
+							Date Available: <?=$start_date->format('l, F jS, Y')?>
+							<br/>
+							Date Close: <?=$end_date->format('l, F jS, Y')?>
+						</div>
+					<? } ?>
+					<? if($time){ ?>
+						<div class="opportunity_info">
+							Time: <?=get_post_meta($opportunity->ID, 'opportunity_time', true)?>
+						</div>
+					<? } ?>
+					<? if($location){ ?>
+						<div class="opportunity_info">
+							Location: <?=get_post_meta($opportunity->ID, 'opportunity_location', true)?>
+						</div>
+					<? } ?>
+					<div class="text-right spotlight_category">
+						Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
+					</div>
+				</li>
+				<?php
+				}
+			?>
+		</ul>
+	</div>
+	
+	<?*/
+	return ob_get_clean();
+	//add_filter('the_content','wpautop');		
+}
+add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 
 
 /**
