@@ -121,7 +121,7 @@ define('LDAP_HOST', 'net.ucf.edu');
 Config::$custom_post_types = array(
 	'Video',
 	'Document',
-	//'Publication',
+	'Publication',
 	'Page',
 	'Person',
 	'Slider',
