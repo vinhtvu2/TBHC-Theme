@@ -1406,3 +1406,33 @@ class Slider extends CustomPostType {
 		}
 	}
 }
+			class Publication extends CustomPostType{
+				public
+				$name           = 'publication',
+				$plural_name    = 'Publications',
+				$singular_name  = 'Publication',
+				$add_new_item   = 'Add New Publication',
+				$edit_item      = 'Edit Publication',
+				$new_item       = 'New Publication',
+				$public         = True,
+				$use_editor     = True,
+				$use_thumbnails = True,
+				$use_order      = True,
+				$use_title      = True,
+				$use_metabox    = True;
+				public function toHTML($pub){
+					return sc_publication(array('pub' => $pub));
+				}
+				public function fields(){
+					$prefix = $this->options('name').'_';
+					return array(
+					array(
+					'name'  => 'Publication URL',
+					'desc' => 'Example: <span style="font-family:monospace;font-weight:bold;color:#21759B;">http://publications.ucf.edu/publications/admissions-viewbook/</span>',
+					'id'   => $prefix.'url',
+					'type' => 'text',
+					'std'  => '',
+					),
+					);
+				}
+			}
