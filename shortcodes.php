@@ -481,10 +481,10 @@ function sc_opportunity_grid($atts) {
 		$b_dt = $b_dt->getTimestamp();
 		if ($a_dt == $b_dt){
 			// If they have the same depth, compare titles
-			return strcmp($a->post_title, $b->post_title);
+			return strcmp($a->post_title, $b->post_title) * -1;
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
-		$res = ($a_dt < $b_dt) ? -1 : 1;
+		$res = ($a_dt > $b_dt) ? -1 : 1;
 		return $res;
 	});
 	
