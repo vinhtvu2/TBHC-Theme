@@ -564,7 +564,7 @@ function sc_opportunity_grid($atts) {
 							Location: <?=get_post_meta($opportunity->ID, 'opportunity_location', true)?>
 						</div>
 					<? } ?>
-					<div class="text-right spotlight_category">
+					<div class="text-right opportunity_category">
 						Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
 					</div>
 				</li>
@@ -613,7 +613,7 @@ function sc_spotlight_grid($atts) {
 	array(
 		'objects_only' => True,
 	));
-	usort($opps, function($a, $b){
+	usort($spots, function($a, $b){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'spotlight_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'spotlight_end', TRUE));
 		$a_dt = $a_dt->getTimestamp();
@@ -679,16 +679,12 @@ function sc_spotlight_grid($atts) {
 					$end_date = get_post_meta($spotlight->ID, 'spotlight_end', TRUE);
 					$time = '';
 					$location = '';
-					if($ext_link){
-						$link = $ext_link; 
-					}			
 					if($start_date){
 						$start_date = new DateTime($start_date);
 					}
 					if($end_date){
 						$end_date = new DateTime($end_date);
 					}
-					$link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);					
 				?>
 				<li>
 					<a href="<?=$link?>">
