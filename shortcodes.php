@@ -611,8 +611,9 @@ function sc_spotlight_grid($atts) {
 			'operator' => $operator,
 			'meta_query'	=> array(
 				array(
-					'key'	=>	'spotlight_post_to_home',
-					'value'	=>	'on',
+					'key'	=>	'spotlight_start',
+					'value'	=>	date('Ymd'),
+					'compare'	=>	'<=',				
 				),
 			),
 		),
