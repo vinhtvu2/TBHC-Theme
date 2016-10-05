@@ -608,11 +608,18 @@ function sc_spotlight_grid($atts) {
 			'orderby' => 'meta_value_num',
 			'order' => 'DESC',
 			'meta_key'	=> 'spotlight_end',
-			'operator' => $operator
+			'operator' => $operator,
+			'meta_query'	=> array(
+				array(
+					'key'	=>	'spotlight_post_to_home',
+					'value'	=>	'on',
+				),
+			),
 		),
-	array(
+		array(
 		'objects_only' => True,
-	));
+		)
+	);
 	usort($spots, function($a, $b){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'spotlight_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'spotlight_end', TRUE));
