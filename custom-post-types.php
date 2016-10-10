@@ -540,6 +540,12 @@ class Page extends CustomPostType {
 					'std' => 'on',
 				),
 				array(
+					'name' => '<strong>Left Sidebar:</strong> Embed Widget 1 Title',
+					'desc' => '(Optional) Title for the embed widget below. Can be left blank.',
+					'id' => $prefix.'widget_l_embed1_title',
+					'type' => 'text',
+				),
+				array(
 					'name' => '<strong>Right Sidebar:</strong> Show UCF Today Stories',
 					'desc' => '(Optional) Check this box to display the UCF Today feed in the <strong>right-hand sidebar.</strong>',
 					'id' => $prefix.'widget_r_showtoday',

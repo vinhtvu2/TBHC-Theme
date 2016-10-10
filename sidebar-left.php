@@ -63,5 +63,13 @@
 		print '<iframe src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com%2fTheBurnettHonorsCollege&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:62px;" allowTransparency="true"></iframe>';
 		print '</div>';
 	}	
-	
+	// Embed Widget 1
+	if ($embed1) {	
+		if ($embed1_title !== '') {
+			print '<h3 id="sidebar_l_embed1" class="sidebar_title">'.$embed1_title.'</h3>';
+		}
+		print '<div id="sidebar_l_embed1_wrap" class="sidebar_l_wrap">';
+		print apply_filters('the_content', $embed1);
+		print '</div>';
+	}
 ?>
