@@ -295,7 +295,7 @@ function sc_person_profile_grid($atts) {
 	array(
 		'objects_only' => True,
 	));
-	if(strpos($org_groups, "dist")){
+	if(strpos($org_groups, "dist") > -1){
 		usort($people, function($a, $b){
 			$a_date = new DateTime(get_post_meta($a->ID, 'dist_speaker_date', true));
 			$b_date = new DateTime(get_post_meta($b->ID, 'dist_speaker_date', true));
