@@ -299,6 +299,14 @@ function get_opps_from_event_group(){
 add_action( 'wp_ajax_get_opps_from_event_group', 'get_opps_from_event_group' );
 add_action( 'wp_ajax_nopriv_get_opps_from_event_group', 'get_opps_from_event_group' );
 
+function get_spots_from_event_group(){
+	echo do_shortcode('[spotlight-grid event_groups=\''.($_REQUEST['event_groups'] ? $_REQUEST['event_groups'] : $_REQUEST['dd_event_groups']).'\' '.(!empty($_REQUEST['event_groups2']) ? 'event_groups2=\''.($_REQUEST['event_groups2'] ? $_REQUEST['event_groups2'] : $_REQUEST['dd2_event_groups']).'\' ' : '').(!empty($_REQUEST['dd_event_groups']) ? ' dd_event_groups=\''.$_REQUEST['dd_event_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_event_groups']) ? 'dd2_event_groups=\''.$_REQUEST['dd2_event_groups'].'\' dropdown2=true ' : ' ') : ' ').(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' ').(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\' ' : ' ').(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'].'\' ' : ' ').(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' ').' ]');
+	die();
+}
+
+add_action( 'wp_ajax_get_spots_from_event_group', 'get_spots_from_event_group' );
+add_action( 'wp_ajax_nopriv_get_spots_from_event_group', 'get_spots_from_event_group' );
+
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.
  * Modifies $allowedposttags defined in wp-includes/kses.php
