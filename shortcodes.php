@@ -398,10 +398,10 @@ function sc_person_profile_grid($atts) {
 			?><div class="row"><?
 			}*/
 		?>
-			<div class="person-outerWrap" style="width: 25%; padding-bottom: 25%; position: relative;">
+			<?=$imageT?>
+			<div class="person-outerWrap" style="width: 25%; padding-bottom: 25%; position: relative; display: inline-block;">
 				<div class="person-innerWrap" style="position: absolute; left: 0; top: 0;">
 					<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
-					<?=$imageT?>
 					<? if($link) {?></a><?}?>
 				</div>
 			</div>
