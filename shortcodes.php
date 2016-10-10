@@ -387,7 +387,7 @@ function sc_person_profile_grid($atts) {
 					return $blrp->name;
 				}, $terms));
 			}
-			$imageT = get_image_tag(get_post_thumbnail_id($person->ID), 'alt text', 'title text', 'None', 'profile-grid-image');
+			$imageT = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'full', false);//get_image_tag(get_post_thumbnail_id($person->ID), 'alt text', 'title text', 'None', 'profile-grid-image');
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image', false);
 			$image_url = get_featured_image_url($person->ID);
 			$link = ($person->post_content != '') ? True : False;
