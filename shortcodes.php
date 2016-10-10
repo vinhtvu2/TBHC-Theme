@@ -295,40 +295,55 @@ function sc_person_profile_grid($atts) {
 	array(
 		'objects_only' => True,
 	));
-	usort($people, function($a, $b){
-		$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
-		$b_title = get_post_meta($b->ID, 'person_jobtitle', true);
-		$haystack = ["Dean", "Director", "Coordinator"];
-		$res = 0;
-		if(preg_match('/Dean|Director|Coordinator/', $a_title) || preg_match('/Dean|Director|Coordinator/', $b_title)){
-			foreach ($haystack as $item)	{
-				$a_r = strpos($a_title, $item);
-				$b_r = strpos($b_title, $item);
-				if($a_r >= 0 && $a_r !== false){
-					if($b_r >= 0 && $b_r !== false){
-						//print($a_title." and ".$b_title." contain ".$item.".\n");
-						$res = $a_r < $b_r ? -1 : $a_r == $b_r ? 0 : 1; // both contain
-						break;
+	if(strpos($org_groups, "dist")){
+		usort($people, function(){
+			$a_date = new DateTime(get_post_meta($a->ID, 'dist_speaker_date', true));
+			$b_date = new DateTime(get_post_meta($b->ID, 'dist_speaker_date', true));
+			$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
+			$b_title = get_post_meta($b->ID, 'person_jobtitle', true);			
+			$a_date = $a_date->getTimestamp();
+			$b_date = $b_date->getTimestamp();
+			if($a_date == $b_date){
+				return $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
+			}
+			return $a_date < $b_date ? -1 : 1;
+		});
+	}else{
+		usort($people, function($a, $b){
+			$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
+			$b_title = get_post_meta($b->ID, 'person_jobtitle', true);
+			$haystack = ["Dean", "Director", "Coordinator"];
+			$res = 0;
+			if(preg_match('/Dean|Director|Coordinator/', $a_title) || preg_match('/Dean|Director|Coordinator/', $b_title)){
+				foreach ($haystack as $item)	{
+					$a_r = strpos($a_title, $item);
+					$b_r = strpos($b_title, $item);
+					if($a_r >= 0 && $a_r !== false){
+						if($b_r >= 0 && $b_r !== false){
+							//print($a_title." and ".$b_title." contain ".$item.".\n");
+							$res = $a_r < $b_r ? -1 : $a_r == $b_r ? 0 : 1; // both contain
+							break;
+						}else{
+							//print("Only ".$a_title." contains ".$item.".\n");					
+							$res = -1; // only a contains
+							break;
+						}
 					}else{
-						//print("Only ".$a_title." contains ".$item.".\n");					
-						$res = -1; // only a contains
-						break;
-					}
-				}else{
-					if($b_r >= 0 && $b_r !== false){
-						//print("Only ".$b_title." contains ".$item.".\n");										
-						$res = 1; // only b contains
-						break;
+						if($b_r >= 0 && $b_r !== false){
+							//print("Only ".$b_title." contains ".$item.".\n");										
+							$res = 1; // only b contains
+							break;
+						}
 					}
 				}
+			}else{
+				// neither contains
+				//print("Neither ".$a_title." nor ".$b_title." contain ".$item.".\n");										
+				$res = $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
 			}
-		}else{
-			// neither contains
-			//print("Neither ".$a_title." nor ".$b_title." contain ".$item.".\n");										
-			$res = $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
-		}
-		return $res;
-	});
+			return $res;
+		});
+	}
 	
 	ob_start();
 	
