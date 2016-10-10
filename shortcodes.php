@@ -402,8 +402,23 @@ function sc_person_profile_grid($atts) {
 		?>
 			<div class="person-outerWrap" style="width: 25%; padding-bottom: 25%; position: relative; display: inline-block;">
 				<div class="person-innerWrap" style="position: absolute; left: 0; top: 0; max-width: 100%; max-height: 100%;">
-					<?= $imageT ?>
 					<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
+						<?= $imageT ?>	
+						<div class="profile-short">
+							<h4 class="title">
+								<?=Person::get_name($person);?>
+								<br/>
+								<small>
+									<?=get_post_meta($person->ID, 'person_jobtitle', True);?>
+								</small>
+							</h4>		
+						</div>
+						<div class="group">
+							<span class="group-inner">
+								<?php if(strtolower($show_org_groups) == "true"){ print($terms); } ?>
+							</span>
+						</div>
+						<div class="overlay"></div>						
 					<? if($link) {?></a><?}?>
 				</div>
 			</div>
