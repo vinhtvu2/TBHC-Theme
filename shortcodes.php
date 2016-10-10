@@ -115,7 +115,7 @@ function sc_publication($attr, $content=null){
 			<?=$thumb?>
 		</a>
 		<p class="pub-desc"><?=$pub->post_content?></p>
-		<div class="modal fade" id="pub-modal-<?php echo $pub->ID; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $pub->post_title; ?>" aria-hidden="true">
+		<div class="modal fade" id="pub-modal-<?php echo $pub->ID; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $pub->post_title; ?>" aria-hidden="true" style="height:auto !important;">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-body">
