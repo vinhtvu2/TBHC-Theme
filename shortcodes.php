@@ -252,13 +252,6 @@ function sc_person_picture_list($atts) {
 	}
 	?>	</div>
 	</div>
-	<div style="">
-		<div class="outerWrap" style="width: 25%; padding-bottom: 25%; position: relative;">
-			<div class="innerWrap" style="position: absolute; left: 0; top: 0;">
-				asdfasdfasdf
-			</div>
-		</div>
-	</div>
 	<?
 	return ob_get_clean();
 }
@@ -430,7 +423,13 @@ function sc_person_profile_grid($atts) {
 	?>		<!--</div>-->
 		</div>
 	</div>
-	
+	<div style="">
+		<div class="outerWrap" style="width: 25%; padding-bottom: 25%; position: relative;">
+			<div class="innerWrap" style="position: absolute; left: 0; top: 0;">
+				asdfasdfasdf
+			</div>
+		</div>
+	</div>
 	<?
 	return ob_get_clean();
 	//add_filter('the_content','wpautop');		
