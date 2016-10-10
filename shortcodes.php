@@ -397,6 +397,7 @@ function sc_person_profile_grid($atts) {
 			}
 			?><div class="row"><?
 			}*/
+			var_dump($imageT);
 		?>
 			<?=$imageT?>
 			<div class="person-outerWrap" style="width: 25%; padding-bottom: 25%; position: relative; display: inline-block;">
