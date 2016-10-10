@@ -66,13 +66,14 @@
 	// Embed Widget 1
 	$embed1_title	 		= get_post_meta($post->ID, 'page_widget_l_embed1_title', TRUE);
 	$embed1			 		= get_post_meta($post->ID, 'page_widget_l_embed1', TRUE);	
+	$embed1					= do_shortcode($embed1);
 	var_dump($embed1);
 	if ($embed1) {	
 		if ($embed1_title !== '') {
 			print '<h3 id="sidebar_l_embed1" class="sidebar_title">'.$embed1_title.'</h3>';
 		}
 		print '<div id="sidebar_l_embed1_wrap" class="sidebar_l_wrap">';
-		print apply_filters('the_content', $embed1);
+		print $embed1;
 		print '</div>';
 	}
 ?>
