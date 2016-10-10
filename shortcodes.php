@@ -398,36 +398,17 @@ function sc_person_profile_grid($atts) {
 			?><div class="row"><?
 			}*/
 		?>
-		<div class="col-md-2 col-sm-2 person-profile-wrap">
-			<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
-				<?=$imageT?>
-				<div class="profile-short">
-					<h4 class="title">
-							<?=Person::get_name($person);?>
-						<br/>
-						<small>
-							<?=get_post_meta($person->ID, 'person_jobtitle', True);?>
-						</small>
-					</h4>		
+			<div class="person-outerWrap" style="width: 25%; padding-bottom: 25%; position: relative;">
+				<div class="person-innerWrap" style="position: absolute; left: 0; top: 0;">
+					<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
+					<?=$imageT?>
+					<? if($link) {?></a><?}?>
 				</div>
-				<div class="group">
-					<span class="group-inner">
-						<?php if(strtolower($show_org_groups) == "true"){ print($terms); } ?>
-					</span>
-				</div>
-				<div class="overlay"></div>
-			<? if($link) {?></a><?}?></div>
-		<?
+			</div>
+			<?
 			$count++;
 		}
 	?>		<!--</div>-->
-		</div>
-	</div>
-	<div style="">
-		<div class="outerWrap" style="width: 25%; padding-bottom: 25%; position: relative;">
-			<div class="innerWrap" style="position: absolute; left: 0; top: 0;">
-				asdfasdfasdf
-			</div>
 		</div>
 	</div>
 	<?
