@@ -400,8 +400,8 @@ function sc_person_profile_grid($atts) {
 			?><div class="row"><?
 			}*/
 		?>
-			<div class="person-outerWrap" style="width: 25%; padding-bottom: 25%; position: relative; display: inline-block;">
-				<div class="person-innerWrap" style="position: absolute; left: 0; top: 0; max-width: 100%; max-height: 100%;">
+			<div class="person-profile-wrap" style="width: 25%; padding-bottom: 25%; position: relative; display: inline-block; overflow: hidden;">
+				<div class="person-inner-wrap" style="position: absolute; left: 0; top: 0; max-width: 100%; max-height: 100%;">
 					<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
 						<?= $imageT ?>	
 						<div class="profile-short">
