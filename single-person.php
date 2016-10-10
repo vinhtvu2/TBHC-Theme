@@ -31,10 +31,11 @@
 			<article role="main">
 				<h2><?=$post->post_title?><?=($title == '') ?: ' - '.$title ?></h2>
 				<div class="contact">
-				<?if(strpos(wp_get_referer(), "distinguished-speaker") === false){ //and type = staff
-					<ul class="list-unstyled">					
-					if(count($phones)) { ?>
-						<? foreach($phones as $phone) { ?>
+				<?if(strpos(wp_get_referer(), "distinguished-speaker") === false){ //and type = staff?>
+					<ul class="list-unstyled">	
+					<?
+					if(count($phones)) {
+						foreach($phones as $phone) { ?>
 							<li><i class="glyphicon glyphicon-earphone"></i><a href="tel:<?=$phone?>" class="phones"><?=$phone?></a></li>
 						<? }
 						} ?>
