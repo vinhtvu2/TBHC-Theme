@@ -304,9 +304,9 @@ function sc_person_profile_grid($atts) {
 			$a_date = $a_date->getTimestamp();
 			$b_date = $b_date->getTimestamp();
 			if($a_date == $b_date){
-				return $a_title < $b_title ? -1 : $a_title == $b_title ? 0 : 1;
+				return strcmp($a_title, $b_title) * -1;
 			}
-			return $a_date < $b_date ? -1 : 1;
+			return $a_date < $b_date ? 1 : -1;
 		});
 	}else{
 		usort($people, function($a, $b){
