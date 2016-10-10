@@ -245,12 +245,19 @@ function sc_person_picture_list($atts) {
 				<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 				<div class="name"><?=Person::get_name($person)?></div>
 				<div class="title"><?=get_post_meta($person->ID, 'person_jobtitle', True)?></div>
-				<? if($link) {?></a><?}?>
+			<? if($link) {?></a><?}?>
 		</div>
 		<?
 		$count++;
 	}
 	?>	</div>
+	</div>
+	<div style="">
+		<div class="outerWrap" style="width: 25%; padding-bottom: 25%; position: relative;">
+			<div class="innerWrap" style="position: absolute; left: 0; top: 0;">
+				asdfasdfasdf
+			</div>
+		</div>
 	</div>
 	<?
 	return ob_get_clean();
@@ -641,7 +648,7 @@ function sc_spotlight_grid($atts) {
 		$res = ($a_dt > $b_dt) ? -1 : 1;
 		return $res;
 	});
-	var_dump($spots);	
+	//var_dump($spots);	
 	
 	ob_start();
 	?><div class="spotlight-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
