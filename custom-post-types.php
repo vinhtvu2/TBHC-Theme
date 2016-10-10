@@ -546,6 +546,12 @@ class Page extends CustomPostType {
 					'type' => 'text',
 				),
 				array(
+					'name' => '<strong>Left Sidebar:</strong> Embed Widget 1',
+					'desc' => '(Optional) Add a custom widget in the <strong>left-hand sidebar</strong>; useful for video and publication embeds.',
+					'id' => $prefix.'widget_l_embed1',
+					'type' => 'textarea',
+				),
+				array(
 					'name' => '<strong>Right Sidebar:</strong> Show UCF Today Stories',
 					'desc' => '(Optional) Check this box to display the UCF Today feed in the <strong>right-hand sidebar.</strong>',
 					'id' => $prefix.'widget_r_showtoday',
