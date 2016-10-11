@@ -561,9 +561,7 @@ function sc_opportunity_grid($atts) {
 					//preg_match('/(?:http|https):\/\/tbhccmsdev.smca.ucf.edu\/(<url>\S*)(?:\/*)/', $cPost, $matches);
 					//$cPost = $matches;
 					//var_dump($matches);					
-					if($cPost){
-						$cPost = url_to_postid($cPost);
-					}
+					$cPost = url_to_postid($cPost);
 					var_dump($cPost);
 					$time = '';
 					$location = '';
