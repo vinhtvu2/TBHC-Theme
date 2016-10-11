@@ -559,9 +559,9 @@ function sc_opportunity_grid($atts) {
 					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
 					$cPost = get_post_meta($opportunity->ID, 'opportunity_url_redirect', true);
 					preg_match('/(?:http|https):\/\/tbhccmsdev.smca.ucf.edu\/(<url>\S*)(?:\/*)/', $cPost, $matches);
-					$cPost = $matches['url'];
-					var_dump($cPost);					
-					$cPost = get_posts(array('name' => $cPost));//url_to_postid($cPost);
+					$cPost = $matches['url'];					
+					$cPost = get_posts(array('name' => $cPost));
+					$cPost = wp_trim_words($cPost->post_content, 200);
 					var_dump($cPost);
 					$time = '';
 					$location = '';
