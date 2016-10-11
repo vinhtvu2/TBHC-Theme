@@ -556,6 +556,8 @@ function sc_opportunity_grid($atts) {
 				foreach ($opps as $opportunity) { 
 					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
 					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
+					$cPost = get_post_meta($opportunity->ID, 'opportunity_url_redirect', true);
+					var_dump($cPost);
 					$time = '';
 					$location = '';
 					if($ext_link){
