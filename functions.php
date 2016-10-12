@@ -206,8 +206,10 @@ function manage_opportunity_columns( $column, $post_id ) {
 		}
 		break;
 		case 'opportunity_start':
-			if(get_post_meta($post->ID,'opportunity_start',true)){
-				print get_post_meta($post->ID,'opportunity_start',true);//date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start', TRUE)));
+			if(get_post_meta($post->ID,'opportunity_start',true)){	
+				$bob = get_post_meta($post->ID,'opportunity_start',true);//date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start', TRUE)));
+				var_dump($bob);
+				print $bob;
 			}
 		break;
 		case 'opportunity_end':
