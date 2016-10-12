@@ -202,7 +202,7 @@ function manage_wp_posts_posts_clauses( $pieces, $query ) {
 		switch( $orderby ) {
 			case 'opportunity_start':
             $pieces[ 'join' ] .= " LEFT JOIN $wpdb->postmeta wp_rd ON wp_rd.post_id = {$wpdb->posts}.ID AND wp_rd.meta_key = 'opportunity_start'";
-            $pieces[ 'orderby' ] = "STR_TO_DATE( wp_rd.meta_value,'%m/%d/%Y' ) $order, " . $pieces[ 'orderby' ];
+            $pieces[ 'orderby' ] = "STR_TO_DATE( wp_rd.meta_value,'%Y/%m/%d' ) $order, " . $pieces[ 'orderby' ];
 			break;
 		}
 	}
