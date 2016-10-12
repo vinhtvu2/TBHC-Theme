@@ -584,6 +584,8 @@ function sc_opportunity_grid($atts) {
 						<div class="opportunity_info">
 							Date Available: <?=$start_date->format('l, F jS, Y')?>
 							<br/>
+							<?=get_post_meta($opportunity->ID, 'opportunity_start', TRUE);?>
+							<br/>
 							Date Close: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
