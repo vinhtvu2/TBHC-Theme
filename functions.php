@@ -188,7 +188,7 @@ function sortable_opportunity_columns( $columns ) {
 	$columns['publish_date'] = 'publish_date';
 	$columns['opportunity_start'] = 'opportunity_start';
 	$columns['opportunity_end'] = 'opportunity_end';
-	$columns['event_group'] = 'event_groups';	
+	$columns['event_groups'] = 'event_groups';	
 	return $columns;
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
