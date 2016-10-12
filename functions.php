@@ -193,6 +193,19 @@ function sortable_opportunity_columns( $columns ) {
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
 
+function sortable_opportunity_columns_meta( $query ) {
+    if( ! is_admin() )
+	return;
+    $orderby = $query->get( 'orderby');
+	switch ( $column ) {
+		case 'opportunity_start':
+        $query->set('meta_key','opportunity_start');
+        $query->set('orderby','meta_value_num');
+		break;
+	}
+}
+add_action( 'pre_get_posts', 'sortable_opportunity_columns_meta' );
+
 // Custom columns content for 'opportunity'
 function manage_opportunity_columns( $column, $post_id ) {
 	global $post;
