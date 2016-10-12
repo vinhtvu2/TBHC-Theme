@@ -193,23 +193,6 @@ function sortable_opportunity_columns( $columns ) {
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
 
-function manage_wp_posts_posts_clauses( $pieces, $query ) {
-	global $wpdb;
-	if ( $query->is_main_query() && ( $orderby = $query->get( 'orderby' ) ) ) {
-		$order = strtoupper( $query->get( 'order' ) );
-		if ( ! in_array( $order, array( 'ASC', 'DESC' ) ) )
-		$order = 'ASC';
-		switch( $orderby ) {
-			case 'opportunity_start':
-            $pieces[ 'join' ] .= " LEFT JOIN $wpdb->postmeta wp_rd ON wp_rd.post_id = {$wpdb->posts}.ID AND wp_rd.meta_key = 'opportunity_start'";
-            $pieces[ 'orderby' ] = "STR_TO_DATE( wp_rd.meta_value,'%Y/%m/%d' ) $order, " . $pieces[ 'orderby' ];
-			break;
-		}
-	}
-	return $pieces;
-}
-add_filter( 'posts_clauses', 'manage_wp_posts_posts_clauses', 1, 2 );
-
 // Custom columns content for 'opportunity'
 function manage_opportunity_columns( $column, $post_id ) {
 	global $post;
@@ -224,7 +207,7 @@ function manage_opportunity_columns( $column, $post_id ) {
 		break;
 		case 'opportunity_start':
 			if(get_post_meta($post->ID,'opportunity_start',true)){
-				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start', TRUE)));
+				print get_post_meta($post->ID,'opportunity_start',true);//date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start', TRUE)));
 			}
 		break;
 		case 'opportunity_end':
