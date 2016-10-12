@@ -193,18 +193,22 @@ function sortable_opportunity_columns( $columns ) {
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
 
-function sortable_opportunity_columns_meta( $query ) {
-    if( ! is_admin() )
-	return;
-    $orderby = $query->get( 'orderby');
-	switch ( $column ) {
-		case 'opportunity_start':
-        $query->set('meta_key','opportunity_start');
-        $query->set('orderby','meta_value_num');
-		break;
+function manage_wp_posts_posts_clauses( $pieces, $query ) {
+	global $wpdb;
+	if ( $query->is_main_query() && ( $orderby = $query->get( 'orderby' ) ) ) {
+		$order = strtoupper( $query->get( 'order' ) );
+		if ( ! in_array( $order, array( 'ASC', 'DESC' ) ) )
+		$order = 'ASC';
+		switch( $orderby ) {
+			case 'opportunity_start':
+            $pieces[ 'join' ] .= " LEFT JOIN $wpdb->postmeta wp_rd ON wp_rd.post_id = {$wpdb->posts}.ID AND wp_rd.meta_key = 'opportunity_start'";
+            $pieces[ 'orderby' ] = "STR_TO_DATE( wp_rd.meta_value,'%m/%d/%Y' ) $order, " . $pieces[ 'orderby' ];
+			break;
+		}
 	}
+	return $pieces;
 }
-add_action( 'pre_get_posts', 'sortable_opportunity_columns_meta' );
+add_filter( 'posts_clauses', 'manage_wp_posts_posts_clauses', 1, 2 );
 
 // Custom columns content for 'opportunity'
 function manage_opportunity_columns( $column, $post_id ) {
