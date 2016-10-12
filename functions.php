@@ -188,10 +188,26 @@ function sortable_opportunity_columns( $columns ) {
 	$columns['publish_date'] = 'publish_date';
 	$columns['opportunity_start'] = 'opportunity_start';
 	$columns['opportunity_end'] = 'opportunity_end';
-	$columns['event_groups'] = 'event_groups';	
+	$columns['event_group'] = 'event_groups';	
 	return $columns;
 }
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
+
+function extranet_orderby( $query ) {   
+    if( ! $query->is_main_query() || 'opportunity' != $query->get( 'post_type' )  )
+	return;
+    $orderby = $query->get( 'orderby');      
+    switch ( $orderby ) 
+    {
+        case 'opportunity_start':
+			$query->set( 'meta_key', 'opportunity_start' );
+			$query->set( 'orderby',  'meta_value_num' );
+		break;
+        default:
+		break;
+    }
+}
+is_admin() && add_action( 'pre_get_posts', 'extranet_orderby' );    
 
 // Custom columns content for 'opportunity'
 function manage_opportunity_columns( $column, $post_id ) {
@@ -206,10 +222,8 @@ function manage_opportunity_columns( $column, $post_id ) {
 		}
 		break;
 		case 'opportunity_start':
-			if(get_post_meta($post->ID,'opportunity_start',true)){	
-				$bob = get_post_meta($post->ID,'opportunity_start',true);//date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start', TRUE)));
-				var_dump($bob);
-				print $bob;
+			if(get_post_meta($post->ID,'opportunity_start',true)){
+				print date('Y/m/d', strtotime(get_post_meta($post->ID, 'opportunity_start', TRUE)));
 			}
 		break;
 		case 'opportunity_end':
