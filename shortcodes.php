@@ -563,9 +563,7 @@ function sc_opportunity_grid($atts) {
 					//var_dump($matches);					
 					//$cPost = $matches['url'];					
 					//var_dump($cPost);
-					$cPost = url_to_postid($cPost);
-					var_dump($cPost);					
-					$cPost = get_post($cPost);
+					$cPost = get_page_by_path($cPost);
 					var_dump($cPost);					
 					$cPost = wp_trim_words($cPost->post_content, 200);
 					var_dump($cPost);
