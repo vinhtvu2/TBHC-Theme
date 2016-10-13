@@ -559,11 +559,11 @@ function sc_opportunity_grid($atts) {
 					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
 					$cPost = get_post_meta($opportunity->ID, 'opportunity_url_redirect', true);
 					var_dump($cPost);
-					//preg_match('/(?:http|https):\/\/tbhccmsdev.smca.ucf.edu\/(?<url>\S*)(?:\/*)/', $cPost, $matches);
-					//var_dump($matches);					
-					//$cPost = $matches['url'];					
-					//var_dump($cPost);
-					$cPost = url_to_postid($cPost);
+					preg_match('/(?:http|https):\/\/tbhccmsdev.smca.ucf.edu\/(?<url>\S*)(?:\/*)/', $cPost, $matches);
+					var_dump($matches);					
+					$cPost = $matches['url'];					
+					var_dump($cPost);
+					$cPost = get_page_by_path($cPost, OBJECT, 'post');
 					var_dump($cPost);					
 					//$cPost = get_post($cPost);
 					//var_dump($cPost);		
