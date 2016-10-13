@@ -579,6 +579,7 @@ function sc_opportunity_grid($atts) {
 					<a href="<?=$link?>">
 						<?=$opportunity->post_title?>
 					</a>
+					<br/>
 					<?=$cPost?>
 					<? if($end_date){ ?>
 						<div class="opportunity_info">
