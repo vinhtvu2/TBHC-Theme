@@ -82,11 +82,8 @@
 				</div>
 			</div>
 			<div id="subfooter" style="<?=get_theme_option('footer_bg_color') ? 'background-color:'.get_theme_option('footer_bg_color').' !important;' : ''?>">
-				<?=
-					$crumbs = explode("/",$_SERVER["REQUEST_URI"]);
-					foreach($crumbs as $crumb){
-						echo ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
-					}
+				<?php
+					custom_breadcrumbs();
 				?>
 			</div>
 		</div><!-- .container -->
