@@ -562,7 +562,6 @@ function sc_opportunity_grid($atts) {
 					$cPost = $matches['url'];					
 					$cPost = get_page_by_path($cPost, OBJECT, 'post');
 					$cPost = wp_trim_words($cPost->post_content, 75);
-					var_dump($cPost);
 					$time = '';
 					$location = '';
 					if($ext_link){
@@ -580,6 +579,7 @@ function sc_opportunity_grid($atts) {
 					<a href="<?=$link?>">
 						<?=$opportunity->post_title?>
 					</a>
+					<?=$cPost?>
 					<? if($end_date){ ?>
 						<div class="opportunity_info">
 							Date Available: <?=$start_date->format('l, F jS, Y')?>
