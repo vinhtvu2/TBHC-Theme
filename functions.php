@@ -125,11 +125,9 @@ function edit_spotlight_columns() {
 add_action('manage_edit-spotlight_columns', 'edit_spotlight_columns');
 
 function sortable_spotlight_columns( $columns ) {
-	$columns['post'] = 'post';
 	$columns['publish_date'] = 'publish_date';
 	$columns['spotlight_start'] = 'spotlight_start';
 	$columns['spotlight_end'] = 'spotlight_end';
-	$columns['spotlight_category'] = 'spotlight_category';
 	return $columns;
 }
 add_action('manage_edit-spotlight_sortable_columns', 'sortable_spotlight_columns');
@@ -194,18 +192,43 @@ function sortable_opportunity_columns( $columns ) {
 add_action('manage_edit-opportunity_sortable_columns', 'sortable_opportunity_columns');
 
 function extranet_orderby( $query ) {   
-    if( ! $query->is_main_query() || 'opportunity' != $query->get( 'post_type' )  )
+    if( ! $query->is_main_query())
 	return;
-    $orderby = $query->get( 'orderby');      
-    switch ( $orderby ) 
-    {
-        case 'opportunity_start':
-			$query->set( 'meta_key', 'opportunity_start' );
-			$query->set( 'orderby',  'meta_value_num' );
+    $orderby = $query->get( 'orderby'); 
+	$type = $query->get( 'post_type' );	
+	switch($type){
+		case "opportunity":
+			switch ( $orderby ) 
+			{
+				case 'opportunity_start':
+					$query->set( 'meta_key', 'opportunity_start' );
+					$query->set( 'orderby',  'meta_value_num' );
+				break;
+				case 'opportunity_end':
+					$query->set( 'meta_key', 'opportunity_end' );
+					$query->set( 'orderby',  'meta_value_num' );
+				break;
+				default:
+				break;
+			}	
+		case "spotlight":
+		switch ( $orderby ) 
+		{
+			case 'spotlight_start':
+				$query->set( 'meta_key', 'spotlight_start' );
+				$query->set( 'orderby',  'meta_value_num' );
+			break;
+			case 'spotlight_end':
+				$query->set( 'meta_key', 'spotlight_end' );
+				$query->set( 'orderby',  'meta_value_num' );
+			break;
+			default:
+			break;
+		}				
 		break;
-        default:
+		default:
 		break;
-    }
+	}
 }
 is_admin() && add_action( 'pre_get_posts', 'extranet_orderby' );    
 
@@ -294,7 +317,6 @@ add_action('manage_person_posts_custom_column', 'manage_people_columns', 10, 2);
 function sortable_people_columns( $columns ) {
 	$columns['orderby'] = 'orderby';
 	$columns['publish_date'] = 'publish_date';
-	$columns['org_group'] = 'org_group';
 	return $columns;
 }
 add_action('manage_edit-person_sortable_columns', 'sortable_people_columns');
