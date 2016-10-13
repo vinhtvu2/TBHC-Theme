@@ -561,7 +561,7 @@ function sc_opportunity_grid($atts) {
 					preg_match('/(?:http|https):\/\/tbhccmsdev.smca.ucf.edu\/(?<url>\S*)(?:\/*)/', $cPost, $matches);
 					$cPost = $matches['url'];					
 					$cPost = get_page_by_path($cPost, OBJECT, 'post');
-					$cPost = wp_trim_words($cPost->post_content, 200);
+					$cPost = wp_trim_words($cPost->post_content, 100);
 					var_dump($cPost);
 					$time = '';
 					$location = '';
