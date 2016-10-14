@@ -717,8 +717,9 @@ function sc_spotlight_grid($atts) {
 			<?php
 				//rsort($opps);
 				foreach ($spots as $spotlight) { 
-					$start_date = get_post_meta($spotlight->ID, 'spotlight_start', TRUE);
-					$end_date = get_post_meta($spotlight->ID, 'spotlight_end', TRUE);
+					$start_date; //= get_post_meta($spotlight->ID, 'spotlight_start', TRUE);
+					$end_date; //= get_post_meta($spotlight->ID, 'spotlight_end', TRUE);
+					$link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
 					$time = '';
 					$location = '';
 					if($start_date){
