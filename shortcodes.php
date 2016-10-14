@@ -390,8 +390,8 @@ function sc_person_profile_grid($atts) {
 		} 
 		
 		foreach($people as $person) {
-			$k = array_search($person, $people);
-			var_dump($k);
+			//$k = array_search($person, $people);
+			//var_dump($k);
 			if(strtolower($show_org_groups) == "true"){
 				$term_list = wp_get_post_terms($person->ID, 'org_groups');
 																									
