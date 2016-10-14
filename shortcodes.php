@@ -406,7 +406,7 @@ function sc_person_profile_grid($atts) {
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image', false);
 			$image_url = get_featured_image_url($person->ID);
 			$link = ($person->post_content != '') ? True : False;
-			$wdth = round((float)1 / $row_size, 3);
+			$wdth = round((float)1 / $row_size, 3) * 100;
 			if( ($count % $row_size) == 0) {
 				if($count > 0) {
 				?></div><?
@@ -414,7 +414,7 @@ function sc_person_profile_grid($atts) {
 			?><div class="row"><?
 			}
 		?>
-			<div class="person-profile-wrap" style="width: <?= $wdth ?>; padding-bottom: <?= $wdth ?>; position: relative; display: inline-block; overflow: hidden;">
+			<div class="person-profile-wrap" style="width: <?= $wdth ?>%; padding-bottom: <?= $wdth ?>%; position: relative; display: inline-block; overflow: hidden;">
 				<div class="person-inner-wrap" style="position: absolute; left: 0; top: 0; max-width: 100%; max-height: 100%;">
 					<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
 						<?= $imageT ?>	
