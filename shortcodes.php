@@ -388,10 +388,9 @@ function sc_person_profile_grid($atts) {
 				wp_dropdown_categories($args2)
 			);
 		} 
-		?>	
-		<div class="row"><?
-		$count = 0;
+		
 		foreach($people as $person) {
+			$k = array_search($person, $people);	
 			if(strtolower($show_org_groups) == "true"){
 				$term_list = wp_get_post_terms($person->ID, 'org_groups');
 																									
@@ -408,13 +407,9 @@ function sc_person_profile_grid($atts) {
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($person->ID), 'profile-grid-image', false);
 			$image_url = get_featured_image_url($person->ID);
 			$link = ($person->post_content != '') ? True : False;
-			/*if( ($count % $row_size) == 0) {
-				if($count > 0) {
-				?></div><?
-			}
-			?><div class="row"><?
-			}*/
-		?>
+			if($k % $row_size === 0){?>
+				<div class="row">
+			<?}
 			<div class="person-profile-wrap" style="width: 25%; padding-bottom: 25%; position: relative; display: inline-block; overflow: hidden;">
 				<div class="person-inner-wrap" style="position: absolute; left: 0; top: 0; max-width: 100%; max-height: 100%;">
 					<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
@@ -437,8 +432,9 @@ function sc_person_profile_grid($atts) {
 					<? if($link) {?></a><?}?>
 				</div>
 			</div>
-			<?
-			$count++;
+			<?if($k % $row_size === 0){?>
+				</div>
+			<?}				
 		}
 	?>		<!--</div>-->
 		</div>
@@ -555,7 +551,7 @@ function sc_opportunity_grid($atts) {
 				//rsort($opps);
 				$matches = "";
 				foreach ($opps as $opportunity) { 
-					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
+					$start_date; //= get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
 					$end_date = get_post_meta($opportunity->ID, 'opportunity_end', TRUE);
 					$cPost = get_post_meta($opportunity->ID, 'opportunity_url_redirect', true);
 					preg_match('/(?:http|https):\/\/tbhccmsdev.smca.ucf.edu\/(?<url>\S*)(?:\/*)/', $cPost, $matches);
@@ -583,8 +579,6 @@ function sc_opportunity_grid($atts) {
 					<?=$cPost?>
 					<? if($end_date){ ?>
 						<div class="opportunity_info">
-							Date Available: <?=$start_date->format('l, F jS, Y')?>
-							<br/>
 							Date Close: <?=$end_date->format('l, F jS, Y')?>
 						</div>
 					<? } ?>
