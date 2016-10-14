@@ -414,7 +414,7 @@ function sc_person_profile_grid($atts) {
 			?><div class="row"><?
 			}
 		?>
-			<div class="person-profile-wrap" style="width: <?= $wdth ?>%; padding-bottom: <?= $wdth ?>%; position: relative; display: inline-block; overflow: hidden;">
+			<div class="person-profile-wrap" style="width: <?= $wdth ?>%; padding-bottom: <?= $wdth ?>%; position: relative; float: left; overflow: hidden;">
 				<div class="person-inner-wrap" style="position: absolute; left: 0; top: 0; max-width: 100%; max-height: 100%;">
 					<? if($link) {?><a href="<?=esc_attr(get_permalink($person->ID))?>"><? } ?>
 						<?= $imageT ?>	
