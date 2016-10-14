@@ -165,3 +165,4 @@
 				<h1><?php echo bloginfo( 'name' ); ?></h1>
 			</div>
 			<?php endif; ?>
+		</div>
