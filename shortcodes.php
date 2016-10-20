@@ -311,7 +311,9 @@ function sc_person_profile_grid($atts) {
 		});
 	}else if(strpos($org_groups, "ambass") > -1){
 		usort($people, function($a, $b){ // tentative peer-ambassador name sort
-			return strcmp($a->title, $b->title);
+			$res = strcmp($a->title, $b->title);
+			echo "\n".$a->title." is ".$res." than ".$b->title;
+			return $res;
 		});
 	}else{
 		usort($people, function($a, $b){
