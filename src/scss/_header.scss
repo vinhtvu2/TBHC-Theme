@@ -78,6 +78,7 @@
             left: 0;
             background-color: white;
             .content-holder{
+                margin: 0 auto;
                 @media (min-width: $screen-sm-min) {
                     max-width: $container-sm;
                 }
@@ -93,12 +94,14 @@
         }
     }
 
-    a:not(.menu-item-dropdown a) {
-        padding-bottom: 15px;
-        padding-top: 15px;
+    .menu-item-dropdown a {
+        padding-bottom: 0;
+        padding-top: 0;
     }
 
     a{
+        padding-bottom: 15px;
+        padding-top: 15px;
         color: #262626;
         font-size: 17px;
         font-weight: 400;
