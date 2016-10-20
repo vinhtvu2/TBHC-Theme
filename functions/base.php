@@ -581,9 +581,7 @@ function bootstrap_menus() {
 
 			function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 				
-				if($args['nav_dropdowns']){
-					echo "doot";
-				}
+				print $args;
 				
 				if ( !$element )
 					return;
