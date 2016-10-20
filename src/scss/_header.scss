@@ -67,23 +67,41 @@
         &:hover .menu-item-dropdown{
             opacity: 1;
             visibility: visible;
+            display: block;
         }
         .menu-item-dropdown{
             opacity: 0;
+            display: none;
             transition: opacity 2s visibility 2s;
             position: absolute;
             width: 100%;
             left: 0;
             background-color: white;
+            .content-holder{
+                @media (min-width: $screen-sm-min) {
+                    max-width: $container-sm;
+                }
+
+                @media (min-width: $screen-md-min) {
+                    max-width: $container-md;
+                }
+
+                @media (min-width: $screen-lg-min) {
+                    max-width: $container-lg;
+                }            
+            }
         }
     }
 
-    a {
+    a:not(.menu-item-dropdown a) {
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    a{
         color: #262626;
         font-size: 17px;
         font-weight: 400;
-        padding-bottom: 15px;
-        padding-top: 15px;
         display: block;
 
         @media (max-width: $screen-sm-max) {

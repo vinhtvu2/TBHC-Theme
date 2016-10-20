@@ -308,6 +308,13 @@ function sc_person_profile_grid($atts) {
 			}
 			return $a_date < $b_date ? -1 : 1;
 		});
+	}else if(has_term('peer-ambassador','org_groups',$person->ID)){
+		usort($people, function($a, $b){ // tentative peer-ambassador name sort
+			if($a_title == $b_title){
+				return strcmp($a_title, $b_title);
+			}
+			return $a_title < $b_title ? -1 : 1;
+		});
 	}else{
 		usort($people, function($a, $b){
 			$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
@@ -346,8 +353,8 @@ function sc_person_profile_grid($atts) {
 	}
 	
 	ob_start();
-	
-	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwgrp="<?=$show_org_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
+	// Added row_size attribute to end of line below (omj it's soooo long...)
+	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwgrp="<?=$show_org_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>" data-rowsize="<?=$row_size?>">
 		<? if($dropdown){ 
 			$args = array(
 				'taxonomy'	=>	'org_groups',
@@ -423,7 +430,12 @@ function sc_person_profile_grid($atts) {
 								<?=Person::get_name($person);?>
 								<br/>
 								<small>
-									<?=get_post_meta($person->ID, 'person_jobtitle', True);?>
+									<!-- this whole bit is for majors and hometown for peer ambassador check-->
+									<?if(has_term('peer-ambassador','org_groups',$person->ID)){
+										echo get_post_meta($person->ID, 'peer_ambassador_major', True).', '.get_post_meta($person->ID, 'peer_ambassador_hometown', True);
+									}else{
+										get_post_meta($person->ID, 'person_jobtitle', True);	
+									}?>
 								</small>
 							</h4>		
 						</div>
@@ -439,7 +451,7 @@ function sc_person_profile_grid($atts) {
 			<?
 			$count++;
 		}
-	?>		</div>
+	?>		<!--</div> attempt to get left sidebar back onto grid pages-->
 		</div>
 	</div>
 	<?
@@ -560,7 +572,7 @@ function sc_opportunity_grid($atts) {
 					preg_match('/(?:http|https):\/\/tbhccmsdev.smca.ucf.edu\/(?<url>\S*)(?:\/*)/', $cPost, $matches);
 					$cPost = $matches['url'];					
 					$cPost = get_page_by_path($cPost, OBJECT, 'post');
-					$cPost = wp_trim_words($cPost->post_content, 75);
+					$cPost = wp_trim_words($cPost->post_content, 50);	// was 75, dropped to 50
 					$time = '';
 					$location = '';
 					if($ext_link){
@@ -572,7 +584,16 @@ function sc_opportunity_grid($atts) {
 					if($end_date){
 						$end_date = new DateTime($end_date);
 					}
-					$link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);					
+					$link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);		
+					// added these lines to retrieve taxonomy terms instead of using the meta field we had
+					$parntCat = get_term_by('slug', 'event-category');
+					$postCats = get_terms('event-groups', array(
+						'parent'	=>	$parntCat->ID
+					));
+					$catTerms = '';
+					foreach($postCats as $cat){
+						$catTerms.= $cat->name;
+					}
 				?>
 				<li>
 					<a href="<?=$link?>">
@@ -582,7 +603,7 @@ function sc_opportunity_grid($atts) {
 					<?=$cPost?>
 					<? if($end_date){ ?>
 						<div class="opportunity_info">
-							Date Close: <?=$end_date->format('l, F jS, Y')?>
+							<b>Date Close: <?=$end_date->format('l, F jS, Y')?></b> <!-- Added these here b tags -->
 						</div>
 					<? } ?>
 					<? if($time){ ?>
@@ -596,7 +617,7 @@ function sc_opportunity_grid($atts) {
 						</div>
 					<? } ?>
 					<div class="text-right opportunity_category">
-						Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
+						Category:&nbsp;<?=$catTerms?> <!-- switched this bugger out -->
 					</div>
 				</li>
 				<?php
@@ -725,6 +746,15 @@ function sc_spotlight_grid($atts) {
 					if($end_date){
 						$end_date = new DateTime($end_date);
 					}
+					// added these lines to retrieve taxonomy terms instead of using the meta field we had
+					$parntCat = get_term_by('slug', 'event-category');
+					$postCats = get_terms('event-groups', array(
+					'parent'	=>	$parntCat->ID
+					));
+					$catTerms = '';
+					foreach($postCats as $cat){
+						$catTerms.= $cat->name;
+					}					
 				?>
 				<li>
 					<a href="<?=$link?>">
@@ -748,7 +778,7 @@ function sc_spotlight_grid($atts) {
 						</div>
 					<? } ?>
 					<div class="text-right spotlight_category">
-						Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?>
+						Category:&nbsp;<?=$catTerms?> <!-- silly bugger -->
 					</div>
 				</li>
 				<?php
