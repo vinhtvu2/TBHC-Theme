@@ -581,10 +581,12 @@ function bootstrap_menus() {
 
 			function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 				
-				if ( is_array( $args[0] ) && array_key_exists('nav_dropdowns',$args[0]))
-					print_r($args[0]['nav_dropdowns']);
-				else if ( is_object( $args[0] ) && property_exists($args[0], 'nav_dropdowns'))
-					print_r($args[0]->nav_dropdowns);
+				// wow this is weird but works, thanks has_children right below here!
+				if ( (is_array( $args[0] ) && array_key_exists('nav_dropdowns',$args[0]) && $args[0]['nav_dropdowns']) ||
+					(is_object( $args[0] ) && property_exists($args[0], 'nav_dropdowns') && $args[0]->nav_dropdowns)
+				){
+					$args->after = '</strong>my name is '.$element->name.' and my this is my id ('.$element->ID.')';
+				}
 				
 				if ( !$element )
 					return;
