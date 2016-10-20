@@ -53,7 +53,7 @@
 							<li><i class="glyphicon glyphicon-time"></i><span class="time"><?=$time?></span></li>
 						<? } ?>
 						<? if($date != '') { ?>
-							<li><i class="glyphicon glyphicon-calendar"></i><span class="date"><?=$date->format('l, F jS, Y')?></span></li>
+							<li><i class="glyphicon glyphicon-calendar"></i><span class="date"><?=date('l, F jS, Y', strtotime($date))?></span></li>
 						<? } ?>
 						<? if($location != '') { ?>
 							<li><i class="glyphicon glyphicon-map-marker"><!--glyphicon-globe"> replaced with a gps marker --></i><span class="location"><?=$location?></span></li>
