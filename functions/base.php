@@ -581,7 +581,7 @@ function bootstrap_menus() {
 
 			function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 				
-				print_r($args);					
+				print_r($args[0]);					
 				
 				if ( !$element )
 					return;
