@@ -591,7 +591,7 @@ function sc_opportunity_grid($atts) {
 					$postCats = wp_get_post_terms($opportunity->ID, 'event_groups');
 					$catTerms = '';
 					foreach($postCats as $cat){
-						$catTerms.= $cat->parent == $parntCat->ID ? $cat->name : '';
+						$catTerms.= $cat->parent == $parntCat->term_id ? $cat->name : '';
 					}
 					var_dump($parntCat);
 					var_dump($postCats);
