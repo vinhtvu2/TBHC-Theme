@@ -1693,7 +1693,7 @@ function getSpotsForGrid(inp1, inp2){
 		jQuery('.spotlight-grid').replaceWith(res);
 	});
 }
-(function(){
+/*(function(){
 	if($("div.row#home[role='main']").length){
 		var link = $("#header-menu li");
 		var ajaxUrl = $("#header-nav-wrap").data("url");
@@ -1719,7 +1719,7 @@ function getSpotsForGrid(inp1, inp2){
 			})
 		})
 	}
-})();
+})();*/
 var debounce = function (func, threshold, execAsap) {
     var timeout;
     return function debounced () {
