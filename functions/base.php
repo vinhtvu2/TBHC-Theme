@@ -581,7 +581,7 @@ function bootstrap_menus() {
 
 			function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 				
-				if(array_key_exists('nav_dropdowns',$args[0])){
+				if(is_array( $args[0] ) && array_key_exists('nav_dropdowns',$args[0])){
 					var_dump($args[0]['nav_dropdowns']);					
 				}
 				
