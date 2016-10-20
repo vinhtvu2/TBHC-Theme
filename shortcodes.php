@@ -590,7 +590,7 @@ function sc_opportunity_grid($atts) {
 					$parntCat = get_term_by('slug', 'event-category','event_groups');
 					$postCats = get_terms(array(
 						'taxonomy'	=>	'event_groups',
-						'parent'	=>	$parntCat->ID
+						'child_of'	=>	$parntCat->ID
 					));
 					$catTerms = '';
 					foreach($postCats as $cat){
