@@ -120,7 +120,7 @@
 					'menu_id' => 'header-menu',
 					'walker' => new Bootstrap_Walker_Nav_Menu(),
 					'before' => '<strong>',
-					'after' => '</strong><div class="menu-item-dropdown"></div>', // THIS IS OVERRIDDEN IN THE WALKER because they wanted fancy behavior for the nav dropdowns
+					'after' => '</strong>', // THIS IS OVERRIDDEN IN THE WALKER because they wanted fancy behavior for the nav dropdowns
 					'nav_dropdowns'	=> true
 					)
 				);
