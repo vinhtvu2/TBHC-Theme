@@ -585,8 +585,27 @@ function bootstrap_menus() {
 				if ( (is_array( $args[0] ) && array_key_exists('nav_dropdowns',$args[0]) && $args[0]['nav_dropdowns']) ||
 					(is_object( $args[0] ) && property_exists($args[0], 'nav_dropdowns') && $args[0]->nav_dropdowns)
 				){
-					$args[0]->after = '</strong>'.$element->ID;
-					print_r($args[0]->after);
+					$argsForPanel = array(
+						'posts_per_page'	=>	1,
+						'post_type'	=>	'nav_dropdown',
+						'meta_query' => array(
+							array(
+								'key'   => 'nav_dropdown_menu_item',
+								'value' => $element->ID,
+							)
+						),
+					);
+					$items = get_posts($argsForPanel);
+					$htmlOut = "";
+					if(is_array($items) && !empty($items)){
+						$htmlOut .= apply_filters( 'siteorigin_panels_before_content', '<div class="content-holder">', $panels_data = false, $items[0]->ID );
+						$htmlOut .= siteorigin_panels_render($post_id = $items[0]->ID);
+						$htmlOut .= apply_filters( 'siteorigin_panels_after_content', '</div>', $panels_data = false, $items[0]->ID );
+					}else{
+						$htmlOut .= "Please check back later! This panel is under maintenance!";
+					}
+					$css = siteorigin_panels_generate_css($items[0]->ID);
+					$args[0]->after = '</strong><div class="menu-item-dropdown">'.$htmlOut.'</div>';
 				}
 				
 				if ( !$element )
