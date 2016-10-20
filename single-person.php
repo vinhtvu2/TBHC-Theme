@@ -49,9 +49,6 @@
 				<? }
 				if(strpos(wp_get_referer(), "distinguished-speaker") > 0){ //or type = dist speaker ?> 
 					<ul class="list-unstyled">
-						<? //if($title != '') { ?>
-							<!--<li><i class="glyphicon glyphicon-info-sign"></i><span class="title"><?=//$title?></span></li> Removed all this to get rid of second title-->
-						<? //} ?>
 						<? if($time != '') { ?>
 							<li><i class="glyphicon glyphicon-time"></i><span class="time"><?=$time?></span></li>
 						<? } ?>
