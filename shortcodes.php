@@ -297,7 +297,6 @@ function sc_person_profile_grid($atts) {
 		'objects_only' => True,
 	));
 	if(strpos($org_groups, "dist") > -1){
-		echo "in ds sort";		
 		usort($people, function($a, $b){
 			$a_date = new DateTime(get_post_meta($a->ID, 'dist_speaker_date', true));
 			$b_date = new DateTime(get_post_meta($b->ID, 'dist_speaker_date', true));
@@ -311,7 +310,6 @@ function sc_person_profile_grid($atts) {
 			return $a_date < $b_date ? -1 : 1;
 		});
 	}else if(strpos($org_groups, "ambass") > -1){
-		echo "in peer sort";
 		usort($people, function($a, $b){ // tentative peer-ambassador name sort
 			if($a->title == $b->title){
 				return strcmp($a->title, $b->title);
@@ -319,7 +317,6 @@ function sc_person_profile_grid($atts) {
 			return $a->title < $b->title ? -1 : 1;
 		});
 	}else{
-		echo "in staff sort";		
 		usort($people, function($a, $b){
 			$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
 			$b_title = get_post_meta($b->ID, 'person_jobtitle', true);
