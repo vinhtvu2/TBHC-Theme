@@ -310,6 +310,7 @@ function sc_person_profile_grid($atts) {
 			return $a_date < $b_date ? -1 : 1;
 		});
 	}else if(has_term('peer-ambassador','org_groups',$person->ID)){
+		echo "in peer sort";
 		usort($people, function($a, $b){ // tentative peer-ambassador name sort
 			if($a->title == $b->title){
 				return strcmp($a->title, $b->title);
