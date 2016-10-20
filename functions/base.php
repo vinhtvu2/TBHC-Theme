@@ -586,8 +586,8 @@ function bootstrap_menus() {
 					(is_object( $args[0] ) && property_exists($args[0], 'nav_dropdowns') && $args[0]->nav_dropdowns)
 				){
 					$args[0]->after = '</strong>my name is bob';
-					print_r($args[0]);
-					print_r($args);
+					print_r($args[0]->after);
+					print_r($element);
 				}
 				
 				if ( !$element )
