@@ -99,7 +99,8 @@
 					'container' => false,
 					'menu_class' => 'menu nav navbar-nav',
 					'menu_id' => 'header-menu-xs',
-					'walker' => new Bootstrap_Walker_Nav_Menu()
+					'walker' => new Bootstrap_Walker_Nav_Menu(),
+					'nav_dropdowns'	=> false
 					) );
 				?>
 			</div>
