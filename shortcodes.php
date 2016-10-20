@@ -593,9 +593,6 @@ function sc_opportunity_grid($atts) {
 					foreach($postCats as $cat){
 						$catTerms.= $cat->parent == $parntCat->term_id ? $cat->name : '';
 					}
-					var_dump($parntCat);
-					var_dump($postCats);
-					var_dump($catTerms);
 				?>
 				<li>
 					<a href="<?=$link?>">
