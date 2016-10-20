@@ -311,10 +311,10 @@ function sc_person_profile_grid($atts) {
 		});
 	}else if(has_term('peer-ambassador','org_groups',$person->ID)){
 		usort($people, function($a, $b){ // tentative peer-ambassador name sort
-			if($a_title == $b_title){
-				return strcmp($a_title, $b_title);
+			if($a->title == $b->title){
+				return strcmp($a->title, $b->title);
 			}
-			return $a_title < $b_title ? -1 : 1;
+			return $a->title < $b->title ? -1 : 1;
 		});
 	}else{
 		usort($people, function($a, $b){
