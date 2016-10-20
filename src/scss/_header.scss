@@ -59,7 +59,7 @@
         }
         .menu-item-dropdown{
             opacity: 0;
-            transition: opacity 1s linear 1s, visibility 1s linear 1s;
+            transition: opacity .5s linear .75s, visibility .5s linear .75s;
             position: absolute;
             visibility: hidden;
             width: 100%;
