@@ -37,17 +37,6 @@
     table-layout: fixed;
     width: 100%;
     max-width: $container-lg;
-    @media (min-width: $screen-sm-min) {
-        max-width: $container-sm;
-    }
-
-    @media (min-width: $screen-md-min) {
-        max-width: $container-md;
-    }
-
-    @media (min-width: $screen-lg-min) {
-        max-width: $container-lg;
-    }
 
     .menu-item-dropdown{
         li{
@@ -67,13 +56,12 @@
         &:hover .menu-item-dropdown{
             opacity: 1;
             visibility: visible;
-            display: block;
         }
         .menu-item-dropdown{
             opacity: 0;
-            display: none;
-            transition: opacity 2s visibility 2s;
+            transition: opacity linear 2s, visibility linear 2s;
             position: absolute;
+            visibility: hidden;
             width: 100%;
             left: 0;
             text-align: left;
@@ -92,7 +80,11 @@
 
                 @media (min-width: $screen-lg-min) {
                     max-width: $container-lg;
-                }            
+                }         
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }   
             }
         }
     }

@@ -458,14 +458,14 @@ Config::$theme_settings = array(
 			'default'	  => '95%',
 		)),
 		new TextField(array(
-			'name'        => 'Header Padding Top',
+			'name'        => 'Header Mobile Padding Top',
 			'id'          => THEME_OPTIONS_NAME.'[header_top_pad_mobile]',
 			'description' => 'Override the default theme header top pad on mobile (does not affect desktop).<br/><em>Suggested units: px (constant width)</em>',
 			'value'       => $theme_options['header_top_pad_mobile'],
 			'default'	  => '15px',
 		)),
 		new TextField(array(
-			'name'        => 'Header Padding Bottom',
+			'name'        => 'Header Mobile Padding Bottom',
 			'id'          => THEME_OPTIONS_NAME.'[header_bottom_pad_mobile]',
 			'description' => 'Override the default theme header bottom pad on mobile (does not affect desktop).<br/><em>Suggested units: px (constant width)</em>',
 			'value'       => $theme_options['header_bottom_pad_mobile'],
