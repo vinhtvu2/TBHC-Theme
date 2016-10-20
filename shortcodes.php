@@ -312,7 +312,7 @@ function sc_person_profile_grid($atts) {
 	}else if(strpos($org_groups, "ambass") > -1){
 		usort($people, function($a, $b){ // tentative peer-ambassador name sort
 			$res = strcmp($a->post_title, $b->post_title);
-			echo "\n".$a->post_title." is ".$res." than ".$b->post_title;
+			//echo "\n".$a->post_title." is ".$res." than ".$b->post_title;
 			return $res;
 		});
 	}else{
