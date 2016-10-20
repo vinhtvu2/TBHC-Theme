@@ -587,7 +587,7 @@ function sc_opportunity_grid($atts) {
 					}
 					$link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);		
 					// added these lines to retrieve taxonomy terms instead of using the meta field we had
-					$parntCat = get_term_by('slug', 'event-category');
+					$parntCat = get_term_by('slug', 'event-category','event_groups');
 					$postCats = get_terms('event-groups', array(
 						'parent'	=>	$parntCat->ID
 					));
