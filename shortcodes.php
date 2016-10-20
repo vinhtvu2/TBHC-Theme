@@ -746,14 +746,12 @@ function sc_spotlight_grid($atts) {
 						$end_date = new DateTime($end_date);
 					}
 					// added these lines to retrieve taxonomy terms instead of using the meta field we had
-					$parntCat = get_term_by('slug', 'event-category');
-					$postCats = get_terms('event-groups', array(
-					'parent'	=>	$parntCat->ID
-					));
+					$parntCat = get_term_by('slug', 'event-category','event_groups');
+					$postCats = wp_get_post_terms($spotlight->ID, 'event_groups');
 					$catTerms = '';
 					foreach($postCats as $cat){
-						$catTerms.= $cat->name;
-					}					
+						$catTerms.= $cat->parent == $parntCat->term_id ? $cat->name : '';
+					}
 				?>
 				<li>
 					<a href="<?=$link?>">
