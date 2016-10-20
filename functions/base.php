@@ -581,7 +581,7 @@ function bootstrap_menus() {
 
 			function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 				
-				var_dump(is_front_page());
+				var_dump(is_home());
 				// wow this is weird but works, thanks has_children right below here!
 				if ( 
 					(
