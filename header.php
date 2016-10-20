@@ -120,6 +120,7 @@
 					'walker' => new Bootstrap_Walker_Nav_Menu(),
 					'before' => '<strong>',
 					'after' => '</strong><div class="menu-item-dropdown"></div>',
+					'nav_dropdowns'	=> true
 					)
 				);
 				/*
@@ -127,8 +128,6 @@
 					<div></div> in li item, left:0, pos: fixed, width: 100%
 					container for content (to center properly)
 					on li hover display
-					use js to add class to li (semi graceful degrade)
-					content for panels should be a post type
 				 * */
 			?>
 		</nav>
