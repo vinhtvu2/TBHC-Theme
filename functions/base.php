@@ -585,7 +585,7 @@ function bootstrap_menus() {
 				if ( (is_array( $args[0] ) && array_key_exists('nav_dropdowns',$args[0]) && $args[0]['nav_dropdowns']) ||
 					(is_object( $args[0] ) && property_exists($args[0], 'nav_dropdowns') && $args[0]->nav_dropdowns)
 				){
-					print_r($args[0]->after);
+					print_r($args[0]);
 				}
 				
 				if ( !$element )
