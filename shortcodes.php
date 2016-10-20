@@ -265,6 +265,7 @@ function sc_person_profile_grid($atts) {
 	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
+	$mobile_row_size 	= ($atts['mobile_row_size']) ? (intval($atts['mobile_row_size'])) : 3;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;
 	$org_groups		= ($atts['org_groups']) ? $atts['org_groups'] : null;
 	$org_groups2		= ($atts['org_groups2']) ? $atts['org_groups2'] : null;	
@@ -594,6 +595,9 @@ function sc_opportunity_grid($atts) {
 					foreach($postCats as $cat){
 						$catTerms.= $cat->name;
 					}
+					var_dump($parntCat);
+					var_dump($postCats);
+					var_dump($catTerms);
 				?>
 				<li>
 					<a href="<?=$link?>">
