@@ -11,5 +11,8 @@
 	}
 	the_content();
 ?>
+	<div class="container-shadow">
+		<span></span>
+	</div>
 </div><!--.container [hidden rage]-->
 <?php get_footer();?>

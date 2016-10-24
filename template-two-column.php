@@ -29,5 +29,8 @@
 			<?=get_sidebar('left');?>
 		</div>
 	</div>
+	<div class="container-shadow">
+		<span></span>
+	</div>
 </div>
 <?php get_footer();?>
