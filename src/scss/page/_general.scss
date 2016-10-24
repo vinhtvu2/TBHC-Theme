@@ -8,7 +8,28 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     z-index: 100;
-    box-shadow: 9px 0px 10px -10px rgba(0, 0, 0, .75), -9px 0px 10px -10px rgba(0, 0, 0, .75), 0px 9px 10px -10px rgba(0, 0, 0, .75);
+    //box-shadow: 9px 0px 10px -10px rgba(0, 0, 0, .75), -9px 0px 10px -10px rgba(0, 0, 0, .75), 0px 9px 10px -10px rgba(0, 0, 0, .75);
+}
+.container-shadow{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    span{
+        box-shadow: 0 26px 57px 0 rgba(0,0,0,.75);
+        height: 100%;
+        @media (min-width: $screen-sm-min) {
+            max-width: $container-sm;
+        }
+
+        @media (min-width: $screen-md-min) {
+            max-width: $container-md;
+        }
+
+        @media (min-width: $screen-lg-min) {
+            max-width: $container-lg;
+        }         
+    }
 }
 
 .person-profile .details img {
