@@ -34,4 +34,7 @@
 		</div>
 	</div>
 </div>
+<div class="container-shadow">
+	<span></span>
+</div>
 <?php get_footer();?>
