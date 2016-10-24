@@ -68,6 +68,7 @@
             padding-top: 15px;
             padding-bottom: 15px;
             background-color: white;
+            z-index: 2;
             .content-holder{
                 margin: 0 auto;
                 @media (min-width: $screen-sm-min) {
