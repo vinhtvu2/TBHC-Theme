@@ -62,15 +62,15 @@ ul{
   /*h2 {
     color: #E26906;
   }*/
-  .home_col_morelink a{
-      color: #3e769a;
-  }
   a {
     color: #333;
 
     &:hover {
       color: #8f3931;
     }
+  }
+  .home_col_morelink a{
+      color: #3e769a;
   }
 }
 
