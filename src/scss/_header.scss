@@ -69,6 +69,11 @@
             padding-bottom: 15px;
             background-color: white;
             z-index: 2;
+            a{
+                &:hover{
+                    font-weight: bold;
+                }
+            }
             .content-holder{
                 margin: 0 auto;
                 @media (min-width: $screen-sm-min) {
@@ -87,14 +92,6 @@
                     height: auto;
                 }   
             }
-        }
-    }
-
-    .menu-item-dropdown a {
-        padding-bottom: 0;
-        padding-top: 0;
-        &:hover{
-            font-weight: bold;
         }
     }
 
