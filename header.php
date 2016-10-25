@@ -132,6 +132,18 @@
 				 * */
 			?>
 		</nav>
+		<?if(is_home() || is_front_page()){?>
+			<div class="col-sm-15">
+				<?php
+					$args = array(
+					'numberposts' => 1,
+					'post_type' => 'centerpiece',
+					);
+					$latest_centerpiece = get_posts($args);
+					echo do_shortcode('[centerpiece id="'.$latest_centerpiece[0]->ID.'"]');
+				?>
+			</div>
+		<?}?>
 		<div class="container">
 			<div class="row status-alert" id="status-alert-template" data-alert-id="">
 				<div class="col-md-12 col-sm-12 alert-wrap">
