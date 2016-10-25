@@ -62,7 +62,9 @@ ul{
   /*h2 {
     color: #E26906;
   }*/
-
+  .home_col_morelink a{
+      color: #3e769a;
+  }
   a {
     color: #333;
 
@@ -120,7 +122,12 @@ ul{
     }
   }
 }
-
+.home_opportunity_single a{
+    color: #3e769a;
+    &:hover {
+      color: #8f3931;
+    }
+}
 .home_spotlight_readmore, .home_opportunity_readmore {
   font-family: $font-family-sans-serif;
   font-size: 12px;
