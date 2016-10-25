@@ -16,15 +16,13 @@ ul{
 // Home Page - Sub Columns - General Styles
 .home_col_morelink,
 .events_morelink {
-  border-bottom: 1px solid #ccc;
-  color: #600 !important;
-  font-family: $font-family-sans-serif;
+    color: #3e769a;
 
-  &:hover {
-    border-bottom: 1px solid #e50606;
-    color: #e50606 !important;
-    text-decoration: none;
-  }
+    &:hover {
+        color: #8f3931;
+        border-bottom: 1px solid #8f3931;
+        text-decoration: none;
+    }
 }
 
 #home_leftcol,
@@ -69,7 +67,7 @@ ul{
     color: #333;
 
     &:hover {
-      color: #e50606;
+      color: #8f3931;
     }
   }
 }
@@ -118,7 +116,7 @@ ul{
     }
 
     &:hover {
-      border-bottom: 1px solid #e50606;
+      border-bottom: 1px solid #8f3931;
     }
   }
 }

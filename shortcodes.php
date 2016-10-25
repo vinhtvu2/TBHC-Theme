@@ -494,9 +494,14 @@ function sc_opportunity_grid($atts) {
 			'operator' => $operator,
 			'meta_query'	=> array(
 				array(
-					'key'	=>	'opportunity_start',
-					'value'	=>	date('Ymd'),
-					'compare'	=>	'<=',				
+				'key'	=>	'opportunity_start',
+				'value'	=>	date('Ymd', mktime(23,59,59)), // this might work? set time as 23:59:59?
+				'compare'	=>	'<=',
+				),
+				array(
+				'key'	=>	'opportunity_end',
+				'value'	=>	date('Ymd', mktime(0,0,0)),
+				'compare'	=>	'>=',
 				),
 			),
 		),
@@ -511,7 +516,7 @@ function sc_opportunity_grid($atts) {
 		$b_dt = $b_dt->getTimestamp();
 		if ($a_dt == $b_dt){
 			// If they have the same depth, compare titles
-			return strcmp($a->post_title, $b->post_title) * -1;
+			return strcmp($a->post_title, $b->post_title);
 		}
 		// If depth_a is smaller than depth_b, return -1; otherwise return 1
 		$res = ($a_dt > $b_dt) ? -1 : 1;
