@@ -481,33 +481,35 @@ function sc_opportunity_grid($atts) {
 	$EGID2			= get_term_by('slug', $dd2_event_groups, 'event_groups');
 	$EGID2			= $EGID2 ? $EGID2->term_id : false;
 	$operator		= ($atts['operator']) ? $atts['operator'] : NULL;
-	$opps 		= sc_object_list(
-		array(
-			'type' => 'opportunity',
-			'limit' => $limit,
-			'join' => $join,
-			'categories' => $categories,
-			'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
-			'orderby' => 'meta_value_num',
-			'order' => 'DESC',
-			'meta_key'	=> 'opportunity_end',
-			'operator' => $operator,
-			'meta_query'	=> array(
-				array(
+	$oppsArgs 		= array(
+		'type' => 'opportunity',
+		'limit' => $limit,
+		'join' => $join,
+		'categories' => $categories,
+		'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
+		'orderby' => 'meta_value_num',
+		'order' => 'DESC',
+		'meta_key'	=> 'opportunity_end',
+		'operator' => $operator,
+		'meta_query'	=> array(
+			array(
 				'key'	=>	'opportunity_start',
 				'value'	=>	date('Ymd', mktime(23,59,59)), // this might work? set time as 23:59:59?
 				'compare'	=>	'<=',
-				),
-				array(
+			),
+			array(
 				'key'	=>	'opportunity_end',
 				'value'	=>	date('Ymd', mktime(0,0,0)),
 				'compare'	=>	'>=',
-				),
 			),
 		),
-	array(
-		'objects_only' => True,
-	));
+	);
+	print_r($oppsArgs);
+	$opps 		= sc_object_list(
+		array(
+			'objects_only' => True,
+		)
+	);
 	
 	usort($opps, function($a, $b){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
