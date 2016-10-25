@@ -429,14 +429,12 @@ function sc_person_profile_grid($atts) {
 							<h4 class="title">
 								<?=Person::get_name($person);?>
 								<br/>
-								<small>
-									<!-- this whole bit is for majors and hometown for peer ambassador check-->
-									<?if(has_term('peer-ambassador','org_groups',$person->ID)){
-										echo get_post_meta($person->ID, 'peer_ambassador_major', True).', '.get_post_meta($person->ID, 'peer_ambassador_hometown', True);
-									}else{
-										get_post_meta($person->ID, 'person_jobtitle', True);	
-									}?>
-								</small>
+								<!-- this whole bit is for majors and hometown for peer ambassador check-->
+								<?if(has_term('peer-ambassador','org_groups',$person->ID)){
+									echo '<small>'.get_post_meta($person->ID, 'peer_ambassador_major', True).'</small><br/><small>'.get_post_meta($person->ID, 'peer_ambassador_hometown', True).'</small>';
+								}else{
+									echo '<small>'.get_post_meta($person->ID, 'person_jobtitle', True).'</small>';	
+								}?>
 							</h4>		
 						</div>
 						<div class="group">
@@ -490,18 +488,13 @@ function sc_opportunity_grid($atts) {
 			'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
 			'orderby' => 'meta_value_num',
 			'order' => 'DESC',
-			//'meta_key'	=> 'opportunity_end',
-			//'operator' => $operator,
+			'meta_key'	=> 'opportunity_end',
+			'operator' => $operator,
 			'meta_query'	=> array(
 				array(
-				'key'	=>	'opportunity_start',
-				'value'	=>	date('Ymd', mktime(23,59,59)), // this might work? set time as 23:59:59?
-				'compare'	=>	'<=',
-				),
-				array(
-				'key'	=>	'opportunity_end',
-				'value'	=>	date('Ymd', mktime(0,0,0)),
-				'compare'	=>	'>=',
+					'key'	=>	'opportunity_start',
+					'value'	=>	date('Ymd'),
+					'compare'	=>	'<=',				
 				),
 			),
 		),
@@ -707,10 +700,12 @@ function sc_spotlight_grid($atts) {
 			if(!empty($show_option_all)){
 				$args['show_option_all'] = $show_option_all;
 			}
+			$wp1Args = wp_dropdown_categories($args);
+			rsort($wp1Args);
 			echo str_replace(
 				'<select',
 				'<select onchange="getSpotsForGrid(this.value'.($dropdown2 ? ', $(\'#dd2_event_groups\').val()' : '').')"',
-				wp_dropdown_categories($args)
+				$wp1Args
 			);
 		} 
 		if($dropdown2 && $EGID2){ 

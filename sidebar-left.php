@@ -58,10 +58,7 @@
 
 	// Facebook Link
 	if ($show_facebook == 'on') {	
-		print '<h3 id="sidebar_l_facebook" class="sidebar_title">Connect With TBHC</h3>';
-		print '<div id="sidebar_l_facebook_wrap" class="sidebar_l_wrap">';
-		print '<iframe src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com%2fTheBurnettHonorsCollege&amp;height=62&amp;show_faces=false&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:62px;" allowTransparency="true"></iframe>';
-		print '</div>';
+		print '<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FTheBurnettHonorsCollege%2F&width=151&layout=button_count&action=like&size=large&show_faces=false&share=true&height=46&appId=966428133474292" width="151" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>';
 	}	
 	// Embed Widget 1
 	$embed1_title	 		= get_post_meta($post->ID, 'page_widget_l_embed1_title', TRUE);

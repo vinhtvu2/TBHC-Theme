@@ -93,6 +93,9 @@
     .menu-item-dropdown a {
         padding-bottom: 0;
         padding-top: 0;
+        &:hover{
+            font-weight: bold;
+        }
     }
 
     a{
