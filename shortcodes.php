@@ -506,6 +506,7 @@ function sc_opportunity_grid($atts) {
 	);
 	print_r($oppsArgs);
 	$opps 		= sc_object_list(
+		$oppsArgs,
 		array(
 			'objects_only' => True,
 		)
