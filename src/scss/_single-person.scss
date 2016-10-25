@@ -1,0 +1,10 @@
+.person-profile{
+    .contact{
+        a{
+            color: #3e769a;
+            &:hover {
+                  color: #8f3931;
+            }
+        }
+    }
+}
