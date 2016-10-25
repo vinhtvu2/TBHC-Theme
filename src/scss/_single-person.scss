@@ -1,5 +1,15 @@
 .person-profile{
     .contact{
+        font-size: 15px;
+
+        @media (max-width: $screen-xs-max) {
+            padding-top: 15px;
+        }
+
+        ul li i.glyphicon {
+            padding: 3px;
+            line-height: 18px;
+        }
         a{
             color: #3e769a;
             &:hover {
