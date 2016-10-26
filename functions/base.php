@@ -1119,7 +1119,7 @@ function sc_object_list($attrs, $options = array()){
 	);
 	
 	$extras = array_diff(array_keys($attrs), array_keys($default_attrs));
-	var_dump($extras[1]);
+	var_dump($extras);
 	$metaQuery = "";
 	
 	//var_dump($taxonomies);
