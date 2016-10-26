@@ -1119,7 +1119,7 @@ function sc_object_list($attrs, $options = array()){
 	);
 	
 	$extras = array_diff(array_keys($attrs), array_keys($default_attrs));
-	if(array_key_exists('meta_query', $extras)){
+	if(in_array('meta_query', $extras)){
 		var_dump($params['meta_query']);	
 	}	
 	$metaQuery = "";
