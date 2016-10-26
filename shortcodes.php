@@ -490,7 +490,7 @@ function sc_opportunity_grid($atts) {
 			//'order' => 'DESC',
 			//'meta_key'	=> 'opportunity_end',
 			'operator' => $operator,
-			/*'meta_query'	=> array(
+			'meta_query'	=> array(
 				array(
 					'key'	=>	'opportunity_start',
 					'value'	=>	date('Ymd', mktime(23,59,59)), // this might work? set time as 23:59:59?
@@ -501,7 +501,7 @@ function sc_opportunity_grid($atts) {
 					'value'	=>	date('Ymd', mktime(0,0,0)),
 					'compare'	=>	'>=',
 				),
-			),*/
+			),
 		),
 	array(
 		'objects_only' => True,

@@ -1117,9 +1117,14 @@ function sc_object_list($attrs, $options = array()){
 		'tags' => 'post_tag',
 		'categories' => 'category'
 	);
-	$taxonomies = array_diff(array_keys($attrs), array_keys($default_attrs));
-	var_dump($taxonomies);
+	
+	$extras = array_diff(array_keys($attrs), array_keys($default_attrs));
+	var_dump($extras[1]);
+	
+	
+	//var_dump($taxonomies);
 	# assemble taxonomy query
+	$taxonomies = $extras;
 	$tax_queries = array();
 	$tax_queries['relation'] = strtoupper($params['join']);
 
@@ -1148,12 +1153,13 @@ function sc_object_list($attrs, $options = array()){
 	# perform query
 	$query_array = array(
 		'tax_query'      => $tax_queries,
+		'meta_query'	 => $metaQuery,
 		'post_status'    => 'publish',
 		'post_type'      => $params['type'],
 		'posts_per_page' => $params['limit'],
 		'orderby'        => $params['orderby'],
 		'order'          => $params['order'],
-		'offset'         => $params['offset']
+		'offset'         => $params['offset'],
 	);
 
 	$query = new WP_Query($query_array);	
