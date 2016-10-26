@@ -48,6 +48,17 @@
     &>img{
         width: 100%;
         max-width: 2000px !important;
+        @media (max-width: $screen-md-max) {
+          height: 338px;
+        }
+
+        @media (max-width: $screen-sm-max) {
+          height: 260px;
+        }
+
+        @media (max-width: $screen-xs-max) {
+          height: 400px;
+        }
     }
   }
 
