@@ -1118,11 +1118,11 @@ function sc_object_list($attrs, $options = array()){
 		'categories' => 'category'
 	);
 	
+	$metaQuery = "";	
 	$extras = array_diff(array_keys($attrs), array_keys($default_attrs));
 	if(in_array('meta_query', $extras)){
-		var_dump($params['meta_query']);	
+		$metaQuery = $params['meta_query'];	
 	}	
-	$metaQuery = "";
 	
 	//var_dump($taxonomies);
 	# assemble taxonomy query
