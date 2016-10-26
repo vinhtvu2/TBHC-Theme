@@ -507,7 +507,7 @@ function sc_opportunity_grid($atts) {
 		'objects_only' => True,
 	));
 	
-	$opps	=	get_post(
+	$opps	=	get_posts(
 		'post_type' => 'opportunity',
 		//'limit' => $limit,
 		//'join' => $join,
