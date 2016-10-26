@@ -516,14 +516,14 @@ function sc_opportunity_grid($atts) {
 			array(
 				'taxonomy'	=>	'event_groups',
 				'field'	=>	'slug',
-				'terms'	=>	$event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
+				'terms'	=>	$event_groups2 ? $event_groups.','.$event_groups2 : $event_groups,
 			),
 		),
 		//'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
 		'orderby' => 'meta_value_num',
 		'order' => 'DESC',
 		'meta_key'	=> 'opportunity_end',
-		'operator' => $operator,
+		//'operator' => $operator,
 		'meta_query'	=> array(
 			array(
 				'key'	=>	'opportunity_start',
