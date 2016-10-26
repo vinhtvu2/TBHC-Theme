@@ -45,7 +45,12 @@
     @media (max-width: $screen-xs-max) {
       //height: auto;
     }
+      &>img{
+          width: 100%;
+          max-width: 2000px;
+      }
   }
+
 
   .thumb_corner_tl,
   .thumb_corner_tr,
