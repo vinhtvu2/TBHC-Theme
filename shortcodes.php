@@ -484,7 +484,7 @@ function sc_opportunity_grid($atts) {
 			'type' => 'opportunity',
 			'limit' => $limit,
 			'join' => $join,
-			//'categories' => $categories,
+			'categories' => $categories,
 			'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
 			'orderby' => 'meta_value_num',
 			'order' => 'DESC',
