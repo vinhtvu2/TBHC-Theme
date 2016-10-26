@@ -1118,7 +1118,7 @@ function sc_object_list($attrs, $options = array()){
 		'categories' => 'category'
 	);
 	$taxonomies = array_diff(array_keys($attrs), array_keys($default_attrs));
-	print_r($taxonomies);
+	var_dump($taxonomies);
 	# assemble taxonomy query
 	$tax_queries = array();
 	$tax_queries['relation'] = strtoupper($params['join']);
