@@ -493,14 +493,38 @@ function sc_opportunity_grid($atts) {
 			'meta_query'	=> array(
 				array(
 					'key'	=>	'opportunity_start',
-					'value'	=>	date('Ymd'),
-					'compare'	=>	'<=',				
+					'value'	=>	date('Ymd', mktime(23,59,59)), // this might work? set time as 23:59:59?
+					'compare'	=>	'<=',
+				),
+				array(
+					'key'	=>	'opportunity_end',
+					'value'	=>	date('Ymd', mktime(0,0,0)),
+					'compare'	=>	'>=',
 				),
 			),
 		),
 	array(
 		'objects_only' => True,
 	));
+	
+	$opps	=	get_post(
+		'post_type' => 'opportunity',
+		//'limit' => $limit,
+		//'join' => $join,
+		//'category_name' => $categories,
+		'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
+		'orderby' => 'meta_value_num',
+		'order' => 'DESC',
+		'meta_key'	=> 'opportunity_end',
+		'operator' => $operator,
+		'meta_query'	=> array(
+			array(
+				'key'	=>	'opportunity_start',
+				'value'	=>	date('Ymd'),
+				'compare'	=>	'<=',				
+			),
+		)
+	);
 	
 	usort($opps, function($a, $b){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
@@ -519,6 +543,7 @@ function sc_opportunity_grid($atts) {
 	ob_start();
 	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
 		<? if($dropdown){ 
+			//$ids = array_map(function(){}, $opps);
 			$args = array(
 				'taxonomy'	=>	'event_groups',
 				'value_field'	=>	'slug',
@@ -528,6 +553,7 @@ function sc_opportunity_grid($atts) {
 				'echo'	=> false,
 				'selected'	=>	$event_groups,
 				'child_of'	=>	$EGID,
+				//'include'	=>	
 			);
 			if(!empty($show_option_all)){
 				$args['show_option_all'] = $show_option_all;
