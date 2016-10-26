@@ -6,19 +6,19 @@
   //width: 1140px;
   width: 100%;
   z-index: 1;
-
+  max-width: 2000px;
   @media (max-width: $screen-md-max) {
-    //height: 338px;
+    height: 338px;
     //width: 940px;
   }
 
   @media (max-width: $screen-sm-max) {
-    //height: 260px;
+    height: 260px;
     //width: 724px;
   }
 
   @media (max-width: $screen-xs-max) {
-    //height: auto;
+    height: auto;
     margin: 0 0 30px;
     //width: 100%;
   }
@@ -35,20 +35,20 @@
     overflow: hidden;
 
     @media (max-width: $screen-md-max) {
-      //height: 338px;
+      height: 338px;
     }
 
     @media (max-width: $screen-sm-max) {
-      //height: 260px;
+      height: 260px;
     }
 
     @media (max-width: $screen-xs-max) {
-      //height: auto;
+      height: 400px;
     }
-      &>img{
-          width: 100%;
-          max-width: 2000px;
-      }
+    &>img{
+        width: 100%;
+        max-width: 2000px;
+    }
   }
 
 
