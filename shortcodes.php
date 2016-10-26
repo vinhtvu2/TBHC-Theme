@@ -507,32 +507,6 @@ function sc_opportunity_grid($atts) {
 		'objects_only' => True,
 	));
 	
-	$opps	=	get_posts(
-		'post_type' => 'opportunity',
-		//'limit' => $limit,
-		//'join' => $join,
-		//'category_name' => $categories,
-		'tax_query'	=>	array(
-			array(
-				'taxonomy'	=>	'event_groups',
-				'field'	=>	'slug',
-				'terms'	=>	$event_groups2 ? $event_groups.','.$event_groups2 : $event_groups,
-			),
-		),
-		//'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
-		'orderby' => 'meta_value_num',
-		'order' => 'DESC',
-		'meta_key'	=> 'opportunity_end',
-		//'operator' => $operator,
-		'meta_query'	=> array(
-			array(
-				'key'	=>	'opportunity_start',
-				'value'	=>	date('Ymd'),
-				'compare'	=>	'<=',				
-			),
-		)
-	);
-	
 	usort($opps, function($a, $b){
 		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
 		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
