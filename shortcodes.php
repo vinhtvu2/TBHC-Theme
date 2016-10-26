@@ -488,9 +488,9 @@ function sc_opportunity_grid($atts) {
 			'event_groups' => $event_groups2 ? $event_groups.' '.$event_groups2 : $event_groups,
 			'orderby' => 'meta_value_num',
 			'order' => 'DESC',
-			//'meta_key'	=> 'opportunity_end',
+			'meta_key'	=> 'opportunity_end',
 			'operator' => $operator,
-			/*'meta_query'	=> array(
+			'meta_query'	=> array(
 				array(
 					'key'	=>	'opportunity_start',
 					'value'	=>	date('Ymd', mktime(23,59,59)), // this might work? set time as 23:59:59?
@@ -500,7 +500,7 @@ function sc_opportunity_grid($atts) {
 					'key'	=>	'opportunity_end',
 					'value'	=>	date('Ymd', mktime(0,0,0)),
 					'compare'	=>	'>=',
-				),*/
+				),
 			),
 		),
 	array(
