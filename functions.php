@@ -2235,7 +2235,8 @@ function add_post_formats_filter_to_post_administration(){
 			'orderby'           => 'NAME',
 			'order'             => 'ASC',
 			'name'              => 'post_format_admin_filter',
-			'taxonomy'          => 'org_groups'
+			'taxonomy'          => 'org_groups',
+			'hierarchical'		=> 1,
         );
 		
         //if we have a post format already selected, ensure that its value is set to be selected
