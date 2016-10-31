@@ -2223,8 +2223,10 @@ function custom_breadcrumbs() {
         echo '</ul>';
     }
 }
+
+// hooks and code modified/inspired from https://www.sitepoint.com/customized-wordpress-administration-filters/ By Simon Codrington December 09, 2014
 //defining the filter that will be used to select posts by 'post formats'
-function add_post_formats_filter_to_post_administration(){
+function add_org_groups_filter_to_post_administration(){
 	
     //execute only on the 'post' content type
     global $post_type;
@@ -2234,7 +2236,7 @@ function add_post_formats_filter_to_post_administration(){
 			'show_option_all'   => 'All People',
 			'orderby'           => 'NAME',
 			'order'             => 'ASC',
-			'name'              => 'post_format_admin_filter',
+			'name'              => 'org_groups_admin_filter',
 			'taxonomy'          => 'org_groups',
 			'hierarchical'		=> 1,
         );
@@ -2248,6 +2250,30 @@ function add_post_formats_filter_to_post_administration(){
 		
     }
 }
-add_action('restrict_manage_posts','add_post_formats_filter_to_post_administration');
+add_action('restrict_manage_posts','add_org_groups_filter_to_post_administration');
+//restrict the posts by an additional author filter
+function add_org_groups_filter_to_posts_query($query){
+
+    global $post_type, $pagenow; 
+
+    //if we are currently on the edit screen of the post type listings
+    if($pagenow == 'edit.php' && $post_type == 'post'){
+
+        if(isset($_GET['org_groups_admin_filter'])){
+
+            //set the query variable for 'author' to the desired value
+            $org_id = sanitize_text_field($_GET['org_groups_admin_filter']);
+
+            //if the author is not 0 (meaning all)
+            if($org_id != 0){
+                $query->query_vars['org_groups'] = $author_id;
+            }
+
+        }
+    }
+}
+
+add_action('pre_get_posts','add_org_groups_filter_to_posts_query');
+
 ?>
 
