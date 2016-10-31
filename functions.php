@@ -2263,7 +2263,8 @@ function add_org_groups_filter_to_posts_query($query){
 
             //set the query variable for 'author' to the desired value
             $org_id = sanitize_text_field($_GET['org_groups_admin_filter']);
-
+			print_r($org_id);
+			
             //if the author is not 0 (meaning all)
             if($org_id != 0){
                 $query->query_vars['tax_query'] = array(
@@ -2274,10 +2275,10 @@ function add_org_groups_filter_to_posts_query($query){
 					)
 				);
             }
-			print_r($query_vars);
 
         }
     }
+	print_r($query_vars);	
 }
 
 add_action('pre_get_posts','add_org_groups_filter_to_posts_query');
