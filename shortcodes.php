@@ -529,7 +529,7 @@ function sc_opportunity_grid($atts) {
 				$trms = wp_get_post_terms($blrp->ID, 'event_groups');
 				$otpt = "";
 				foreach($trms as $trm){
-					if($trm->parent && $trm->parent == $prntTrm){
+					if($trm->parent && $trm->parent == $prntTrm->term_id){
 						$otpt .= $trm->term_id . ",";
 					}
 				}
