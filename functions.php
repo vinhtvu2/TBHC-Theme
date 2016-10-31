@@ -2274,6 +2274,7 @@ function add_org_groups_filter_to_posts_query($query){
 					)
 				);
             }
+			print_r($query_vars);
 
         }
     }
