@@ -524,7 +524,15 @@ function sc_opportunity_grid($atts) {
 	ob_start();
 	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
 		<? if($dropdown){ 
-			$ids = get_the_terms($blrp, 'category');//array_map(function($blrp){ $trms = get_the_terms($blrp, 'category'); $otpt = ""; foreach($trms as $trm){ $otpt .= $trm->term_id;} return $otpt; }, $opps);
+			$prntTrms = get_term_by('slug', 'event-category','event_groups');			
+			$ids = array_map(function($blrp)use($prntTrms){ 
+				$trms = wp_get_post_terms($opportunity->ID, 'event_groups');
+				$otpt = ""; 
+				foreach($trms as $trm){ 
+					$otpt .= $trm->parent == $prntTrms->term_id ? $trm->term_id : '';
+				} 
+				return $otpt; 
+			}, $opps);
 			print_r($ids);
 			$args = array(
 				'taxonomy'	=>	'event_groups',
