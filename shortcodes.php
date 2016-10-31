@@ -526,10 +526,10 @@ function sc_opportunity_grid($atts) {
 		<? if($dropdown){ 
 			$prntTrms = get_term_by('slug', 'event-category','event_groups');			
 			$ids = array_map(function($blrp){ 
-				$trms = wp_get_post_terms($opportunity->ID, 'event_groups');
+				$trms = wp_get_post_terms($blrp->ID, 'event_groups');
 				$otpt = "";
 				foreach($trms as $trm){
-					if($term->parent){
+					if($trm->parent){
 						$otpt .= $term->term_id . ","
 					}
 				}
