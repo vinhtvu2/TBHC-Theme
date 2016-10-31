@@ -529,6 +529,7 @@ function sc_opportunity_grid($atts) {
 			$ids = array_map(function($blrp){ 
 				$trms = wp_get_post_terms($blrp->ID, 'event_groups');
 				$otpt = "";
+				print_r($trms);				
 				foreach($trms as $trm){
 					if($trm->parent && $trm->parent == $prntTrm->term_id){
 						$otpt .= $trm->term_id . ",";
