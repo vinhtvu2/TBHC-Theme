@@ -2266,7 +2266,7 @@ function add_org_groups_filter_to_posts_query($query){
 
             //if the author is not 0 (meaning all)
             if($org_id != 0){
-                $query->query_vars['org_groups'] = $author_id;
+                $query->query_vars['org_groups'] = $org_id;
             }
 
         }
