@@ -48,6 +48,8 @@
     &>img, li, li img{
         width: 100%;
         max-width: 2000px !important;
+    }
+    &>img, li{
         height: 400px!important ;
         @media (max-width: $screen-md-max) {
           height: 338px !important;
