@@ -2285,7 +2285,7 @@ add_action('pre_get_posts','add_org_groups_filter_to_posts_query');
 // inspiration from http://wordpress.stackexchange.com/a/72562
 function get_terms_orderby_semester_year($orderby, $args){
 	print_r($orderby);
-	$orderby = "SUBSTR({$orderby}, (INSTR({$orderby}, ' ') + 1)), SUBSTR({$orderby}, 1, INSTR({$orderby}, ' '))";
+	$orderby = "SUBSTR({$orderby}, (INSTR({$orderby}, ' ') + 1)) DESC, SUBSTR({$orderby}, 1, INSTR({$orderby}, ' '))";
     return $orderby;
 }
 
