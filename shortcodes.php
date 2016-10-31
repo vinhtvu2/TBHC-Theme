@@ -535,7 +535,6 @@ function sc_opportunity_grid($atts) {
 				}
 				return $otpt; 
 			}, $opps);
-			print_r($ids);
 			$args = array(
 				'taxonomy'	=>	'event_groups',
 				'value_field'	=>	'slug',
