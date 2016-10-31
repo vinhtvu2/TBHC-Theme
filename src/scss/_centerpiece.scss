@@ -45,6 +45,15 @@
     @media (max-width: $screen-xs-max) {
       height: 400px;
     }
+    .flip {
+        -webkit-transform: rotate(180deg);
+        -moz-transform:    rotate(180deg);
+        -ms-transform:     rotate(180deg);
+        -o-transform:      rotate(180deg);
+        transform:         rotate(180deg);
+        /* needed? not sure */
+        zoom: 1;
+    }
     &>img, li, li img{
         width: 100%;
         max-width: 2000px !important;
