@@ -2266,7 +2266,13 @@ function add_org_groups_filter_to_posts_query($query){
 
             //if the author is not 0 (meaning all)
             if($org_id != 0){
-                $query->query_vars['org_groups'] = $org_id;
+                $query->query_vars['tax_query'] = array(
+					array(
+						'taxonomy'  => 'org_groups',
+						'field'     => 'ID',
+						'terms'     => array($org_id)
+					)
+				);
             }
 
         }
