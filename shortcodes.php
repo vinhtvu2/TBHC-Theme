@@ -530,7 +530,7 @@ function sc_opportunity_grid($atts) {
 				$otpt = "";
 				foreach($trms as $trm){
 					if($trm->parent){
-						$otpt .= $trm->term_id . ","
+						$otpt .= $trm->term_id . ",";
 					}
 				}
 				return $otpt; 
