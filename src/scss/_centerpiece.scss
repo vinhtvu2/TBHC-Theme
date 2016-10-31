@@ -48,16 +48,13 @@
     &>img, li, li img{
         width: 100%;
         max-width: 2000px !important;
+        height: 400px!important ;
         @media (max-width: $screen-md-max) {
           height: 338px !important;
         }
 
         @media (max-width: $screen-sm-max) {
           height: 260px !important;
-        }
-
-        @media (max-width: $screen-xs-max) {
-          height: 400px!important ;
         }
     }
   }
