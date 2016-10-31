@@ -2243,7 +2243,7 @@ function add_org_groups_filter_to_post_administration(){
 		
         //if we have a post format already selected, ensure that its value is set to be selected
         if(isset($_GET['post_format_admin_filter'])){
-            $post_formats_args['selected'] = sanitize_text_field($_GET['post_format_admin_filter']);
+            $post_formats_args['selected'] = sanitize_text_field($_GET['org_groups_admin_filter']);
         }
 		
         wp_dropdown_categories($post_formats_args);
