@@ -45,19 +45,19 @@
     @media (max-width: $screen-xs-max) {
       height: 400px;
     }
-    &>img{
+    &>img, li, li img{
         width: 100%;
         max-width: 2000px !important;
         @media (max-width: $screen-md-max) {
-          height: 338px;
+          height: 338px !important;
         }
 
         @media (max-width: $screen-sm-max) {
-          height: 260px;
+          height: 260px !important;
         }
 
         @media (max-width: $screen-xs-max) {
-          height: 400px;
+          height: 400px!important ;
         }
     }
   }
