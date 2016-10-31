@@ -2257,7 +2257,7 @@ function add_org_groups_filter_to_posts_query($query){
     global $post_type, $pagenow; 
 
     //if we are currently on the edit screen of the post type listings
-    if($pagenow == 'edit.php' && $post_type == 'post'){
+    if($pagenow == 'edit.php' && $post_type == 'person'){
 
         if(isset($_GET['org_groups_admin_filter'])){
 
