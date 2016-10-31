@@ -717,7 +717,11 @@ function sc_spotlight_grid($atts) {
 			if(!empty($show_option_all)){
 				$args['show_option_all'] = $show_option_all;
 			}
+			// filter hooks from http://wordpress.stackexchange.com/a/72562, get_terms_orderby_semester_year function exists in functions.php
+			add_filter('get_terms_orderby', 'get_terms_orderby_semester_year',10,2);
 			$wp1Args = wp_dropdown_categories($args);
+			remove_filter('get_terms_orderby', 'get_terms_orderby_semester_year');
+			//
 			rsort($wp1Args);
 			echo str_replace(
 				'<select',

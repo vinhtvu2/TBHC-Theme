@@ -2282,5 +2282,11 @@ function add_org_groups_filter_to_posts_query($query){
 
 add_action('pre_get_posts','add_org_groups_filter_to_posts_query');
 
+// inspiration from http://wordpress.stackexchange.com/a/72562
+function get_terms_orderby_semester_year($orderby, $args){
+	$orderby = "SUBSTR({$orderby} FROM INSTR({$orderby}, ' ') + 1), SUBSTR({$orderby} FROM 1 TO INSTR({$orderby}, ' '))";
+    return $orderby;
+}
+
 ?>
 
