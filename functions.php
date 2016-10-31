@@ -2242,7 +2242,7 @@ function add_org_groups_filter_to_post_administration(){
         );
 		
         //if we have a post format already selected, ensure that its value is set to be selected
-        if(isset($_GET['post_format_admin_filter'])){
+        if(isset($_GET['org_groups_admin_filter'])){
             $post_formats_args['selected'] = sanitize_text_field($_GET['org_groups_admin_filter']);
         }
 		
@@ -2263,7 +2263,6 @@ function add_org_groups_filter_to_posts_query($query){
 
             //set the query variable for 'author' to the desired value
             $org_id = sanitize_text_field($_GET['org_groups_admin_filter']);
-			print_r($org_id);
 			
             //if the author is not 0 (meaning all)
             if($org_id != 0){
