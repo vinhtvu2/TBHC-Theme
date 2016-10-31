@@ -713,6 +713,7 @@ function sc_spotlight_grid($atts) {
 				'echo'	=> false,
 				'selected'	=>	$event_groups,
 				'child_of'	=>	$EGID,
+				'orderby'	=>  'name',
 			);
 			if(!empty($show_option_all)){
 				$args['show_option_all'] = $show_option_all;
