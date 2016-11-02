@@ -1,5 +1,14 @@
 #Out of date and not updated, originally Ucf.edu theme
 
+Added remote repository for gitlab
+Created alias for pushes to both origin and gitlab repos
+Woot one command to rule the repos
+
+
+
+
+
+
 # UCF.edu Theme - [The Main Website for the University of Central Florida in Orlando, FL](http://www.ucf.edu)
 
 Theme built off of Generic Bootstrap to convert UCF.edu into a responsive WordPress site.
