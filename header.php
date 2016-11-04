@@ -133,7 +133,7 @@
 			?>
 		</nav>
 		<?if(is_home() || is_front_page()){?>
-			<div class="col-sm-15">
+			<div class="col-sm-15" id="cntrPceWrap">
 				<?php
 					$args = array(
 					'numberposts' => 1,
