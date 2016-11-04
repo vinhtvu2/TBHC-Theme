@@ -1,11 +1,15 @@
+#cntrPceWrap{
+    float: none !important;
+    margin-bottom: -20px;
+}
 #centerpiece_slider {
   //height: 400px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
   //width: 1140px;
   width: 100%;
-  z-index: 1;
+  //z-index: 1;
   max-width: 2000px;
   @media (max-width: $screen-md-max) {
     height: 338px;
