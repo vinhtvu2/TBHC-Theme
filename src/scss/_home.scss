@@ -39,6 +39,7 @@ ul li:not(ul li div){
 #home_centercol,
 #home_rightcol {
       @media (min-width: $screen-xs-max) {
+          float: none;
         display: table-cell !important;
       }
   h2 {
