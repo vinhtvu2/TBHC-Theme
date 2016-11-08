@@ -69,9 +69,6 @@ ul li:not(ul li div){
       color: #8f3931;
     }
   }
-  .home_col_morelink{
-      color: #3e769a;
-  }
 }
 
 .home_spotlight_single, .home_opportunity_single {
@@ -206,16 +203,18 @@ ul li:not(ul li div){
 
 p.moreBtn a {
     padding: 3px 5px;
-    background: #B38C0B;
+    background: #FC0;
     font-weight: bold;
     color: black;
     position: absolute;
     bottom: 0;
 }
 
-#home_leftcol h2 br, #home_centercol h2 br, #home_rightcol h2 br{
-    background-color: #B38C0B;
+#home_leftcol h2 hr, #home_centercol h2 hr, #home_rightcol h2 hr{
+    background-color: #FC0;
     position:absolute;
     left:0;
     width: 25%;
+    height: 3px;
+    margin: 0 auto 5px 0;
 }
