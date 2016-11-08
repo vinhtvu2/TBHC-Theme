@@ -6,14 +6,14 @@ ul li:not(ul li div){
 
 .container{
     @media (min-width: $screen-xs-max) {
-        display: table;
+        display: table !important;
       }
 
 }
 
 #home {
       @media (min-width: $screen-xs-max) {
-        display: table-row;
+        display: table-row !important;
       }
   .description {
     @media (min-width: $screen-xs-max) {
@@ -39,7 +39,7 @@ ul li:not(ul li div){
 #home_centercol,
 #home_rightcol {
       @media (max-width: $screen-xs-max) {
-        display: table-cell;
+        display: table-cell !important;
       }
   h2 {
     font-family: $font-family-sans-serif;
