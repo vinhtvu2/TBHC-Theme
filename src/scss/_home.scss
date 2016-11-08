@@ -4,7 +4,17 @@ ul li:not(ul li div){
     list-style: none;
 }
 
+.container{
+    @media (max-width: $screen-xs-max) {
+        display: table;
+      }
+
+}
+
 #home {
+      @media (max-width: $screen-xs-max) {
+        display: table-row;
+      }
   .description {
     @media (max-width: $screen-xs-max) {
       margin-top: 10px;
@@ -28,12 +38,22 @@ ul li:not(ul li div){
 #home_leftcol,
 #home_centercol,
 #home_rightcol {
+      @media (max-width: $screen-xs-max) {
+        display: table-cell;
+      }
   h2 {
     font-family: $font-family-sans-serif;
     font-size: 14px;
     margin: 11px 0;
     text-transform: uppercase;
-    color: #B38C0B;
+    color: black;
+        hr{
+            background-color: #FC0;
+            left:0;
+            width: 15%;
+            height: 3px;
+            margin: 0 auto 5px 0;
+        }
   }
 
   h3 {
@@ -208,15 +228,4 @@ p.moreBtn a {
     color: black;
     position: absolute;
     bottom: 0;
-}
-
-#home_leftcol h2, #home_centercol h2, #home_rightcol h2 {
-    color: black;
-    hr{
-        background-color: #FC0;
-        left:0;
-        width: 25%;
-        height: 3px;
-        margin: 0 auto 5px 0;
-    }
 }
