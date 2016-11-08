@@ -210,11 +210,13 @@ p.moreBtn a {
     bottom: 0;
 }
 
-#home_leftcol h2 hr, #home_centercol h2 hr, #home_rightcol h2 hr{
-    background-color: #FC0;
-    position:absolute;
-    left:0;
-    width: 25%;
-    height: 3px;
-    margin: 0 auto 5px 0;
+#home_leftcol h2, #home_centercol h2, #home_rightcol h2 {
+    color: black;
+    hr{
+        background-color: #FC0;
+        left:0;
+        width: 25%;
+        height: 3px;
+        margin: 0 auto 5px 0;
+    }
 }
