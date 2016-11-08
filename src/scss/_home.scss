@@ -212,11 +212,10 @@ p.moreBtn a {
     position: absolute;
     bottom: 0;
 }
-#home_leftcol, #home_centercol, #home_rightcol{
-    h2 br{
-        background-color: #B38C0B;
-        position:absolute;
-        left:0;
-        width: 25%;
-    }
+
+#home_leftcol h2 br, #home_centercol h2 br, #home_rightcol h2 br{
+    background-color: #B38C0B;
+    position:absolute;
+    left:0;
+    width: 25%;
 }
