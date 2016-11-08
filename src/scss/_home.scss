@@ -5,18 +5,18 @@ ul li:not(ul li div){
 }
 
 .container{
-    @media (max-width: $screen-xs-max) {
+    @media (min-width: $screen-xs-max) {
         display: table;
       }
 
 }
 
 #home {
-      @media (max-width: $screen-xs-max) {
+      @media (min-width: $screen-xs-max) {
         display: table-row;
       }
   .description {
-    @media (max-width: $screen-xs-max) {
+    @media (min-width: $screen-xs-max) {
       margin-top: 10px;
     }
   }
