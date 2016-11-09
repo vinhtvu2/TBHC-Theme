@@ -206,7 +206,7 @@ function display_events($start=null, $limit=null){?>
 					$loc_link 	= $item['location_url'];
 					$location	= $item['location'];
 					$title		= $item['title'];
-					$cat 		= $item['cat'];
+					$cat 		= $item['category'];
 					print_r($item);
 				?>
 				<tr class="item vevent">
