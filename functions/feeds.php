@@ -217,7 +217,7 @@ function display_events($start=null, $limit=null){?>
 					</td>
 					<td class="eventdata">
 						<div class="category"><?= $cat ?></div>
-						<div class="summary"><a href="<?=$link?>" class="wrap url"><?=$title?></a></div>
+						<div class="title"><a href="<?=$link?>" class="wrap url"><?=$title?></a></div>
 					</td>
 				</tr>
 				<?php endforeach;?>
