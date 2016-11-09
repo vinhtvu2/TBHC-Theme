@@ -237,8 +237,8 @@ p.moreBtn a {
     bottom: 0;
 }
 
-.item {
-    .vevent .date {
+.item.vevent {
+    .date {
         text-align: center;
         text-transform: uppercase;
         line-height: 1.1;
