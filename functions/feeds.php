@@ -202,7 +202,9 @@ function display_events($start=null, $limit=null){?>
 			<tbody class="vcalendar">
 				<?php foreach($events as $item):
 					$start 		= new DateTime($item['starts']);
-					$day 		= $start->format('M d');
+					$weekday	= $start->format('D');
+					$day 		= $start->format('d');
+					$month		= $start->format('M');
 					$time 		= $start->format('h:i a');
 					$link 		= 'https://events.ucf.edu/event/'.$item['id'].'/'.sanitize_title_with_dashes($item['title']);//$url.'eventdatetime_id='.$item['id']; // TODO: use 'url' after unify-events launches
 					$loc_link 	= $item['location_url'];
@@ -211,10 +213,9 @@ function display_events($start=null, $limit=null){?>
 				?>
 				<tr class="item vevent">
 					<td class="date">
-						<div class="day"><?=$day?></div>
-						<div class="dtstart">
-							<abbr class="dtstart" title="<?=$start->format('c')?>"><?=$time?></abbr>
-						</div>
+						<div class="weekday"><?=$weekday?></div>
+						<div class="day"><?= Sday ?></div>
+						<div class="month"><?= $month ?></div>						
 					</td>
 					<td class="eventdata">
 						<div class="summary"><a href="<?=$link?>" class="wrap url"><?=$title?></a></div>
