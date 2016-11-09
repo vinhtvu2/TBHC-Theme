@@ -206,6 +206,7 @@ function display_events($start=null, $limit=null){?>
 					$loc_link 	= $item['location_url'];
 					$location	= $item['location'];
 					$title		= $item['title'];
+					$cat 		= $item['cat'];
 					print_r($item);
 				?>
 				<tr class="item vevent">
@@ -215,10 +216,8 @@ function display_events($start=null, $limit=null){?>
 						<div class="month"><?=$month?></div>						
 					</td>
 					<td class="eventdata">
+						<div class="category"><?= $cat ?></div>
 						<div class="summary"><a href="<?=$link?>" class="wrap url"><?=$title?></a></div>
-						<div class="location">
-							<?php if ($loc_link) { ?><a href="<?=$loc_link?>" class="wrap"><?php } ?><?=$location?><?php if ($loc_link) { ?></a><?php } ?>
-						</div>
 					</td>
 				</tr>
 				<?php endforeach;?>
