@@ -207,7 +207,7 @@ function display_events($start=null, $limit=null){?>
 					$location	= $item['location'];
 					$title		= $item['title'];
 					$cat 		= $item['category'];
-					print_r($item);
+					//print_r($item);
 				?>
 				<tr class="item vevent">
 					<td class="date">
