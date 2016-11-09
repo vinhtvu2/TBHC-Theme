@@ -230,3 +230,15 @@ p.moreBtn a {
     position: absolute;
     bottom: 0;
 }
+.item.vevent .date {
+    .weekday{
+        font-size: 1.5em;
+    }
+    .day{
+        font-size: 2em;
+        color: gray;
+    }
+    .month{
+        font-size: 1em;
+    }
+}
