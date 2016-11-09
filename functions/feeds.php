@@ -195,10 +195,6 @@ function display_events($start=null, $limit=null){?>
 	$events  = get_events($start, $limit);
 	if($events !== NULL && count($events)): ?>
 		<table class="events table">
-			<thead>
-				<td>Date</td>
-				<td>Description</td>
-			</thead>
 			<tbody class="vcalendar">
 				<?php foreach($events as $item):
 					$start 		= new DateTime($item['starts']);
