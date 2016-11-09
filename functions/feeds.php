@@ -214,8 +214,8 @@ function display_events($start=null, $limit=null){?>
 				<tr class="item vevent">
 					<td class="date">
 						<div class="weekday"><?=$weekday?></div>
-						<div class="day"><?= Sday ?></div>
-						<div class="month"><?= $month ?></div>						
+						<div class="day"><?=$day?></div>
+						<div class="month"><?=$month?></div>						
 					</td>
 					<td class="eventdata">
 						<div class="summary"><a href="<?=$link?>" class="wrap url"><?=$title?></a></div>
