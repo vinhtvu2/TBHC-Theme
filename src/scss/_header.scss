@@ -27,6 +27,14 @@
     width: 100%;
     //position: relative;
     z-index: 1000;
+    &.affix {
+    }
+
+    &.affix-top {
+    }
+
+    &.affix-bottom {
+    }
 }
 
 #header-menu {
