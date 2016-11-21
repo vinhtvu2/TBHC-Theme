@@ -1739,7 +1739,7 @@ var debounce = function (func, threshold, execAsap) {
 $(function() {
     $('#header-nav-wrap').height($("#header-nav-wrap").height());
 
-    $('#nav').affix({
+    $('#header-nav-wrap').affix({
         offset: { top: $('#header-nav-wrap').offset().top }
     });
 });
