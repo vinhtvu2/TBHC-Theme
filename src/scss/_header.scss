@@ -28,6 +28,13 @@
     //position: relative;
     z-index: 1000;
     &.affix {
+        top:0;
+        position:fixed;
+        display: block;
+
+        & + .hdrSpcr{
+
+        }
     }
 
     &.affix-top {
