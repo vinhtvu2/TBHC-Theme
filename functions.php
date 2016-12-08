@@ -760,7 +760,6 @@ function frontpage_opportunities() {
 			</a>
 			<h3 class="home_opportunity_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>"><?=$opportunity->post_title?></a></h3>
 			<?=truncateHtml($opportunity->post_content, 200)?>
-			<p><a class="home_opportunity_readmore ga-event" href="<?=esc_attr($link)?>" target="_blank" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">Read More…</a></p>
 		</div>
 		<?
 	}
