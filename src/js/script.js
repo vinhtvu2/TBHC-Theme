@@ -1741,4 +1741,5 @@ $(function() {
     $('#header-nav-wrap').affix({
         offset: { top: $('#header-nav-wrap').offset().top + 70 }
     });
+	$('#cntrPceWrap').on('affix-top.bs.affix', function(){ $(this).css('top','58px') })
 });
