@@ -1740,5 +1740,6 @@ $(function() {
     $('#header-nav-wrap').height($("#header-nav-wrap").height());
     $('#header-nav-wrap').affix({
         offset: { top: $('#header-nav-wrap').offset().top + 70 } // plus 70 for the danged ucf search bar header that loads late fml
+	});
 	$('#cntrPceWrap').on('affix-top.bs.affix', function(){ $(this).css('top','58px') })
 });
