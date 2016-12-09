@@ -1739,13 +1739,6 @@ var debounce = function (func, threshold, execAsap) {
 $(function() {
     $('#header-nav-wrap').height($("#header-nav-wrap").height());
     $('#header-nav-wrap').affix({
-<<<<<<< HEAD
         offset: { top: $('#header-nav-wrap').offset().top + 70 } // plus 70 for the danged ucf search bar header that loads late fml
-    });
-})();
-=======
-        offset: { top: $('#header-nav-wrap').offset().top + 70 }
-    });
 	$('#cntrPceWrap').on('affix-top.bs.affix', function(){ $(this).css('top','58px') })
 });
->>>>>>> fixedHeader.2
