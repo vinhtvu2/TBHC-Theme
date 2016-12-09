@@ -1742,4 +1742,5 @@ var debounce = function (func, threshold, execAsap) {
         offset: { top: $('#header-nav-wrap').offset().top } // plus 70 for the danged ucf search bar header that loads late fml
 	});
 	$('#header-nav-wrap').on('affixed.bs.affix', function(){ $('#cntrPceWrap').css('top','58px') })
+	$('#header-nav-wrap').on('affix-top.bs.affix', function(){ $('#cntrPceWrap').css('top','0') })
 })();
