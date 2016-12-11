@@ -1741,6 +1741,6 @@ var debounce = function (func, threshold, execAsap) {
     $('#header-nav-wrap').affix({
         offset: { top: $('#header-nav-wrap').offset().top } // plus 70 for the danged ucf search bar header that loads late fml
 	});
-	$('#header-nav-wrap').on('affixed.bs.affix', function(){ $('#cntrPceWrap').prepend("<div id='fakeNav' style='height:58px;display:block'></div>"); })
+	$('#header-nav-wrap').on('affixed.bs.affix', function(){ $('#cntrPceWrap').prepend("<div id='fakeNav' style='height:58px;display:block;'></div>"); })
 	$('#header-nav-wrap').on('affix-top.bs.affix', function(){ $('#fakeNav').detach(); })
 })();
