@@ -16,17 +16,6 @@
   width: 100%;
   //z-index: 1;
   max-width: 2000px;
-  @media (min-width: $screen-sm-max) {
-    height: 338px;
-    //width: 940px;
-  }
-
-  @media (min-width: $screen-xs-max) {
-    height: 260px;
-    
-    //width: 724px;
-  }
-
   @include body-prefix('.ie8') {
     margin: auto;
     z-index: 1;
@@ -38,13 +27,7 @@
     margin-left: 0;
     overflow: hidden;
     padding-left: 0;
-    @media (min-width: $screen-sm-max) {
-      height: 338px;
-    }
 
-    @media (min-width: $screen-xs-max) {
-      height: 260px;
-    }
     .flip {
         -webkit-transform: rotate(180deg);
         -moz-transform:    rotate(180deg);
@@ -57,16 +40,6 @@
     &>img, li, li img{
         width: 100%;
         max-width: 2000px !important;
-    }
-    &>img, li{
-        //height: 500px!important ;
-        @media (min-width: $screen-sm-max) {
-          height: 338px !important;
-        }
-
-        @media (min-width: $screen-xs-max) {
-          height: 300px !important;
-        }
     }
   }
 
