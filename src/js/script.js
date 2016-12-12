@@ -1737,7 +1737,6 @@ var debounce = function (func, threshold, execAsap) {
     };
 }
 (function() {
-    $('#header-nav-wrap').height($("#header-nav-wrap").height());
 	var wpAdminBar = $('#wpadminbar');
 	if(wpAdminBar.length){
 		$('#header-nav-wrap').on('affixed.bs.affix', function(){ $(this).css("top", "32px") });
