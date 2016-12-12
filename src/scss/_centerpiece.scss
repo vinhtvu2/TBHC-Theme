@@ -64,7 +64,7 @@
         max-width: 2000px !important;
     }
     &>img, li{
-        height: 500px!important ;
+        //height: 500px!important ;
         @media (max-width: $screen-md-max) {
           height: 338px !important;
         }
