@@ -1,6 +1,6 @@
 #cntrPceWrap{
     float: none !important;
-    @media (max-width: $screen-sm-max) {
+    @media (min-width: $screen-xs-max) {
         margin-bottom: -20px;
     }
     z-index: -1;
@@ -16,20 +16,15 @@
   width: 100%;
   //z-index: 1;
   max-width: 2000px;
-  @media (max-width: $screen-md-max) {
+  @media (min-width: $screen-sm-max) {
     height: 338px;
     //width: 940px;
   }
 
-  @media (max-width: $screen-sm-max) {
+  @media (min-width: $screen-xs-max) {
     height: 260px;
     
     //width: 724px;
-  }
-
-  @media (max-width: $screen-xs-max) {
-    height: auto;
-    //width: 100%;
   }
 
   @include body-prefix('.ie8') {
@@ -43,11 +38,11 @@
     margin-left: 0;
     overflow: hidden;
     padding-left: 0;
-    @media (max-width: $screen-md-max) {
+    @media (min-width: $screen-sm-max) {
       height: 338px;
     }
 
-    @media (max-width: $screen-sm-max) {
+    @media (min-width: $screen-xs-max) {
       height: 260px;
     }
     .flip {
@@ -65,11 +60,11 @@
     }
     &>img, li{
         //height: 500px!important ;
-        @media (max-width: $screen-md-max) {
+        @media (min-width: $screen-sm-max) {
           height: 338px !important;
         }
 
-        @media (max-width: $screen-sm-max) {
+        @media (min-width: $screen-xs-max) {
           height: 300px !important;
         }
     }

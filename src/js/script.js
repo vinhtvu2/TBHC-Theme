@@ -1745,6 +1745,7 @@ var debounce = function (func, threshold, execAsap) {
     $('#header-nav-wrap').affix({
         offset: { top: $('#header-nav-wrap').offset().top }
 	});
-	$('#header-nav-wrap').on('affixed.bs.affix', function(){ $('#cntrPceWrap').prepend("<div id='fakeNav' style='height:58px;display:block;'></div>"); })
+	var toPrep = $('#cntrPceWrap') ? $('#cntrPceWrap') : $('.container');
+	$('#header-nav-wrap').on('affixed.bs.affix', function(){ toPrep.prepend("<div id='fakeNav' style='height:58px;display:block;'></div>"); })
 	$('#header-nav-wrap').on('affix-top.bs.affix', function(){ $('#fakeNav').detach(); })
 })();
