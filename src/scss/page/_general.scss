@@ -595,3 +595,12 @@ ul.spotlight-list, ul.opportunity-list {
         font-style: italic;
     }
 }
+
+.2x2imgGrid .panel-grid-cell{
+    width: 50%;
+    padding: 0;
+    display: inline-block;
+    .panel-first-child{
+        margin: 0;
+    }
+}
