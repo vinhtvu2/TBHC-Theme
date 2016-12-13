@@ -600,11 +600,11 @@ ul.spotlight-list, ul.opportunity-list {
 }
 
 .imgGrid2x2 .panel-grid-cell {
-    width: 50%;
+    width: 50% !important;
     padding: 0;
     display: inline-block;
     margin: 0 auto;
     .panel-first-child {
-        margin: 0;
+        margin-bottom: 0;
     }
 }
