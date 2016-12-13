@@ -599,15 +599,23 @@ ul.spotlight-list, ul.opportunity-list {
     }
 }
 
-.imgGrid2x2 .panel-grid-cell {
-    width: 50% !important;
-    padding: 0;
-    display: inline-block;
-    margin: 0 auto;
-    margin-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    .panel-first-child {
+.imgGrid2x2 {
+    .panel-grid{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .panel-grid-cell {
+        width: 50% !important;
+        padding: 0;
+        display: inline-block;
+        margin: 0 auto;
         margin-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .panel-first-child {
+            margin-bottom: 0 !important;
+        }
     }
 }
