@@ -1711,6 +1711,7 @@ var debounce = function (func, threshold, execAsap) {
 }
 function stickyHeadFix(){
 	var wpAdminBar = $('#wpadminbar'), headWrp = $('#header-nav-wrap');
+	headWrp.off(bs.affix);
 	if(wpAdminBar.length){
 		headWrp.on('affixed.bs.affix', function(){ $(this).css("top", wpAdminBar.height() + "px") });
 		headWrp.on('affix-top.bs.affix', function(){ $(this).css("top", "0px") });
