@@ -1726,7 +1726,7 @@ function stickyHeadFix(){
 		$('#fakeNav').detach();
 	});
 }
-(function() {
+$(function() {
 	stickyHeadFix();
 	window.onresize = debounce(stickyHeadFix, 150);
-})();
+});
