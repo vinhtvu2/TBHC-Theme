@@ -1727,5 +1727,6 @@ function stickyHeadFix(){
 	});
 }
 (function() {
+	stickyHeadFix();
 	window.onresize = debounce(stickyHeadFix, 150);
 })();
