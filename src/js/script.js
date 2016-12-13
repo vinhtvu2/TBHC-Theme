@@ -1693,33 +1693,6 @@ function getSpotsForGrid(inp1, inp2){
 		jQuery('.spotlight-grid').replaceWith(res);
 	});
 }
-/*(function(){
-	if($("div.row#home[role='main']").length){
-		var link = $("#header-menu li");
-		var ajaxUrl = $("#header-nav-wrap").data("url");
-		$.each(link, function(){
-			$(this).on("hover", function(){
-				var ths = $(this);
-				var mid = ths.children('.menu-item-dropdown');
-				if(!$("#site-nav-xs").is("visible") && mid.html() == ""){
-					var tagClass = ths.attr("class").split(" ");
-					tagClass = $.grep(tagClass, function(elem) {
-						return elem.toLowerCase().match(/^menu-item-\d*$/g);
-					})[0];
-					$.post(ajaxUrl, {
-							id: tagClass.replace(/\D/g, ''),
-							action: "get_nav_panel",
-						}, function(res){
-							console.log(res);
-							mid.html(res.html);
-							var inlineCss = '<style type="text/css" media="all" id="siteorigin-panels-grid-' + tagClass.replace(/\D/g, '') + '">' + res.css + '</style>';
-							$("head").append(inlineCss);
-					});
-				}
-			})
-		})
-	}
-})();*/
 var debounce = function (func, threshold, execAsap) {
     var timeout;
     return function debounced () {
@@ -1736,16 +1709,23 @@ var debounce = function (func, threshold, execAsap) {
         timeout = setTimeout(delayed, threshold || 100); 
     };
 }
-(function() {
-	var wpAdminBar = $('#wpadminbar');
-	if(wpAdminBar.length){
-		$('#header-nav-wrap').on('affixed.bs.affix', function(){ $(this).css("top", "32px") });
-		$('#header-nav-wrap').on('affix-top.bs.affix', function(){ $(this).css("top", "0px") });
-	}
-    $('#header-nav-wrap').affix({
-        offset: { top: $('#header-nav-wrap').offset().top }
+function stickyHeadFix(){
+	var wpAdminBar = $('#wpadminbar'), headWrp = $('#header-nav-wrap');
+	headWrp.off("affixed.bs.affix");
+	headWrp.off("affix-top.bs.affix");
+	headWrp.affix({
+		offset: { top: headWrp.offset().top }
 	});
 	var toPrep = $('#cntrPceWrap').length ? $('#cntrPceWrap') : $('.container');
-	$('#header-nav-wrap').on('affixed.bs.affix', function(){ toPrep.prepend("<div id='fakeNav' style='height:58px;display:block;'></div>"); })
-	$('#header-nav-wrap').on('affix-top.bs.affix', function(){ $('#fakeNav').detach(); })
+	headWrp.on('affixed.bs.affix', function(){ 
+		$(this).css("top", wpAdminBar.length ? wpAdminBar.height() : "0" + "px"); 
+		toPrep.prepend("<div id='fakeNav' style='height:" + headWrp.height() + "px;display:block;'></div>");
+	});
+	headWrp.on('affix-top.bs.affix', function(){ 
+		$(this).css("top", "0px"); 
+		$('#fakeNav').detach();
+	});
+}
+(function() {
+	window.onresize = debounce(stickyHeadFix, 150);
 })();
