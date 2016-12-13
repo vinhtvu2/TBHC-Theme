@@ -1714,7 +1714,7 @@ function stickyHeadFix(){
 	headWrp.off("affixed.bs.affix");
 	headWrp.off("affix-top.bs.affix");
 	headWrp.affix({
-		offset: { top: headWrp.offset().top + (wpAdminBar.length ? wpAdminBar.height() - 55 : 55) } // 55 for the lazy load ucf search bar ugh
+		offset: { top: headWrp.offset().top + (wpAdminBar.length ? 55 - wpAdminBar.height() : 55) } // 55 for the lazy load ucf search bar ugh
 	});
 	var toPrep = $('#cntrPceWrap').length ? $('#cntrPceWrap') : $('.container');
 	headWrp.on('affixed.bs.affix', function(){ 
