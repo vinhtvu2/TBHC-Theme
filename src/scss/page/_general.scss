@@ -604,7 +604,10 @@ ul.spotlight-list, ul.opportunity-list {
     padding: 0;
     display: inline-block;
     margin: 0 auto;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     .panel-first-child {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 }
