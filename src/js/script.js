@@ -1717,16 +1717,14 @@ function stickyHeadFix(){
 		offset: { top: headWrp.offset().top }
 	});
 	var toPrep = $('#cntrPceWrap').length ? $('#cntrPceWrap') : $('.container');
-	if(wpAdminBar.length){
-		headWrp.on('affixed.bs.affix', function(){ 
-			$(this).css("top", wpAdminBar.height() + "px"); 
-			toPrep.prepend("<div id='fakeNav' style='height:" + headWrp.height() + "px;display:block;'></div>");
-		});
-		headWrp.on('affix-top.bs.affix', function(){ 
-			$(this).css("top", "0px"); 
-			$('#fakeNav').detach();
-		});
-	}
+	headWrp.on('affixed.bs.affix', function(){ 
+		$(this).css("top", wpAdminBar.length ? wpAdminBar.height() : "0" + "px"); 
+		toPrep.prepend("<div id='fakeNav' style='height:" + headWrp.height() + "px;display:block;'></div>");
+	});
+	headWrp.on('affix-top.bs.affix', function(){ 
+		$(this).css("top", "0px"); 
+		$('#fakeNav').detach();
+	});
 }
 (function() {
 	window.onresize = debounce(stickyHeadFix, 150);
