@@ -1712,16 +1712,20 @@ var debounce = function (func, threshold, execAsap) {
 function stickyHeadFix(){
 	var wpAdminBar = $('#wpadminbar'), headWrp = $('#header-nav-wrap');
 	headWrp.off("bs.affix");
-	if(wpAdminBar.length){
-		headWrp.on('affixed.bs.affix', function(){ $(this).css("top", wpAdminBar.height() + "px") });
-		headWrp.on('affix-top.bs.affix', function(){ $(this).css("top", "0px") });
-	}
 	headWrp.affix({
 		offset: { top: headWrp.offset().top }
 	});
 	var toPrep = $('#cntrPceWrap').length ? $('#cntrPceWrap') : $('.container');
-	headWrp.on('affixed.bs.affix', function(){ toPrep.prepend("<div id='fakeNav' style='height:" + headWrp.height() + "px;display:block;'></div>"); })
-	headWrp.on('affix-top.bs.affix', function(){ $('#fakeNav').detach(); })
+	if(wpAdminBar.length){
+		headWrp.on('affixed.bs.affix', function(){ 
+			$(this).css("top", wpAdminBar.height() + "px"); 
+			toPrep.prepend("<div id='fakeNav' style='height:" + headWrp.height() + "px;display:block;'></div>");
+		});
+		headWrp.on('affix-top.bs.affix', function(){ 
+			$(this).css("top", "0px"); 
+			$('#fakeNav').detach();
+		});
+	}
 }
 (function() {
 	window.onresize = debounce(stickyHeadFix, 150);
