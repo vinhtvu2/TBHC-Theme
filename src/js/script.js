@@ -1711,7 +1711,8 @@ var debounce = function (func, threshold, execAsap) {
 }
 function stickyHeadFix(){
 	var wpAdminBar = $('#wpadminbar'), headWrp = $('#header-nav-wrap');
-	headWrp.off("bs.affix");
+	headWrp.off("affixed.bs.affix");
+	headWrp.off("affix-top.bs.affix");
 	headWrp.affix({
 		offset: { top: headWrp.offset().top }
 	});
