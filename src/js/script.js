@@ -1748,4 +1748,13 @@ var debounce = function (func, threshold, execAsap) {
 	var toPrep = $('#cntrPceWrap').length ? $('#cntrPceWrap') : $('.container');
 	$('#header-nav-wrap').on('affixed.bs.affix', function(){ toPrep.prepend("<div id='fakeNav' style='height:58px;display:block;'></div>"); })
 	$('#header-nav-wrap').on('affix-top.bs.affix', function(){ $('#fakeNav').detach(); })
+	var doit;
+	window.onresize = function(){
+		clearTimeout(doit);
+		doit = setTimeout(function(){
+			$('#header-nav-wrap').affix({
+				offset: { top: $('#header-nav-wrap').offset().top }
+			});
+		}, 100);
+	};
 })();
