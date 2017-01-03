@@ -1,6 +1,6 @@
 #footer {
   border-top: 0;
-  padding-top: 20px;
+  //padding-top: 20px;
   position: relative;
   z-index:-2;
   line-height: 15px;
@@ -14,10 +14,10 @@
         color: #FFF;
       }
   }
-  @media(min-width: $screen-sm-min){
+  /*@media(min-width: $screen-sm-min){
       padding-top: 0 px;
       margin-top: -25px;
-  }
+  }*/
   #footer-navwrap{
     margin: 0 auto;
     width:100%;
