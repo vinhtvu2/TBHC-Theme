@@ -8232,7 +8232,6 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 #footer {
   border-top: 0;
-  padding-top: 20px;
   position: relative;
   z-index: -2;
   line-height: 15px;
