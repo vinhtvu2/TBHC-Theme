@@ -8359,6 +8359,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   }
 }*/
 #footer-logo {
+  padding-top: 15px;
   background-image: none; }
   @media (min-width: 770px) {
     #footer-logo {
