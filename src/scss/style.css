@@ -8367,6 +8367,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   }
 }*/
 #footer-logo {
+  padding-top: 15px;
   background-image: none; }
   @media (min-width: 770px) {
     #footer-logo {
@@ -8374,7 +8375,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
       margin-bottom: -1000px;
       border-right: 1px solid #4f4e4e; } }
   #footer-logo img {
-    margin: 10px auto 0 auto;
+    margin: 0 auto;
     width: 75px;
     display: block; }
     @media (min-width: 992px) {
