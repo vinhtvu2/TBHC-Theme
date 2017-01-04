@@ -161,13 +161,14 @@
 }*/
 
 #footer-logo { 
+    padding-top: 15px;
     @media (min-width: $screen-sm-min){
         padding: 15px 10px 1000px 10px;
         margin-bottom: -1000px;
         border-right: 1px solid #4f4e4e;
     }
     img{
-        margin: 10px auto 0 auto;
+        margin: 0 auto;
         width: 75px;
         display: block;
         @media (min-width: $screen-md-min){
