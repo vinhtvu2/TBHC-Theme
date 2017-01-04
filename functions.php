@@ -2288,7 +2288,5 @@ function get_terms_orderby_semester_year($orderby, $args){
     return $orderby;
 }
 
-add_filter( 'storm_social_icons_use_latest', '__return_true' );
-
 ?>
 
