@@ -4,9 +4,6 @@ Added remote repository for gitlab
 Created alias for pushes to both origin and gitlab repos
 Woot one command to rule the repos
 
-Checking changes to automated build process maybe?
-
-
 
 
 
