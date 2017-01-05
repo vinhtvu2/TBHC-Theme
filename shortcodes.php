@@ -866,12 +866,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 					$slide_single_duration = (!empty($slide_duration[$s]) ? $slide_duration[$s] : '6');
 
 					// Start <li>
-					$output .= '<li class="centerpiece_single" id="centerpiece_single_'.$s.'" data-duration="'.$slide_single_duration.'"';
-					if($slide_content_type[$s] == 'image'){
-						'style="background-image:url(\''.$slide_image_url[0].'\');">';
-					}else{
-						'>'
-					}
+					$output .= '<li class="centerpiece_single" id="centerpiece_single_'.$s.'" data-duration="'.$slide_single_duration.'">';
 
 					// Add <a> tag and target="_blank" if applicable:
 					if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
@@ -884,7 +879,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 
 					// Image output:
 					if ($slide_content_type[$s] == 'image') {
-						$output .= '<img class="centerpiece_single_img" src="'./*$slide_image_url[0]*/''.'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
+						$output .= '<img class="centerpiece_single_img" src="'.$slide_image_url[0].'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
 						$output .= '/>';
 
 						if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
