@@ -18,8 +18,8 @@
 			</article>
 		</div>
 	</div>
-	<div class="container-shadow">
+	<!--<div class="container-shadow">
 		<span></span>
-	</div>
+	</div>-->
 </div>
 <?php get_footer();?>
