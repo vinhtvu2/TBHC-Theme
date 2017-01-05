@@ -123,7 +123,11 @@ ul li:not(ul li div) {
     .opportunity_thumb {
         height: 66px;
         width: 66px;
+        margin-bottom: 15px;
     }
+    p {
+        text-align: right;
+    } 
 }
 
 .home_spotlight_title, .home_opportunity_title {
@@ -146,8 +150,7 @@ ul li:not(ul li div) {
 }
 
 .home_opportunity_single a {
-    color: #3e769a;
-
+    color: #333;
     &:hover {
         color: #8f3931;
     }
@@ -231,10 +234,12 @@ ul li:not(ul li div) {
 p.moreBtn a {
     padding: 3px 5px;
     background: #FC0;
-    font-weight: bold;
+    //font-weight: bold;
     color: black;
-    position: absolute;
-    bottom: 0;
+    @media (min-width: $screen-xs-max) {
+        position: absolute;
+        bottom: 0;
+    }
 }
 
 .item.vevent {
@@ -265,7 +270,8 @@ p.moreBtn a {
             background: #FC0;
             font-weight: bold;
             color: black;
-            display: inline;
+            display: inline-block;
+            margin-bottom: 5px;
         }
 
         .title {
