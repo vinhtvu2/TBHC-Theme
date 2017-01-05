@@ -852,7 +852,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
 			$output .= '<div id="centerpiece_slider">
 						  <ul>
-						  	<img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png" style="max-width: 100%; height: auto;">';
+						  	<img src="'.get_bloginfo('stylesheet_directory').'/static/img/centerpiece_placeholder.gif" width="940" style="max-width: 100%; height: auto;">';
 
 
 			foreach ($slide_order as $s) {
