@@ -868,9 +868,9 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 					// Start <li>
 					$output .= '<li class="centerpiece_single" id="centerpiece_single_'.$s.'" data-duration="'.$slide_single_duration.'"';
 					if($slide_content_type[$s] == 'image'){
-						$output .= 'style="background-image:url(\''.$slide_image_url[0].'\');">';
+						'style="background-image:url(\''.$slide_image_url[0].'\');">';
 					}else{
-						$output .= '>';
+						'>'
 					}
 
 					// Add <a> tag and target="_blank" if applicable:
