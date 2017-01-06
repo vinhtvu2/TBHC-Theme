@@ -8769,7 +8769,8 @@ body {
       text-decoration: none; }
 
 .sub-menu {
-  padding: 0; }
+  padding: 0;
+  list-style: none; }
   .sub-menu > li {
     border-top: 1px solid #cbcbcb; }
     .sub-menu > li > strong > a {
@@ -8779,7 +8780,8 @@ body {
       color: #FFF;
       text-decoration: none; }
   .sub-menu .sub-menu {
-    padding: 0; }
+    padding: 0;
+    list-style: none; }
     .sub-menu .sub-menu > li {
       border-top: 1px solid #cbcbcb; }
       .sub-menu .sub-menu > li > strong > a {
