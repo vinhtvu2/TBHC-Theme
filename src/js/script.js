@@ -1719,7 +1719,7 @@ function stickyHeadFix(){
 	var toPrep = $('#cntrPceWrap').length ? $('#cntrPceWrap') : $('.container');
 	headWrp.on('affixed.bs.affix', function(){ 
 		$(this).css("top", wpAdminBar.length ? wpAdminBar.height() : "0" + "px"); 
-		toPrep.prepend("<div id='fakeNav' style='height:" + headWrp.height() + "px;display:block;'></div>");
+		toPrep.prepend("<div id='fakeNav' class='hidden-xs' style='height:" + headWrp.height() + "px;display:block;'></div>");
 	});
 	headWrp.on('affix-top.bs.affix', function(){ 
 		$(this).css("top", "0px"); 

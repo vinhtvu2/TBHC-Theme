@@ -7,13 +7,13 @@ body {
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
-    z-index: -1;
+    //z-index: -1;
     //box-shadow: 9px 0px 10px -10px rgba(0, 0, 0, .75), -9px 0px 10px -10px rgba(0, 0, 0, .75), 0px 9px 10px -10px rgba(0, 0, 0, .75);
 }
 
 .container-shadow {
     position: absolute;
-    z-index: -1;
+    //z-index: -1;
     left: 0;
     top: 0;
     height: 100%;
@@ -257,7 +257,7 @@ body {
 
 .sub-menu {
     padding: 0;
-
+    list-style: none;
     > li {
         border-top: 1px solid #cbcbcb;
 
@@ -274,7 +274,7 @@ body {
 
     .sub-menu {
         padding: 0;
-
+        list-style:none;
         > li {
             border-top: 1px solid #cbcbcb;
 
