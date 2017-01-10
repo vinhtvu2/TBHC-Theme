@@ -5,12 +5,12 @@
 		<div class="col-sm-5 col-md-xpad col-sm-xpad" id="home_leftcol">
 			<h2>Spotlights<hr/></h2>
 			<?=frontpage_spotlights()?>
-			<p class="screen-only moreBtn"><a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Spotlight Archive</a></p>
+			<div class="screen-only moreBtn"><a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Spotlight Archive</a></div>
 		</div>
 		<div class="col-sm-5 col-md-xpad col-sm-xpad" id="home_centercol">
 			<h2>Opportunities<hr/></h2>
 			<?=frontpage_opportunities()?>
-			<p class="screen-only moreBtn"><a href="<?=get_permalink(get_page_by_title('Opportunities', OBJECT, 'page')->ID);?>" class="home_col_morelink">More Opportunities</a></p>
+			<div class="screen-only moreBtn"><a href="<?=get_permalink(get_page_by_title('Opportunities', OBJECT, 'page')->ID);?>" class="home_col_morelink">More Opportunities</a></div>
 		</div>
 		<div class="col-sm-5 col-md-xpad col-sm-xpad" id="home_rightcol">
 			<h2>Upcoming Events<hr/></h2>
