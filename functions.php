@@ -879,7 +879,7 @@ function output_weather_data($cssclass=null) {
 	$temp 		= $weather['temp'];
 	$img 		= $weather['img']; ?>
 	<div id="weather_bug" class="<?=$cssclass?> screen-only" role="complementary">
-		<div id="wb_status_txt"><span><i class="wi wi-yahoo-<?=$img?>"></i><?=$temp?>F, <?=$condition?></span></div>
+		<div id="wb_status_txt"><i class="wi wi-yahoo-<?=$img?>"></i><span><?=$temp?>F, <?=$condition?></span></div>
 	</div>
 	<?php
 }
