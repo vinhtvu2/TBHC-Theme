@@ -231,7 +231,8 @@ ul li:not(ul li div) {
     }
 }
 
-p.moreBtn {
+.moreBtn {
+    width: 100%;
     a{
         padding: 3px 5px;
         background: #FC0;
