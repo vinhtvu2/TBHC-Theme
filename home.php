@@ -18,8 +18,8 @@
 			<?php esi_include('output_weather_data'); ?>
 		</div>
 	</div>
-	<div class="container-shadow">
+	<!--<div class="container-shadow">
 		<span></span>
-	</div>
+	</div>-->
 </div><!--[container]-->
 <?php get_footer();?>
