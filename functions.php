@@ -18,7 +18,7 @@ require_once('third-party/truncate-html.php');  # Includes truncateHtml function
 // Custom columns for 'Centerpiece' post type
 function edit_centerpiece_columns() {
 	$columns = array(
-		'cb'          => '<input type='checkbox' />',
+		'cb'          => '<input type="checkbox" />',
 		'title'       => 'Name',
 		'slide_count' => 'Slide Count'
 	);
@@ -64,7 +64,7 @@ add_filter('enter_title_here', 'change_centerpiece_title');
 // Custom columns for 'Announcement' post type
 function edit_announcement_columns() {
 	$columns = array(
-		'cb'           => '<input type='checkbox' />',
+		'cb'           => '<input type="checkbox" />',
 		'title'        => 'Name',
 		'start_date'   => 'Start Date',
 		'end_date'     => 'End Date',
@@ -79,11 +79,11 @@ function manage_announcement_columns( $column, $post_id ) {
 	global $post;
 	switch ( $column ) {
 		case 'start_date':
-			$start_date = get_post_meta($post->ID, 'announcement_start_date', TRUE) ? date('Y/m/d', strtotime(get_post_meta($post->ID, 'announcement_start_date', TRUE))) : '<span style='font-weight:bold;color:#cc0000;'>N/A</span>';
+			$start_date = get_post_meta($post->ID, 'announcement_start_date', TRUE) ? date('Y/m/d', strtotime(get_post_meta($post->ID, 'announcement_start_date', TRUE))) : '<span style="font-weight:bold;color:#cc0000;">N/A</span>';
 			print $start_date;
 			break;
 		case 'end_date':
-			$end_date = get_post_meta($post->ID, 'announcement_end_date', TRUE) ? date('Y/m/d', strtotime(get_post_meta($post->ID, 'announcement_end_date', TRUE))) : '<span style='font-weight:bold;color:#cc0000;'>N/A</span>';
+			$end_date = get_post_meta($post->ID, 'announcement_end_date', TRUE) ? date('Y/m/d', strtotime(get_post_meta($post->ID, 'announcement_end_date', TRUE))) : '<span style="font-weight:bold;color:#cc0000;">N/A</span>';
 			print $end_date;
 			break;
 		case 'publish_date':
@@ -112,7 +112,7 @@ add_action('manage_edit-announcement_sortable_columns', 'sortable_announcement_c
 // Custom columns for 'spotlight' post type
 function edit_spotlight_columns() {
 	$columns = array(
-	'cb'          => '<input type='checkbox' />',
+	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
 	'spotlight_start'	=> 'Adv Start Date',
 	'spotlight_end'	=> 'Adv End Date',
@@ -169,7 +169,7 @@ add_action('manage_spotlight_posts_custom_column', 'manage_spotlight_columns', 1
 // Custom columns for 'opportunity' post type
 function edit_opportunity_columns() {
 	$columns = array(
-	'cb'          => '<input type='checkbox' />',
+	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
 	'opportunity_start'	=> 'Adv Start Date',
 	'opportunity_end'	=> 'Adv End Date',
@@ -197,7 +197,7 @@ function extranet_orderby( $query ) {
     $orderby = $query->get( 'orderby'); 
 	$type = $query->get( 'post_type' );	
 	switch($type){
-		case 'opportunity':
+		case "opportunity":
 			switch ( $orderby ) 
 			{
 				case 'opportunity_start':
@@ -211,7 +211,7 @@ function extranet_orderby( $query ) {
 				default:
 				break;
 			}	
-		case 'spotlight':
+		case "spotlight":
 		switch ( $orderby ) 
 		{
 			case 'spotlight_start':
@@ -273,7 +273,7 @@ add_action('manage_opportunity_posts_custom_column', 'manage_opportunity_columns
 // Custom columns for 'people (persons)' post type
 function edit_people_columns() {
 	$columns = array(
-	'cb'          => '<input type='checkbox' />',
+	'cb'          => '<input type="checkbox" />',
 	'title'       => 'Title',
 	'org_group' 		  => 'Organizational Group',	
 	'orderby' => 'Sort Name',
@@ -285,7 +285,7 @@ add_action('manage_edit-person_columns', 'edit_people_columns');
 
 function manage_columns_terms($term){
 	$termLink = get_term_link($term);
-	return '<a href=''.$termLink.''>'.$term->name.'</a>';
+	return '<a href="'.$termLink.'">'.$term->name.'</a>';
 }
 
 // Custom columns content for 'people (persons)'
@@ -494,7 +494,7 @@ add_action( 'admin_menu', 'hide_admin_links' );
 function add_pusher_to_nav( $items, $args )
 {
 	if($args->theme_location == 'header-menu'){
-		$items .= '<li>...</li>';
+		$items .= "<li>...</li>";
 	}
 	return $items;
 }*/
@@ -530,18 +530,18 @@ function get_page_subheader( $post ) {
 			}
 		}
 	?>
-		<div class='col-md-10 col-sm-10 col-sm-push-2 col-md-push-2'>
-			<div id='subheader' role='complementary'>
-				<div class='row'>
+		<div class="col-md-10 col-sm-10 col-sm-push-2 col-md-push-2">
+			<div id="subheader" role="complementary">
+				<div class="row">
 					<?php if($sub_img){ ?>
-						<div class='col-md-2 col-sm-2'>
+						<div class="col-md-2 col-sm-2">
 							<?php echo wp_get_attachment_image( $sub_img, 'subpage-subimg', 0, $sub_img_atts ); ?>
 						</div>
 					<?php } ?>
-					<div class='col-md-<?= $adjustedColWidth ?> col-sm-<?= $adjustedColWidth ?>'>
-						<blockquote class='subheader-quote'>
+					<div class="col-md-<?= $adjustedColWidth ?> col-sm-<?= $adjustedColWidth ?>">
+						<blockquote class="subheader-quote">
 							<?php echo $subheader_post->post_content; ?>
-							<p class='subheader-author text-right'><?php echo $student_name; ?></p>
+							<p class="subheader-author text-right"><?php echo $student_name; ?></p>
 						</blockquote>
 					</div>
 				</div>
@@ -607,22 +607,22 @@ function frontpage_spotlights() {
 		}
 		
 		?>
-		<div class='home_spotlight_single'>
+		<div class="home_spotlight_single">
 		
-			<a href='<?=esc_attr($link)?>' class='ga-event' data-ga-action='Spotlight Link' data-ga-label='<?=esc_attr($spotlight->post_title)?>'>
+			<a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">
 				<?php
 					$thumb_id = get_post_thumbnail_id($spotlight->ID);
 					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
 					$thumb_src = $thumb_src[0];
 				?>
 				<?php if ($thumb_src) { ?>
-				<img class='print-only spotlight_thumb' src='<?=esc_attr($thumb_src)?>' alt='<?=esc_attr($spotlight->post_title)?>'/>
-				<div class='screen-only spotlight_thumb' style='background-image:url('<?=esc_attr($thumb_src)?>');'><?=esc_attr($spotlight->post_title)?></div>
+				<img class="print-only spotlight_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
+				<div class="screen-only spotlight_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($spotlight->post_title)?></div>
 				<?php } ?>
 			</a>
-			<h3 class='home_spotlight_title'><a href='<?=esc_attr($link)?>' class='ga-event' data-ga-action='Spotlight Link' data-ga-label='<?=esc_attr($spotlight->post_title)?>'><?=$spotlight->post_title?></a></h3>
+			<h3 class="home_spotlight_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>"><?=$spotlight->post_title?></a></h3>
 			<?=truncateHtml($spotlight->post_content, 200)?>
-			<p><a class='home_spotlight_readmore ga-event' href='<?=esc_attr($link)?>' target='_blank' data-ga-action='Spotlight Link' data-ga-label='<?=esc_attr($spotlight->post_title)?>'>Read More…</a></p>
+			<p><a class="home_spotlight_readmore ga-event" href="<?=esc_attr($link)?>" target="_blank" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">Read More…</a></p>
 		</div>
 		<?
 	}
@@ -746,19 +746,19 @@ function frontpage_opportunities() {
 		}
 		
 		?>
-		<div class='home_opportunity_single'>
-			<a href='<?=esc_attr($link)?>' class='ga-event' data-ga-action='Opportunity Link' data-ga-label='<?=esc_attr($opportunity->post_title)?>'>
+		<div class="home_opportunity_single">
+			<a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
 				<?php
 					$thumb_id = get_post_thumbnail_id($opportunity->ID);
 					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
 					$thumb_src = $thumb_src[0];
 				?>
 				<?php if ($thumb_src) { ?>
-					<img class='print-only opportunity_thumb' src='<?=esc_attr($thumb_src)?>' alt='<?=esc_attr($spotlight->post_title)?>'/>
-					<div class='screen-only opportunity_thumb' style='background-image:url('<?=esc_attr($thumb_src)?>');'><?=esc_attr($opportunity->post_title)?></div>
+					<img class="print-only opportunity_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
+					<div class="screen-only opportunity_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($opportunity->post_title)?></div>
 				<?php } ?>
 			</a>
-			<h3 class='home_opportunity_title'><a href='<?=esc_attr($link)?>' class='ga-event' data-ga-action='Opportunity Link' data-ga-label='<?=esc_attr($opportunity->post_title)?>'><?=$opportunity->post_title?></a></h3>
+			<h3 class="home_opportunity_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>"><?=$opportunity->post_title?></a></h3>
 			<?=truncateHtml($opportunity->post_content, 200)?>
 		</div>
 		<?
@@ -877,10 +877,11 @@ function output_weather_data($cssclass=null) {
 	$weather 	= get_weather_data();
 	$condition 	= $weather['condition'];
 	$temp 		= $weather['temp'];
-	$img 		= $weather['img']; 
-	print "<div id='weather_bug' class='<?=$cssclass?> screen-only' role='complementary'>".
-		"<div id='wb_status_txt'><i class='wi wi-yahoo-<?=$img?>'></i><span><?=$temp?>F, <?=$condition?></span></div>".
-	"</div>";
+	$img 		= $weather['img']; ?>
+	<div id="weather_bug" class="<?=$cssclass?> screen-only" role="complementary">
+		<div id="wb_status_txt"><i class="wi wi-yahoo-<?=$img?>"></i><span><?=$temp?>F, <?=$condition?></span></div>
+	</div>
+	<?php
 }
 
 
@@ -1156,8 +1157,8 @@ function get_announcements($role='all', $keyword=NULL, $time='thisweek') {
 			$announcement->announcementPhone		 = get_post_meta($announcement->ID, 'announcement_phone', TRUE);
 			$announcement->announcementEmail		 = get_post_meta($announcement->ID, 'announcement_email', TRUE);
 			$announcement->announcementPostedBy		 = get_post_meta($announcement->ID, 'announcement_posted_by', TRUE);
-			$announcement->announcementRoles		 = wp_get_post_terms($announcement->ID, 'audienceroles', array('fields' => 'names'));
-			$announcement->announcementKeywords		 = wp_get_post_terms($announcement->ID, 'keywords', array('fields' => 'names'));
+			$announcement->announcementRoles		 = wp_get_post_terms($announcement->ID, 'audienceroles', array("fields" => "names"));
+			$announcement->announcementKeywords		 = wp_get_post_terms($announcement->ID, 'keywords', array("fields" => "names"));
 			$announcement->announcementIsNew		 = ( date('Ymd') - date('Ymd', strtotime($announcement->post_date) ) <= 2 ) ? true : false;
 
 			// Fallback for bad date ranges--force the start date to equal
@@ -1179,12 +1180,12 @@ function get_announcements($role='all', $keyword=NULL, $time='thisweek') {
 function print_announcements($announcements, $liststyle='thumbtacks', $spantype='col-md-4 col-sm-4', $perrow=3) {
 	switch ($liststyle) {
 		case 'list':
-			print '<ul class='announcement_list list-unstyled'>';
+			print '<ul class="announcement_list list-unstyled">';
 			// Simple list of announcements; no descriptions.
 			// $spantype and $perrow are not used here.
 			foreach ($announcements as $announcement) {
 				ob_start(); ?>
-				<li><h3><a href='<?=get_permalink($announcement->ID)?>'><?=$announcement->post_title?></a></h3></li>
+				<li><h3><a href="<?=get_permalink($announcement->ID)?>"><?=$announcement->post_title?></a></h3></li>
 			<?php
 				print ob_get_clean();
 			}
@@ -1193,20 +1194,20 @@ function print_announcements($announcements, $liststyle='thumbtacks', $spantype=
 
 		case 'thumbtacks':
 			// Grid of thumbtack-styled announcements
-			print '<div class='row'>';
+			print '<div class="row">';
 			$count = 0;
 			foreach ($announcements as $announcement) {
 				if ($count % $perrow == 0 && $count !== 0) {
-					print '</div><div class='row'>';
+					print '</div><div class="row">';
 				}
 				ob_start();
 				?>
-				<div class='<?=$spantype?>' id='announcement_<?=$announcement->ID?>'>
-					<div class='announcement_wrap'>
-						<div class='thumbtack'></div>
-						<?php if ($announcement->announcementIsNew == true) { ?><div class='new'>New Announcement</div><?php } ?>
-						<h3><a href='<?=get_permalink($announcement->ID)?>'><?=$announcement->post_title?></a></h3>
-						<p class='date'>
+				<div class="<?=$spantype?>" id="announcement_<?=$announcement->ID?>">
+					<div class="announcement_wrap">
+						<div class="thumbtack"></div>
+						<?php if ($announcement->announcementIsNew == true) { ?><div class="new">New Announcement</div><?php } ?>
+						<h3><a href="<?=get_permalink($announcement->ID)?>"><?=$announcement->post_title?></a></h3>
+						<p class="date">
 							<?php if ($announcement->announcementStartDate == $announcement->announcementEndDate) {
 								print date('M d', strtotime($announcement->announcementEndDate));
 							} else {
@@ -1215,7 +1216,7 @@ function print_announcements($announcements, $liststyle='thumbtacks', $spantype=
 							?>
 						</p>
 						<p><?=truncateHtml(strip_tags($announcement->post_content, 200))?></p>
-						<p class='audience'><strong>Audience:</strong>
+						<p class="audience"><strong>Audience:</strong>
 						<?php
 							if ($announcement->announcementRoles) {
 								$rolelist = '';
@@ -1243,19 +1244,19 @@ function print_announcements($announcements, $liststyle='thumbtacks', $spantype=
 											$link = '';
 											break;
 									}
-									$rolelist .= '<a class='print-noexpand' href=''.get_permalink().$link.''>'.$role.'</a>, ';
+									$rolelist .= '<a class="print-noexpand" href="'.get_permalink().$link.'">'.$role.'</a>, ';
 								}
 								print substr($rolelist, 0, -2);
 							}
 							else { print 'n/a'; }
 						?>
 						</p>
-						<p class='keywords'><strong>Keywords:</strong>
+						<p class="keywords"><strong>Keywords:</strong>
 						<?php
 							if ($announcement->announcementKeywords) {
 								$keywordlist = '';
 								foreach ($announcement->announcementKeywords as $keyword) {
-									$keywordlist .= '<a class='print-noexpand' href=''.get_permalink().'?keyword='.$keyword.''>'.$keyword.'</a>, ';
+									$keywordlist .= '<a class="print-noexpand" href="'.get_permalink().'?keyword='.$keyword.'">'.$keyword.'</a>, ';
 								}
 								print substr($keywordlist, 0, -2);
 							}
@@ -1284,8 +1285,8 @@ function print_announcements($announcements, $liststyle='thumbtacks', $spantype=
  **/
 function announcements_to_rss($announcements) {
 	header('Content-Type: application/rss+xml; charset=ISO-8859-1');
-	print '<?xml version='1.0' encoding='ISO-8859-1'?>';
-	print '<rss version='2.0' xmlns:announcement=''.get_site_url().'/announcements/'>';
+	print '<?xml version="1.0" encoding="ISO-8859-1"?>';
+	print '<rss version="2.0" xmlns:announcement="'.get_site_url().'/announcements/">';
 	print '<channel>';
 	print '<title>University of Central Florida Announcements</title>';
 	print '<link>http://www.ucf.edu/</link>';
@@ -1384,7 +1385,7 @@ function esi_include($statementname, $argset=null) {
 	if(!is_null($enable_esi) && $enable_esi === '1' && is_ssl() == false) {
 		$argset = ($argset !== null) ? $argset = '&args='.urlencode(base64_encode($argset)) : '';
 		?>
-		<esi:include src='<?php echo ESI_INCLUDE_URL?>?statement=<?=$statementkey?><?=$argset?>' />
+		<esi:include src="<?php echo ESI_INCLUDE_URL?>?statement=<?=$statementkey?><?=$argset?>" />
 		<?php
 	} elseif (array_key_exists($statementkey, Config::$esi_whitelist)) {
 		$statementname = Config::$esi_whitelist[$statementkey]['name'];
@@ -1442,14 +1443,14 @@ function get_feedback_entries($formid=1, $duration=7, $to=array('webcom@ucf.edu'
 
 	// Get all entry IDs
 	$entry_ids = $wpdb->get_results(
-			'
+			"
 			SELECT          id
-			FROM            '.$gf_table.'
-			WHERE           form_id = '.$formid.'
-			AND                     date_created >= ''.$dur_start_date.' 00:00:00'
-			AND                     date_created <= ''.$dur_end_date.' 23:59:59'
+			FROM            ".$gf_table."
+			WHERE           form_id = ".$formid."
+			AND                     date_created >= '".$dur_start_date." 00:00:00'
+			AND                     date_created <= '".$dur_end_date." 23:59:59'
 			ORDER BY        date_created ASC
-			'
+			"
 	);
 
 	// Begin $output
@@ -1548,7 +1549,7 @@ function get_feedback_entries($formid=1, $duration=7, $to=array('webcom@ucf.edu'
 	$message = $output;
 
 	// Change e-mail content type to HTML
-	add_filter('wp_mail_content_type', create_function('', 'return 'text/html'; '));
+	add_filter('wp_mail_content_type', create_function('', 'return "text/html"; '));
 
 	// Send e-mail; return success or error
 	$results = wp_mail( $to, $subject, $message );
@@ -1611,7 +1612,7 @@ function query_undergraduate_catalog() {
 
 
 /**
- * Prevent Wordpress from trying to redirect to a 'loose match' post when
+ * Prevent Wordpress from trying to redirect to a "loose match" post when
  * an invalid URL is requested.  WordPress will redirect to 404.php instead.
  *
  * See http://wordpress.stackexchange.com/questions/3326/301-redirect-instead-of-404-when-url-is-a-prefix-of-a-post-or-page-name
@@ -1652,7 +1653,7 @@ add_action( 'add_meta_boxes', 'remove_yoast_meta_boxes' );
 function page_specific_stylesheet($pageid) {
 	if(($stylesheet_id = get_post_meta($pageid, 'page_stylesheet', True)) !== False
 		&& ($stylesheet_url = wp_get_attachment_url($stylesheet_id)) !== False) {
-		print '<link rel='stylesheet' href=''.$stylesheet_url.'' type='text/css' media='all' />';
+		print '<link rel="stylesheet" href="'.$stylesheet_url.'" type="text/css" media="all" />';
 	}
 	else { return NULL; }
 }
@@ -1664,7 +1665,7 @@ function page_specific_stylesheet($pageid) {
 function webfont_stylesheet() {
 	$css_key = get_theme_option( 'cloud_font_key' );
 	if ( $css_key ) {
-		echo '<link rel='stylesheet' href=''. $css_key .'' type='text/css' media='all' />';
+		echo '<link rel="stylesheet" href="'. $css_key .'" type="text/css" media="all" />';
 	}
 }
 
@@ -1716,7 +1717,7 @@ add_action('template_redirect', 'kill_unused_templates');
 function add_id_to_ucfhb($url) {
 	if ( (false !== strpos($url, 'bar/js/university-header.js')) || (false !== strpos($url, 'bar/js/university-header-full.js')) ) {
 	  remove_filter('clean_url', 'add_id_to_ucfhb', 10, 3);
-	  return '$url' id='ucfhb-script';
+	  return "$url' id='ucfhb-script";
 	}
 	return $url;
 }
@@ -1825,7 +1826,7 @@ function get_term_custom_meta( $term_id, $taxonomy, $key ) {
  * Assumes that term data are saved as options using the naming schema
  * 'tax_<taxonomy slug>_<term id>', and that term data is included in
  * Add New/Update <taxonomy> forms with inputs that have a name and ID
- * of 'term_meta[]'; e.g. '<input name='term_meta[my_custom_meta]' ..>'
+ * of 'term_meta[]'; e.g. '<input name="term_meta[my_custom_meta]" ..>'
  *
  * This function should be called on edited_<taxonomy> and create_<taxonomy>.
  * It saves all metadata following the term_meta[...] naming structure, so it
@@ -1864,21 +1865,21 @@ function display_social( $url, $title, $subject_line='', $email_body='' ) {
 
 	ob_start();
 ?>
-	<aside class='social clearfix'>
-		<a class='share-facebook' target='_blank' data-button-target='<?php echo $url; ?>' href='http://www.facebook.com/sharer.php?u=<?php echo $url; ?>' title='Like this on Facebook'>
-			Like '<?php echo $title; ?>' on Facebook
+	<aside class="social clearfix">
+		<a class="share-facebook" target="_blank" data-button-target="<?php echo $url; ?>" href="http://www.facebook.com/sharer.php?u=<?php echo $url; ?>" title="Like this on Facebook">
+			Like "<?php echo $title; ?>" on Facebook
 		</a>
-		<a class='share-twitter' target='_blank' data-button-target='<?php echo $url; ?>' href='https://twitter.com/intent/tweet?text=<?php echo $subject_line; ?>&url=<?php echo $url; ?>' title='Tweet this'>
-			Tweet '<?php echo $title; ?>' on Twitter
+		<a class="share-twitter" target="_blank" data-button-target="<?php echo $url; ?>" href="https://twitter.com/intent/tweet?text=<?php echo $subject_line; ?>&url=<?php echo $url; ?>" title="Tweet this">
+			Tweet "<?php echo $title; ?>" on Twitter
 		</a>
-		<a class='share-googleplus' target='_blank' data-button-target='<?php echo $url; ?>' href='https://plus.google.com/share?url=<?php echo $url; ?>' title='Share this on Google+'>
-			Share '<?php echo $title; ?>' on Google+
+		<a class="share-googleplus" target="_blank" data-button-target="<?php echo $url; ?>" href="https://plus.google.com/share?url=<?php echo $url; ?>" title="Share this on Google+">
+			Share "<?php echo $title; ?>" on Google+
 		</a>
-		<a class='share-linkedin' target='_blank' data-button-target='<?php echo $url; ?>' href='https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $url; ?>&title=<?php echo $subject_line; ?>' title='Share this on Linkedin'>
-			Share '<?php echo $title; ?>' on Linkedin
+		<a class="share-linkedin" target="_blank" data-button-target="<?php echo $url; ?>" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $url; ?>&title=<?php echo $subject_line; ?>" title="Share this on Linkedin">
+			Share "<?php echo $title; ?>" on Linkedin
 		</a>
-		<a class='share-email' target='_blank' data-button-target='<?php echo $url; ?>' href='mailto:?subject=<?php echo $subject_line; ?>&amp;body=<?php echo $email_body; ?>%0A%0A<?php echo $url; ?>' title='Share this in an email'>
-			Share '<?php echo $title; ?>' in an email
+		<a class="share-email" target="_blank" data-button-target="<?php echo $url; ?>" href="mailto:?subject=<?php echo $subject_line; ?>&amp;body=<?php echo $email_body; ?>%0A%0A<?php echo $url; ?>" title="Share this in an email">
+			Share "<?php echo $title; ?>" in an email
 		</a>
 	</aside>
 <?php
@@ -2003,8 +2004,8 @@ function google_tag_manager() {
 	if ( $gtm_id ) :
 ?>
 <!-- Google Tag Manager -->
-<noscript><iframe src='//www.googletagmanager.com/ns.html?id=<?php echo $gtm_id; ?>'
-height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=<?php echo $gtm_id; ?>"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -2048,13 +2049,13 @@ function get_nav_panel(){
 		),
 	);
 	$items = get_posts($args);
-	$htmlOut = '';
+	$htmlOut = "";
 	if(is_array($items) && !empty($items)){
-		$htmlOut .= apply_filters( 'siteorigin_panels_before_content', '<div class='content-holder'>', $panels_data = false, $items[0]->ID );
+		$htmlOut .= apply_filters( 'siteorigin_panels_before_content', '<div class="content-holder">', $panels_data = false, $items[0]->ID );
 		$htmlOut .= siteorigin_panels_render($post_id = $items[0]->ID);
 		$htmlOut .= apply_filters( 'siteorigin_panels_after_content', '</div>', $panels_data = false, $items[0]->ID );
 	}else{
-		$htmlOut .= 'Please check back later! This panel is under maintenance!';
+		$htmlOut .= "Please check back later! This panel is under maintenance!";
 	}
 	$css = siteorigin_panels_generate_css($items[0]->ID);
 	wp_send_json(array(
@@ -2081,12 +2082,12 @@ function custom_breadcrumbs() {
     // Do not display on the homepage
     if ( !is_front_page() ) {
         // Build the breadcrums
-        echo '<ul id='' . $breadcrums_id . '' class='' . $breadcrums_class . ''>';
+        echo '<ul id="' . $breadcrums_id . '" class="' . $breadcrums_class . '">';
         // Home page
-        echo '<span class='item-home'><a class='bread-link bread-home' href='' . get_home_url() . '' title='' . $home_title . ''>' . $home_title . '</a></span>';
-        echo '<span class='separator separator-home'> ' . $separator . ' </span>';
+        echo '<span class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></span>';
+        echo '<span class="separator separator-home"> ' . $separator . ' </span>';
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
-            echo '<span class='item-current item-archive'><strong class='bread-current bread-archive'>' . post_type_archive_title($prefix, false) . '</strong></span>';
+            echo '<span class="item-current item-archive"><strong class="bread-current bread-archive">' . post_type_archive_title($prefix, false) . '</strong></span>';
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
             // If post is a custom post type
             $post_type = get_post_type();
@@ -2094,11 +2095,11 @@ function custom_breadcrumbs() {
             if($post_type != 'post') {
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
-                echo '<span class='item-cat item-custom-post-type-' . $post_type . ''><a class='bread-cat bread-custom-post-type-' . $post_type . '' href='' . $post_type_archive . '' title='' . $post_type_object->labels->name . ''>' . $post_type_object->labels->name . '</a></span>';
-                echo '<span class='separator'> ' . $separator . ' </span>';
+                echo '<span class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></span>';
+                echo '<span class="separator"> ' . $separator . ' </span>';
             }
             $custom_tax_name = get_queried_object()->name;
-            echo '<span class='item-current item-archive'><strong class='bread-current bread-archive'>' . $custom_tax_name . '</strong></span>';
+            echo '<span class="item-current item-archive"><strong class="bread-current bread-archive">' . $custom_tax_name . '</strong></span>';
         } else if ( is_single() ) {
             // If post is a custom post type
             $post_type = get_post_type();
@@ -2106,8 +2107,8 @@ function custom_breadcrumbs() {
             if($post_type != 'post') {
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
-                echo '<span class='item-cat item-custom-post-type-' . $post_type . ''><a class='bread-cat bread-custom-post-type-' . $post_type . '' href='' . $post_type_archive . '' title='' . $post_type_object->labels->name . ''>' . $post_type_object->labels->name . '</a></span>';
-                echo '<span class='separator'> ' . $separator . ' </span>';
+                echo '<span class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></span>';
+                echo '<span class="separator"> ' . $separator . ' </span>';
             }
             // Get post category info
             $category = get_the_category();
@@ -2120,8 +2121,8 @@ function custom_breadcrumbs() {
                 // Loop through parent categories and store in variable $cat_display
                 $cat_display = '';
                 foreach($cat_parents as $parents) {
-                    $cat_display .= '<span class='item-cat'>'.$parents.'</span>';
-                    $cat_display .= '<span class='separator'> ' . $separator . ' </span>';
+                    $cat_display .= '<span class="item-cat">'.$parents.'</span>';
+                    $cat_display .= '<span class="separator"> ' . $separator . ' </span>';
                 }
             }
             // If it's a custom post type within a custom taxonomy
@@ -2136,18 +2137,18 @@ function custom_breadcrumbs() {
             // Check if the post is in a category
             if(!empty($last_category)) {
                 echo $cat_display;
-                echo '<span class='item-current item-' . $post->ID . ''><strong class='bread-current bread-' . $post->ID . '' title='' . get_the_title() . ''>' . get_the_title() . '</strong></span>';
+                echo '<span class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></span>';
 				// Else if post is in a custom taxonomy
             } else if(!empty($cat_id)) {
-                echo '<span class='item-cat item-cat-' . $cat_id . ' item-cat-' . $cat_nicename . ''><a class='bread-cat bread-cat-' . $cat_id . ' bread-cat-' . $cat_nicename . '' href='' . $cat_link . '' title='' . $cat_name . ''>' . $cat_name . '</a></span>';
-                echo '<span class='separator'> ' . $separator . ' </span>';
-                echo '<span class='item-current item-' . $post->ID . ''><strong class='bread-current bread-' . $post->ID . '' title='' . get_the_title() . ''>' . get_the_title() . '</strong></span>';
+                echo '<span class="item-cat item-cat-' . $cat_id . ' item-cat-' . $cat_nicename . '"><a class="bread-cat bread-cat-' . $cat_id . ' bread-cat-' . $cat_nicename . '" href="' . $cat_link . '" title="' . $cat_name . '">' . $cat_name . '</a></span>';
+                echo '<span class="separator"> ' . $separator . ' </span>';
+                echo '<span class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></span>';
             } else {
-                echo '<span class='item-current item-' . $post->ID . ''><strong class='bread-current bread-' . $post->ID . '' title='' . get_the_title() . ''>' . get_the_title() . '</strong></span>';
+                echo '<span class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></span>';
             }
         } else if ( is_category() ) {
             // Category page
-            echo '<span class='item-current item-cat'><strong class='bread-current bread-cat'>' . single_cat_title('', false) . '</strong></span>';
+            echo '<span class="item-current item-cat"><strong class="bread-current bread-cat">' . single_cat_title('', false) . '</strong></span>';
         } else if ( is_page() ) {
             // Standard page
             if( $post->post_parent ){
@@ -2158,16 +2159,16 @@ function custom_breadcrumbs() {
                 // Parent page loop
                 if ( !isset( $parents ) ) $parents = null;
                 foreach ( $anc as $ancestor ) {
-                    $parents .= '<span class='item-parent item-parent-' . $ancestor . ''><a class='bread-parent bread-parent-' . $ancestor . '' href='' . get_permalink($ancestor) . '' title='' . get_the_title($ancestor) . ''>' . get_the_title($ancestor) . '</a></span>';
-                    $parents .= '<span class='separator separator-' . $ancestor . ''> ' . $separator . ' </span>';
+                    $parents .= '<span class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></span>';
+                    $parents .= '<span class="separator separator-' . $ancestor . '"> ' . $separator . ' </span>';
                 }
                 // Display parent pages
                 echo $parents;
                 // Current page
-                echo '<span class='item-current item-' . $post->ID . ''><strong title='' . get_the_title() . ''> ' . get_the_title() . '</strong></span>';
+                echo '<span class="item-current item-' . $post->ID . '"><strong title="' . get_the_title() . '"> ' . get_the_title() . '</strong></span>';
             } else {
                 // Just display current page if not parents
-                echo '<span class='item-current item-' . $post->ID . ''><strong class='bread-current bread-' . $post->ID . ''> ' . get_the_title() . '</strong></span>';
+                echo '<span class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '"> ' . get_the_title() . '</strong></span>';
             }
         } else if ( is_tag() ) {
             // Tag page
@@ -2180,40 +2181,40 @@ function custom_breadcrumbs() {
             $get_term_slug  = $terms[0]->slug;
             $get_term_name  = $terms[0]->name;
             // Display the tag name
-            echo '<span class='item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . ''><strong class='bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . ''>' . $get_term_name . '</strong></span>';
+            echo '<span class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><strong class="bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . '">' . $get_term_name . '</strong></span>';
         } elseif ( is_day() ) {
             // Day archive
             // Year link
-            echo '<span class='item-year item-year-' . get_the_time('Y') . ''><a class='bread-year bread-year-' . get_the_time('Y') . '' href='' . get_year_link( get_the_time('Y') ) . '' title='' . get_the_time('Y') . ''>' . get_the_time('Y') . ' Archives</a></span>';
-            echo '<span class='separator separator-' . get_the_time('Y') . ''> ' . $separator . ' </span>';
+            echo '<span class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></span>';
+            echo '<span class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </span>';
             // Month link
-            echo '<span class='item-month item-month-' . get_the_time('m') . ''><a class='bread-month bread-month-' . get_the_time('m') . '' href='' . get_month_link( get_the_time('Y'), get_the_time('m') ) . '' title='' . get_the_time('M') . ''>' . get_the_time('M') . ' Archives</a></span>';
-            echo '<span class='separator separator-' . get_the_time('m') . ''> ' . $separator . ' </span>';
+            echo '<span class="item-month item-month-' . get_the_time('m') . '"><a class="bread-month bread-month-' . get_the_time('m') . '" href="' . get_month_link( get_the_time('Y'), get_the_time('m') ) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</a></span>';
+            echo '<span class="separator separator-' . get_the_time('m') . '"> ' . $separator . ' </span>';
             // Day display
-            echo '<span class='item-current item-' . get_the_time('j') . ''><strong class='bread-current bread-' . get_the_time('j') . ''> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></span>';
+            echo '<span class="item-current item-' . get_the_time('j') . '"><strong class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></span>';
         } else if ( is_month() ) {
             // Month Archive
             // Year link
-            echo '<span class='item-year item-year-' . get_the_time('Y') . ''><a class='bread-year bread-year-' . get_the_time('Y') . '' href='' . get_year_link( get_the_time('Y') ) . '' title='' . get_the_time('Y') . ''>' . get_the_time('Y') . ' Archives</a></span>';
-            echo '<span class='separator separator-' . get_the_time('Y') . ''> ' . $separator . ' </span>';
+            echo '<span class="item-year item-year-' . get_the_time('Y') . '"><a class="bread-year bread-year-' . get_the_time('Y') . '" href="' . get_year_link( get_the_time('Y') ) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></span>';
+            echo '<span class="separator separator-' . get_the_time('Y') . '"> ' . $separator . ' </span>';
             // Month display
-            echo '<span class='item-month item-month-' . get_the_time('m') . ''><strong class='bread-month bread-month-' . get_the_time('m') . '' title='' . get_the_time('M') . ''>' . get_the_time('M') . ' Archives</strong></span>';
+            echo '<span class="item-month item-month-' . get_the_time('m') . '"><strong class="bread-month bread-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</strong></span>';
         } else if ( is_year() ) {	
             // Display year archive
-            echo '<span class='item-current item-current-' . get_the_time('Y') . ''><strong class='bread-current bread-current-' . get_the_time('Y') . '' title='' . get_the_time('Y') . ''>' . get_the_time('Y') . ' Archives</strong></span>';
+            echo '<span class="item-current item-current-' . get_the_time('Y') . '"><strong class="bread-current bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</strong></span>';
         } else if ( is_author() ) {
             // Auhor archive
             // Get the author information
             global $author;
             $userdata = get_userdata( $author );
             // Display author name
-            echo '<span class='item-current item-current-' . $userdata->user_nicename . ''><strong class='bread-current bread-current-' . $userdata->user_nicename . '' title='' . $userdata->display_name . ''>' . 'Author: ' . $userdata->display_name . '</strong></span>';
+            echo '<span class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . 'Author: ' . $userdata->display_name . '</strong></span>';
         } else if ( get_query_var('paged') ) {
             // Paginated archives
-            echo '<span class='item-current item-current-' . get_query_var('paged') . ''><strong class='bread-current bread-current-' . get_query_var('paged') . '' title='Page ' . get_query_var('paged') . ''>'.__('Page') . ' ' . get_query_var('paged') . '</strong></span>';
+            echo '<span class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'.__('Page') . ' ' . get_query_var('paged') . '</strong></span>';
         } else if ( is_search() ) {
             // Search results page
-            echo '<span class='item-current item-current-' . get_search_query() . ''><strong class='bread-current bread-current-' . get_search_query() . '' title='Search results for: ' . get_search_query() . ''>Search results for: ' . get_search_query() . '</strong></span>';
+            echo '<span class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</strong></span>';
         } elseif ( is_404() ) {
             // 404 page
             echo '<span>' . 'Error 404' . '</span>';
@@ -2283,7 +2284,7 @@ add_action('pre_get_posts','add_org_groups_filter_to_posts_query');
 // inspiration from http://wordpress.stackexchange.com/a/72562
 function get_terms_orderby_semester_year($orderby, $args){
 	print_r($orderby);
-	$orderby = 'SUBSTR({$orderby}, (INSTR({$orderby}, ' ') + 1)) DESC, (CASE SUBSTR({$orderby}, 1, (INSTR({$orderby}, ' ') - 1)) WHEN 'Spring' THEN 1 WHEN 'Summer' THEN 2 ELSE 3 END)';
+	$orderby = "SUBSTR({$orderby}, (INSTR({$orderby}, ' ') + 1)) DESC, (CASE SUBSTR({$orderby}, 1, (INSTR({$orderby}, ' ') - 1)) WHEN 'Spring' THEN 1 WHEN 'Summer' THEN 2 ELSE 3 END)";
     return $orderby;
 }
 
