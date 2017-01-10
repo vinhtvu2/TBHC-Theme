@@ -14,7 +14,7 @@
 		</div>
 		<div class="col-sm-5 col-md-xpad col-sm-xpad" id="home_rightcol">
 			<h2>Upcoming Events<hr/></h2>
-			<?php esi_include('do_shortcode','[events-widget]'); ?>
+			<?php do_shortcode('[events-widget]'); ?>
 			<?php //esi_include('output_weather_data'); ?>
 		</div>
 	</div>
