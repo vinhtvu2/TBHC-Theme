@@ -231,11 +231,13 @@ ul li:not(ul li div) {
     }
 }
 
-p.moreBtn a {
-    padding: 3px 5px;
-    background: #FC0;
-    //font-weight: bold;
-    color: black;
+p.moreBtn {
+    a{
+        padding: 3px 5px;
+        background: #FC0;
+        //font-weight: bold;
+        color: black;
+    }
     @media (min-width: $screen-xs-max) {
         position: absolute;
         bottom: 0;
