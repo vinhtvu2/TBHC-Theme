@@ -948,7 +948,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 function sc_events_widget() {
 	display_events();
 	print /*'<p class="events_icons"><a class="icsbtn" href="http://events.ucf.edu/upcoming/feed.ics">ICS Format for upcoming events</a><a class="rssbtn" href="http://events.ucf.edu/upcoming/feed.rss">RSS Format for upcoming events</a></p>*/
-	'<div class="screen-only moreBtn"><a href="https://events.ucf.edu/calendar/2862/the-burnett-honors-college/upcoming/" class="home_col_morelink">More Events</a>'.output_weather_data().'</div>';
+	'<div class="screen-only moreBtn"><a href="https://events.ucf.edu/calendar/2862/the-burnett-honors-college/upcoming/" class="home_col_morelink">More Events</a>'.esi_include('output_weather_data').'</div>';
 }
 add_shortcode('events-widget', 'sc_events_widget');
 
