@@ -234,7 +234,6 @@ ul li:not(ul li div) {
 }
 
 .moreBtnPad {
-    position: relative;
     padding-top: 11px;
     .moreBtn {
         width: 100%;
@@ -250,7 +249,7 @@ ul li:not(ul li div) {
         @media (min-width: $screen-xs-max) {
             position: absolute;
             bottom: 11px;
-            left: 0;
+            left: 15px;
         }
     }
 }
