@@ -241,7 +241,8 @@ ul li:not(ul li div) {
         @media (min-width: $screen-xs-max) {
             position: absolute;
             bottom: 11px;
-            left: 15px;
+            padding: 0 15px;
+            left: 0;
         }
     }
 }
