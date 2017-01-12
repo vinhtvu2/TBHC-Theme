@@ -5,7 +5,7 @@
 		<div class="col-sm-5" id="home_leftcol">
 			<h2>Spotlights<hr/></h2>
 			<?=frontpage_spotlights()?>
-			<div class="moreBtnPad"><div class="screen-only moreBtn"><a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Spotlight Archive</a></div><div>
+			<div class="moreBtnPad"><div class="screen-only moreBtn"><a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Spotlight Archive</a></div></div>
 		</div>
 		<div class="col-sm-5" id="home_centercol">
 			<h2>Opportunities<hr/></h2>
