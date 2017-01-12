@@ -125,9 +125,10 @@ ul li:not(ul li div) {
         width: 66px;
         margin-bottom: 15px;
     }
+
     p {
         text-align: right;
-    } 
+    }
 }
 
 .home_spotlight_title, .home_opportunity_title {
@@ -151,6 +152,7 @@ ul li:not(ul li div) {
 
 .home_opportunity_single a {
     color: #333;
+
     &:hover {
         color: #8f3931;
     }
@@ -231,20 +233,25 @@ ul li:not(ul li div) {
     }
 }
 
-.moreBtn {
-    width: 100%;
-    margin-top: 5px;
-    a{
-        padding: 3px 5px;
-        background: #FC0;
-        //font-weight: bold;
-        color: black;
-        margin: 0;
-    }
-    @media (min-width: $screen-xs-max) {
-        position: absolute;
-        bottom: 11px;
-        left: 15px;
+.moreBtnPad {
+    position: relative;
+    padding-top: 11px;
+    .moreBtn {
+        width: 100%;
+
+        a {
+            padding: 3px 5px;
+            background: #FC0;
+            //font-weight: bold;
+            color: black;
+            margin: 0;
+        }
+
+        @media (min-width: $screen-xs-max) {
+            position: absolute;
+            bottom: 11px;
+            left: 0;
+        }
     }
 }
 
