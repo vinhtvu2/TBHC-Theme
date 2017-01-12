@@ -164,7 +164,7 @@ ul li:not(ul li div) {
 
 .home_col_morelink {
     display: inline-block;
-    margin-top: 10px;
+    margin-bottom: 11px;
 }
 
 
@@ -213,7 +213,7 @@ ul li:not(ul li div) {
     }
 
     #weather_bug {
-        width: 100%;
+        //width: 100%;
     }
 
     #wb_status_text {
@@ -231,14 +231,20 @@ ul li:not(ul li div) {
     }
 }
 
-p.moreBtn a {
-    padding: 3px 5px;
-    background: #FC0;
-    //font-weight: bold;
-    color: black;
+.moreBtn {
+    width: 100%;
+    margin-top: 5px;
+    a{
+        padding: 3px 5px;
+        background: #FC0;
+        //font-weight: bold;
+        color: black;
+        margin: 0;
+    }
     @media (min-width: $screen-xs-max) {
         position: absolute;
-        bottom: 0;
+        bottom: 11px;
+        left: 15px;
     }
 }
 
