@@ -1,0 +1,293 @@
+// Home Page - General
+
+ul li:not(ul li div) {
+    list-style: none;
+}
+
+.container {
+    @media (min-width: $screen-xs-max) {
+        display: table !important;
+    }
+}
+
+#home {
+    @media (min-width: $screen-xs-max) {
+        display: table-row !important;
+    }
+
+    .description {
+        @media (min-width: $screen-xs-max) {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+// Home Page - Sub Columns - General Styles
+.home_col_morelink,
+.events_morelink {
+    color: #3e769a;
+
+    &:hover {
+        color: #8f3931;
+        border-bottom: 1px solid #8f3931;
+        text-decoration: none;
+    }
+}
+
+#home_leftcol,
+#home_centercol,
+#home_rightcol {
+    @media (min-width: $screen-xs-max) {
+        float: none;
+        display: table-cell !important;
+    }
+
+    h2 {
+        font-family: $font-family-sans-serif;
+        font-size: 14px;
+        margin: 11px 0;
+        text-transform: uppercase;
+        color: black;
+
+        hr {
+            background-color: #FC0;
+            left: 0;
+            width: 15%;
+            height: 3px;
+            margin: 0 auto 5px 0;
+        }
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+}
+
+#home_leftcol,
+#home_centercol {
+    @media (max-width: $screen-xs-max) {
+        border-bottom: 1px dotted #333 !important;
+        padding-bottom: 20px;
+    }
+}
+
+#home_centercol,
+#home_rightcol {
+    @media (max-width: $screen-xs-max) {
+        margin-top: 20px;
+    }
+}
+
+
+// Home page - left column
+#home_leftcol {
+    /*h2 {
+    color: #E26906;
+  }*/
+    a {
+        color: #333;
+
+        &:hover {
+            color: #8f3931;
+        }
+    }
+}
+
+.home_spotlight_single, .home_opportunity_single {
+    @include clearfix();
+    margin-bottom: 20px;
+
+    @media (max-width: $screen-sm-max) {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .spotlight_thumb, .opportunity_thumb {
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        cursor: pointer;
+        float: left;
+        margin-right: 15px;
+        position: relative;
+        text-indent: -9999px;
+    }
+
+    .spotlight_thumb {
+        height: 110px;
+        width: 110px;
+        margin-bottom: 15px;
+    }
+
+    .opportunity_thumb {
+        height: 66px;
+        width: 66px;
+    }
+}
+
+.home_spotlight_title, .home_opportunity_title {
+    line-height: 16px;
+    margin-bottom: 5px;
+
+    a {
+        border-bottom: 1px solid #ccc;
+        font-size: 14px;
+        text-decoration: none;
+
+        @media (max-width: $screen-sm-max) {
+            font-size: 12px;
+        }
+
+        &:hover {
+            border-bottom: 1px solid #8f3931;
+        }
+    }
+}
+
+.home_opportunity_single a {
+    color: #3e769a;
+
+    &:hover {
+        color: #8f3931;
+    }
+}
+
+.home_spotlight_readmore, .home_opportunity_readmore {
+    font-family: $font-family-sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.home_col_morelink {
+    display: inline-block;
+    margin-bottom: 11px;
+}
+
+
+// Home page - center column
+#home_centercol {
+    border-left: 1px dotted #333;
+
+    @media (max-width: $screen-xs-max) {
+        border-left: 0;
+    }
+
+    .item {
+        line-height: 18px;
+        margin-bottom: 20px;
+
+        @media (max-width: $screen-xs-max) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .title {
+        a {
+            font-size: 14px;
+
+            @media (max-width: $screen-sm-max) {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+// Home page - right column
+#home_rightcol {
+    border-left: 1px dotted #333;
+
+    @media (max-width: $screen-xs-max) {
+        border-left: 0;
+    }
+
+    h2 {
+        /*color: #B38C0B;*/
+        @include body-prefix('.ie8') {
+            padding-bottom: 15px;
+        }
+    }
+
+    #weather_bug {
+        //width: 100%;
+    }
+
+    #wb_status_text {
+        text-align: left;
+    }
+}
+
+
+// Misc. print overrides
+.home_spotlight_single > a[href]:after,
+.home_spotlight_title a[href]:after,
+.news .item > .image:after {
+    @media print {
+        content: '';
+    }
+}
+
+<<<<<<< HEAD
+p.moreBtn a {
+    padding: 3px 5px;
+    background: #FC0;
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    bottom: 0;
+=======
+.moreBtn {
+    width: 100%;
+    margin-top: 5px;
+    a{
+        padding: 3px 5px;
+        background: #FC0;
+        //font-weight: bold;
+        color: black;
+        margin: 0;
+    }
+    @media (min-width: $screen-xs-max) {
+        position: absolute;
+        bottom: 11px;
+        left: 15px;
+    }
+>>>>>>> rc-v0.9.0
+}
+
+.item.vevent {
+    .date {
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1.1;
+
+        .weekday {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .day {
+            font-size: 2.5em;
+            color: #ccc;
+        }
+
+        .month {
+            font-size: .75em;
+            font-weight: bold;
+        }
+    }
+
+    .eventdata {
+        .category {
+            padding: 3px 5px;
+            background: #FC0;
+            font-weight: bold;
+            color: black;
+            display: inline;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+    }
+}
