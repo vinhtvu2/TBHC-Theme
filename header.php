@@ -49,8 +49,8 @@
 			var PRINT_HEADER_IMG			= '<?php echo THEME_IMG_URL.'/ucflogo-print.png'; ?>';
 
 		</script>
-		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+		<script type="text/javascript" src="//malsup.github.io/min/jquery.cycle.all.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
 		<!--[if IE]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>			
 		<![endif]-->
