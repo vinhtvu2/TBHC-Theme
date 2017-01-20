@@ -49,8 +49,8 @@
 			var PRINT_HEADER_IMG			= '<?php echo THEME_IMG_URL.'/ucflogo-print.png'; ?>';
 
 		</script>
-		<script type="text/javascript" src="//malsup.github.io/min/jquery.cycle.all.min.js"></script>
-		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+		<script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle.all.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
 		<!--[if IE]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>			
 		<![endif]-->
@@ -107,7 +107,7 @@
 		</nav>
 		
 		<div id="jumbotron-logo" style="background-color:<?=get_theme_option('header_bg_color')?>">
-			<a href="<?=get_site_url()?>">
+			<a href="http://tbhccmsdev.smca.ucf.edu">
 				<img id="tbhcLogo" src="<?=get_theme_option('header_logo')?>" alt="The Burnett Honors College"/>
 			</a>
 		</div>

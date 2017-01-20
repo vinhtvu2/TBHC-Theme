@@ -216,7 +216,7 @@ function display_events($start=null, $limit=null){?>
 						<div class="month"><?=$month?></div>						
 					</td>
 					<td class="eventdata">
-						<div class="category"><?= $location ?></div>
+						<div class="category"><?= $cat ?></div>
 						<div class="title"><a href="<?=$link?>" class="wrap url"><?=$title?></a></div>
 					</td>
 				</tr>

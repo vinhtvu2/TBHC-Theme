@@ -161,7 +161,7 @@ ul li:not(ul li div) {
 
 .home_col_morelink {
     display: inline-block;
-    margin-top: 10px;
+    margin-bottom: 11px;
 }
 
 
@@ -210,7 +210,7 @@ ul li:not(ul li div) {
     }
 
     #weather_bug {
-        width: 100%;
+        //width: 100%;
     }
 
     #wb_status_text {
@@ -228,6 +228,7 @@ ul li:not(ul li div) {
     }
 }
 
+<<<<<<< HEAD
 p.moreBtn a {
     padding: 3px 5px;
     background: #FC0;
@@ -235,6 +236,23 @@ p.moreBtn a {
     color: black;
     position: absolute;
     bottom: 0;
+=======
+.moreBtn {
+    width: 100%;
+    margin-top: 5px;
+    a{
+        padding: 3px 5px;
+        background: #FC0;
+        //font-weight: bold;
+        color: black;
+        margin: 0;
+    }
+    @media (min-width: $screen-xs-max) {
+        position: absolute;
+        bottom: 11px;
+        left: 15px;
+    }
+>>>>>>> rc-v0.9.0
 }
 
 .item.vevent {
