@@ -38,6 +38,13 @@ ul li:not(ul li div) {
 #home_leftcol,
 #home_centercol,
 #home_rightcol {
+    a {
+        color: #333;
+
+        &:hover {
+            color: #8f3931;
+        }
+    }
     @media (min-width: $screen-xs-max) {
         float: none;
         display: table-cell !important;
@@ -79,21 +86,6 @@ ul li:not(ul li div) {
     }
 }
 
-
-// Home page - left column
-#home_leftcol {
-    /*h2 {
-    color: #E26906;
-  }*/
-    a {
-        color: #333;
-
-        &:hover {
-            color: #8f3931;
-        }
-    }
-}
-
 .home_spotlight_single, .home_opportunity_single {
     @include clearfix();
     margin-bottom: 20px;
@@ -123,6 +115,11 @@ ul li:not(ul li div) {
     .opportunity_thumb {
         height: 66px;
         width: 66px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        text-align: right;
     }
 }
 
@@ -146,7 +143,7 @@ ul li:not(ul li div) {
 }
 
 .home_opportunity_single a {
-    color: #3e769a;
+    color: #333;
 
     &:hover {
         color: #8f3931;
@@ -161,7 +158,7 @@ ul li:not(ul li div) {
 
 .home_col_morelink {
     display: inline-block;
-    margin-top: 10px;
+    margin-bottom: 11px;
 }
 
 
@@ -210,7 +207,7 @@ ul li:not(ul li div) {
     }
 
     #weather_bug {
-        width: 100%;
+        //width: 100%;
     }
 
     #wb_status_text {
@@ -228,13 +225,26 @@ ul li:not(ul li div) {
     }
 }
 
-p.moreBtn a {
-    padding: 3px 5px;
-    background: #FC0;
-    font-weight: bold;
-    color: black;
-    position: absolute;
-    bottom: 0;
+.moreBtnPad {
+    padding-top: 11px;
+    .moreBtn {
+        width: 100%;
+
+        a {
+            padding: 3px 5px;
+            background: #FC0;
+            //font-weight: bold;
+            color: black;
+            margin: 0;
+        }
+
+        @media (min-width: $screen-xs-max) {
+            position: absolute;
+            bottom: 11px;
+            padding: 0 15px;
+            left: 0;
+        }
+    }
 }
 
 .item.vevent {
@@ -265,7 +275,8 @@ p.moreBtn a {
             background: #FC0;
             font-weight: bold;
             color: black;
-            display: inline;
+            display: inline-block;
+            margin-bottom: 5px;
         }
 
         .title {

@@ -47,6 +47,10 @@ gulp.task('bower', function() {
       // Add Font Awesome fonts to fonts dir
       gulp.src(config.componentsPath + '/font-awesome/fonts/*')
         .pipe(gulp.dest(config.fontPath + '/font-awesome'));
+		
+	  // Add Weather Icons fonts to fonts dir
+      gulp.src(config.componentsPath + '/weather-icons/font/*')
+        .pipe(gulp.dest(config.fontPath + '/weather-icons'));
 
     });
 });

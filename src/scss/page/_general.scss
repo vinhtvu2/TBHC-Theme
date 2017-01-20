@@ -1,5 +1,5 @@
 body {
-    background-color: #d9d6d6;
+    background-color: white;
 }
 
 .container {
@@ -7,16 +7,18 @@ body {
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
-    //z-index: 100;
+    //z-index: -1;
     //box-shadow: 9px 0px 10px -10px rgba(0, 0, 0, .75), -9px 0px 10px -10px rgba(0, 0, 0, .75), 0px 9px 10px -10px rgba(0, 0, 0, .75);
 }
-.container-shadow{
+
+.container-shadow {
     position: absolute;
-    z-index: -1;
+    //z-index: -1;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
+
     @media (min-width: $screen-sm-min) {
         max-width: $container-sm;
     }
@@ -27,8 +29,9 @@ body {
 
     @media (min-width: $screen-lg-min) {
         max-width: $container-lg;
-    }         
-    span{
+    }
+
+    span {
         box-shadow: 0 0 20px 0 rgba(0,0,0,.75);
         width: 100%;
         height: 100%;
@@ -45,9 +48,11 @@ body {
     p, br {
         display: none;
     }
+
     select {
         font-size: 1.25em;
     }
+
     .row {
         display: table;
         width: 100%;
@@ -57,7 +62,6 @@ body {
             p {
                 margin: 0;
             }
-
             /*display: block;
             padding: 0;
             position: relative;
@@ -68,7 +72,6 @@ body {
                 width:25%;
             }
             overflow: hidden;*/
-
             a, & {
                 .group {
                     position: absolute;
@@ -254,7 +257,7 @@ body {
 
 .sub-menu {
     padding: 0;
-
+    list-style: none;
     > li {
         border-top: 1px solid #cbcbcb;
 
@@ -268,9 +271,10 @@ body {
             text-decoration: none;
         }
     }
+
     .sub-menu {
         padding: 0;
-
+        list-style:none;
         > li {
             border-top: 1px solid #cbcbcb;
 
@@ -359,7 +363,6 @@ body {
     a {
         color: #3e769a;
         //border-bottom: 1px solid #ccc;
-
         &:hover {
             color: #8f3931;
             border-bottom: 1px solid #8f3931;
@@ -593,5 +596,26 @@ ul.spotlight-list, ul.opportunity-list {
 
     .spotlight_info, .spotlight_category, .opportunity_info, .opportunity_category {
         font-style: italic;
+    }
+}
+
+.imgGrid2x2 {
+    .panel-grid{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .panel-grid-cell {
+        width: 50% !important;
+        padding: 0;
+        display: inline-block;
+        margin: 0 auto;
+        margin-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .panel-first-child {
+            margin-bottom: 0 !important;
+        }
     }
 }
