@@ -13,10 +13,10 @@ require_once('third-party/truncate-html.php');  # Includes truncateHtml function
 // stuff for cors
 add_filter( 'allowed_http_origins', 'add_allowed_origins' );
 function add_allowed_origins( $origins ) {
-    $origins[] = site_url(null, null, 'http');
+    /*$origins[] = site_url(null, null, 'http');
     $origins[] = site_url(null, null, 'https');
 	print_r($origins);
-	echo $origins;
+	echo $origins;*/
     return $origins;
 }
 
