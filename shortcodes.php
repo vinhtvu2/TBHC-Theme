@@ -92,7 +92,7 @@ function sc_publication($attr, $content=null){
 	}
 
 	$url = get_post_meta($pub->ID, "publication_url", True);
-	$url = str_replace('https:', 'http:', $url); // Force http
+	//$url = str_replace('https:', 'http:', $url); // Force http // y?
 
 	// Get the Issuu DocumentID from the url provided
 	$docID = json_decode(file_get_contents($url.'?issuu-data=docID'));
