@@ -10,6 +10,15 @@ require_once('third-party/truncate-html.php');  # Includes truncateHtml function
 
 //Add theme-specific functions here.
 
+// stuff for cors
+add_filter( 'allowed_http_origins', 'add_allowed_origins' );
+function add_allowed_origins( $origins ) {
+    $origins[] = site_url(null, null, 'http');
+    $origins[] = site_url(null, null, 'https');
+	print_r($origins);
+    return $origins;
+}
+
 /**
  * Slider post type customizations
  * Stolen from SmartStart theme
