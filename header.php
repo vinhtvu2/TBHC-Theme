@@ -74,7 +74,10 @@
 				}
 				#jumbotron-logo img{
 					width: <?=get_theme_option('header_width_desktop')?>;        
-				}			
+				}		
+				#centerpiece_slider ul>img{
+					height: <?=get_theme_option('centerpiece_desktop_height')?>;
+				}				
 			}
 		</style>
 		</head>
