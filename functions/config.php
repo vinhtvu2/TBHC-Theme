@@ -481,9 +481,9 @@ Config::$theme_settings = array(
 		new TextField(array(
 			'name'        => 'Centerpiece Desktop Height',
 			'id'          => THEME_OPTIONS_NAME.'[centerpiece_desktop_height]',
-			'description' => 'Override the default centerpiece height (does not affect mobile).<br/><em>Suggested units: px (constant height)</em>',
+			'description' => 'Override the default centerpiece height (does not affect mobile). Set to auto for default functionality.<br/><em>Suggested units: px (constant height)</em>',
 			'value'       => $theme_options['centerpiece_desktop_height'],
-			'default'	  => '400px',
+			'default'	  => 'auto',
 		)),
 		new TextField(array(
 			'name'        => 'Footer Background Color',
