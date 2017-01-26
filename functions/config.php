@@ -224,7 +224,7 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['cb_domain'],
 		)),
 	),
-	'Events' => array(
+	'Feeds' => array(
 		new SelectField(array(
 			'name'        => 'Events Max Items',
 			'id'          => THEME_OPTIONS_NAME.'[events_max_items]',
@@ -246,6 +246,13 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['events_url'],
 			'default'     => 'http://events.ucf.edu',
 		)),
+		/*new TextField(array(
+			'name'        => 'Opportunities feed URL',
+			'id'          => THEME_OPTIONS_NAME.'[opportunity_feed_url]',
+			'description' => 'Base URL for the opportunities you wish to use. Leave blank if this site is feeding out opportunities. Example: <em>//tbhccms.smca.ucf.edu/feed?post-type=opportunity</em>',
+			'value'       => $theme_options['opportunity_feed_url'],
+			'default'     => '//tbhccms.smca.ucf.edu/feed?post-type=opportunity',
+		)),*/
 	),
 	'Home Page' => array(
 		new TextareaField(array(
