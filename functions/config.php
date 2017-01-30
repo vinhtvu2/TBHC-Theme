@@ -598,6 +598,8 @@ if ( $theme_options['gw_verify'] ) {
 	);
 }
 
+define('WP_HOME','https://tbhccms.smca.ucf.edu');
+define('WP_SITEURL','https://tbhccms.smca.ucf.edu');
 define('NOBLOGREDIRECT', 'https://tbhccms.smca.ucf.edu');
 define('DOMAIN_CURRENT_SITE', 'https://tbhccms.smca.ucf.edu');
 define( 'PATH_CURRENT_SITE', '/' );
