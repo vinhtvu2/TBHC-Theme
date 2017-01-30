@@ -50,7 +50,7 @@ function __init__(){
 }
 add_action('after_setup_theme', '__init__');
 
-define('NOBLOGREDIRECT', 'https://new.honors.ucf.edu');
+define('NOBLOGREDIRECT', 'https://tbhccms.smca.ucf.edu');
 
 # Set theme constants
 #define('DEBUG', True);                  # Always on
