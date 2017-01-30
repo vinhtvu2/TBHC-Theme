@@ -604,13 +604,3 @@ if ( $theme_options['gw_verify'] ) {
 		'content' => htmlentities( $theme_options['gw_verify'] ),
 	);
 }
-
-define('NOBLOGREDIRECT', 'https://tbhccms.smca.ucf.edu');
-define('DOMAIN_CURRENT_SITE', 'https://tbhccms.smca.ucf.edu');
-define( 'PATH_CURRENT_SITE', '/' );
-define( 'SITE_ID_CURRENT_SITE', 1 );
-define( 'BLOG_ID_CURRENT_SITE', 1 );
-define('ADMIN_COOKIE_PATH', '/');
-define('COOKIE_DOMAIN', '');
-define('COOKIEPATH', '');
-define('SITECOOKIEPATH', '');
