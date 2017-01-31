@@ -50,8 +50,6 @@ function __init__(){
 }
 add_action('after_setup_theme', '__init__');
 
-define('NOBLOGREDIRECT', 'https://tbhccms.smca.ucf.edu');
-
 # Set theme constants
 #define('DEBUG', True);                  # Always on
 #define('DEBUG', False);                 # Always off
@@ -605,9 +603,13 @@ if ( $theme_options['gw_verify'] ) {
 		'name'    => 'google-site-verification',
 		'content' => htmlentities( $theme_options['gw_verify'] ),
 	);
+<<<<<<< HEAD
+}
+=======
 }
 //Begin Really Simple SSL Load balancing fix 
 if (isset($_SERVER["HTTP_X_FORWARDED_PROTO"] ) && "https" == $_SERVER["HTTP_X_FORWARDED_PROTO"] ) {
 	$_SERVER["HTTPS"] = "on";
 }
 //END Really Simple SSL 
+>>>>>>> https-changes
