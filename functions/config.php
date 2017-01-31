@@ -599,3 +599,8 @@ if ( $theme_options['gw_verify'] ) {
 		'content' => htmlentities( $theme_options['gw_verify'] ),
 	);
 }
+//Begin Really Simple SSL Load balancing fix 
+if (isset($_SERVER["HTTP_X_FORWARDED_PROTO"] ) && "https" == $_SERVER["HTTP_X_FORWARDED_PROTO"] ) {
+	$_SERVER["HTTPS"] = "on";
+}
+//END Really Simple SSL 

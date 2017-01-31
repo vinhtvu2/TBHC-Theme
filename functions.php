@@ -15,7 +15,7 @@ add_filter( 'allowed_http_origins', 'add_allowed_origins' );
 function add_allowed_origins( $origins ) {
     $origins[] = site_url(null, null, 'http');
     $origins[] = site_url(null, null, 'https');
-	print_r($origins);
+	//print_r($origins);
     return $origins;
 }
 
