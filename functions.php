@@ -13,8 +13,7 @@ require_once('third-party/truncate-html.php');  # Includes truncateHtml function
 // stuff for cors
 add_filter( 'allowed_http_origins', 'add_allowed_origins' );
 function add_allowed_origins( $origins ) {
-    $origins[] = site_url(null, null, 'http');
-    $origins[] = site_url(null, null, 'https');
+    $origins = array(site_url(null, null, 'http'),site_url(null, null, 'https'),'https://e.issuu.com/issuu-reader3-embed-files/stable/embed.html');
 	//print_r($origins);
     return $origins;
 }
