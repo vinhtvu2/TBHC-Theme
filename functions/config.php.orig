@@ -603,4 +603,13 @@ if ( $theme_options['gw_verify'] ) {
 		'name'    => 'google-site-verification',
 		'content' => htmlentities( $theme_options['gw_verify'] ),
 	);
+<<<<<<< HEAD
 }
+=======
+}
+//Begin Really Simple SSL Load balancing fix 
+if (isset($_SERVER["HTTP_X_FORWARDED_PROTO"] ) && "https" == $_SERVER["HTTP_X_FORWARDED_PROTO"] ) {
+	$_SERVER["HTTPS"] = "on";
+}
+//END Really Simple SSL 
+>>>>>>> https-changes
