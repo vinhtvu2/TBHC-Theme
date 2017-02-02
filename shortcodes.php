@@ -522,7 +522,7 @@ function sc_opportunity_grid($atts) {
 	});
 	
 	ob_start();
-	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=esc_attr($dd_event_groups)?>" data-group2="<?=esc_attr($dd2_event_groups)?>" data-jn="<?=esc_attr($join)?>" data-oprtr="<?=esc_attr($operator)?>" data-allopt="<?=esc_attr($show_option_all)?>" data-allopt2="<?=esc_attr($show_option_all2)?>">
+	?><div class="opportunity-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
 		<? if($dropdown){ 
 			$prntTrm = get_term_by('slug', 'event-category','event_groups');
 			$ids = array_map(function($blrp)use($prntTrm){ 
@@ -702,7 +702,7 @@ function sc_spotlight_grid($atts) {
 	//var_dump($spots);	
 	
 	ob_start();
-	?><div class="spotlight-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=esc_attr($dd_event_groups)?>" data-group2="<?=esc_attr($dd2_event_groups)?>" data-jn="<?=esc_attr($join)?>" data-oprtr="<?=esc_attr($operator)?>" data-allopt="<?=esc_attr($show_option_all)?>" data-allopt2="<?=esc_attr($show_option_all2)?>">
+	?><div class="spotlight-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_event_groups?>" data-group2="<?=$dd2_event_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>">
 		<? if($dropdown){ 
 			$args = array(
 				'taxonomy'	=>	'event_groups',
