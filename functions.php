@@ -18,11 +18,6 @@ function add_allowed_origins( $origins ) {
     return $origins;
 }
 
-//x frame options header
-function send_frame_options_header() {
-	@header( 'X-Frame-Options: SAMEORIGIN' );
-} 
-
 /**
  * Slider post type customizations
  * Stolen from SmartStart theme
