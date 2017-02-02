@@ -342,7 +342,7 @@ function get_people_from_org_group(){
 		'row_size='.$_REQUEST['row_size'],
 	);
 	$p = array_map(function($a){ return htmlspecialchars($a); }, $p);
-	echo do_shortcode('[person-profile-grid org_groups=\''.p[0].'\''.p[1].p[2].p[3].p[4].p[5].p[6].p[7].p[8].']');
+	echo do_shortcode('[person-profile-grid org_groups=\''.$p[0].'\''.$p[1].$p[2].$p[3].$p[4].$p[5].$p[6].$p[7].$p[8].']');
 	die();
 }
 
@@ -360,7 +360,7 @@ function get_opps_from_event_group(){
 		(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' '),
 	);
 	$p = array_map(function($a){ return htmlspecialchars($a); }, $p);
-	echo do_shortcode('[opportunity-grid event_groups=\''.p[0].'\' '.p[1].p[2].p[3].p[4].p[5].p[6].' ]');
+	echo do_shortcode('[opportunity-grid event_groups=\''.$p[0].'\' '.$p[1].$p[2].$p[3].$p[4].$p[5].$p[6].' ]');
 	die();
 }
 
@@ -378,7 +378,7 @@ function get_spots_from_event_group(){
 		(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' '),
 	);
 	$p = array_map(function($a){ return htmlspecialchars($a); }, $p);
-	echo do_shortcode('[spotlight-grid event_groups=\''.p[0].'\' '.p[1].p[2].p[3].p[4].p[5].p[6].' ]');
+	echo do_shortcode('[spotlight-grid event_groups=\''.$p[0].'\' '.$p[1].$p[2].$p[3].$p[4].$p[5].$p[6].' ]');
 	die();
 }
 
