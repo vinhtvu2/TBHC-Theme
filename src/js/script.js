@@ -1626,7 +1626,7 @@ function getProfilesForGrid(inp1, inp2){ // moved out person-profile-grid to new
 		data.show_option_all2 = shwOptAll2;
 	}
 	$.post(ajaxUrl, data, function(res){
-		ele.replaceWith(res);
+		ele.text(res);
 	});
 }
 function getOppsForGrid(inp1, inp2){
@@ -1658,7 +1658,7 @@ function getOppsForGrid(inp1, inp2){
 		data.show_option_all2 = shwOptAll2;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
-		jQuery('.opportunity-grid').replaceWith(res);
+		jQuery('.opportunity-grid').text(res);
 	});
 }
 function getSpotsForGrid(inp1, inp2){
@@ -1690,7 +1690,7 @@ function getSpotsForGrid(inp1, inp2){
 		data.show_option_all2 = shwOptAll2;
 	}
 	jQuery.post(ajaxUrl, data, function(res){
-		jQuery('.spotlight-grid').replaceWith(res);
+		jQuery('.spotlight-grid').text(res);
 	});
 }
 var debounce = function (func, threshold, execAsap) {
