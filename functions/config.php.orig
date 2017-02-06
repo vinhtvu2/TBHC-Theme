@@ -68,9 +68,6 @@ define('THEME_OPTIONS_NAME', 'theme');
 define('THEME_OPTIONS_PAGE_TITLE', 'Theme Options');
 define('ESI_INCLUDE_URL', THEME_STATIC_URL.'/esi.php');
 
-#wrong place for this?
-header('X-Frame-Options: SAMEORIGIN');
-
 # Timeout for data grabbed from feeds
 define('FEED_FETCH_TIMEOUT', 10); // seconds
 
@@ -606,4 +603,13 @@ if ( $theme_options['gw_verify'] ) {
 		'name'    => 'google-site-verification',
 		'content' => htmlentities( $theme_options['gw_verify'] ),
 	);
+<<<<<<< HEAD
 }
+=======
+}
+//Begin Really Simple SSL Load balancing fix 
+if (isset($_SERVER["HTTP_X_FORWARDED_PROTO"] ) && "https" == $_SERVER["HTTP_X_FORWARDED_PROTO"] ) {
+	$_SERVER["HTTPS"] = "on";
+}
+//END Really Simple SSL 
+>>>>>>> https-changes
