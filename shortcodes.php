@@ -885,7 +885,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 						$output .= '<img class="centerpiece_single_img" src="'.$slide_image_url[0].'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
 						$output .= '/>';
 
-						if($slide_display_tit[$s]){//$slide_display_tit == 'on'){
+						if($slide_display_tit[$s] == 'on'){
 							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:'.$slide_tit_bg_color[$s].';opactiy:'.$slide_tit_opacity[$s].';">'.$slide_title[$s].'</div>';
 						}
 						
