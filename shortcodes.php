@@ -351,8 +351,10 @@ function sc_person_profile_grid($atts) {
 			return $res;
 		});
 	}
-	
-	ob_start();
+	function specCharEscCallback($buffer){
+		return htmlentities($buffer);
+	}
+	ob_start("specCharEscCallback");
 	// Added row_size attribute to end of line below (omj it's soooo long...)
 	?><div class="person-profile-grid" data-url="<?=admin_url( 'admin-ajax.php' )?>" data-group="<?=$dd_org_groups?>" data-group2="<?=$dd2_org_groups?>" data-shwgrp="<?=$show_org_groups?>" data-jn="<?=$join?>" data-oprtr="<?=$operator?>" data-allopt="<?=$show_option_all?>" data-allopt2="<?=$show_option_all2?>" data-rowsize="<?=$row_size?>">
 		<? if($dropdown){ 
