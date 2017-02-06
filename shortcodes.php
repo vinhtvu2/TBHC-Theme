@@ -884,17 +884,18 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 						$output .= '<img class="centerpiece_single_img" src="'.$slide_image_url[0].'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
 						$output .= '/>';
 
+						if(TRUE){}//$slide_display_tit == 'on'){
+							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top.';left:'.$slide_tit_off_left.';">'.$slide_title.'</div>';
+						}
+						
 						if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
 							$output .= '</a>';
 						}
 
 						if ($slide_content[$s] !== '') {
 							$output .= '<div class="slide_contents">'.apply_filters('the_content', $slide_content[$s]).'</div>';
-						}
-						
-						if($slide_display_tit == 'on'){
-							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top.';left:'.$slide_tit_off_left.';">'.$slide_title.'</div>';
-						}
+						}						
+
 					}
 
 					// Video output:
