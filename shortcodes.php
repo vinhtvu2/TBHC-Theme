@@ -852,6 +852,12 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			$slide_tit_bg_color		= get_post_meta($post->ID, 'ss_title_background_color', TRUE);	
 			$slide_tit_opacity		= get_post_meta($post->ID, 'ss_title_opacity', TRUE);	
 		
+			// id have made a param array (literals in js), debug gets ezier
+			if(DEBUG){
+				$a = array($slide_display_tit,$slide_tit_off_top,$slide_tit_off_left,$slide_tit_font_sz,$slide_tit_font_col,$slide_tit_bg_color,$slide_tit_opacity);
+				print_r($a);
+			}
+		
 			// #centerpiece_slider must contain an image placeholder set to the max
 			// slide width in order to trigger responsive styles properly--
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
