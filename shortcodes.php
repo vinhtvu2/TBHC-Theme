@@ -845,6 +845,8 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			$slide_newtab			= get_post_meta($post->ID, 'ss_slide_link_newtab', TRUE);
 			$slide_duration			= get_post_meta($post->ID, 'ss_slide_duration', TRUE);
 			$slide_display_tit		= get_post_meta($post->ID, 'ss_display_title', TRUE);
+			$slide_tit_off_top		= get_post_meta($post->ID, 'ss_title_top_offset', TRUE);	
+			$slide_tit_off_left		= get_post_meta($post->ID, 'ss_title_left_offset', TRUE);	
 			$slide_tit_font_sz		= get_post_meta($post->ID, 'ss_title_font_size', TRUE);	
 			$slide_tit_font_col		= get_post_meta($post->ID, 'ss_title_font_color', TRUE);	
 			$slide_tit_bg_color		= get_post_meta($post->ID, 'ss_title_background_color', TRUE);	
