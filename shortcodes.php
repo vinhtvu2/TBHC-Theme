@@ -257,11 +257,15 @@ function sc_person_picture_list($atts) {
 }
 add_shortcode('person-picture-list', 'sc_person_picture_list');
 
+function specCharEscCallback($buffer){
+		return htmlentities($buffer);
+	}
 
 /**
  * Custom Person List by Erik
  **/
 function sc_person_profile_grid($atts) {
+	$atts = array_map('specCharEscCallback', $atts);
 	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
@@ -350,9 +354,6 @@ function sc_person_profile_grid($atts) {
 			}
 			return $res;
 		});
-	}
-	function specCharEscCallback($buffer){
-		return htmlentities($buffer);
 	}
 	ob_start("specCharEscCallback");
 	// Added row_size attribute to end of line below (omj it's soooo long...)
