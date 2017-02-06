@@ -844,6 +844,9 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			$slide_links_to			= get_post_meta($post->ID, 'ss_slide_links_to', TRUE);
 			$slide_newtab			= get_post_meta($post->ID, 'ss_slide_link_newtab', TRUE);
 			$slide_duration			= get_post_meta($post->ID, 'ss_slide_duration', TRUE);
+			$slide_display_tit		= get_post_meta($post->ID, 'ss_display_title', TRUE);
+			$slide_tit_off_left		= get_post_meta($post->ID, 'ss_title_left_offset', TRUE);
+			$slide_tit_off_top 		= get_post_meta($post->ID, 'ss_title_top_offset', TRUE);
 			$rounded_corners		= get_post_meta($post->ID, 'ss_slider_rounded_corners', TRUE);
 
 			// #centerpiece_slider must contain an image placeholder set to the max
@@ -887,6 +890,10 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 
 						if ($slide_content[$s] !== '') {
 							$output .= '<div class="slide_contents">'.apply_filters('the_content', $slide_content[$s]).'</div>';
+						}
+						
+						if($slide_display_tit == 'on'){
+							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top.';left:'.$slide_tit_off_left.';">'.$slide_title.'</div>';
 						}
 					}
 
