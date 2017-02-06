@@ -1163,6 +1163,27 @@ class Slider extends CustomPostType {
 							'desc' => '',
 						),
 						array(
+							'name' => __('Display Title'),
+							'id'   => $prefix . 'display_title',
+							'type' => 'checkbox',
+							'desc' => 'Whether or not the title will be displayed on the slide.',
+							'std' => 'off',
+						),
+						array(
+							'name' => __('Title Offset Top'),
+							'id'   => $prefix . '_title_top_offset',
+							'type' => 'text',
+							'desc' => 'Title\'s distance from top edge of slide. Requires \'Display Title\' to be checked.<br/><em>Suggested units: % (variable height)</em>',
+							'std' => '10%',
+						),
+						array(
+							'name' => __('Title Offset Left'),
+							'id'   => $prefix . '_title_left_offset',
+							'type' => 'text',
+							'desc' => 'Title\'s distance from left edge of slide. Requires \'Display Title\' to be checked.<em>Suggested units: % (variable width)</em>',
+							'std' => '10%',
+						),
+						array(
 							'name' => __('Type of Content'),
 							'id'   => $prefix . 'type_of_content',
 							'type' => 'radio',
