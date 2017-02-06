@@ -1171,17 +1171,17 @@ class Slider extends CustomPostType {
 						),
 						array(
 							'name' => __('Title Offset Top'),
-							'id'   => $prefix . '_title_top_offset',
+							'id'   => $prefix . 'title_top_offset',
 							'type' => 'text',
 							'desc' => 'Title\'s distance from top edge of slide. Requires \'Display Title\' to be checked.<br/><em>Suggested units: % (variable height)</em>',
-							'std' => '10%',
+							'default' => '10%',
 						),
 						array(
 							'name' => __('Title Offset Left'),
-							'id'   => $prefix . '_title_left_offset',
+							'id'   => $prefix . 'title_left_offset',
 							'type' => 'text',
 							'desc' => 'Title\'s distance from left edge of slide. Requires \'Display Title\' to be checked.<em>Suggested units: % (variable width)</em>',
-							'std' => '10%',
+							'default' => '10%',
 						),
 						array(
 							'name' => __('Type of Content'),
