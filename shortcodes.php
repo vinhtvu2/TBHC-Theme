@@ -465,6 +465,7 @@ add_shortcode('person-profile-grid', 'sc_person_profile_grid');
  * Custom Opp List by Erik
  **/
 function sc_opportunity_grid($atts) {
+	$atts = array_map('specCharEscCallback', $atts);	
 	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;	
@@ -649,6 +650,7 @@ function sc_opportunity_grid($atts) {
 add_shortcode('opportunity-grid', 'sc_opportunity_grid');
 
 function sc_spotlight_grid($atts) {
+	$atts = array_map('specCharEscCallback', $atts);	
 	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;	
@@ -818,7 +820,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
  * Centerpiece Slider
  **/
 	function sc_centerpiece_slider( $atts, $content = null ) {
-
+		$atts = array_map('specCharEscCallback', $atts);		
 		extract( shortcode_atts( array(
 			'id' => '',
 		), $atts ) );
