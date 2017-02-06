@@ -845,10 +845,11 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			$slide_newtab			= get_post_meta($post->ID, 'ss_slide_link_newtab', TRUE);
 			$slide_duration			= get_post_meta($post->ID, 'ss_slide_duration', TRUE);
 			$slide_display_tit		= get_post_meta($post->ID, 'ss_display_title', TRUE);
-			$slide_tit_off_left		= get_post_meta($post->ID, 'ss_title_left_offset', TRUE);
-			$slide_tit_off_top 		= get_post_meta($post->ID, 'ss_title_top_offset', TRUE);
-			$rounded_corners		= get_post_meta($post->ID, 'ss_slider_rounded_corners', TRUE);
-
+			$slide_tit_font_sz		= get_post_meta($post->ID, 'ss_title_font_size', TRUE);	
+			$slide_tit_font_col		= get_post_meta($post->ID, 'ss_title_font_color', TRUE);	
+			$slide_tit_bg_color		= get_post_meta($post->ID, 'ss_title_background_color', TRUE);	
+			$slide_tit_opacity		= get_post_meta($post->ID, 'ss_title_opacity', TRUE);	
+		
 			// #centerpiece_slider must contain an image placeholder set to the max
 			// slide width in order to trigger responsive styles properly--
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
@@ -885,7 +886,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 						$output .= '/>';
 
 						if($slide_display_tit[$s]){//$slide_display_tit == 'on'){
-							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';">'.$slide_title[$s].'</div>';
+							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz.';color:'.$slide_tit_font_col.';background-color:'.$slide_tit_bg_color.';opactiy:'.$slide_tit_opacity.';">'.$slide_title[$s].'</div>';
 						}
 						
 						if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
