@@ -366,11 +366,6 @@ function hex_and_opacity_to_rgba($color, $opacity){
         $r = hexdec( substr($color, 0, 2) );
         $g = hexdec( substr($color, 2, 2) );
         $b = hexdec( substr($color, 4, 2) );
-        if( $opacity > 99){
-            $opacity = 1;
-			}else{
-            $opacity = "0.$opacity";
-        }
         $a = $opacity;
     }
     else{
