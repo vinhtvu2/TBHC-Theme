@@ -354,6 +354,32 @@ function get_spots_from_event_group(){
 add_action( 'wp_ajax_get_spots_from_event_group', 'get_spots_from_event_group' );
 add_action( 'wp_ajax_nopriv_get_spots_from_event_group', 'get_spots_from_event_group' );
 
+function hex_and_opacity_to_rgba($color, $opacity){
+	/*
+        Convert HEX Color to RGBA Color, opacity value support.
+        Written By: Qassim Hassan
+        Website: wp-time.com
+	 */
+    $color = trim($color, "#");
+    $hex = hexdec($color);
+    if( strlen($color) == 6 ){
+        $r = hexdec( substr($color, 0, 2) );
+        $g = hexdec( substr($color, 2, 2) );
+        $b = hexdec( substr($color, 4, 2) );
+        if( $opacity > 99){
+            $opacity = 1;
+			}else{
+            $opacity = "0.$opacity";
+        }
+        $a = $opacity;
+    }
+    else{
+        return "Error color code! Please enter correct color code, for example #ffffff";
+        return false;
+    }
+    return $r.", ".$g.", ".$b.", ".$a;
+}
+
 /**
  * Allow special tags in post bodies that would get stripped otherwise for most users.
  * Modifies $allowedposttags defined in wp-includes/kses.php
