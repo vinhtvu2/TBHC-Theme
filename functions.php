@@ -13,9 +13,8 @@ require_once('third-party/truncate-html.php');  # Includes truncateHtml function
 // stuff for cors
 add_filter( 'allowed_http_origins', 'add_allowed_origins' );
 function add_allowed_origins( $origins ) {
-    $origins[] = site_url(null, null, 'http');
-    $origins[] = site_url(null, null, 'https');
-	print_r($origins);
+    $origins = array(site_url(null, null, 'http'),site_url(null, null, 'https'),'https://e.issuu.com/issuu-reader3-embed-files/stable/embed.html');
+	//print_r($origins);
     return $origins;
 }
 
@@ -330,8 +329,20 @@ function sortable_people_columns( $columns ) {
 }
 add_action('manage_edit-person_sortable_columns', 'sortable_people_columns');
 
-function get_people_from_org_group(){ // Added row_size to end of line below
-	echo do_shortcode('[person-profile-grid org_groups=\''.($_REQUEST['org_groups'] ? $_REQUEST['org_groups'] : $_REQUEST['dd_org_groups']).'\'' .(!empty($_REQUEST['org_groups2']) ? 'org_groups2=\''.$_REQUEST['org_groups2'].'\' ' : '').(!empty($_REQUEST['dd_org_groups']) ? ' dd_org_groups=\''.$_REQUEST['dd_org_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_org_groups']) ? 'dd2_org_groups=\''.$_REQUEST['dd2_org_groups'].'\' dropdown2=true ' : ' ') : ' ').'show_org_groups='.$_REQUEST['show_org_groups'].(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' ').(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\'' : ' ').(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'].'\' ' : ' ').(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' ').'row_size='.$_REQUEST['row_size'].']');
+function get_people_from_org_group(){ 
+	$p = array(
+		($_REQUEST['org_groups'] ? $_REQUEST['org_groups'] : $_REQUEST['dd_org_groups']),
+		(!empty($_REQUEST['org_groups2']) ? 'org_groups2=\''.$_REQUEST['org_groups2'].'\' ' : ''),
+		(!empty($_REQUEST['dd_org_groups']) ? ' dd_org_groups=\''.$_REQUEST['dd_org_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_org_groups']) ? 'dd2_org_groups=\''.$_REQUEST['dd2_org_groups'].'\' dropdown2=true ' : ' ') : ' '),
+		'show_org_groups='.$_REQUEST['show_org_groups'],
+		(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' '),
+		(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\'' : ' '),
+		(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'].'\' ' : ' '),
+		(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' '),
+		'row_size='.$_REQUEST['row_size'],
+	);
+	$p = array_map(function($a){ return htmlspecialchars($a); }, $p);
+	echo do_shortcode('[person-profile-grid org_groups=\''.$p[0].'\''.$p[1].$p[2].$p[3].$p[4].$p[5].$p[6].$p[7].$p[8].']');
 	die();
 }
 
@@ -339,7 +350,17 @@ add_action( 'wp_ajax_get_people_from_org_group', 'get_people_from_org_group' );
 add_action( 'wp_ajax_nopriv_get_people_from_org_group', 'get_people_from_org_group' );
 
 function get_opps_from_event_group(){
-	echo do_shortcode('[opportunity-grid event_groups=\''.($_REQUEST['event_groups'] ? $_REQUEST['event_groups'] : $_REQUEST['dd_event_groups']).'\' '.(!empty($_REQUEST['event_groups2']) ? 'event_groups2=\''.($_REQUEST['event_groups2'] ? $_REQUEST['event_groups2'] : $_REQUEST['dd2_event_groups']).'\' ' : '').(!empty($_REQUEST['dd_event_groups']) ? ' dd_event_groups=\''.$_REQUEST['dd_event_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_event_groups']) ? 'dd2_event_groups=\''.$_REQUEST['dd2_event_groups'].'\' dropdown2=true ' : ' ') : ' ').(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' ').(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\' ' : ' ').(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'].'\' ' : ' ').(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' ').' ]');
+	$p = array(
+		($_REQUEST['event_groups'] ? $_REQUEST['event_groups'] : $_REQUEST['dd_event_groups']),
+		(!empty($_REQUEST['event_groups2']) ? 'event_groups2=\''.($_REQUEST['event_groups2'] ? $_REQUEST['event_groups2'] : $_REQUEST['dd2_event_groups']).'\' ' : ''),
+		(!empty($_REQUEST['dd_event_groups']) ? ' dd_event_groups=\''.$_REQUEST['dd_event_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_event_groups']) ? 'dd2_event_groups=\''.$_REQUEST['dd2_event_groups'].'\' dropdown2=true ' : ' ') : ' '),
+		(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' '),
+		(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\' ' : ' '),
+		(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'].'\' ' : ' '),
+		(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' '),
+	);
+	$p = array_map(function($a){ return htmlspecialchars($a); }, $p);
+	echo do_shortcode('[opportunity-grid event_groups=\''.$p[0].'\' '.$p[1].$p[2].$p[3].$p[4].$p[5].$p[6].' ]');
 	die();
 }
 
@@ -347,7 +368,17 @@ add_action( 'wp_ajax_get_opps_from_event_group', 'get_opps_from_event_group' );
 add_action( 'wp_ajax_nopriv_get_opps_from_event_group', 'get_opps_from_event_group' );
 
 function get_spots_from_event_group(){
-	echo do_shortcode('[spotlight-grid event_groups=\''.($_REQUEST['event_groups'] ? $_REQUEST['event_groups'] : $_REQUEST['dd_event_groups']).'\' '.(!empty($_REQUEST['event_groups2']) ? 'event_groups2=\''.($_REQUEST['event_groups2'] ? $_REQUEST['event_groups2'] : $_REQUEST['dd2_event_groups']).'\' ' : '').(!empty($_REQUEST['dd_event_groups']) ? ' dd_event_groups=\''.$_REQUEST['dd_event_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_event_groups']) ? 'dd2_event_groups=\''.$_REQUEST['dd2_event_groups'].'\' dropdown2=true ' : ' ') : ' ').(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' ').(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\' ' : ' ').(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'].'\' ' : ' ').(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' ').' ]');
+	$p = array(
+		($_REQUEST['event_groups'] ? $_REQUEST['event_groups'] : $_REQUEST['dd_event_groups']),
+		(!empty($_REQUEST['event_groups2']) ? 'event_groups2=\''.($_REQUEST['event_groups2'] ? $_REQUEST['event_groups2'] : $_REQUEST['dd2_event_groups']).'\' ' : ''),
+		(!empty($_REQUEST['dd_event_groups']) ? ' dd_event_groups=\''.$_REQUEST['dd_event_groups'].'\' dropdown=true '.(!empty($_REQUEST['dd2_event_groups']) ? 'dd2_event_groups=\''.$_REQUEST['dd2_event_groups'].'\' dropdown2=true ' : ' ') : ' '),
+		(!empty($_REQUEST['join']) ? ' join=\''.$_REQUEST['join'].'\'' : ' '),
+		(!empty($_REQUEST['operator']) ? ' operator=\''.$_REQUEST['operator'].'\' ' : ' '),
+		(!empty($_REQUEST['show_option_all']) ? ' show_option_all=\''.$_REQUEST['show_option_all'].'\' ' : ' '),
+		(!empty($_REQUEST['show_option_all2']) ? ' show_option_all2=\''.$_REQUEST['show_option_all2'].'\' ' : ' '),
+	);
+	$p = array_map(function($a){ return htmlspecialchars($a); }, $p);
+	echo do_shortcode('[spotlight-grid event_groups=\''.$p[0].'\' '.$p[1].$p[2].$p[3].$p[4].$p[5].$p[6].' ]');
 	die();
 }
 

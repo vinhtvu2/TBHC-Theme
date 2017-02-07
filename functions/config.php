@@ -50,8 +50,6 @@ function __init__(){
 }
 add_action('after_setup_theme', '__init__');
 
-
-
 # Set theme constants
 #define('DEBUG', True);                  # Always on
 #define('DEBUG', False);                 # Always off
@@ -227,7 +225,7 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['cb_domain'],
 		)),
 	),
-	'Events' => array(
+	'Feeds' => array(
 		new SelectField(array(
 			'name'        => 'Events Max Items',
 			'id'          => THEME_OPTIONS_NAME.'[events_max_items]',
@@ -249,6 +247,13 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['events_url'],
 			'default'     => 'http://events.ucf.edu',
 		)),
+		/*new TextField(array(
+			'name'        => 'Opportunities feed URL',
+			'id'          => THEME_OPTIONS_NAME.'[opportunity_feed_url]',
+			'description' => 'Base URL for the opportunities you wish to use. Leave blank if this site is feeding out opportunities. Example: <em>//tbhccms.smca.ucf.edu/feed?post-type=opportunity</em>',
+			'value'       => $theme_options['opportunity_feed_url'],
+			'default'     => '//tbhccms.smca.ucf.edu/feed?post-type=opportunity',
+		)),*/
 	),
 	'Home Page' => array(
 		new TextareaField(array(
@@ -480,6 +485,13 @@ Config::$theme_settings = array(
 			'description' => 'Override the default theme navbar color using the defined HEX color code (eg #FFFFFF for white).<br/>**Affects both mobile and desktop nav',
 			'value'       => $theme_options['navbar_bg_color'],
 			'default'	  => '#ffcc00'	
+		)),
+		new TextField(array(
+			'name'        => 'Centerpiece Desktop Height',
+			'id'          => THEME_OPTIONS_NAME.'[centerpiece_desktop_height]',
+			'description' => 'Override the default centerpiece height (does not affect mobile). Set to auto for default functionality.<br/><em>Suggested units: px (constant height)</em>',
+			'value'       => $theme_options['centerpiece_desktop_height'],
+			'default'	  => 'auto',
 		)),
 		new TextField(array(
 			'name'        => 'Footer Background Color',
