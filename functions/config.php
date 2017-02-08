@@ -494,6 +494,13 @@ Config::$theme_settings = array(
 			'default'	  => 'auto',
 		)),
 		new TextField(array(
+			'name'        => 'Centerpiece Mobile Height',
+			'id'          => THEME_OPTIONS_NAME.'[centerpiece_mobile_height]',
+			'description' => 'Override the default centerpiece height (does not affect desktop). Set to auto for default functionality.<br/><em>Suggested units: px (constant height)</em>',
+			'value'       => $theme_options['centerpiece_mobile_height'],
+			'default'	  => 'auto',
+		)),
+		new TextField(array(
 			'name'        => 'Footer Background Color',
 			'id'          => THEME_OPTIONS_NAME.'[footer_bg_color]',
 			'description' => 'Override the default theme footer color using the defined HEX color code (eg #FFFFFF for white).',

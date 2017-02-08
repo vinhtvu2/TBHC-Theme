@@ -18,6 +18,12 @@ function add_allowed_origins( $origins ) {
     return $origins;
 }
 
+// disable oembed
+function my_deregister_scripts(){
+	wp_dequeue_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );
+
 /**
  * Slider post type customizations
  * Stolen from SmartStart theme
