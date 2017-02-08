@@ -13,17 +13,10 @@ require_once('third-party/truncate-html.php');  # Includes truncateHtml function
 // stuff for cors
 add_filter( 'allowed_http_origins', 'add_allowed_origins' );
 function add_allowed_origins( $origins ) {
-    $origins = array(site_url(null, null, 'http'),site_url(null, null, 'https'),'https://e.issuu.com/issuu-reader3-embed-files/stable/embed.html');
+    $origins = array(site_url(null, null, 'http'),site_url(null, null, 'https'),'https://e.issuu.com/issuu-reader3-embed-files/stable/embed.html', site_url(null, null, 'https').'/wp-json/oembed/1.0/embed');
 	//print_r($origins);
     return $origins;
 }
-
-add_filter( 'rest_endpoints', function( $endpoints ){
-    if ( isset( $endpoints['/wp-json/oembed/1.0/embed'] ) ) {
-        unset( $endpoints['/wp/v2/users'] );
-    }
-    return $endpoints;
-});
 
 /**
  * Slider post type customizations
