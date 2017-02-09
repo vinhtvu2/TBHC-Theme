@@ -898,12 +898,12 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 					// Image output:
 					if ($slide_content_type[$s] == 'image') {
 						//$output .= '<img class="centerpiece_single_img" src="'.$slide_image_url[0].'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
-						$output .= '<div class="centerpiece_single)img" style="background-image:url(\''.$slide_image_url[0].'\');background-size:cover;"';
+						$output .= '<div class="centerpiece_single img" style="background-image:url(\''.$slide_image_url[0].'\');background-size:cover;position:relative;height:'.$slide_mob_height.';"';
 						$output .= '/>';
 
 						if($slide_display_tit[$s] == 'on'){
 							$rgba = hex_and_opacity_to_rgba($slide_tit_bg_color[$s], $slide_tit_opacity[$s]);
-							$output .= '<div style="top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:rgba('.$rgba.');width:100%;height:'.$slide_mob_height.';">'.$slide_title[$s].'</div>';
+							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:rgba('.$rgba.');">'.$slide_title[$s].'</div>';
 						}
 						
 						if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
