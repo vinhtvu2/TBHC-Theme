@@ -857,7 +857,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			$slide_tit_bg_color		= get_post_meta($post->ID, 'ss_title_background_color', TRUE);	
 			$slide_tit_opacity		= get_post_meta($post->ID, 'ss_title_opacity', TRUE);	
 		
-			//$slide_mob_height		= get_
+			$slide_mob_height		= get_theme_option('centerpiece_mobile_height');
 			
 			// id have made a param array (literals in js), debug gets ezier
 			if(DEBUG){
@@ -869,8 +869,8 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			// slide width in order to trigger responsive styles properly--
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
 			$output .= '<div id="centerpiece_slider">
-						  <ul>
-						  	<img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png" style="max-width: 100%; height: auto;">';
+						  <ul>';
+						  	//<img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png" style="max-width: 100%; height: auto;">';
 
 
 			foreach ($slide_order as $s) {
@@ -903,7 +903,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 
 						if($slide_display_tit[$s] == 'on'){
 							$rgba = hex_and_opacity_to_rgba($slide_tit_bg_color[$s], $slide_tit_opacity[$s]);
-							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:rgba('.$rgba.');">'.$slide_title[$s].'</div>';
+							$output .= '<div style="top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:rgba('.$rgba.');width:100%;height:'.$slide_mob_height.';">'.$slide_title[$s].'</div>';
 						}
 						
 						if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
