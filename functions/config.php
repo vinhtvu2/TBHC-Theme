@@ -68,9 +68,6 @@ define('THEME_OPTIONS_NAME', 'theme');
 define('THEME_OPTIONS_PAGE_TITLE', 'Theme Options');
 define('ESI_INCLUDE_URL', THEME_STATIC_URL.'/esi.php');
 
-#wrong place for this?
-header('X-Frame-Options: SAMEORIGIN');
-
 # Timeout for data grabbed from feeds
 define('FEED_FETCH_TIMEOUT', 10); // seconds
 
@@ -491,13 +488,6 @@ Config::$theme_settings = array(
 			'id'          => THEME_OPTIONS_NAME.'[centerpiece_desktop_height]',
 			'description' => 'Override the default centerpiece height (does not affect mobile). Set to auto for default functionality.<br/><em>Suggested units: px (constant height)</em>',
 			'value'       => $theme_options['centerpiece_desktop_height'],
-			'default'	  => 'auto',
-		)),
-		new TextField(array(
-			'name'        => 'Centerpiece Mobile Height',
-			'id'          => THEME_OPTIONS_NAME.'[centerpiece_mobile_height]',
-			'description' => 'Override the default centerpiece height (does not affect desktop). Set to auto for default functionality.<br/><em>Suggested units: px (constant height)</em>',
-			'value'       => $theme_options['centerpiece_mobile_height'],
 			'default'	  => 'auto',
 		)),
 		new TextField(array(
