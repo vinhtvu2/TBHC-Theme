@@ -1202,7 +1202,7 @@ class Slider extends CustomPostType {
 							'id'   => $prefix . 'title_background_color',
 							'type' => 'text',
 							'desc' => 'Title\'s background color. Requires \'Display Title\' to be checked.<em>Suggested units: hex (colors)</em>',
-							'default' => '#FFFFFF',
+							'default' => '#FFCC00',
 						),
 						array(
 							'name' => __('Title Opacity'),
