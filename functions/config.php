@@ -68,9 +68,6 @@ define('THEME_OPTIONS_NAME', 'theme');
 define('THEME_OPTIONS_PAGE_TITLE', 'Theme Options');
 define('ESI_INCLUDE_URL', THEME_STATIC_URL.'/esi.php');
 
-#wrong place for this?
-header('X-Frame-Options: SAMEORIGIN');
-
 # Timeout for data grabbed from feeds
 define('FEED_FETCH_TIMEOUT', 10); // seconds
 

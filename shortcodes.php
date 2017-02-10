@@ -257,15 +257,11 @@ function sc_person_picture_list($atts) {
 }
 add_shortcode('person-picture-list', 'sc_person_picture_list');
 
-function specCharEscCallback($buffer){
-		return htmlentities($buffer);
-	}
 
 /**
  * Custom Person List by Erik
  **/
 function sc_person_profile_grid($atts) {
-	$atts = array_map('specCharEscCallback', $atts);
 	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
@@ -354,6 +350,9 @@ function sc_person_profile_grid($atts) {
 			}
 			return $res;
 		});
+	}
+	function specCharEscCallback($buffer){
+		return htmlentities($buffer);
 	}
 	ob_start("specCharEscCallback");
 	// Added row_size attribute to end of line below (omj it's soooo long...)
@@ -465,7 +464,6 @@ add_shortcode('person-profile-grid', 'sc_person_profile_grid');
  * Custom Opp List by Erik
  **/
 function sc_opportunity_grid($atts) {
-	$atts = array_map('specCharEscCallback', $atts);	
 	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;	
@@ -650,7 +648,6 @@ function sc_opportunity_grid($atts) {
 add_shortcode('opportunity-grid', 'sc_opportunity_grid');
 
 function sc_spotlight_grid($atts) {
-	$atts = array_map('specCharEscCallback', $atts);	
 	//remove_filter('the_content','wpautop');
 	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;	
@@ -820,7 +817,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
  * Centerpiece Slider
  **/
 	function sc_centerpiece_slider( $atts, $content = null ) {
-		$atts = array_map('specCharEscCallback', $atts);		
+
 		extract( shortcode_atts( array(
 			'id' => '',
 		), $atts ) );
@@ -857,8 +854,6 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			$slide_tit_bg_color		= get_post_meta($post->ID, 'ss_title_background_color', TRUE);	
 			$slide_tit_opacity		= get_post_meta($post->ID, 'ss_title_opacity', TRUE);	
 		
-			$slide_mob_height		= get_theme_option('centerpiece_mobile_height');
-			
 			// id have made a param array (literals in js), debug gets ezier
 			if(DEBUG){
 				$a = array($slide_display_tit,$slide_tit_off_top,$slide_tit_off_left,$slide_tit_font_sz,$slide_tit_font_col,$slide_tit_bg_color,$slide_tit_opacity);
@@ -869,8 +864,8 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			// slide width in order to trigger responsive styles properly--
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
 			$output .= '<div id="centerpiece_slider">
-						  <ul>';
-						  	//<img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png" style="max-width: 100%; height: auto;">';
+						  <ul>
+						  	<img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png" style="max-width: 100%;">';
 
 
 			foreach ($slide_order as $s) {
@@ -897,13 +892,11 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 
 					// Image output:
 					if ($slide_content_type[$s] == 'image') {
-						//$output .= '<img class="centerpiece_single_img" src="'.$slide_image_url[0].'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
-						$output .= '<div class="centerpiece_single img" style="background-image:url(\''.$slide_image_url[0].'\');background-size:cover;position:relative!important;height:'.$slide_mob_height.';"';
+						$output .= '<img class="centerpiece_single_img" src="'.$slide_image_url[0].'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
 						$output .= '/>';
 
 						if($slide_display_tit[$s] == 'on'){
-							$rgba = hex_and_opacity_to_rgba($slide_tit_bg_color[$s], $slide_tit_opacity[$s]);
-							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:rgba('.$rgba.');">'.$slide_title[$s].'</div>';
+							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:'.$slide_tit_bg_color[$s].';opactiy:'.$slide_tit_opacity[$s].';">'.$slide_title[$s].'</div>';
 						}
 						
 						if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
