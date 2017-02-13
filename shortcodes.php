@@ -903,7 +903,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 
 						if($slide_display_tit[$s] == 'on'){
 							$rgba = hex_and_opacity_to_rgba($slide_tit_bg_color[$s], $slide_tit_opacity[$s]);
-							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:rgba('.$rgba.');">'.$slide_title[$s].'</div>';
+							$output .= '<div style="position:absolute;top:'.$slide_tit_off_top[$s].';left:'.$slide_tit_off_left[$s].';font-size:'.$slide_tit_font_sz[$s].';color:'.$slide_tit_font_col[$s].';background-color:rgba('.$rgba.');height:auto;">'.$slide_title[$s].'</div>';
 						}
 						
 						if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
