@@ -97,12 +97,10 @@
       //height: 338px;
       //width: 940px;
     }
-
     @media (max-width: $screen-sm-max) {
       //height: 260px;
       //width: 724px;
     }
-
     @media (max-width: $screen-xs-max) {
       //height: auto;
       line-height: 0;
@@ -111,7 +109,6 @@
       //width: 100%;
     }
   }
-
   .centerpiece_float_text{
       position: absolute;
   }
