@@ -70,6 +70,9 @@
 			#centerpiece_slider .centerpiece_single {
 				height: <?=get_theme_option('centerpiece_mobile_height')?>;
 			}			
+			#centerpiece_slider .centerpiece_single_img {
+				height: 100%;
+			}			
 			@media(min-width: 770px){
 				#jumbotron-logo{
 					padding-top: <?=get_theme_option('header_top_pad_desktop')?>;
