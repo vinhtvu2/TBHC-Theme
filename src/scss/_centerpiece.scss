@@ -57,7 +57,7 @@
 .centerpiece_single {
   float: left;
   list-style-type: none;
-
+  height: 100%;
   .centerpiece_single_vid_thumb {
     cursor: pointer;
   }
@@ -92,17 +92,15 @@
   embed {
     //height: 400px;
     //width: 1140px;
-
+    height: 100%;
     @media (max-width: $screen-md-max) {
       //height: 338px;
       //width: 940px;
     }
-
     @media (max-width: $screen-sm-max) {
       //height: 260px;
       //width: 724px;
     }
-
     @media (max-width: $screen-xs-max) {
       //height: auto;
       line-height: 0;
@@ -111,20 +109,6 @@
       //width: 100%;
     }
   }
-
-  &,
-  .centerpiece_single_img,
-  .centerpiece_single_vid_hidden,
-  object,
-  iframe,
-  embed {
-    @include body-prefix('.ie8') {
-      //height: 400px;
-      //width: 1140px;
-      zoom: 1;
-    }
-  }
-
   .centerpiece_float_text{
       position: absolute;
   }
