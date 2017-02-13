@@ -870,7 +870,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			// slide width in order to trigger responsive styles properly--
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
 			$output .= '<div id="centerpiece_slider">
-						  <ul><img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png" style="height:100%;">';
+						  <ul><img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png"">';
 
 
 			foreach ($slide_order as $s) {
