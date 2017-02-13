@@ -12046,7 +12046,6 @@ body.ie8 #azIndexList .navbar-nav {
     @media (max-width: 991px) { }
     @media (max-width: 769px) {
       .centerpiece_single, .centerpiece_single .centerpiece_single_img, .centerpiece_single .centerpiece_single_vid_thumb, .centerpiece_single object, .centerpiece_single iframe, .centerpiece_single embed {
-        line-height: 0;
         margin: 0;
         max-width: 100%; } }
   .centerpiece_single .centerpiece_float_text {
