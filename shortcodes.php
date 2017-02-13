@@ -884,7 +884,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 					$slide_single_duration = (!empty($slide_duration[$s]) ? $slide_duration[$s] : '6');
 
 					// Start <li>
-					$output .= '<li class="centerpiece_single" id="centerpiece_single_'.$s.'" data-duration="'.$slide_single_duration.'">';
+					$output .= '<li class="centerpiece_single" id="centerpiece_single_'.$s.'" data-duration="'.$slide_single_duration.'" style="height:100%;">';
 
 					// Add <a> tag and target="_blank" if applicable:
 					if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
