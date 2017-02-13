@@ -80,11 +80,11 @@
 				}				
 			}
 			#centerpiece_slider .centerpiece_single_img {
-				height: <?=get_theme_option('centerpiece_mobile_height')?>;
+				height: <?=get_theme_option('centerpiece_mobile_height')?> !important;
 			}
 			@media (max-width: $screen-xs-max) {
 				#centerpiece_slider .centerpiece_single_img {
-					height: <?=get_theme_option('centerpiece_desktop_height')?>;
+					height: <?=get_theme_option('centerpiece_desktop_height')?> !important;
 				}
 			}
 		</style>
