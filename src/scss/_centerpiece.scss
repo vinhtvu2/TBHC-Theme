@@ -85,7 +85,7 @@
   }
 
   &,
-  .centerpiece_single_img,
+  .centerpiece_slider_img,
   .centerpiece_single_vid_thumb,
   object,
   iframe,
@@ -110,14 +110,7 @@
       max-width: 100%;
       //width: 100%;
     }
-  }
 
-  &,
-  .centerpiece_single_img,
-  .centerpiece_single_vid_hidden,
-  object,
-  iframe,
-  embed {
     @include body-prefix('.ie8') {
       //height: 400px;
       //width: 1140px;

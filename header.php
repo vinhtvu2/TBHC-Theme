@@ -66,7 +66,10 @@
 			}
 			#jumbotron-logo img{
 				width: <?=get_theme_option('header_width_mobile')?>;        
-			}						
+			}					
+			#centerpiece_slider .centerpiece_single {
+				height: <?=get_theme_option('centerpiece_mobile_height')?>;
+			}			
 			@media(min-width: 770px){
 				#jumbotron-logo{
 					padding-top: <?=get_theme_option('header_top_pad_desktop')?>;
@@ -78,11 +81,6 @@
 				#centerpiece_slider ul>img{
 					height: <?=get_theme_option('centerpiece_desktop_height')?>;
 				}				
-			}
-			#centerpiece_slider .centerpiece_single {
-				height: <?=get_theme_option('centerpiece_mobile_height')?>;
-			}
-			@media (min-width: 770px) {
 				#centerpiece_slider .centerpiece_single {
 					height: <?=get_theme_option('centerpiece_desktop_height')?>;
 				}
