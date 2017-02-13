@@ -82,7 +82,7 @@
 			#centerpiece_slider .centerpiece_single {
 				height: <?=get_theme_option('centerpiece_mobile_height')?>;
 			}
-			@media (min-width: $screen-xs-max) {
+			@media (min-width: 770px) {
 				#centerpiece_slider .centerpiece_single {
 					height: <?=get_theme_option('centerpiece_desktop_height')?>;
 				}
