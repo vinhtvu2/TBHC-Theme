@@ -110,12 +110,6 @@
       max-width: 100%;
       //width: 100%;
     }
-
-    @include body-prefix('.ie8') {
-      //height: 400px;
-      //width: 1140px;
-      zoom: 1;
-    }
   }
 
   .centerpiece_float_text{
