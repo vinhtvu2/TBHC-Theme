@@ -57,7 +57,7 @@
 .centerpiece_single {
   float: left;
   list-style-type: none;
-
+  height: 100%;
   .centerpiece_single_vid_thumb {
     cursor: pointer;
   }
@@ -92,7 +92,7 @@
   embed {
     //height: 400px;
     //width: 1140px;
-
+    height: 100%;
     @media (max-width: $screen-md-max) {
       //height: 338px;
       //width: 940px;
