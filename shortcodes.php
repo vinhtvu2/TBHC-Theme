@@ -859,6 +859,8 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 		
 			$slide_mob_height		= get_theme_option('centerpiece_mobile_height');
 			$slide_desk_height		= get_theme_option('centerpiece_desktop_height');
+			$slide_bg_off_top		= get_post_meta($post->ID, 'ss_background_top_offset', TRUE);	
+			$slide_bg_off_left		= get_post_meta($post->ID, 'ss_background_left_offset', TRUE);	
 			
 			// id have made a param array (literals in js), debug gets ezier
 			if(DEBUG){
@@ -870,7 +872,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 			// slide width in order to trigger responsive styles properly--
 			// http://www.bluebit.co.uk/blog/Using_jQuery_Cycle_in_a_Responsive_Layout
 			$output .= '<div id="centerpiece_slider">
-						  <ul><img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png" style="height:100%;">';
+						  <ul><img src="'.get_bloginfo('stylesheet_directory').'/static/img/blank_slide.png"">';
 
 
 			foreach ($slide_order as $s) {
@@ -884,7 +886,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 					$slide_single_duration = (!empty($slide_duration[$s]) ? $slide_duration[$s] : '6');
 
 					// Start <li>
-					$output .= '<li class="centerpiece_single" id="centerpiece_single_'.$s.'" data-duration="'.$slide_single_duration.'">';
+					$output .= '<li class="centerpiece_single" id="centerpiece_single_'.$s.'" data-duration="'.$slide_single_duration.'" style="height:100%;">';
 
 					// Add <a> tag and target="_blank" if applicable:
 					if ($slide_links_to[$s] !== '' && $slide_content_type[$s] == 'image') {
@@ -898,7 +900,7 @@ add_shortcode('spotlight-grid', 'sc_spotlight_grid');
 					// Image output:
 					if ($slide_content_type[$s] == 'image') {
 						//$output .= '<img class="centerpiece_single_img" src="'.$slide_image_url[0].'" title="'.$slide_title[$s].'" alt="'.$slide_title[$s].'"';
-						$output .= '<div class="centerpiece_single_img" style="background-image:url(\''.$slide_image_url[0].'\'); background-size:cover;height:100%;"';
+						$output .= '<div class="centerpiece_single_img" style="background-image:url(\''.$slide_image_url[0].'\');background-size:cover;height:100%;background-position:'.$slide_bg_off_top[$s].' '.$slide_bg_off_left[$s].';"';
 						$output .= '/>';
 
 						if($slide_display_tit[$s] == 'on'){

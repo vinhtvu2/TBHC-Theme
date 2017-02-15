@@ -1234,6 +1234,20 @@ class Slider extends CustomPostType {
 							'desc' => 'Copy and paste your video embed code here. [video] shortcodes are also allowed, but require the parameter display="embed" in order to not use a modal window; e.g. [video name="My Video" display="embed"]',
 						),
 						array(
+							'name' => __('Origin Offset Top'),
+							'id'   => $prefix . 'background_top_offset',
+							'type' => 'text',
+							'desc' => 'Sets the distance from top of slide where image is \'fixed\' while other content expands/collapses due to resizing.<br/><em>Suggested units: % (variable height)</em>',
+							'default' => '50%',
+						),
+						array(
+							'name' => __('Origin Offset Left'),
+							'id'   => $prefix . 'background_left_offset',
+							'type' => 'text',
+							'desc' => 'Sets the distance from left of slide where image is \'fixed\' while other content expands/collapses due to resizing.<br/><em>Suggested units: % (variable width)</em>',
+							'default' => '50%',
+						),
+						array(
 							'name' => __('Slide Video Thumbnail'),
 							'id' => $prefix . 'slide_video_thumb',
 							'desc' => 'If you\'re using a video embed, add a "click to play" thumbnail here. Recommended image size is 940x338px. Larger images may be cropped.',
