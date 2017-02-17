@@ -2,19 +2,19 @@
 <?php $options = get_option(THEME_OPTIONS_NAME);?>
 <?php $page    = get_page_by_title('Home');?>
 	<div class="row" id="home" data-template="home-nodescription" role="main">
-		<section class="col-sm-5" id="opportunities">
+		<section id="opportunities">
 			<h2>Opportunities</h2>
 			<?=frontpage_opportunities()?>
 		</section>
-		<?if(function_exists("Tbhc_Interests_Plugin_Post_Type_render")){
-			Tbhc_Interests_Plugin_Post_Type_render();
+		<?if(function_exists("Tbhc_Interests_Plugin_Post_Type_interests")){
+			Tbhc_Interests_Plugin_Post_Type_interests();
 		}?>
-		<section class="col-sm-5" id="spotlights">
+		<section id="spotlights">
 			<h2>Spotlights<hr/></h2>
 			<?=frontpage_spotlights()?>
 			<div class="moreBtnPad"><div class="screen-only moreBtn"><a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Spotlight Archive</a></div></div>
 		</section>
-		<section class="col-sm-5" id="events">
+		<section id="events">
 			<h2>Upcoming Events</h2>
 			<?php do_shortcode('[events-widget]'); ?>
 			<?php //esi_include('output_weather_data'); ?>
