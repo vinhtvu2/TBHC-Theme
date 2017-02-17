@@ -849,7 +849,7 @@ class Opportunity extends CustomPostType {
 	public function objectsToHTML($objects, $css_classes) {
 	ob_start();?>
 		<ul class="opportunity-list">
-			<?php
+			<?
 				rsort($objects);
 				foreach ($objects as $opportunity) { 
 					$start_date = get_post_meta($opportunity->ID, 'opportunity_start', TRUE);
@@ -885,11 +885,11 @@ class Opportunity extends CustomPostType {
 						Category:&nbsp;<?=get_post_meta($opportunity->ID, 'opportunity_category', true)?>
 					</div>
 				</li>
-				<?php
+				<?
 				}
 			?>
 		</ul>
-	<?php
+	<?php return ob_get_clean();
 	}
 	
 }
@@ -947,7 +947,7 @@ class Spotlight extends CustomPostType {
 	public function objectsToHTML($objects, $css_classes) {		
 		ob_start();?>
 		<ul class="spotlight-list">
-			<?php
+			<?
 			rsort($objects);
 			foreach ($objects as $spotlight) { 
 				$link = get_permalink($opportunity->ID);
@@ -973,11 +973,12 @@ class Spotlight extends CustomPostType {
 						Category:&nbsp;<?=get_post_meta($spotlight->ID, 'spotlight_category', true)?>
 					</div>
 				</li>
-			<?php
+			<?
 			}
 			?>
 		</ul>
 	<?php
+	return ob_get_clean();
 	}
 
 }

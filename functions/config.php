@@ -113,9 +113,6 @@ define('WP_SITE_PATH', $path);
 
 define('LDAP_HOST', 'net.ucf.edu');
 
-# tryn to fix multisite incorrect css issues
-define( 'PLUGINDIR', 'wp-app-content/plugins' );
-
 /**
  * Set config values including meta tags, registered custom post types, styles,
  * scripts, and any other statically defined assets that belong in the Config

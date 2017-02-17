@@ -112,7 +112,7 @@
 			</div>
 		</nav>
 		
-		<div id="jumbotron-logo" style="background-color:<?=get_theme_option('header_bg_color')?>">
+		<div class="hidden-xs" id="jumbotron-logo" style="background-color:<?=get_theme_option('header_bg_color')?>">
 			<a href="<?=get_site_url()?>">
 				<img id="tbhcLogo" src="<?=get_theme_option('header_logo')?>" alt="The Burnett Honors College"/>
 			</a>
