@@ -767,10 +767,10 @@ function frontpage_opportunities() {
 	if(DEBUG){
 		print_r($opportunities);
 	}
-	ob_start(); ?>
+	ob_start(); /*?>
 	<section id="opportunities">
 		<div class="opportunities_title_wrap">
-			<h2 class="opportunities_title">Opportunities</h2> <!--http://codepen.io/ericrasch/pen/Irlpm-->
+			<h2 class="opportunities_title">Opportunities</h2>
 			<a href="<?=get_permalink(get_page_by_title('Opportunity Archives', OBJECT, 'page')->ID);?>">Even More Opportunities</a>			
 		</div>					
 		<? foreach ( $opportunities as $opportunity ){ 
@@ -798,7 +798,7 @@ function frontpage_opportunities() {
 			</div>
 		<? } ?>
 	</section>
-	<? return ob_get_clean();
+	<? */return ob_get_clean();
 }
 
 
