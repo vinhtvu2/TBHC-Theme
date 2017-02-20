@@ -1526,7 +1526,7 @@ public
 	$use_order      = True,
 	$use_title      = True,
 	$use_revisions  = True;
-	/*function objectsToHTML(){
+	function objectsToHTML(){
 		$itms = new WP_Query(array(
 			"post_type" => "interest",
 			"post_status" => "publish",
@@ -1556,5 +1556,5 @@ public
 		</section>
 	<? 
 		return ob_get_clean();
-	} */
-}
+	} 
+}*/
