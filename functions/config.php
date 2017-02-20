@@ -21,6 +21,7 @@ function __init__(){
 	add_image_size('subpage-subimg', 160);
 	add_image_size('subpage-studentimg', 115, 280);
 	register_nav_menu('header', __('Header Menu'));
+	register_nav_menu('homepage-sections', __('Homepage Sections Menu (Under Centerpiece)'));
 	register_nav_menu('footer-outer-left-collapse', __('Footer Outer Left Menu (Mobile Collapse)'));	
 	register_nav_menu('footer-inner-left-collapse', __('Footer Inner Left Menu (Mobile Collapse)'));
 	register_nav_menu('footer-inner-right', __('Footer Inner Right Menu (Mobile Left)'));
@@ -130,6 +131,7 @@ Config::$custom_post_types = array(
 	'AZIndexLink',
 	'NavDropdown',
 	'Post',
+	'Interest',
 );
 
 Config::$custom_taxonomies = array(
