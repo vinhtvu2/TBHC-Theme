@@ -1512,3 +1512,18 @@ public
 		);
 	}
 }
+class Interest extends CustomPostType{
+	public
+		$name           = 'interest',
+		$plural_name    = 'Interests',
+		$singular_name  = 'Interest',
+		$add_new_item   = 'Add New Interest',
+		$edit_item      = 'Edit Interest',
+		$new_item       = 'New Interest',
+		$public         = True,
+		$use_editor     = True,
+		$use_thumbnails = True,
+		$use_order      = True,
+		$use_title      = True,
+		$use_revisions  = True;
+}
