@@ -1526,7 +1526,7 @@ class Interest extends CustomPostType{
 	$use_order      = True,
 	$use_title      = True,
 	$use_revisions  = True;
-	static function objectsToHTML(){
+	/*function objectsToHTML(){
 		$itms = new WP_Query(array(
 			"post_type" => "interest",
 			"post_status" => "publish",
@@ -1554,5 +1554,7 @@ class Interest extends CustomPostType{
 				</div>
 			<? } ?>
 		</section>
-	<? } 
+	<? 
+		return ob_get_clean();
+	} */
 }
