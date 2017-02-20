@@ -1512,7 +1512,7 @@ public
 		);
 	}
 }
-class Interest extends CustomPostType{
+/*class Interest extends CustomPostType{
 	public
 	$name           = 'interest',
 	$plural_name    = 'Interests',
