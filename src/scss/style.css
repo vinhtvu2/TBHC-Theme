@@ -12593,4 +12593,18 @@ body.ie8 #azIndexList .navbar-nav {
     .person-profile .contact a:hover {
       color: #8f3931; }
 
+#interests {
+  width: 100%;
+  text-align: center; }
+  #interests .interests_title_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 50%; }
+  #interests .interests_content_wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    max-height: 50%; }
+
 /*# sourceMappingURL=style.css.map */
