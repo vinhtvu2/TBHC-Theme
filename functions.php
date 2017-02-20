@@ -814,7 +814,7 @@ function frontpage_opportunities() {
 					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
 					$thumb_src = $thumb_src[0];
 				?>
-				<?php if ($thumb_src) { ?>
+				<?php if (false){//$thumb_src) { ?>
 					<img class="print-only opportunity_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
 					<div class="screen-only opportunity_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($opportunity->post_title)?></div>
 				<?php } ?>

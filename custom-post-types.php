@@ -1512,3 +1512,47 @@ public
 		);
 	}
 }
+class Interest extends CustomPostType{
+	public
+	$name           = 'interest',
+	$plural_name    = 'Interests',
+	$singular_name  = 'Interest',
+	$add_new_item   = 'Add New Interest',
+	$edit_item      = 'Edit Interest',
+	$new_item       = 'New Interest',
+	$public         = True,
+	$use_editor     = True,
+	$use_thumbnails = True,
+	$use_order      = True,
+	$use_title      = True,
+	$use_revisions  = True;
+	static function objectsToHTML(){
+		$itms = new WP_Query(array(
+			"post_type" => "interest",
+			"post_status" => "publish",
+		));
+		ob_start(); ?>
+		<section id="interests">
+			<div class="interests_title_wrap">
+				<h2 class="interests_title">What Are You Interested In?</h2> <!--http://codepen.io/ericrasch/pen/Irlpm-->
+			</div>					
+			<? foreach ( $itms->posts as $itm ){ ?>
+				<div class="interest_single_wrap" style="background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');">
+					<a class="interest_single">
+						<div class="interest_title_wrap">
+							<h2 class="interest_title">
+								<?=$itm->post_title?>	
+							</h2>
+						</div>
+						<div class="interest_content_wrap">
+							<p class="interest_content">
+								<?=$itm->post_content?>	
+							</p>
+							<i class="interest_more_btn fa-2x fa fa-arrow-right"></i>
+						</div>
+					</a>
+				</div>
+			<? } ?>
+		</section>
+	<? } 
+}
