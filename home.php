@@ -6,7 +6,7 @@
 			<h2>Opportunities</h2>
 			<?=frontpage_opportunities()?>
 		</section>
-		<?=Interest::objectsToHtml()?>
+		<?=//Interest::objectsToHtml()?>
 		<section id="spotlights">
 			<h2>Spotlights<hr/></h2>
 			<?=frontpage_spotlights()?>
