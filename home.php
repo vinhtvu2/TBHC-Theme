@@ -6,7 +6,9 @@
 			<h2>Opportunities</h2>
 			<?=frontpage_opportunities()?>
 		</section>
-		<?=//Interest::objectsToHtml()?>
+		<?if(function_exists("Tbhc_Interests_Plugin_Post_Type_render")){
+			Tbhc_Interests_Plugin_Post_Type_render();
+		}?>
 		<section id="spotlights">
 			<h2>Spotlights<hr/></h2>
 			<?=frontpage_spotlights()?>
