@@ -1,0 +1,16 @@
+﻿#interests{
+    width:100%;
+    text-align:center;
+    .interests_title_wrap{
+        position: absolute;
+        top:0;
+        left:0;
+        max-height:50%;
+    }
+    .interests_content_wrap{
+        position: absolute;
+        top:50%;
+        left:0;
+        max-height:50%;
+    }
+}
