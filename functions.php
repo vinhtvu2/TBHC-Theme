@@ -819,19 +819,17 @@ function frontpage_interests(){
 		<? foreach ( $itms as $itm ){ ?>
 			<div class="interest_single_wrap" style="background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');">
 				<div class="interest_single">
-					<div class="interest_title_wrap">
+					<div class="interest_content_wrap">
 						<h2 class="interest_title">
 							<?=$itm->post_title?>	
 						</h2>
-					</div>
-					<div class="interest_content_wrap">
 						<p class="interest_content">
 							<?=$itm->post_content?>	
 						</p>
 					</div>
-				</div>
-				<div class="interest_icon">
-					<i class="fa fa-arrow-right"></i>
+					<div class="interest_icon">
+						<i class="fa fa-arrow-right"></i>
+					</div>
 				</div>
 			</div>
 		<? } ?>

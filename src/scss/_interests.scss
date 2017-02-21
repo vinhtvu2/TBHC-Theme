@@ -10,13 +10,16 @@
     .interest_single_wrap {
         text-align: left;
         word-break: break-word;
-        .interest_single{
-            padding-left:7.5%;
-            display:inline-block;
-        div {
-            .interest_title_wrap {
-                padding:10px 0;
-                /*h2.background {
+
+        .interest_single {
+
+            .interest_content_wrap {
+                padding-left: 7.5%;
+                display: inline-block;
+
+                h2 {
+                    margin: 10px 0;
+                    /*h2.background {
                 position: relative;
                 z-index: 1;
                 &:before {
@@ -34,14 +37,13 @@
                     padding: 0 15px; 
                 }
             }*/
-            }
+                }
 
-            .interest_content_wrap {
+                .interest_icon {
+                    width: 7.5%;
+                    display:inline-block;
+                }
             }
-        }
-    }
-        .interest_icon{
-            width:7.5%;
         }
     }
 }
