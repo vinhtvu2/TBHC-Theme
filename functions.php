@@ -816,7 +816,7 @@ function frontpage_interests(){
 		<div class="interests_title_wrap">
 			<h2 class="interests_title">What Are You Interested In?</h2> <!--http://codepen.io/ericrasch/pen/Irlpm-->
 		</div>					
-		<? foreach ( $itms->posts as $itm ){ ?>
+		<? foreach ( $itms as $itm ){ ?>
 			<div class="interest_single_wrap" style="background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');">
 				<a class="interest_single">
 					<div class="interest_title_wrap">
