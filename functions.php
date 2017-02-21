@@ -818,7 +818,7 @@ function frontpage_interests(){
 		</div>					
 		<? foreach ( $itms as $itm ){ ?>
 			<div class="interest_single_wrap" style="background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');">
-				<a class="interest_single">
+				<div class="interest_single">
 					<div class="interest_title_wrap">
 						<h2 class="interest_title">
 							<?=$itm->post_title?>	
@@ -829,7 +829,10 @@ function frontpage_interests(){
 							<?=$itm->post_content?>	
 						</p>
 					</div>
-				</a>
+				</div>
+				<div class="interest_icon">
+					<i class="fa fa-arrow-right"></i>
+				</div>
 			</div>
 		<? } ?>
 	</section>
