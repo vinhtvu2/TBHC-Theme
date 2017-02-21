@@ -718,6 +718,56 @@ function frontpage_spotlights() {
  * Output Opportunities for front page.
 **/
 function frontpage_opportunities() {
+	/*$args = array(
+		'numberposts' => -1,	
+		'post_type' 	=> 'opportunity',
+		'post_status'   => 'publish',
+		'meta_key'		=> 'opportunity_end',
+		'meta_query'	=> array(
+			array(
+				'key'	=>	'opportunity_start',
+				'value'	=>	date('Ymd', mktime(23,59,59)), // this might work? set time as 23:59:59?
+				'compare'	=>	'<=',
+			),
+			array(
+				'key'	=>	'opportunity_end',
+				'value'	=>	date('Ymd', mktime(0,0,0)),
+				'compare'	=>	'>=',
+			),
+		),
+	);
+	$opportunities = get_posts($args);
+		
+	if(empty($opportunities)){
+		$args = array(
+			'numberposts' => -1,
+			'post_type' 	=> 'opportunity',
+			'post_status'   => 'publish',
+			'meta_key'		=> 'opportunity_end',
+		);
+		$opportunities = get_posts($args);
+	}
+	
+	usort($opportunities, function($a, $b){
+		$a_dt = new DateTime(get_post_meta($a->ID, 'opportunity_end', TRUE));
+		$b_dt = new DateTime(get_post_meta($b->ID, 'opportunity_end', TRUE));
+		$a_dt = $a_dt->getTimestamp();
+		$b_dt = $b_dt->getTimestamp();
+		if ($a_dt == $b_dt){
+			// If they have the same depth, compare titles
+			return strcmp($a->post_title, $b->post_title);
+		}
+		// If depth_a is smaller than depth_b, return -1; otherwise return 1
+		$res = ($a_dt < $b_dt) ? -1 : 1;
+		return $res;
+	});
+	
+	$opportunities = array_splice($opportunities, 0, 5);
+	
+	if(DEBUG){
+		print_r($opportunities);
+	}
+	 */
 	ob_start(); ?>
 		<section id="opportunities">
 			<div class="opportunities_title_wrap">
