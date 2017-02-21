@@ -1,9 +1,9 @@
 <?php get_header();?>
 <?php $options = get_option(THEME_OPTIONS_NAME);?>
 <?php $page    = get_page_by_title('Home');?>
-	<nav id="section-nav-xs" class="visible-xs-block navbar navbar-inverse" style="<?=get_theme_option('navbar_bg_color') ? 'background-color:'.get_theme_option('navbar_bg_color').' !important;' : ''?>">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-xs-collapse" aria-expanded="false">
+	<nav id="section-nav-xs" class="visible-xs-block navbar navbar-inverse">
+		<div class="navbar-section">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#section-menu-xs-collapse" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -11,7 +11,7 @@
 			</button>
 			<span class="navbar-brand">Navigation</span>
 		</div>
-		<div class="collapse navbar-collapse" id="header-menu-xs-collapse">
+		<div class="collapse navbar-collapse" id="section-menu-xs-collapse">
 			<?php
 				wp_nav_menu( array(
 				'theme_location' => 'homepage-sections',
