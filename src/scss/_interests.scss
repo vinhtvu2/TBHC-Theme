@@ -8,12 +8,12 @@
     }
 
     .interest_single_wrap {
-        padding: 7.5%;
         text-align: left;
         word-break: break-word;
-
-        a {
-            display: block;
+        .interest_single{
+            padding-left:7.5%;
+            display:inline-block;
+        div {
             .interest_title_wrap {
                 padding:10px 0;
                 /*h2.background {
@@ -38,6 +38,10 @@
 
             .interest_content_wrap {
             }
+        }
+    }
+        .interest_icon{
+            width:7.5%;
         }
     }
 }
