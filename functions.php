@@ -717,7 +717,7 @@ function frontpage_spotlights() {
 /**
  * Output Opportunities for front page.
 **/
-/*function frontpage_opportunities() {
+function frontpage_opportunities() {
 	/*$args = array(
 		'numberposts' => -1,	
 		'post_type' 	=> 'opportunity',
@@ -798,8 +798,8 @@ function frontpage_spotlights() {
 			</div>
 		<? /*}*//* ?>
 	</section>
-	<? return ob_get_clean();
-}*/
+	<? return ob_get_clean();*/
+}
 
 
 function frontpage_interests(){
