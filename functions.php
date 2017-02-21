@@ -796,7 +796,7 @@ function frontpage_opportunities() {
 					</div>
 				</a>
 			</div>
-		<? } ?>
+		<? /*}*/ ?>
 	</section>
 	<? return ob_get_clean();
 }
