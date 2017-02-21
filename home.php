@@ -13,14 +13,14 @@
 		</div>
 		<div class="collapse navbar-collapse" id="section-menu-xs-collapse">
 			<?php
-				wp_nav_menu( array(
+				/*wp_nav_menu( array(
 				'theme_location' => 'homepage-sections',
 				'container' => false,
 				'menu_class' => 'menu nav navbar-nav',
 				'menu_id' => 'section-menu-xs',
 				'walker' => new Bootstrap_Walker_Nav_Menu(),
 				'nav_dropdowns'	=> false
-				) );
+				) );*/
 			?>
 		</div>
 	</nav>
