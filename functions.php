@@ -718,7 +718,7 @@ function frontpage_spotlights() {
  * Output Opportunities for front page.
 **/
 function frontpage_opportunities() {
-	/*$args = array(
+	$args = array(
 		'numberposts' => -1,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
@@ -767,24 +767,24 @@ function frontpage_opportunities() {
 	if(DEBUG){
 		print_r($opportunities);
 	}
-	 */
+	
 	ob_start(); ?>
 		<section id="opportunities">
 			<div class="opportunities_title_wrap">
 				<h2 class="opportunities_title">Opportunities</h2>
-				<a href="<?//get_permalink(get_page_by_title('Opportunity Archives', OBJECT, 'page')->ID)?>">Even More Opportunities</a>	
+				<a href="<?=get_permalink(get_page_by_title('Opportunity Archives', OBJECT, 'page')->ID)?>">Even More Opportunities</a>	
 			</div>					
-			<? /*foreach ( $opportunities as $opportunity ){ 
+			<? foreach ( $opportunities as $opportunity ){ 
 				$link = get_permalink($opportunity->ID);
 				$ext_link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);
 				if($ext_link){
-				$link = $ext_link; 
-				} */?>
+					$link = $ext_link; 
+				} ?>
 				<div class="opportunity_single_wrap">
-					<a class="opportunity_single" href="<?//esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?//esc_attr($opportunity->post_title)?>">
+					<a class="opportunity_single" href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
 						<div class="opportunity_title_wrap">
 							<h2 class="opportunity_title">
-								<?//$opportunity->post_title?>	
+								<?=$opportunity->post_title?>	
 							</h2>
 						</div>
 						<div class="opportunity_content_wrap">
@@ -792,12 +792,12 @@ function frontpage_opportunities() {
 								<i></i>
 							</div>
 							<div class="opportunity_type">
-								<?//get_post_meta($opportunity->ID, '', TRUE)?>Some Category stuff later
+								<?=get_post_meta($opportunity->ID, '', TRUE)?>Some Category stuff later
 							</div>
 						</div>
 					</a>
 				</div>
-			<? /*}*/ ?>
+			<? } ?>
 		</section>
 	<? return ob_get_clean();
 }
