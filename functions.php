@@ -767,7 +767,7 @@ function frontpage_opportunities() {
 	if(DEBUG){
 		print_r($opportunities);
 	}
-	ob_start(); ?>
+	*/ob_start(); ?>
 	<section id="opportunities">
 		<div class="opportunities_title_wrap">
 			<h2 class="opportunities_title">Opportunities</h2>
@@ -778,7 +778,7 @@ function frontpage_opportunities() {
 			$ext_link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);
 			if($ext_link){
 				$link = $ext_link; 
-			} *//*?>
+			} */?>
 			<div class="opportunity_single_wrap">
 				<a class="opportunity_single" href="<?=//esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=//esc_attr($opportunity->post_title)?>"></a>
 					<div class="opportunity_title_wrap">
@@ -796,9 +796,9 @@ function frontpage_opportunities() {
 					</div>
 				</a>
 			</div>
-		<? /*}*//* ?>
+		<? /*}*/ ?>
 	</section>
-	<? return ob_get_clean();*/
+	<? return ob_get_clean();
 }
 
 
