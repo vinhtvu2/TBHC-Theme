@@ -30,7 +30,7 @@
 		<section id="spotlights">
 			<div class="spotlights_title_wrap">
 				<h2>Spotlights<hr/></h2>
-				<a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID);?>" class="home_col_morelink">Spotlight Archive</a>				
+				<a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID)?>" class="home_col_morelink">Spotlight Archive</a>				
 			</div>
 			<?=frontpage_spotlights()?>
 		</section>
