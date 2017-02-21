@@ -718,7 +718,7 @@ function frontpage_spotlights() {
  * Output Opportunities for front page.
 **/
 function frontpage_opportunities() {
-	$args = array(
+	/*$args = array(
 		'numberposts' => -1,	
 		'post_type' 	=> 'opportunity',
 		'post_status'   => 'publish',
@@ -766,7 +766,7 @@ function frontpage_opportunities() {
 		
 	if(DEBUG){
 		print_r($opportunities);
-	}
+	}*/
 	ob_start(); ?>
 	<section id="opportunities">
 		<div class="opportunities_title_wrap">
