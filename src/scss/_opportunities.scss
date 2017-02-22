@@ -4,17 +4,20 @@
     text-align: left;
     word-break: break-word;
     .opportunities_title_wrap{
-        padding-left:15%;
+        padding-left:3%;
+        .opportunities_title{
+            display:inline-block;
+        }
     }
     .opportunity_single_wrap {
         .opportunity_single {
             display: table;
             width:100%;
             .opportunity_content_wrap {
-                padding: 5% 0;
+                padding: 3%;
 
-                h1 {
-                    color:#333;
+                .opportunity_title {
+                    color:#000;
                     /*h2.background {
                 position: relative;
                 z-index: 1;

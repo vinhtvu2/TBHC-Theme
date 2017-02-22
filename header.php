@@ -158,7 +158,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<span class="navbar-brand">Navigation</span>
+				<span class="navbar-brand">Menu</span>
 			</div>
 			<div class="collapse navbar-collapse" id="section-menu-xs-collapse">
 				<?php
