@@ -5,6 +5,7 @@
 
     .interests_title_wrap {
         background-color: #FC0;
+        padding: 2.5% 0;
     }
 
     .interest_single_wrap {
@@ -14,9 +15,9 @@
             display: table;
             width:100%;
             .interest_content_wrap {
-                padding-left: 7.5%;
+                padding-left: 15%;
 
-                h2 {
+                .interest_title {
                     margin: 10px 0;
                     /*h2.background {
                 position: relative;
@@ -43,12 +44,13 @@
             }
             .interest_icon {
                 display: table-cell;
-                padding-right: 15%;
+                width:20%;
                 vertical-align: middle;
                 i{
                     border-radius: 50%;
                     padding: 10%;
                     border:5px #FC0 solid;
+                    color:#333;
                 }
             }
         }

@@ -783,15 +783,15 @@ function frontpage_opportunities() {
 				<div class="opportunity_single_wrap">
 					<a class="opportunity_single" href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
 						<div class="opportunity_content_wrap">
-							<h2 class="opportunity_title">
+							<h3 class="opportunity_title">
 								<?=$opportunity->post_title?>	
-							</h2>
+							</h3>
 							<div class="opportunity_type">
 								<?=get_post_meta($opportunity->ID, '', TRUE)?>Some Category stuff later
 							</div>					
 						</div>
 						<div class="opportunity_icon">
-							<i class="fa fa-chevron-right"></i>
+							<i class="fa fa-2x fa-chevron-right"></i>
 						</div>
 					</a>
 				</div>
@@ -823,9 +823,9 @@ function frontpage_interests(){
 			<div class="interest_single_wrap" style="background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');">
 				<a class="interest_single" href="<?=$link?>">
 					<div class="interest_content_wrap">
-						<h2 class="interest_title">
+						<h3 class="interest_title">
 							<?=$itm->post_title?>	
-						</h2>
+						</h3>
 						<p class="interest_content">
 							<?=$itm->post_content?>	
 						</p>
