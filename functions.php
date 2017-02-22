@@ -791,7 +791,7 @@ function frontpage_opportunities() {
 							</div>					
 						</div>
 						<div class="opportunity_icon">
-							<i></i>
+							<i class="fa fa-chevron-right"></i>
 						</div>
 					</a>
 				</div>
@@ -831,7 +831,7 @@ function frontpage_interests(){
 						</p>
 					</div>
 					<div class="interest_icon">
-						<i class="fa fa-arrow-right"></i>
+						<i class="fa fa-2x fa-arrow-right"></i>
 					</div>
 				</a>
 			</div>

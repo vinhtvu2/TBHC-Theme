@@ -1,5 +1,50 @@
-﻿section#opportunities{
-    .opportunity_type{
-        color: #FC0;
+﻿section#opportunities {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    word-break: break-word;
+
+    .opportunity_single_wrap {
+        .opportunity_single {
+            display: table;
+            width:100%;
+            .opportunity_content_wrap {
+                padding-left: 5%;
+                padding-right:5%;
+                width: 85%;
+
+                h2 {
+                    margin: 10px 0;
+                    /*h2.background {
+                position: relative;
+                z-index: 1;
+                &:before {
+                    border-top: 2px solid #dfdfdf;
+                    content:"";
+                    margin: 0 auto; // this centers the line to the full width specified 
+                    position: absolute; // positioning must be absolute here, and relative positioning must be applied to the parent
+                    top: 50%; left: 0; right: 0; bottom: 0;
+                    width: 95%;
+                    z-index: -1;
+                }
+                span { 
+                    // to hide the lines from behind the text, you have to set the background color the same as the container 
+                    background: #fff; 
+                    padding: 0 15px; 
+                }
+            }*/
+                }
+            }
+
+            .opportunity_icon {
+                width: 12%;
+                display: table-cell;
+                vertical-align: middle;
+                text-align:center;
+                i{
+                    
+                }
+            }
+        }
     }
 }
