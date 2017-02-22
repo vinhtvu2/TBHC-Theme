@@ -15,7 +15,6 @@
             width:100%;
             .interest_content_wrap {
                 padding-left: 7.5%;
-                width: 85%;
 
                 h2 {
                     margin: 10px 0;
@@ -39,12 +38,18 @@
             }*/
                 }
             }
-
+            .interest_content{
+                padding-right:15%;
+            }
             .interest_icon {
-                height: 100%;
                 display: table-cell;
+                padding-right: 15%;
                 vertical-align: middle;
-                width: 7.5%;
+                i{
+                    border-radius: 50%;
+                    padding: 10%;
+                    border:5px #FC0 solid;
+                }
             }
         }
     }
