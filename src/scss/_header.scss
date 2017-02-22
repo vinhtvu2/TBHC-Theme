@@ -1,11 +1,13 @@
 // Desktop nav
-#ucfhb{
+#ucfhb {
     border-bottom: 5px solid #d9d6d6;
 }
+
 #jumbotron-logo {
     background-color: #3d3c3c;
     padding: 15px 20px 25px 20px;
-    @media(min-width: $screen-sm-min){
+
+    @media(min-width: $screen-sm-min) {
         padding: 30px 35px 45px 35px;
     }
 
@@ -13,11 +15,13 @@
         width: 95%;
         margin: 0 auto;
         display: block;
+
         @include body-prefix('.ie8') {
             max-width: 480px;
         }
-        @media(min-width: $screen-sm-min){
-            width: 480px;        
+
+        @media(min-width: $screen-sm-min) {
+            width: 480px;
         }
     }
 }
@@ -28,9 +32,10 @@
     position: relative;
     z-index: 1000;
     box-shadow: 0 2px 32px rgba(0,0,0,.5);
+
     &.affix {
-        top:0;
-        position:fixed;
+        top: 0;
+        position: fixed;
         display: block;
     }
 }
@@ -44,8 +49,8 @@
     width: 100%;
     max-width: $container-lg;
 
-    .menu-item-dropdown{
-        li{
+    .menu-item-dropdown {
+        li {
             position: absolute;
             display: block;
             visibility: hidden;
@@ -56,14 +61,17 @@
         padding: 0;
         display: table-cell;
         text-align: center;
-        &.active strong a, &.current-page-ancestor strong a{
+
+        &.active strong a, &.current-page-ancestor strong a {
             background-color: #FFF;
         }
-        &:hover .menu-item-dropdown{
+
+        &:hover .menu-item-dropdown {
             opacity: 1;
             visibility: visible;
         }
-        .menu-item-dropdown{
+
+        .menu-item-dropdown {
             opacity: 0;
             transition: opacity .5s linear, visibility .5s linear;
             position: absolute;
@@ -75,8 +83,10 @@
             padding-bottom: 15px;
             background-color: white;
             z-index: 2;
-            .content-holder{
+
+            .content-holder {
                 margin: 0 auto;
+
                 @media (min-width: $screen-sm-min) {
                     max-width: $container-sm;
                 }
@@ -87,15 +97,18 @@
 
                 @media (min-width: $screen-lg-min) {
                     max-width: $container-lg;
-                }         
-                img{
+                }
+
+                img {
                     max-width: 100%;
                     height: auto;
-                }   
+                }
+
                 a {
                     padding-bottom: 0;
                     padding-top: 0;
-                    &:hover{
+
+                    &:hover {
                         font-weight: bold;
                     }
                 }
@@ -103,7 +116,7 @@
         }
     }
 
-    a{
+    a {
         padding-bottom: 15px;
         padding-top: 15px;
         color: #262626;
@@ -139,27 +152,30 @@
     //border-radius: 4px;
     margin: 0;
     border: none;
-    background-color:#fc0;
+    background-color: #fc0;
     color: #000;
+
     .navbar-brand {
         color: #000;
         //font-family: $font-family-sans-serif, serif;
         font-size: 20px;
     }
-    .icon-bar{
-        background-color:#000;
+
+    .icon-bar {
+        background-color: #000;
     }
-    button{
-        border:none;
+
+    button {
+        border: none;
     }
 }
 
 #header-menu-xs {
     //font-family: $font-family-sans-serif, serif;
-
     li {
         margin-bottom: 0;
-        &.active a{
+
+        &.active a {
             background-color: #000;
             color: #FFF !important;
         }
@@ -169,22 +185,26 @@
         font-size: 14px;
         font-weight: bold;
         color: #000;
+
         &:hover,
         &:active,
         &:focus {
-             color: #FFF;
-             text-decoration: none;
+            color: #FFF;
+            text-decoration: none;
         }
     }
 }
-#section-nav-xs{
-    clear:both;
-    margin-bottom:0;
-    .navbar-brand{
-        float:right;
+
+#section-nav-xs {
+    clear: both;
+    margin-bottom: 0;
+
+    .navbar-brand {
+        float: right;
         color: white;
-    } 
-    button{
-        border:none;
+    }
+
+    button {
+        border: none;
     }
 }
