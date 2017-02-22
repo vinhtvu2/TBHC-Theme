@@ -146,6 +146,12 @@
         //font-family: $font-family-sans-serif, serif;
         font-size: 20px;
     }
+    .icon-bar{
+        background-color:#000;
+    }
+    button{
+        border:none;
+    }
 }
 
 #header-menu-xs {
@@ -169,5 +175,16 @@
              color: #FFF;
              text-decoration: none;
         }
+    }
+}
+#section-nav-xs{
+    clear:both;
+    margin-bottom:0;
+    .navbar-brand{
+        float:right;
+        color: white;
+    } 
+    button{
+        border:none;
     }
 }
