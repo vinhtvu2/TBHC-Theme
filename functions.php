@@ -782,18 +782,16 @@ function frontpage_opportunities() {
 				} ?>
 				<div class="opportunity_single_wrap">
 					<a class="opportunity_single" href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
-						<div class="opportunity_title_wrap">
+						<div class="opportunity_content_wrap">
 							<h2 class="opportunity_title">
 								<?=$opportunity->post_title?>	
 							</h2>
-						</div>
-						<div class="opportunity_content_wrap">
-							<div class="opportunity_read_more">
-								<i></i>
-							</div>
 							<div class="opportunity_type">
 								<?=get_post_meta($opportunity->ID, '', TRUE)?>Some Category stuff later
-							</div>
+							</div>					
+						</div>
+						<div class="opportunity_icon">
+							<i></i>
 						</div>
 					</a>
 				</div>
@@ -816,9 +814,14 @@ function frontpage_interests(){
 		<div class="interests_title_wrap">
 			<h2 class="interests_title">What Are You Interested In?</h2> <!--http://codepen.io/ericrasch/pen/Irlpm-->
 		</div>					
-		<? foreach ( $itms as $itm ){ ?>
+		<? foreach ( $itms as $itm ){ 
+			$link = get_permalink($itm->ID);
+			$ext_link = get_post_meta($itm->ID, 'interest_url_redirect', TRUE);
+			if($ext_link){
+				$link = $ext_link; 
+			}?>
 			<div class="interest_single_wrap" style="background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');">
-				<div class="interest_single">
+				<a class="interest_single" href="<?=$link?>">
 					<div class="interest_content_wrap">
 						<h2 class="interest_title">
 							<?=$itm->post_title?>	
@@ -830,7 +833,7 @@ function frontpage_interests(){
 					<div class="interest_icon">
 						<i class="fa fa-arrow-right"></i>
 					</div>
-				</div>
+				</a>
 			</div>
 		<? } ?>
 	</section>
