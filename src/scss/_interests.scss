@@ -12,11 +12,11 @@
         word-break: break-word;
 
         .interest_single {
-            display:table;
+            display: table;
 
             .interest_content_wrap {
                 padding-left: 7.5%;
-                width:85%;
+                width: 85%;
 
                 h2 {
                     margin: 10px 0;
@@ -39,13 +39,13 @@
                 }
             }*/
                 }
+            }
 
-                .interest_icon {
-                    height:100%;
-                    display:table-cell;
-                    vertical-align:middle;
-                    width:7.5%;
-                }
+            .interest_icon {
+                height: 100%;
+                display: table-cell;
+                vertical-align: middle;
+                width: 7.5%;
             }
         }
     }
