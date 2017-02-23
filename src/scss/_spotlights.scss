@@ -1,34 +1,43 @@
-﻿section#spotlights{
-    padding:0 8%;
-    .spotlights_title{
+﻿section#spotlights {
+    padding: 0 8%;
+
+    .spotlights_title {
         font-size: 3em;
         font-weight: bold;
-        a{
-            color: #aaa;
-            font-weight: bold;
-            text-transform: uppercase;
-         }
     }
-    .spotlight_single{
+
+    a {
+        color: #aaa;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .spotlight_single {
         display: table;
-        .spotlight_image_wrap{
+
+        .spotlight_image_wrap {
             display: table-cell;
             width: 15%;
-            .spotlight_image{
+            vertical-align: top;
+
+            .spotlight_image {
                 width: 100%;
             }
         }
-        .spotlight_content_wrap{
+
+        .spotlight_content_wrap {
             display: table-cell;
             padding-left: 3%;
             color: #333;
-            .spotlight_type{
-                background-color:#FC0;
+
+            .spotlight_type {
+                background-color: #FC0;
                 text-transform: uppercase;
                 color: #333;
             }
-            .spotlight_title{
-                font-weight:bold;
+
+            .spotlight_title {
+                font-weight: bold;
                 padding: 5px 0;
                 color: #333;
             }
