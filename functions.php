@@ -609,6 +609,7 @@ function frontpage_spotlights() {
 	$args = array(
 		'post_type' 	=> 'spotlight',
 		'post_status'   => 'publish',
+		'numberofposts'	=> 2,
 		'meta_query'	=> array(
 			array(
 				'key'	=>	'spotlight_post_to_home',
@@ -785,7 +786,14 @@ function frontpage_interests(){
 			if($ext_link){
 				$link = $ext_link; 
 			}?>
-			<div class="interest_single_wrap" style="background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');">
+			<style>
+				@media(min-width: 770px){
+					.interest_single_wrap{
+						background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');				
+					}
+				}
+			</style>
+			<div class="interest_single_wrap">
 				<a class="interest_single" href="<?=$link?>">
 					<div class="interest_content_wrap">
 						<h3 class="interest_title">

@@ -12723,15 +12723,16 @@ section#spotlights {
   section#spotlights .spotlights_title {
     font-size: 3em;
     font-weight: bold; }
-    section#spotlights .spotlights_title a {
-      color: #aaa;
-      font-weight: bold;
-      text-transform: uppercase; }
+  section#spotlights a {
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase; }
   section#spotlights .spotlight_single {
     display: table; }
     section#spotlights .spotlight_single .spotlight_image_wrap {
       display: table-cell;
-      width: 15%; }
+      width: 15%;
+      vertical-align: top; }
       section#spotlights .spotlight_single .spotlight_image_wrap .spotlight_image {
         width: 100%; }
     section#spotlights .spotlight_single .spotlight_content_wrap {
