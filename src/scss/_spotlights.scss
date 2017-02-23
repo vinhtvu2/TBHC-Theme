@@ -1,15 +1,17 @@
 ﻿section#spotlights {
     padding: 0 8%;
 
-    .spotlights_title {
-        font-size: 3em;
-        font-weight: bold;
-    }
+    .spotlights_title_wrap {
+        .spotlights_title {
+            font-size: 3em;
+            font-weight: bold;
+        }
 
-    a {
-        color: #aaa;
-        font-weight: bold;
-        text-transform: uppercase;
+        a {
+            color: #aaa;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     }
 
     .spotlight_single {
