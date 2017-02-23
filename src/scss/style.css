@@ -10039,9 +10039,15 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   border: none;
   background-color: #fc0;
   color: #000; }
+  #site-nav-xs .navbar-collapse {
+    border: none; }
   #site-nav-xs .navbar-brand {
     color: #000;
     font-size: 20px; }
+  #site-nav-xs .icon-bar {
+    background-color: #000; }
+  #site-nav-xs button {
+    border: none; }
 
 #header-menu-xs li {
   margin-bottom: 0; }
@@ -10054,7 +10060,17 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   color: #000; }
   #header-menu-xs a:hover, #header-menu-xs a:active, #header-menu-xs a:focus {
     color: #FFF;
-    text-decoration: none; }
+    text-decoration: none;
+    background-color: #efbc00; }
+
+#section-nav-xs {
+  clear: both;
+  margin-bottom: 0; }
+  #section-nav-xs .navbar-brand {
+    float: right;
+    color: white; }
+  #section-nav-xs button {
+    border: none; }
 
 #footer {
   border-top: 0;
@@ -12598,17 +12614,22 @@ section#interests {
   width: 100%;
   text-align: center; }
   section#interests .interests_title_wrap {
-    background-color: #FC0; }
+    background-color: #FC0;
+    padding: 0.75em 0;
+    color: #000; }
   section#interests .interest_single_wrap {
     text-align: left;
     word-break: break-word; }
+    @media (max-width: 991px) {
+      section#interests .interest_single_wrap {
+        background-image: none !important; } }
     section#interests .interest_single_wrap .interest_single {
       display: table;
       width: 100%; }
       section#interests .interest_single_wrap .interest_single .interest_content_wrap {
-        padding-left: 7.5%;
-        width: 85%; }
-        section#interests .interest_single_wrap .interest_single .interest_content_wrap h2 {
+        padding-left: 15%; }
+        section#interests .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
+          color: #000;
           margin: 10px 0;
           /*h2.background {
                 position: relative;
@@ -12628,15 +12649,70 @@ section#interests {
                     padding: 0 15px; 
                 }
             }*/ }
-      section#interests .interest_single_wrap .interest_single .interest_icon {
-        height: 100%;
+      section#interests .interest_single_wrap .interest_single .interest_content {
+        padding-right: 15%;
+        color: #000; }
+      section#interests .interest_single_wrap .interest_single .interest_icon_wrap {
         display: table-cell;
-        vertical-align: middle;
-        width: 7.5%;
-        border-radius: 50%;
-        border: 5px #FC0 solid; }
+        width: 20%;
+        vertical-align: middle; }
+        section#interests .interest_single_wrap .interest_single .interest_icon_wrap .interset_icon {
+          border-radius: 50%;
+          padding: 5%;
+          border: 4px #FC0 solid;
+          font-size: 1.5em;
+          color: #000; }
+    section#interests .interest_single_wrap:after {
+      content: "";
+      display: block;
+      width: 95%;
+      margin: 1em auto 0;
+      border-bottom: 4px solid #e5e5e5; }
 
-section#opportunities .opportunity_type {
-  color: #FC0; }
+section#opportunities {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  word-break: break-word; }
+  section#opportunities .opportunities_title_wrap {
+    padding-left: 3%; }
+    section#opportunities .opportunities_title_wrap .opportunities_title {
+      display: inline-block; }
+  section#opportunities .opportunity_single_wrap .opportunity_single {
+    display: table;
+    width: 100%; }
+    section#opportunities .opportunity_single_wrap .opportunity_single .opportunity_content_wrap {
+      padding: 3%; }
+      section#opportunities .opportunity_single_wrap .opportunity_single .opportunity_content_wrap .opportunity_title {
+        color: #000;
+        /*h2.background {
+                position: relative;
+                z-index: 1;
+                &:before {
+                    border-top: 2px solid #dfdfdf;
+                    content:"";
+                    margin: 0 auto; // this centers the line to the full width specified 
+                    position: absolute; // positioning must be absolute here, and relative positioning must be applied to the parent
+                    top: 50%; left: 0; right: 0; bottom: 0;
+                    width: 95%;
+                    z-index: -1;
+                }
+                span { 
+                    // to hide the lines from behind the text, you have to set the background color the same as the container 
+                    background: #fff; 
+                    padding: 0 15px; 
+                }
+            }*/ }
+      section#opportunities .opportunity_single_wrap .opportunity_single .opportunity_content_wrap .opportunity_type {
+        color: #FC0; }
+    section#opportunities .opportunity_single_wrap .opportunity_single .opportunity_icon_wrap {
+      width: 12%;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      background-color: #f7f7f7; }
+      section#opportunities .opportunity_single_wrap .opportunity_single .opportunity_icon_wrap .opportunity_icon {
+        font-size: 1.5em;
+        color: #aaa; }
 
 /*# sourceMappingURL=style.css.map */
