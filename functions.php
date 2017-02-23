@@ -666,7 +666,7 @@ function frontpage_spotlights() {
 								<?=$spotlight->post_title?>	
 							</h3>
 							<p class="spotlight_content">
-								<?=get_the_excerpt($spotlight)?>	
+								<?=get_the_excerpt($spotlight->ID)?>	
 							</p>
 						</div>
 					</a>
@@ -789,7 +789,7 @@ function frontpage_interests(){
 							<?=$itm->post_title?>	
 						</h3>
 						<p class="interest_content">
-							<?=get_the_excerpt($itm)?>	
+							<?=$itm->post_content?>	
 						</p>
 					</div>
 					<div class="interest_icon_wrap">
