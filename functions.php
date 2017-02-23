@@ -640,7 +640,10 @@ function frontpage_spotlights() {
 		<section id="spotlights">
 			<div class="spotlights_title_wrap">
 				<h2 class="spotlights_title">Spotlights</h2>
-				<a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID)?>">Check out more stories</a>	
+				<a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID)?>">
+					Check out more stories
+					<i class="fa fa-external-link"></i>
+				</a>	
 			</div>					
 			<? foreach ( $spotlights as $spotlight ){ 
 				$link = get_permalink($spotlight->ID);
