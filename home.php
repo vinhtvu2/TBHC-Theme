@@ -4,13 +4,7 @@
 	<div class="row" id="home" data-template="home-nodescription" role="main">
 		<?=frontpage_opportunities()?>
 		<?=frontpage_interests()?>
-		<section id="spotlights">
-			<div class="spotlights_title_wrap">
-				<h2>Spotlights<hr/></h2>
-				<a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID)?>" class="home_col_morelink">Spotlight Archive</a>				
-			</div>
-			<?=frontpage_spotlights()?>
-		</section>
+ 		<?=frontpage_spotlights()?>
 		<section id="events">
 			<h2>Upcoming Events</h2>
 			<?php do_shortcode('[events-widget]'); ?>

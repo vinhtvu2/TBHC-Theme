@@ -12,6 +12,10 @@
     .interest_single_wrap {
         text-align: left;
         word-break: break-word;
+        
+        @media (max-width: $screen-sm-max) {
+            background-image: none !important;
+        }
 
         .interest_single {
             display: table;
@@ -49,16 +53,17 @@
                 color: #000;
             }
 
-            .interest_icon {
+            .interest_icon_wrap {
                 display: table-cell;
                 width: 20%;
                 vertical-align: middle;
 
-                i {
+                .interset_icon {
                     border-radius: 50%;
                     padding: 5%;
                     border: 4px #FC0 solid;
                     font-size: 1.5em;
+                    color: #000;
                 }
             }
         }

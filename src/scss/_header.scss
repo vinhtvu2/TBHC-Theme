@@ -155,6 +155,10 @@
     background-color: #fc0;
     color: #000;
 
+    .navbar-collapse{
+        border:none;
+    }
+
     .navbar-brand {
         color: #000;
         //font-family: $font-family-sans-serif, serif;
@@ -191,6 +195,7 @@
         &:focus {
             color: #FFF;
             text-decoration: none;
+            background-color:#efbc00;
         }
     }
 }

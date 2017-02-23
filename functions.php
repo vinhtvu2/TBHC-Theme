@@ -635,83 +635,45 @@ function frontpage_spotlights() {
 			'post_status'   => 'publish',
 			);
 		$spotlights = get_posts($args);
-	}
-
-	$spotlight_one = $spotlights[0];
-	$spotlight_two = $spotlights[1];
-
-	$position_one  = get_post_meta($spotlight_one->ID, 'spotlight_position', TRUE);
-	$position_two  = get_post_meta($spotlight_two->ID, 'spotlight_position', TRUE);
-	
-	function output_spotlight($spotlight) {
-		$link = get_permalink($spotlight->ID);
-		$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
-		if($ext_link){
-			$link = $ext_link; 
-		}
-		
-		?>
-		<div class="home_spotlight_single">
-		
-			<a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">
-				<?php
-					$thumb_id = get_post_thumbnail_id($spotlight->ID);
-					$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
-					$thumb_src = $thumb_src[0];
-				?>
-				<?php if ($thumb_src) { ?>
-				<img class="print-only spotlight_thumb" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
-				<div class="screen-only spotlight_thumb" style="background-image:url('<?=esc_attr($thumb_src)?>');"><?=esc_attr($spotlight->post_title)?></div>
-				<?php } ?>
-			</a>
-			<h3 class="home_spotlight_title"><a href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>"><?=$spotlight->post_title?></a></h3>
-			<?=truncateHtml($spotlight->post_content, 200)?>
-			<p><a class="home_spotlight_readmore ga-event" href="<?=esc_attr($link)?>" target="_blank" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">Read More…</a></p>
-		</div>
-		<?
-	}
-	
-	// If neither positions are set, or the two positions conflict with each
-	// other, just display them in the order they were retrieved:
-	if (($position_one == '' && $position_two == '') || ($position_one == $position_two)) {
-		output_spotlight($spotlight_one);
-		output_spotlight($spotlight_two);
-	}
-
-	// If one is set but not the other, respect the set spotlight's position
-	// and place the other one in the other slot:
-	else if ($position_one == '' && $position_two !== '') {
-		if ($position_two == 'top') {
-			output_spotlight($spotlight_two);
-			output_spotlight($spotlight_one);
-		}
-		else {
-			output_spotlight($spotlight_one);
-			output_spotlight($spotlight_two);
-		}
-	}
-	else if ($position_one !== '' && $position_two == '') {
-		if ($position_one == 'top') {
-			output_spotlight($spotlight_one);
-			output_spotlight($spotlight_two);
-		}
-		else {
-			output_spotlight($spotlight_two);
-			output_spotlight($spotlight_one);
-		}
-	}
-
-	// Otherwise, display them in their designated positions:
-	else {
-		if ($position_one == 'top') { // we can assume position_two is the opposite
-			output_spotlight($spotlight_one);
-			output_spotlight($spotlight_two);
-		}
-		else {
-			output_spotlight($spotlight_two);
-			output_spotlight($spotlight_one);
-		}
-	}
+	}	
+	ob_start(); ?>
+		<section id="spotlights">
+			<div class="spotlights_title_wrap">
+				<h2 class="spotlights_title">Spotlights</h2>
+				<a href="<?=get_permalink(get_page_by_title('Spotlight Archives', OBJECT, 'page')->ID)?>">Check out more stories</a>	
+			</div>					
+			<? foreach ( $spotlights as $spotlight ){ 
+				$link = get_permalink($spotlight->ID);
+				$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
+				if($ext_link){
+					$link = $ext_link; 
+				} ?>
+				<div class="spotlight_single_wrap">
+					<a class="spotlight_single" href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">
+						<div class="spotlight_image_wrap">
+							<? $thumb_id = get_post_thumbnail_id($spotlight->ID);
+								$thumb_src = wp_get_attachment_image_src( $thumb_id, 'home-thumb' );
+								$thumb_src = $thumb_src[0];
+								if ($thumb_src) { ?>
+									<img class="spotlight_image" src="<?=esc_attr($thumb_src)?>" alt="<?=esc_attr($spotlight->post_title)?>"/>
+								<? } ?>
+						</div>
+						<div class="spotlight_content_wrap">
+							<div class="spotlight_type">
+								<?=get_post_meta($spotlight->ID, '', TRUE)?>Some Category stuff later
+							</div>	
+							<h3 class="spotlight_title">
+								<?=$spotlight->post_title?>	
+							</h3>
+							<p class="spotlight_content">
+								<?=get_the_excerpt($spotlight)?>	
+							</p>
+						</div>
+					</a>
+				</div>
+			<? } ?>
+		</section>
+	<? return ob_get_clean();
 }
 
 /**
@@ -790,8 +752,8 @@ function frontpage_opportunities() {
 								<?=get_post_meta($opportunity->ID, '', TRUE)?>Some Category stuff later
 							</div>					
 						</div>
-						<div class="opportunity_icon">
-							<i class="fa fa-2x fa-chevron-right"></i>
+						<div class="opportunity_icon_wrap">
+							<i class="fa fa-2x fa-chevron-right opportunity_icon"></i>
 						</div>
 					</a>
 				</div>
@@ -827,11 +789,11 @@ function frontpage_interests(){
 							<?=$itm->post_title?>	
 						</h3>
 						<p class="interest_content">
-							<?=$itm->post_content?>	
+							<?=get_the_excerpt($itm)?>	
 						</p>
 					</div>
-					<div class="interest_icon">
-						<i class="fa fa-2x fa-arrow-right"></i>
+					<div class="interest_icon_wrap">
+						<i class="fa fa-2x fa-arrow-right interest_icon"></i>
 					</div>
 				</a>
 			</div>

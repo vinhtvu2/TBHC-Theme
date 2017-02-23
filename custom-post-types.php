@@ -108,6 +108,9 @@ abstract class CustomPostType{
 		if ($this->options('use_revisions')){
 			$supports[] = 'revisions';
 		}
+		if ($this->options('use_excerpt')){
+			$supports[] = 'excerpt';
+		}
 		return $supports;
 	}
 
@@ -818,6 +821,7 @@ class Opportunity extends CustomPostType {
 	$use_title      = True,
 	$use_metabox    = True,
 	$use_shortcode	= True,
+	$use_excerpt	= True,	
 	$taxonomies     = array('event_groups');	
 	
 	public function fields() {
@@ -894,7 +898,6 @@ class Opportunity extends CustomPostType {
 	
 }
 
-
 /**
  * Describes a spotlight feature
  *
@@ -915,8 +918,8 @@ class Spotlight extends CustomPostType {
 		$use_title      = True,
 		$use_metabox    = True,
 		$use_shortcode	= True,
+		$use_excerpt	= True,
 		$taxonomies     = array('event_groups');	
-	
 
 	public function fields() {
 		$prefix = $this->options('name').'_';
