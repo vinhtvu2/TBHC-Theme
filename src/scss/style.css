@@ -10043,6 +10043,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     border: none; }
   #site-nav-xs .navbar-brand {
     color: #000;
+    text-transform: uppercase;
     font-size: 20px; }
   #site-nav-xs .icon-bar {
     background-color: #000; }
@@ -12612,7 +12613,8 @@ body.ie8 #azIndexList .navbar-nav {
 section#interests {
   position: relative;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase; }
   section#interests .interests_title_wrap {
     background-color: #FC0;
     padding: 0.75em 0;
@@ -12622,7 +12624,7 @@ section#interests {
     word-break: break-word; }
     @media (max-width: 991px) {
       section#interests .interest_single_wrap {
-        background-image: none !important; } }
+        background-image: none; } }
     section#interests .interest_single_wrap .interest_single {
       display: table;
       width: 100%; }
@@ -12651,7 +12653,8 @@ section#interests {
             }*/ }
       section#interests .interest_single_wrap .interest_single .interest_content {
         padding-right: 15%;
-        color: #000; }
+        color: #000;
+        text-transform: none; }
       section#interests .interest_single_wrap .interest_single .interest_icon_wrap {
         display: table-cell;
         width: 20%;
@@ -12714,5 +12717,34 @@ section#opportunities {
       section#opportunities .opportunity_single_wrap .opportunity_single .opportunity_icon_wrap .opportunity_icon {
         font-size: 1.5em;
         color: #aaa; }
+
+section#spotlights {
+  padding: 0 8%; }
+  section#spotlights .spotlights_title {
+    font-size: 3em;
+    font-weight: bold; }
+    section#spotlights .spotlights_title a {
+      color: #aaa;
+      font-weight: bold;
+      text-transform: uppercase; }
+  section#spotlights .spotlight_single {
+    display: table; }
+    section#spotlights .spotlight_single .spotlight_image_wrap {
+      display: table-cell;
+      width: 15%; }
+      section#spotlights .spotlight_single .spotlight_image_wrap .spotlight_image {
+        width: 100%; }
+    section#spotlights .spotlight_single .spotlight_content_wrap {
+      display: table-cell;
+      padding-left: 3%;
+      color: #333; }
+      section#spotlights .spotlight_single .spotlight_content_wrap .spotlight_type {
+        background-color: #FC0;
+        text-transform: uppercase;
+        color: #333; }
+      section#spotlights .spotlight_single .spotlight_content_wrap .spotlight_title {
+        font-weight: bold;
+        padding: 5px 0;
+        color: #333; }
 
 /*# sourceMappingURL=style.css.map */
