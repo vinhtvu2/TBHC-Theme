@@ -12720,10 +12720,10 @@ section#opportunities {
 
 section#spotlights {
   padding: 0 8%; }
-  section#spotlights .spotlights_title {
+  section#spotlights .spotlights_title_wrap .spotlights_title {
     font-size: 3em;
     font-weight: bold; }
-  section#spotlights a {
+  section#spotlights .spotlights_title_wrap a {
     color: #aaa;
     font-weight: bold;
     text-transform: uppercase; }
