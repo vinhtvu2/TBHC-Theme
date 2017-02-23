@@ -10077,7 +10077,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   position: relative;
   line-height: 15px;
   background-color: #3d3c3c;
-  color: #d9d6d6;
+  color: #e5e5e5;
   overflow: hidden;
   clear: both;
   /*@media(min-width: $screen-sm-min){
@@ -10085,7 +10085,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
       margin-top: -25px;
   }*/ }
   #footer a {
-    color: #d9d6d6; }
+    color: #e5e5e5; }
     #footer a:hover {
       color: #FFF; }
   #footer #footer-navwrap {
@@ -10143,10 +10143,10 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   background-color: #3d3c3c;
   height: 30px;
   width: 100%;
-  color: #d9d6d6;
+  color: #e5e5e5;
   padding-left: 0; }
   #subfooter a {
-    color: #d9d6d6; }
+    color: #e5e5e5; }
 
 #social-menu-wrap {
   margin: 0;
@@ -10165,7 +10165,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
         display: block;
         padding-top: 7px;
         color: #333;
-        background-color: #d9d6d6;
+        background-color: #e5e5e5;
         border-radius: 50%;
         /*filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
         /*filter: gray; /* IE6-9 */
@@ -10178,7 +10178,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
             -webkit-filter: grayscale(0%);
         }*/ }
         #social-menu-wrap ul li a:hover {
-          color: #d9d6d6;
+          color: #e5e5e5;
           background-color: transparent; }
 
 /*#social-menu {
@@ -12656,7 +12656,7 @@ section#interests {
         display: table-cell;
         width: 20%;
         vertical-align: middle; }
-        section#interests .interest_single_wrap .interest_single .interest_icon_wrap .interset_icon {
+        section#interests .interest_single_wrap .interest_single .interest_icon_wrap .interest_icon {
           border-radius: 50%;
           padding: 5%;
           border: 4px #FC0 solid;
@@ -12710,7 +12710,7 @@ section#opportunities {
       display: table-cell;
       vertical-align: middle;
       text-align: center;
-      background-color: #f7f7f7; }
+      background-color: #e5e5e5; }
       section#opportunities .opportunity_single_wrap .opportunity_single .opportunity_icon_wrap .opportunity_icon {
         font-size: 1.5em;
         color: #aaa; }
