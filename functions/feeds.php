@@ -299,6 +299,10 @@ function get_events($start, $limit){
 
 	// Grab the weather feed
 	$raw_events = file_get_contents($url, false, $context);
+	if(DEBUG){
+		print_r("RAW EVENTS:");
+		print_r($raw_events);
+	}
 	if ($raw_events) {
 		$events = json_decode($raw_events, TRUE);
 		$events = array_slice($events, $start, $limit);
