@@ -816,6 +816,9 @@ function frontpage_interests(){
 
 function frontpage_events(){
 	$events = get_events(0, 5);
+	if(DEBUG){
+		print_r($events);
+	}
 	reset($events);
 	$firstEle = key($events);
 	ob_start();?>
