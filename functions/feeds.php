@@ -287,7 +287,9 @@ function get_events($start, $limit){
 		$url .= '&';
 	}
 	$url    .= 'format=json';
-
+	if(DEBUG){
+		print_r($url);
+	}
 	// Set a timeout
 	$opts = array('http' => array(
 						'method'  => 'GET',
