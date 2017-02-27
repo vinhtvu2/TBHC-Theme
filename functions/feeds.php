@@ -295,16 +295,22 @@ function get_events($start, $limit){
 						'method'  => 'GET',
 						'timeout' => FEED_FETCH_TIMEOUT
 	));
-	$context = stream_context_create($opts);
-
+	$raw_events = wp_safe_remote_get($url, array('timeout' => FEED_FETCH_TIMEOUT));
+	if ( is_array( $raw_events ) ) {
+		$raw_events = json_decode( wp_remote_retrieve_body( $raw_events ) );
+	}
+	else {
+		$raw_events = false;
+	}
+	
 	// Grab the weather feed
-	$raw_events = file_get_contents($url, false, $context);
+
 	if(DEBUG){
 		print_r("RAW EVENTS:");
 		print_r($raw_events);
 	}
 	if ($raw_events) {
-		$events = json_decode($raw_events, TRUE);
+		//$events = json_decode($raw_events, TRUE);
 		$events = array_slice($events, $start, $limit);
 		return $events;
 	}
