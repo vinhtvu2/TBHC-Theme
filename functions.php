@@ -609,7 +609,6 @@ function frontpage_spotlights() {
 	$args = array(
 		'post_type' 	=> 'spotlight',
 		'post_status'   => 'publish',
-		'numberofposts'	=> 2,
 		'meta_query'	=> array(
 			array(
 				'key'	=>	'spotlight_post_to_home',
@@ -637,6 +636,8 @@ function frontpage_spotlights() {
 			);
 		$spotlights = get_posts($args);
 	}	
+	
+	$spotlights = array_splice($spotlights, 0, 2);
 	ob_start(); ?>
 		<section id="spotlights">
 			<div class="spotlights_title_wrap">
@@ -812,6 +813,31 @@ function frontpage_interests(){
 	</section>
 	<? return ob_get_clean();
 } 
+
+function frontpage_events(){
+	$events = get_events(0, 5);
+	reset($events);
+	$firstEle = key($events);
+	ob_start();?>
+	<section id="events">
+		<div class="events_title_wrap">
+			<h2 class="events_title"></h2>
+		</div>
+		<?foreach($events as $key => $element){?>
+			<div class="event_single_wrap">
+				<div class="event_single">
+					<div class="event_datetime"></div>
+					<h3 class="event_title"><?=$element["title"]?></h3>
+					<?if ($key === $first){?>
+						<p class="event_content"></p>	
+					<?}?>
+				</div>
+			</div>			
+		<?}?>
+	</section>
+	<? return ob_get_clean();
+}
+
 
 /**
  * Pulls, parses and caches the weather.

@@ -286,7 +286,7 @@ function get_events($start, $limit){
 	}else{
 		$url .= '&';
 	}
-	$url    .= 'upcoming=upcoming&format=json';
+	$url    .= 'format=json';
 
 	// Set a timeout
 	$opts = array('http' => array(
