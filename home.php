@@ -5,11 +5,7 @@
 		<?=frontpage_opportunities()?>
 		<?=frontpage_interests()?>
  		<?=frontpage_spotlights()?>
-		<section id="events">
-			<h2>Upcoming Events</h2>
-			<?php do_shortcode('[events-widget]'); ?>
-			<?php //esi_include('output_weather_data'); ?>
-		</section>
+		<?=frontpage_events()?>
 	</div>
 	<!--<div class="container-shadow">
 		<span></span>
