@@ -298,10 +298,10 @@ function get_events($start, $limit){
 	$raw_events = wp_safe_remote_get($url, array('timeout' => FEED_FETCH_TIMEOUT));
 	if ( !is_wp_error( $raw_events ) ) {
 		$raw_events = wp_remote_retrieve_body( $raw_events );
-		if(DEBUG){
-			print_r($raw_events);
-		}
 		$raw_events = json_decode( $raw_events, TRUE );
+		if(DEBUG){
+			print_r(json_last_error());
+		}
 	}
 	else {
 		$raw_events = false;
