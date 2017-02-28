@@ -323,7 +323,7 @@ function sc_person_profile_grid($atts) {
 		usort($people, function($a, $b){
 			$a_title = get_post_meta($a->ID, 'person_jobtitle', true);
 			$b_title = get_post_meta($b->ID, 'person_jobtitle', true);
-			$haystack = ["Dean", "Director", "Coordinator"];
+			$haystack = array("Dean", "Director", "Coordinator");
 			$res = 0;
 			if(preg_match('/Dean|Director|Coordinator/', $a_title) || preg_match('/Dean|Director|Coordinator/', $b_title)){
 				foreach ($haystack as $item)	{

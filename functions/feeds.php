@@ -287,9 +287,9 @@ function get_events($start, $limit){
 		$url .= '&';
 	}
 	$url    .= 'format=json';
-	if(DEBUG){
-		print_r($url);
-	}
+	//if(DEBUG){
+		//print_r($url);
+	//}
 	// Set a timeout
 	$opts = array('http' => array(
 						'method'  => 'GET',
@@ -297,7 +297,7 @@ function get_events($start, $limit){
 	));
 	$raw_events = wp_safe_remote_get($url, array('timeout' => FEED_FETCH_TIMEOUT));
 	if ( is_array( $raw_events ) ) {
-		$raw_events = json_decode( wp_remote_retrieve_body( $raw_events ) );
+		$raw_events = json_decode( wp_remote_retrieve_body( $raw_events ), TRUE );
 	}
 	else {
 		$raw_events = false;
@@ -305,10 +305,10 @@ function get_events($start, $limit){
 	
 	// Grab the weather feed
 
-	if(DEBUG){
-		print_r("RAW EVENTS:");
-		print_r($raw_events);
-	}
+	//if(DEBUG){
+		//print_r("RAW EVENTS:");
+		//print_r($raw_events);
+	//}
 	if ($raw_events) {
 		//$events = json_decode($raw_events, TRUE);
 		$events = array_slice($events, $start, $limit);
