@@ -296,8 +296,12 @@ function get_events($start, $limit){
 						'timeout' => FEED_FETCH_TIMEOUT
 	));
 	$raw_events = wp_safe_remote_get($url, array('timeout' => FEED_FETCH_TIMEOUT));
-	if ( is_array( $raw_events ) ) {
-		$raw_events = json_decode( wp_remote_retrieve_body( $raw_events ), TRUE );
+	if ( !is_wp_error( $raw_events ) ) {
+		$raw_events = wp_remote_retrieve_body( $raw_events );
+		if(DEBUG){
+			print_r($raw_events);
+		}
+		$raw_events = json_decode( $raw_events, TRUE );
 	}
 	else {
 		$raw_events = false;
