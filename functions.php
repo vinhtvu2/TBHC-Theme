@@ -830,7 +830,7 @@ function frontpage_events(){
 					<div class="event_datetime"><?=$element["starts"]?></div>
 					<h3 class="event_title"><?=$element["title"]?></h3>
 					<?if (array_search($element, $events) === 0){?>
-						<p class="event_content"><?=$element["description"]?></p>	
+						<div class="event_content"><?=$element["description"]?></div>	
 					<?}?>
 				</div>
 			</div>			
