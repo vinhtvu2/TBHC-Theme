@@ -817,14 +817,14 @@ function frontpage_interests(){
 function frontpage_events(){
 	$events = get_events(0, 5);
 	if(DEBUG){
-		print_r($events);
+		print_r($events[0]);
 	}
 	ob_start();?>
 	<section id="events">
 		<div class="events_title_wrap">
 			<h2 class="events_title"></h2>
 		</div>
-		<?foreach($events as $element){?>
+		<? foreach($events as $element){?>
 			<div class="event_single_wrap">
 				<div class="event_single">
 					<div class="event_datetime"></div>
