@@ -299,9 +299,6 @@ function get_events($start, $limit){
 	if ( !is_wp_error( $raw_events ) ) {
 		$raw_events = wp_remote_retrieve_body( $raw_events );
 		$raw_events = json_decode( $raw_events, TRUE );
-		if(DEBUG){
-			print_r(json_last_error());
-		}
 	}
 	else {
 		$raw_events = false;
@@ -315,7 +312,7 @@ function get_events($start, $limit){
 	//}
 	if ($raw_events) {
 		//$events = json_decode($raw_events, TRUE);
-		$events = array_slice($events, $start, $limit);
+		$events = array_slice($raw_events, $start, $limit);
 		return $events;
 	}
 	else { return NULL; }
