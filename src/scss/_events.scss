@@ -1,0 +1,19 @@
+﻿section#events{
+    background-color:black;
+    .events_title{
+        color:white;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .event_datetime{
+        color:#FC0;
+        text-transform: uppercase;
+    }
+    .event_title{
+        font-weight: bold;
+        color:white;
+    }
+    .event_content{
+        color: white;
+    }
+}
