@@ -149,7 +149,7 @@
 					echo do_shortcode('[centerpiece id="'.$latest_centerpiece[0]->ID.'"]');
 				?>
 			</div>
-			<nav id="section-nav-xs" class="visible-xs-block navbar navbar-inverse">
+			<nav id="section-nav-xs" class="navbar navbar-inverse">
 				<div class="navbar-section">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#section-menu-xs-collapse" aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span>
