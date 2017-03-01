@@ -10066,7 +10066,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 #section-nav-xs {
   clear: both;
   margin-bottom: 0;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  height: auto; }
   #section-nav-xs .navbar-brand {
     float: right;
     color: white; }
