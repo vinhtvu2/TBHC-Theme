@@ -10043,7 +10043,6 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     border: none; }
   #site-nav-xs .navbar-brand {
     color: #000;
-    text-transform: uppercase;
     font-size: 20px; }
   #site-nav-xs .icon-bar {
     background-color: #000; }
@@ -10066,7 +10065,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 #section-nav-xs {
   clear: both;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-transform: uppercase; }
   #section-nav-xs .navbar-brand {
     float: right;
     color: white; }
@@ -10415,12 +10415,6 @@ ul li:not(ul li div) {
       background: #FC0;
       color: black;
       margin: 0; }
-    @media (min-width: 769px) {
-      .moreBtnPad .moreBtn {
-        position: absolute;
-        bottom: 11px;
-        padding: 0 15px;
-        left: 0; } }
 
 .item.vevent .date {
   text-align: center;
@@ -12748,5 +12742,20 @@ section#spotlights {
         padding: 5px 0;
         color: #333; }
 
+section#events {
+  padding: 0 3%;
+  background-color: black; }
+  section#events .events_title {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold; }
+  section#events .event_datetime {
+    color: #FC0;
+    text-transform: uppercase; }
+  section#events .event_title {
+    font-weight: bold;
+    color: white; }
+  section#events .event_content, section#events .event_content p, section#events .event_content a {
+    color: white; }
 
 /*# sourceMappingURL=style.css.map */
