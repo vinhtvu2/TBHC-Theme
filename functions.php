@@ -754,7 +754,7 @@ function frontpage_opportunities() {
 								<?=$opportunity->post_title?>	
 							</h3>
 							<div class="opportunity_type">
-								<?=get_post_meta($opportunity->ID, '', TRUE)?>Some Category stuff later
+								<?=get_post_meta($opportunity->ID, '', TRUE)?>Some Cat Stuff
 							</div>					
 						</div>
 						<div class="opportunity_icon_wrap">
