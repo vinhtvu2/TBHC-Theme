@@ -10443,31 +10443,35 @@ body {
   background-color: white; }
 
 .container {
-  position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  position: relative; }
 
-.container-shadow {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%; }
-  @media (min-width: 770px) {
-    .container-shadow {
-      max-width: 752px; } }
-  @media (min-width: 992px) {
-    .container-shadow {
-      max-width: 970px; } }
-  @media (min-width: 1200px) {
-    .container-shadow {
-      max-width: 1170px; } }
-  .container-shadow span {
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.75);
-    width: 100%;
+/*.container-shadow {
+    position: absolute;
+    //z-index: -1;
+    left: 0;
+    top: 0;
     height: 100%;
-    display: block; }
+    width: 100%;
 
+    @media (min-width: $screen-sm-min) {
+        max-width: $container-sm;
+    }
+
+    @media (min-width: $screen-md-min) {
+        max-width: $container-md;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        max-width: $container-lg;
+    }
+
+    span {
+        box-shadow: 0 0 20px 0 rgba(0,0,0,.75);
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}*/
 .person-profile .details img {
   width: 100%; }
 

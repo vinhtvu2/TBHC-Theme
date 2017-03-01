@@ -5,13 +5,13 @@ body {
 .container {
     //opacity:.99;
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    //padding-top: 20px;
+    //padding-bottom: 20px;
     //z-index: -1;
     //box-shadow: 9px 0px 10px -10px rgba(0, 0, 0, .75), -9px 0px 10px -10px rgba(0, 0, 0, .75), 0px 9px 10px -10px rgba(0, 0, 0, .75);
 }
 
-.container-shadow {
+/*.container-shadow {
     position: absolute;
     //z-index: -1;
     left: 0;
@@ -37,7 +37,7 @@ body {
         height: 100%;
         display: block;
     }
-}
+}*/
 
 .person-profile .details img {
     width: 100%;
