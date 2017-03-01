@@ -237,13 +237,6 @@ ul li:not(ul li div) {
             color: black;
             margin: 0;
         }
-
-        @media (min-width: $screen-xs-max) {
-            position: absolute;
-            bottom: 11px;
-            padding: 0 15px;
-            left: 0;
-        }
     }
 }
 
