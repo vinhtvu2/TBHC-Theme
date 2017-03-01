@@ -10069,7 +10069,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   text-transform: uppercase;
   height: auto;
   width: 100%;
-  z-index: 1; }
+  z-index: 1;
+  display: block; }
   #section-nav-xs .navbar-brand {
     float: right;
     color: white; }
