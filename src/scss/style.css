@@ -12667,12 +12667,12 @@ section#interests {
           border: 4px #FC0 solid;
           font-size: 1.5em;
           color: #000; }
-    section#interests .interests_wrap:after {
-      content: "";
-      display: block;
-      width: 95%;
-      margin: 1em auto 0;
-      border-bottom: 4px solid #e5e5e5; }
+      section#interests .interests_wrap .interest_single:after {
+        content: "";
+        display: block;
+        width: 95%;
+        margin: 1em auto 0;
+        border-bottom: 4px solid #e5e5e5; }
 
 section#opportunities {
   position: relative;

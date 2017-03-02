@@ -2,7 +2,8 @@
     position: relative;
     width: 100%;
     text-align: center;
-    text-transform:uppercase;
+    text-transform: uppercase;
+
     .interests_title_wrap {
         background-color: #FC0;
         padding: .75em 0;
@@ -12,7 +13,7 @@
     .interests_wrap {
         text-align: left;
         word-break: break-word;
-        
+
         @media (max-width: $screen-sm-max) {
             background-image: none;
         }
@@ -51,7 +52,7 @@
             .interest_content {
                 padding-right: 15%;
                 color: #000;
-                text-transform:none;
+                text-transform: none;
             }
 
             .interest_icon_wrap {
@@ -67,14 +68,14 @@
                     color: #000;
                 }
             }
-        }
 
-        &:after {
-            content: "";
-            display: block;
-            width: 95%;
-            margin: 1em auto 0;
-            border-bottom: 4px solid #e5e5e5;
+            &:after {
+                content: "";
+                display: block;
+                width: 95%;
+                margin: 1em auto 0;
+                border-bottom: 4px solid #e5e5e5;
+            }
         }
     }
 }
