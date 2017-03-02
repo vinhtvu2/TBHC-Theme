@@ -12621,18 +12621,18 @@ section#interests {
     background-color: #FC0;
     padding: 0.75em 0;
     color: #000; }
-  section#interests .interest_single_wrap {
+  section#interests .interests_wrap {
     text-align: left;
     word-break: break-word; }
     @media (max-width: 991px) {
-      section#interests .interest_single_wrap {
+      section#interests .interests_wrap {
         background-image: none; } }
-    section#interests .interest_single_wrap .interest_single {
+    section#interests .interests_wrap .interest_single {
       display: table;
       width: 100%; }
-      section#interests .interest_single_wrap .interest_single .interest_content_wrap {
+      section#interests .interests_wrap .interest_single .interest_content {
         padding-left: 15%; }
-        section#interests .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
+        section#interests .interests_wrap .interest_single .interest_content .interest_title {
           color: #000;
           margin: 10px 0;
           /*h2.background {
@@ -12653,21 +12653,21 @@ section#interests {
                     padding: 0 15px; 
                 }
             }*/ }
-      section#interests .interest_single_wrap .interest_single .interest_content {
+      section#interests .interests_wrap .interest_single .interest_content {
         padding-right: 15%;
         color: #000;
         text-transform: none; }
-      section#interests .interest_single_wrap .interest_single .interest_icon_wrap {
+      section#interests .interests_wrap .interest_single .interest_icon_wrap {
         display: table-cell;
         width: 20%;
         vertical-align: middle; }
-        section#interests .interest_single_wrap .interest_single .interest_icon_wrap .interest_icon {
+        section#interests .interests_wrap .interest_single .interest_icon_wrap .interest_icon {
           border-radius: 50%;
           padding: 5%;
           border: 4px #FC0 solid;
           font-size: 1.5em;
           color: #000; }
-    section#interests .interest_single_wrap:after {
+    section#interests .interests_wrap:after {
       content: "";
       display: block;
       width: 95%;
