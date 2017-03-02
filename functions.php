@@ -655,7 +655,7 @@ function frontpage_spotlights() {
 				}
 				$cat_term = get_term_by('slug','event-category','event_groups');
 				$child_terms = get_term_children($cat_term->term_id, 'event_groups');
-				$all_terms   = wp_get_post_terms($post->ID, 'event_groups');
+				$all_terms   = wp_get_post_terms($spotlight->ID, 'event_groups');
 				foreach ( $all_terms as $term ) {
 					if( !in_array($term->term_id, $child_terms ) ) {
 						$term_title = $term->name;
@@ -761,9 +761,9 @@ function frontpage_opportunities() {
 				if($ext_link){
 					$link = $ext_link; 
 				} 
-				$cat_term = get_term_by('name','category','event_groups');
+				$cat_term = get_term_by('slug','event-category','event_groups');
 				$child_terms = get_term_children($cat_term->term_id, 'event_groups');
-				$all_terms   = wp_get_post_terms($post->ID, 'event_groups');
+				$all_terms   = wp_get_post_terms($opportunity->ID, 'event_groups');
 				if(DEBUG){
 					print_r($cat_term);
 					print_r($child_terms);
