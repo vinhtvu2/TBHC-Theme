@@ -809,6 +809,7 @@ function frontpage_interests(){
 		<div class="interests_title_wrap">
 			<h2 class="interests_title">What Are You Interested In?</h2> <!--http://codepen.io/ericrasch/pen/Irlpm-->
 		</div>					
+		<div class="interests_wrap" >			
 		<? foreach ( $itms as $itm ){ 
 			$link = get_permalink($itm->ID);
 			$ext_link = get_post_meta($itm->ID, 'interest_url_redirect', TRUE);
@@ -817,14 +818,13 @@ function frontpage_interests(){
 			}?>
 			<style>
 				@media(min-width: 770px){
-					.interest_single_wrap#interest_<?=$itm->ID?>{
+					.interest_single#interest_<?=$itm->ID?>{
 						background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');				
 					}
 				}
 			</style>
-			<div class="interest_single_wrap" id="interest_<?=$itm->ID?>">
-				<a class="interest_single" href="<?=$link?>">
-					<div class="interest_content_wrap">
+				<a class="interest_single" href="<?=$link?>" id="interest_<?=$itm->ID?>">
+					<div class="interest_content">
 						<h3 class="interest_title">
 							<?=$itm->post_title?>	
 						</h3>
@@ -836,8 +836,8 @@ function frontpage_interests(){
 						<i class="fa fa-2x fa-arrow-right interest_icon"></i>
 					</div>
 				</a>
-			</div>
 		<? } ?>
+		</div>		
 	</section>
 	<? return ob_get_clean();
 } 
