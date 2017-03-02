@@ -657,7 +657,7 @@ function frontpage_spotlights() {
 				$child_terms = get_term_children($cat_term->term_id, 'event_groups');
 				$all_terms   = wp_get_post_terms($spotlight->ID, 'event_groups');
 				foreach ( $all_terms as $term ) {
-					if( !in_array($term->term_id, $child_terms ) ) {
+					if( in_array($term->term_id, $child_terms ) ) {
 						$term_title = $term->name;
 						break;
 					}
@@ -770,7 +770,7 @@ function frontpage_opportunities() {
 					print_r($all_terms);					
 				}
 				foreach ( $all_terms as $term ) {
-					if( !in_array($term->term_id, $child_terms ) ) {
+					if( in_array($term->term_id, $child_terms ) ) {
 						$term_title = $term->name;
 						break;
 					}
