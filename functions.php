@@ -652,7 +652,16 @@ function frontpage_spotlights() {
 				$ext_link = get_post_meta($spotlight->ID, 'spotlight_url_redirect', TRUE);
 				if($ext_link){
 					$link = $ext_link; 
-				} ?>
+				}
+				$cat_term = get_term_by('name','category','event_groups');
+				$child_terms = get_term_children($cat_term->term_id, 'event_group');
+				$all_terms   = wp_get_post_terms($post->ID, 'event_group');
+				foreach ( $all_terms as $term ) {
+					if( !in_array($term->term_id, $child_terms ) ) {
+						$term_title = $term->name;
+						break;
+					}
+				}?>
 				<div class="spotlight_single_wrap">
 					<a class="spotlight_single" href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">
 						<div class="spotlight_image_wrap">
@@ -665,7 +674,7 @@ function frontpage_spotlights() {
 						</div>
 						<div class="spotlight_content_wrap">
 							<div class="spotlight_type">
-								<?=get_post_meta($spotlight->ID, '', TRUE)?>Some Category stuff later
+								<?=$term_title?>
 							</div>	
 							<h3 class="spotlight_title">
 								<?=$spotlight->post_title?>	
@@ -746,7 +755,16 @@ function frontpage_opportunities() {
 				$ext_link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);
 				if($ext_link){
 					$link = $ext_link; 
-				} ?>
+				} 
+				$cat_term = get_term_by('name','category','event_groups');
+				$child_terms = get_term_children($cat_term->term_id, 'event_group');
+				$all_terms   = wp_get_post_terms($post->ID, 'event_group');
+				foreach ( $all_terms as $term ) {
+					if( !in_array($term->term_id, $child_terms ) ) {
+						$term_title = $term->name;
+						break;
+					}
+				}?>
 				<div class="opportunity_single_wrap">
 					<a class="opportunity_single" href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Opportunity Link" data-ga-label="<?=esc_attr($opportunity->post_title)?>">
 						<div class="opportunity_content_wrap">
@@ -754,7 +772,7 @@ function frontpage_opportunities() {
 								<?=$opportunity->post_title?>	
 							</h3>
 							<div class="opportunity_type">
-								<?=get_post_meta($opportunity->ID, '', TRUE)?>Some Cat Stuff
+								<?=$term_title?>
 							</div>					
 						</div>
 						<div class="opportunity_icon_wrap">
