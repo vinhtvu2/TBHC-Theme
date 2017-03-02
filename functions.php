@@ -653,14 +653,19 @@ function frontpage_spotlights() {
 				if($ext_link){
 					$link = $ext_link; 
 				}
-				$cat_term = get_term_by('name','category','event_groups');
-				$child_terms = get_term_children($cat_term->term_id, 'event_group');
-				$all_terms   = wp_get_post_terms($post->ID, 'event_group');
+				$cat_term = get_term_by('slug','event-category','event_groups');
+				$child_terms = get_term_children($cat_term->term_id, 'event_groups');
+				$all_terms   = wp_get_post_terms($post->ID, 'event_groups');
 				foreach ( $all_terms as $term ) {
 					if( !in_array($term->term_id, $child_terms ) ) {
 						$term_title = $term->name;
 						break;
 					}
+					if(DEBUG){
+						print_r($cat_term);
+						print_r($child_terms);
+						print_r($all_terms);					
+					}					
 				}?>
 				<div class="spotlight_single_wrap">
 					<a class="spotlight_single" href="<?=esc_attr($link)?>" class="ga-event" data-ga-action="Spotlight Link" data-ga-label="<?=esc_attr($spotlight->post_title)?>">
@@ -757,8 +762,13 @@ function frontpage_opportunities() {
 					$link = $ext_link; 
 				} 
 				$cat_term = get_term_by('name','category','event_groups');
-				$child_terms = get_term_children($cat_term->term_id, 'event_group');
-				$all_terms   = wp_get_post_terms($post->ID, 'event_group');
+				$child_terms = get_term_children($cat_term->term_id, 'event_groups');
+				$all_terms   = wp_get_post_terms($post->ID, 'event_groups');
+				if(DEBUG){
+					print_r($cat_term);
+					print_r($child_terms);
+					print_r($all_terms);					
+				}
 				foreach ( $all_terms as $term ) {
 					if( !in_array($term->term_id, $child_terms ) ) {
 						$term_title = $term->name;
