@@ -12621,18 +12621,24 @@ section#interests {
     background-color: #FC0;
     padding: 0.75em 0;
     color: #000; }
-  section#interests .interests_wrap {
+  @media (min-width: 991px) {
+    section#interests .interests_lg_table {
+      display: table; } }
+  section#interests .interests_lg_table .interest_single_wrap {
     text-align: left;
     word-break: break-word; }
     @media (max-width: 991px) {
-      section#interests .interests_wrap {
+      section#interests .interests_lg_table .interest_single_wrap {
         background-image: none; } }
-    section#interests .interests_wrap .interest_single {
+    @media (min-width: 991px) {
+      section#interests .interests_lg_table .interest_single_wrap {
+        display: table-cell; } }
+    section#interests .interests_lg_table .interest_single_wrap .interest_single {
       display: table;
       width: 100%; }
-      section#interests .interests_wrap .interest_single .interest_content {
+      section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
         padding-left: 15%; }
-        section#interests .interests_wrap .interest_single .interest_content .interest_title {
+        section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
           color: #000;
           margin: 10px 0;
           /*h2.background {
@@ -12653,26 +12659,26 @@ section#interests {
                     padding: 0 15px; 
                 }
             }*/ }
-      section#interests .interests_wrap .interest_single .interest_content {
+      section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content {
         padding-right: 15%;
         color: #000;
         text-transform: none; }
-      section#interests .interests_wrap .interest_single .interest_icon_wrap {
+      section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_icon_wrap {
         display: table-cell;
         width: 20%;
         vertical-align: middle; }
-        section#interests .interests_wrap .interest_single .interest_icon_wrap .interest_icon {
+        section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_icon_wrap .interest_icon {
           border-radius: 50%;
           padding: 5%;
           border: 4px #FC0 solid;
           font-size: 1.5em;
           color: #000; }
-      section#interests .interests_wrap .interest_single:after {
-        content: "";
-        display: block;
-        width: 95%;
-        margin: 1em auto 0;
-        border-bottom: 4px solid #e5e5e5; }
+    section#interests .interests_lg_table .interest_single_wrap:after {
+      content: "";
+      display: block;
+      width: 95%;
+      margin: 1em auto 0;
+      border-bottom: 4px solid #e5e5e5; }
 
 section#opportunities {
   position: relative;

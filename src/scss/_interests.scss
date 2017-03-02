@@ -10,25 +10,32 @@
         color: #000;
     }
 
-    .interests_wrap {
-        text-align: left;
-        word-break: break-word;
+    .interests_lg_table {
+        @media (min-width: $screen-sm-max) {
+                display: table;
+            }
+        .interest_single_wrap {
+            text-align: left;
+            word-break: break-word;
 
-        @media (max-width: $screen-sm-max) {
-            background-image: none;
-        }
+            @media (max-width: $screen-sm-max) {
+                background-image: none;
+            }
+            @media (min-width: $screen-sm-max) {
+                display: table-cell;
+            }
 
-        .interest_single {
-            display: table;
-            width: 100%;
+            .interest_single {
+                display: table;
+                width: 100%;
 
-            .interest_content {
-                padding-left: 15%;
+                .interest_content_wrap {
+                    padding-left: 15%;
 
-                .interest_title {
-                    color: #000;
-                    margin: 10px 0;
-                    /*h2.background {
+                    .interest_title {
+                        color: #000;
+                        margin: 10px 0;
+                        /*h2.background {
                 position: relative;
                 z-index: 1;
                 &:before {
@@ -46,26 +53,27 @@
                     padding: 0 15px; 
                 }
             }*/
+                    }
                 }
-            }
 
-            .interest_content {
-                padding-right: 15%;
-                color: #000;
-                text-transform: none;
-            }
-
-            .interest_icon_wrap {
-                display: table-cell;
-                width: 20%;
-                vertical-align: middle;
-
-                .interest_icon {
-                    border-radius: 50%;
-                    padding: 5%;
-                    border: 4px #FC0 solid;
-                    font-size: 1.5em;
+                .interest_content {
+                    padding-right: 15%;
                     color: #000;
+                    text-transform: none;
+                }
+
+                .interest_icon_wrap {
+                    display: table-cell;
+                    width: 20%;
+                    vertical-align: middle;
+
+                    .interest_icon {
+                        border-radius: 50%;
+                        padding: 5%;
+                        border: 4px #FC0 solid;
+                        font-size: 1.5em;
+                        color: #000;
+                    }
                 }
             }
 
