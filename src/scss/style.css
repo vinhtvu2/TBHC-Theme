@@ -10446,8 +10446,13 @@ ul li:not(ul li div) {
 body {
   background-color: white; }
 
-.container {
+.container, .container .row {
   position: relative; }
+  @media (max-width: 769px) {
+    .container, .container .row {
+      padding-left: 0;
+      padding-right: 0;
+      margin: auto 0; } }
 
 /*.container-shadow {
     position: absolute;
@@ -12770,7 +12775,8 @@ section#spotlights {
     font-weight: bold;
     text-transform: uppercase; }
   section#spotlights .spotlight_single {
-    display: table; }
+    display: table;
+    width: 100%; }
     section#spotlights .spotlight_single .spotlight_image_wrap {
       display: table-cell;
       width: 15%;
