@@ -754,7 +754,8 @@ function frontpage_opportunities() {
 			<div class="opportunities_title_wrap">
 				<h2 class="opportunities_title">Opportunities</h2>
 				<a href="<?=get_permalink(get_page_by_title('Opportunity Archives', OBJECT, 'page')->ID)?>">Even More Opportunities</a>	
-			</div>					
+			</div>		
+			<div class="opportunities_lg_table">
 			<? foreach ( $opportunities as $opportunity ){ 
 				$link = get_permalink($opportunity->ID);
 				$ext_link = get_post_meta($opportunity->ID, 'opportunity_url_redirect', TRUE);
@@ -791,6 +792,7 @@ function frontpage_opportunities() {
 					</a>
 				</div>
 			<? } ?>
+			</div>
 		</section>
 	<? return ob_get_clean();
 }
@@ -837,7 +839,7 @@ function frontpage_interests(){
 						<i class="fa fa-2x fa-arrow-right interest_icon"></i>
 					</div>
 				</a>
-		</div>					
+			</div>					
 		<? } ?>
 		</div>
 	</section>

@@ -12,17 +12,32 @@
         }
     }
 
-    .opportunity_single_wrap {
-        .opportunity_single {
+    .opportunities_lg_table {
+        @media (min-width: $screen-sm-max) {
             display: table;
+            table-layout: fixed;
             width: 100%;
+        }
 
-            .opportunity_content_wrap {
-                padding: 3%;
+        .opportunity_single_wrap {
+            @media (min-width: $screen-sm-max) {
+                display: table-cell;
+            }
 
-                .opportunity_title {
-                    color: #000;
-                    /*h2.background {
+            .opportunity_single {
+                display: table;
+                width: 100%;
+
+                @media (min-width: $screen-sm-max) {
+                    position: relative;
+                }
+
+                .opportunity_content_wrap {
+                    padding: 3%;
+
+                    .opportunity_title {
+                        color: #000;
+                        /*h2.background {
                 position: relative;
                 z-index: 1;
                 &:before {
@@ -40,23 +55,32 @@
                     padding: 0 15px; 
                 }
             }*/
+                    }
+
+                    .opportunity_type {
+                        color: #FC0;
+                    }
                 }
 
-                .opportunity_type {
-                    color: #FC0;
+                .opportunity_icon_wrap {
+                    width: 12%;
+                    display: table-cell;
+                    vertical-align: middle;
+                    text-align: center;
+                    background-color: #e5e5e5;
+                                    @media (min-width: $screen-sm-max) {
+                    display:none;
+                }
+                    .opportunity_icon {
+                        font-size: 1.5em;
+                        color: #aaa;
+                    }
                 }
             }
 
-            .opportunity_icon_wrap {
-                width: 12%;
-                display: table-cell;
-                vertical-align: middle;
-                text-align: center;
-                background-color: #e5e5e5;
-
-                .opportunity_icon {
-                    font-size: 1.5em;
-                    color: #aaa;
+            :after {
+                @media (min-width: $screen-sm-max) {
+                    padding-bottom: 100%;
                 }
             }
         }
