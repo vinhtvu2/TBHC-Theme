@@ -2,9 +2,14 @@ body {
     background-color: white;
 }
 
-.container {
+.container, .container .row {
     //opacity:.99;
     position: relative;
+    @media (max-width: $screen-xs-max) {
+        padding-left: 0;
+        padding-right: 0;
+        margin: auto 0;
+    }
     //padding-top: 20px;
     //padding-bottom: 20px;
     //z-index: -1;
