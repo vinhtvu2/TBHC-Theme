@@ -12,8 +12,11 @@
 
     .interests_lg_table {
         @media (min-width: $screen-sm-max) {
-                display: table;
-            }
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+
         .interest_single_wrap {
             text-align: left;
             word-break: break-word;
@@ -21,6 +24,7 @@
             @media (max-width: $screen-sm-max) {
                 background-image: none;
             }
+
             @media (min-width: $screen-sm-max) {
                 display: table-cell;
             }
@@ -56,16 +60,25 @@
                     }
                 }
 
-                .interest_content {
+                .interest_content_wrap {
                     padding-right: 15%;
                     color: #000;
                     text-transform: none;
+
+                    @media (min-width: $screen-sm-max) {
+                        position: absolute;
+                        padding-left: 0;
+                    }
                 }
 
                 .interest_icon_wrap {
                     display: table-cell;
                     width: 20%;
                     vertical-align: middle;
+
+                    @media (min-width: $screen-sm-max) {
+                        display: none;
+                    }
 
                     .interest_icon {
                         border-radius: 50%;
@@ -83,6 +96,12 @@
                 width: 95%;
                 margin: 1em auto 0;
                 border-bottom: 4px solid #e5e5e5;
+
+                @media (min-width: $screen-sm-max) {
+                    border: none;
+                    margin: 0;
+                    padding-bottom: 100%;
+                }
             }
         }
     }

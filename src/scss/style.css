@@ -12623,7 +12623,9 @@ section#interests {
     color: #000; }
   @media (min-width: 991px) {
     section#interests .interests_lg_table {
-      display: table; } }
+      display: table;
+      table-layout: fixed;
+      width: 100%; } }
   section#interests .interests_lg_table .interest_single_wrap {
     text-align: left;
     word-break: break-word; }
@@ -12659,14 +12661,21 @@ section#interests {
                     padding: 0 15px; 
                 }
             }*/ }
-      section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content {
+      section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
         padding-right: 15%;
         color: #000;
         text-transform: none; }
+        @media (min-width: 991px) {
+          section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
+            position: absolute;
+            padding-left: 0; } }
       section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_icon_wrap {
         display: table-cell;
         width: 20%;
         vertical-align: middle; }
+        @media (min-width: 991px) {
+          section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_icon_wrap {
+            display: none; } }
         section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_icon_wrap .interest_icon {
           border-radius: 50%;
           padding: 5%;
@@ -12679,6 +12688,11 @@ section#interests {
       width: 95%;
       margin: 1em auto 0;
       border-bottom: 4px solid #e5e5e5; }
+      @media (min-width: 991px) {
+        section#interests .interests_lg_table .interest_single_wrap:after {
+          border: none;
+          margin: 0;
+          padding-bottom: 100%; } }
 
 section#opportunities {
   position: relative;
