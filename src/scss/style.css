@@ -10452,7 +10452,8 @@ body {
     .container, .container .row {
       padding-left: 0;
       padding-right: 0;
-      margin: auto 0; } }
+      margin: auto 0;
+      width: 100%; } }
 
 /*.container-shadow {
     position: absolute;
