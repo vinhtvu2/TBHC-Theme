@@ -5,7 +5,7 @@ body {
 .container, .container .row {
     //opacity:.99;
     position: relative;
-    @media (max-width: $screen-xs-max) {
+    @media (min-width: $screen-xs-max) {
         padding-left: 0;
         padding-right: 0;
         margin: auto 0;
