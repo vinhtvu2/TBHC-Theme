@@ -10448,7 +10448,7 @@ body {
 
 .container, .container .row {
   position: relative; }
-  @media (max-width: 769px) {
+  @media (min-width: 769px) {
     .container, .container .row {
       padding-left: 0;
       padding-right: 0;
