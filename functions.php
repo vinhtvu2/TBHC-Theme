@@ -825,7 +825,8 @@ function frontpage_interests(){
 					}
 				}
 			</style>
-			<div class="interest_single_wrap" id="interest_<?=$itm->ID?>">							
+			<div class="interest_single_wrap" id="interest_<?=$itm->ID?>">
+				<div class="interest_single_overlay"></div>
 				<a class="interest_single" href="<?=$link?>" >
 					<div class="interest_content_wrap">
 						<h3 class="interest_title">
