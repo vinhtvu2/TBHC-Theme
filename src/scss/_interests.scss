@@ -33,6 +33,10 @@
                 display: table;
                 width: 100%;
 
+                @media (min-width: $screen-sm-max) {
+                    position: relative;
+                }
+
                 .interest_content_wrap {
                     padding-left: 15%;
 
