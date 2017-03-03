@@ -12638,6 +12638,9 @@ section#interests {
     section#interests .interests_lg_table .interest_single_wrap .interest_single {
       display: table;
       width: 100%; }
+      @media (min-width: 991px) {
+        section#interests .interests_lg_table .interest_single_wrap .interest_single {
+          position: relative; } }
       section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
         padding-left: 15%; }
         section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
