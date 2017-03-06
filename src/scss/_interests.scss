@@ -32,13 +32,8 @@
         .interest_single_wrap {
             text-align: left;
             word-break: break-word;
-            background-size: cover;
             overflow: hidden;
             position: relative;
-
-            @media (max-width: $screen-sm-max) {
-                background-image: none;
-            }
 
             @media (min-width: $screen-sm-max) {
                 position: relative;
@@ -61,7 +56,10 @@
             .interest_single {
                 display: table;
                 width: 100%;
-
+                background-size:cover;
+            @media (max-width: $screen-sm-max) {
+                background-image: none;
+            }
                 @media (min-width: $screen-sm-max) {
                     position: absolute;
                     width: 85%;

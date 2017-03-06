@@ -820,13 +820,13 @@ function frontpage_interests(){
 			}?>
 			<style>
 				@media(min-width: 770px){
-					.interest_single_wrap#interest_<?=$itm->ID?>{
+					.interest_single#interest_<?=$itm->ID?>{
 						background-image:url('<?=get_the_post_thumbnail_url($itm->ID)?>');				
 					}
 				}
 			</style>
-			<div class="interest_single_wrap" id="interest_<?=$itm->ID?>">
-				<a class="interest_single" href="<?=$link?>" >
+			<div class="interest_single_wrap" >
+				<a class="interest_single" href="<?=$link?>" id="interest_<?=$itm->ID?>">
 					<div class="interest_single_overlay"></div>
 					<div class="interest_content_wrap">
 						<h3 class="interest_title">
