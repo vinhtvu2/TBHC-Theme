@@ -12626,53 +12626,67 @@ section#interests {
   @media (min-width: 991px) {
     section#interests {
       background-color: black;
-      color: white; } }
+      color: white;
+      padding: 0 15%; } }
   section#interests .interests_title_wrap {
     background-color: #FC0;
     padding: 0.75em 0;
     color: #000; }
     @media (min-width: 991px) {
       section#interests .interests_title_wrap {
-        background-color: none;
+        background-color: black;
         color: white; } }
   @media (min-width: 991px) {
     section#interests .interests_lg_table {
       display: table;
       table-layout: fixed;
-      width: 100%; } }
+      width: 100%;
+      position: relative; } }
   section#interests .interests_lg_table .interest_single_wrap {
     text-align: left;
     word-break: break-word;
     background-size: cover;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
     @media (max-width: 991px) {
       section#interests .interests_lg_table .interest_single_wrap {
         background-image: none; } }
     @media (min-width: 991px) {
       section#interests .interests_lg_table .interest_single_wrap {
+        position: relative;
         display: table-cell; } }
     section#interests .interests_lg_table .interest_single_wrap .interest_single_overlay {
-      width: 100%;
-      height: 100%;
-      display: block;
-      background-color: #FC0;
-      position: absolute;
-      opacity: 0.9; }
+      display: none; }
+      @media (min-width: 991px) {
+        section#interests .interests_lg_table .interest_single_wrap .interest_single_overlay {
+          width: 100%;
+          height: 100%;
+          display: block;
+          background-color: #FC0;
+          position: absolute;
+          opacity: 0.9; } }
     section#interests .interests_lg_table .interest_single_wrap .interest_single {
       display: table;
       width: 100%; }
       @media (min-width: 991px) {
         section#interests .interests_lg_table .interest_single_wrap .interest_single {
-          position: relative; } }
+          position: absolute;
+          width: 85%;
+          height: 85%;
+          top: 7.5%;
+          left: 7.5%;
+          display: block; } }
       section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
         padding-left: 15%;
         padding-right: 15%;
         color: #000;
-        text-transform: none; }
+        text-transform: none;
+        width: 100%; }
         @media (min-width: 991px) {
           section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
             position: absolute;
-            padding-left: 0; } }
+            padding-left: 0;
+            padding-right: 0; } }
         section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
           color: #000;
           margin: 10px 0;
@@ -12715,8 +12729,8 @@ section#interests {
       border-bottom: 4px solid #e5e5e5; }
       @media (min-width: 991px) {
         section#interests .interests_lg_table .interest_single_wrap:after {
-          border: none;
-          margin: 0;
+          display: none;
+          margin: 0px;
           padding-bottom: 100%; } }
 
 section#opportunities {
