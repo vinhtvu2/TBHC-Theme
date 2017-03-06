@@ -12721,17 +12721,17 @@ section#interests {
           border: 4px #FC0 solid;
           font-size: 1.5em;
           color: #000; }
-    section#interests .interests_lg_table .interest_single_wrap:after {
-      content: "";
-      display: block;
-      width: 95%;
-      margin: 1em auto 0;
-      border-bottom: 4px solid #e5e5e5; }
-      @media (min-width: 991px) {
-        section#interests .interests_lg_table .interest_single_wrap:after {
-          display: none;
-          margin: 0px;
-          padding-bottom: 100%; } }
+      section#interests .interests_lg_table .interest_single_wrap .interest_single:after {
+        content: "";
+        display: block;
+        width: 95%;
+        margin: 1em auto 0;
+        border-bottom: 4px solid #e5e5e5; }
+        @media (min-width: 991px) {
+          section#interests .interests_lg_table .interest_single_wrap .interest_single:after {
+            border: none;
+            margin: 0px;
+            padding-bottom: 100%; } }
 
 section#opportunities {
   position: relative;

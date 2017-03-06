@@ -3,19 +3,22 @@
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-            @media (min-width: $screen-sm-max) {
-                background-color:black;
-                color: white;
-                padding:0 15%;
-            }
+
+    @media (min-width: $screen-sm-max) {
+        background-color: black;
+        color: white;
+        padding: 0 15%;
+    }
+
     .interests_title_wrap {
         background-color: #FC0;
         padding: .75em 0;
         color: #000;
+
         @media (min-width: $screen-sm-max) {
-                background-color:black;
-                color: white;
-            }
+            background-color: black;
+            color: white;
+        }
     }
 
     .interests_lg_table {
@@ -30,29 +33,31 @@
             text-align: left;
             word-break: break-word;
             background-size: cover;
-            overflow:hidden;
-            position:relative;
+            overflow: hidden;
+            position: relative;
+
             @media (max-width: $screen-sm-max) {
                 background-image: none;
             }
 
             @media (min-width: $screen-sm-max) {
-                position:relative;
+                position: relative;
                 display: table-cell;
             }
 
-            .interest_single_overlay{
-                display:none;
-                            @media (min-width: $screen-sm-max) {
+            .interest_single_overlay {
+                display: none;
 
-                width: 100%;
-                height: 100%;
-                display: block;
-                background-color: #FC0;
-                position: absolute;
-                opacity: 0.9;
+                @media (min-width: $screen-sm-max) {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    background-color: #FC0;
+                    position: absolute;
+                    opacity: 0.9;
                 }
             }
+
             .interest_single {
                 display: table;
                 width: 100%;
@@ -72,11 +77,13 @@
                     color: #000;
                     text-transform: none;
                     width: 100%;
+
                     @media (min-width: $screen-sm-max) {
                         position: absolute;
                         padding-left: 0;
                         padding-right: 0;
                     }
+
                     .interest_title {
                         color: #000;
                         margin: 10px 0;
@@ -118,19 +125,19 @@
                         color: #000;
                     }
                 }
-            }
 
-            &:after {
-                content: "";
-                display: block;
-                width: 95%;
-                margin: 1em auto 0;
-                border-bottom: 4px solid #e5e5e5;
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 95%;
+                    margin: 1em auto 0;
+                    border-bottom: 4px solid #e5e5e5;
 
-                @media (min-width: $screen-sm-max) {
-                    display: none;
-                    margin: 0px;
-                    padding-bottom: 100%;
+                    @media (min-width: $screen-sm-max) {
+                        border: none;
+                        margin: 0px;
+                        padding-bottom: 100%;
+                    }
                 }
             }
         }
