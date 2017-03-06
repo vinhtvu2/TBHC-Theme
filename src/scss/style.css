@@ -12645,12 +12645,8 @@ section#interests {
   section#interests .interests_lg_table .interest_single_wrap {
     text-align: left;
     word-break: break-word;
-    background-size: cover;
     overflow: hidden;
     position: relative; }
-    @media (max-width: 991px) {
-      section#interests .interests_lg_table .interest_single_wrap {
-        background-image: none; } }
     @media (min-width: 991px) {
       section#interests .interests_lg_table .interest_single_wrap {
         position: relative;
@@ -12667,7 +12663,11 @@ section#interests {
           opacity: 0.9; } }
     section#interests .interests_lg_table .interest_single_wrap .interest_single {
       display: table;
-      width: 100%; }
+      width: 100%;
+      background-size: cover; }
+      @media (max-width: 991px) {
+        section#interests .interests_lg_table .interest_single_wrap .interest_single {
+          background-image: none; } }
       @media (min-width: 991px) {
         section#interests .interests_lg_table .interest_single_wrap .interest_single {
           position: absolute;
