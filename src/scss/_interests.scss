@@ -26,6 +26,7 @@
             display: table;
             table-layout: fixed;
             width: 100%;
+            vertical-align: top;
             position: relative;
         }
 
@@ -56,10 +57,12 @@
             .interest_single {
                 display: table;
                 width: 100%;
-                background-size:cover;
-            @media (max-width: $screen-sm-max) {
-                background-image: none;
-            }
+                background-size: cover;
+
+                @media (max-width: $screen-sm-max) {
+                    background-image: none;
+                }
+
                 @media (min-width: $screen-sm-max) {
                     position: absolute;
                     width: 85%;
@@ -77,14 +80,22 @@
                     width: 100%;
 
                     @media (min-width: $screen-sm-max) {
-                        position: absolute;
+                        position: relative;
                         padding-left: 0;
                         padding-right: 0;
+                        float: left;
                     }
 
                     .interest_title {
                         color: #000;
                         margin: 10px 0;
+
+                        @media (min-width: $screen-sm-max) {
+                            position: absolute;
+                            bottom: 66%;
+                            padding: 0;
+                            margin: 0;
+                        }
                         /*h2.background {
                 position: relative;
                 z-index: 1;
@@ -106,6 +117,15 @@
                     }
                 }
 
+                .interest_content {
+                    @media (min-width: $screen-sm-max) {
+                        position: absolute;
+                        top: 33%;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+
                 .interest_icon_wrap {
                     display: table-cell;
                     width: 20%;
@@ -123,19 +143,19 @@
                         color: #000;
                     }
                 }
+            }
 
-                &:after {
-                    content: "";
-                    display: block;
-                    width: 95%;
-                    margin: 1em auto 0;
-                    border-bottom: 4px solid #e5e5e5;
+            &:after {
+                content: "";
+                display: block;
+                width: 95%;
+                margin: 1em auto 0;
+                border-bottom: 4px solid #e5e5e5;
 
-                    @media (min-width: $screen-sm-max) {
-                        border: none;
-                        margin: 0px;
-                        padding-bottom: 100%;
-                    }
+                @media (min-width: $screen-sm-max) {
+                    border: none;
+                    margin: 0px;
+                    padding-bottom: 100%;
                 }
             }
         }

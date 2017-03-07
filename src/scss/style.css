@@ -12641,6 +12641,7 @@ section#interests {
       display: table;
       table-layout: fixed;
       width: 100%;
+      vertical-align: top;
       position: relative; } }
   section#interests .interests_lg_table .interest_single_wrap {
     text-align: left;
@@ -12684,9 +12685,10 @@ section#interests {
         width: 100%; }
         @media (min-width: 991px) {
           section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
-            position: absolute;
+            position: relative;
             padding-left: 0;
-            padding-right: 0; } }
+            padding-right: 0;
+            float: left; } }
         section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
           color: #000;
           margin: 10px 0;
@@ -12708,6 +12710,18 @@ section#interests {
                     padding: 0 15px; 
                 }
             }*/ }
+          @media (min-width: 991px) {
+            section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
+              position: absolute;
+              bottom: 66%;
+              padding: 0;
+              margin: 0; } }
+      @media (min-width: 991px) {
+        section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content {
+          position: absolute;
+          top: 33%;
+          margin: 0;
+          padding: 0; } }
       section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_icon_wrap {
         display: table-cell;
         width: 20%;
@@ -12721,17 +12735,17 @@ section#interests {
           border: 4px #FC0 solid;
           font-size: 1.5em;
           color: #000; }
-      section#interests .interests_lg_table .interest_single_wrap .interest_single:after {
-        content: "";
-        display: block;
-        width: 95%;
-        margin: 1em auto 0;
-        border-bottom: 4px solid #e5e5e5; }
-        @media (min-width: 991px) {
-          section#interests .interests_lg_table .interest_single_wrap .interest_single:after {
-            border: none;
-            margin: 0px;
-            padding-bottom: 100%; } }
+    section#interests .interests_lg_table .interest_single_wrap:after {
+      content: "";
+      display: block;
+      width: 95%;
+      margin: 1em auto 0;
+      border-bottom: 4px solid #e5e5e5; }
+      @media (min-width: 991px) {
+        section#interests .interests_lg_table .interest_single_wrap:after {
+          border: none;
+          margin: 0px;
+          padding-bottom: 100%; } }
 
 section#opportunities {
   position: relative;
