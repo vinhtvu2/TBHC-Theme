@@ -12622,12 +12622,13 @@ section#interests {
   position: relative;
   width: 100%;
   text-align: center;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  max-width: 1200px; }
   @media (min-width: 991px) {
     section#interests {
       background-color: black;
       color: white;
-      padding: 0 15%; } }
+      padding: 0 7.5%; } }
   section#interests .interests_title_wrap {
     background-color: #FC0;
     padding: 0.75em 0;
@@ -12682,13 +12683,13 @@ section#interests {
         padding-right: 15%;
         color: #000;
         text-transform: none;
-        width: 100%; }
+        width: 100%;
+        height: 100%; }
         @media (min-width: 991px) {
           section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
             position: relative;
             padding-left: 0;
-            padding-right: 0;
-            float: left; } }
+            padding-right: 0; } }
         section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap .interest_title {
           color: #000;
           margin: 10px 0;
@@ -12715,13 +12716,15 @@ section#interests {
               position: absolute;
               bottom: 66%;
               padding: 0;
-              margin: 0; } }
+              margin: 0;
+              text-align: center; } }
       @media (min-width: 991px) {
         section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content {
           position: absolute;
           top: 33%;
           margin: 0;
-          padding: 0; } }
+          padding: 0;
+          text-align: center; } }
       section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_icon_wrap {
         display: table-cell;
         width: 20%;
