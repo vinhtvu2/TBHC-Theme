@@ -12865,5 +12865,9 @@ section#events {
     color: white; }
   section#events .event_content, section#events .event_content p, section#events .event_content a {
     color: white; }
+  @media (min-width: 991px) {
+    section#events .event_single_wrap:first {
+      float: left;
+      width: 50%; } }
 
 /*# sourceMappingURL=style.css.map */
