@@ -10035,6 +10035,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   content: '' !important; }
 
 #site-nav-xs {
+  border-radius: 0;
   margin: 0;
   border: none;
   background-color: #fc0;
@@ -10074,6 +10075,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   #section-nav-xs .navbar-brand {
     float: right;
     color: white; }
+  @media (min-width: 770px) {
+    #section-nav-xs li > a {
+      line-height: normal; } }
   #section-nav-xs button {
     border: none; }
 
@@ -12684,7 +12688,8 @@ section#interests {
         color: #000;
         text-transform: none;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        float: none; }
         @media (min-width: 991px) {
           section#interests .interests_lg_table .interest_single_wrap .interest_single .interest_content_wrap {
             position: relative;

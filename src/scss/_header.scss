@@ -149,7 +149,7 @@
 
 // Mobile nav
 #site-nav-xs {
-    //border-radius: 4px;
+    border-radius: 0;
     margin: 0;
     border: none;
     background-color: #fc0;
@@ -211,7 +211,11 @@
         float: right;
         color: white;
     }
-
+    @media(min-width: $screen-sm-min) {
+        li>a{
+            line-height: normal;
+        }
+    }
     button {
         border: none;
     }
