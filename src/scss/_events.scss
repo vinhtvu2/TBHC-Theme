@@ -1,20 +1,31 @@
-﻿section#events{
+﻿section#events {
     padding: 0 3%;
-    background-color:black;
-    .events_title{
-        color:white;
+    background-color: black;
+
+    .events_title {
+        color: white;
         text-transform: uppercase;
         font-weight: bold;
     }
-    .event_datetime{
-        color:#FC0;
+
+    .event_datetime {
+        color: #FC0;
         text-transform: uppercase;
     }
-    .event_title{
+
+    .event_title {
         font-weight: bold;
-        color:white;
+        color: white;
     }
+
     .event_content, .event_content p, .event_content a {
         color: white;
+    }
+
+    @media (min-width: $screen-sm-max) {
+        .event_single_wrap:first {
+            float: left;
+            width: 50%;
+        }
     }
 }

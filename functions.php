@@ -868,6 +868,7 @@ function frontpage_events(){
 				</div>
 			</div>			
 		<?}?>
+		<div class="clearfix"></div>
 	</section>
 	<? return ob_get_clean();
 }
