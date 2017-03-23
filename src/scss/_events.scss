@@ -23,7 +23,7 @@
     }
 
     @media (min-width: $screen-sm-max) {
-        .event_single_wrap:first {
+        .event_single_wrap.first {
             float: left;
             width: 50%;
         }
