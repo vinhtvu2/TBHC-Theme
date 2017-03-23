@@ -858,7 +858,7 @@ function frontpage_events(){
 			<h2 class="events_title">Upcoming Events</h2>
 		</div>
 		<? foreach($events as $element){?>
-			<div class="event_single_wrap<? array_search($element, $events) === 0 ? ' first' : ''?>">
+			<div class="event_single_wrap<? if(array_search($element, $events) === 0){?> first<?}?>">
 				<div class="event_single">
 					<div class="event_datetime"><?=$element["starts"]?></div>
 					<h3 class="event_title"><?=$element["title"]?></h3>
